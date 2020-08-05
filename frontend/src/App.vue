@@ -35,32 +35,33 @@
         </template>
     </cv-header>
 
-    <cv-side-nav style="background-color:#233554;width:200px" id="side-nav" fixed expanded>
-        <cv-side-nav-items>
-          <cv-side-nav-link color="white" style="color:white" href="javascript:void(0)" active>
-            <p style="color:white">
-              Home
-            </p>
-          </cv-side-nav-link >
-          <cv-side-nav-link href="javascript:void(0)">
-            <p style="color:white">
-              Run Analysis
-            </p>
-          </cv-side-nav-link>
-          <!-- <cv-side-nav-menu color="white" title="Personas">
-            <cv-side-nav-menu-item href="javascript:void(0)" active>
-              <p style="color:white">
-                Officer
-              </p>
 
-            </cv-side-nav-menu-item>
-            <cv-side-nav-menu-item href="javascript:void(0)">
-              Victim
-            </cv-side-nav-menu-item>
-            <cv-side-nav-menu-item href="javascript:void(0)">
-              Witness
-            </cv-side-nav-menu-item>
-          </cv-side-nav-menu> -->
+
+
+
+    <cv-side-nav style="background-color:#233554;width:80px" id="side-nav" fixed expanded>
+        <cv-side-nav-items>
+          <cv-side-nav-link color="white" style="margin-bottom:25px" href="javascript:void(0)">
+            <Home32 fill="white"/>
+            <!-- <p style="color:white">
+              Home
+            </p> -->
+          </cv-side-nav-link >
+          <cv-side-nav-link style="margin-bottom:25px" href="javascript:void(0)">
+            <ChartClusterBar32 fill="white" />
+            <!-- <p style="color:white">
+              Run Analysis
+            </p> -->
+          </cv-side-nav-link>
+          <cv-side-nav-link style="margin-bottom:25px" href="javascript:void(0)">
+            <FolderShared32 fill="white"/>
+            <!-- <p style="color:white">
+              Run Analysis
+            </p> -->
+          </cv-side-nav-link>
+
+
+
         </cv-side-nav-items>
     </cv-side-nav>
 
@@ -77,12 +78,9 @@
       </div>
     </div> -->
 
-
-    <div style="margin-left:20%;float: center;width:75%">
+    <h2 style="position:relative;margin-left: 100px;margin-bottom:30px">Welcome, Srgt. Jeffords</h2>
+    <div style="margin-left:10%;float: center;width:90%">
       <!-- <CvButton style="margin: 0px 10px; text-align: center" type="default" v-on:click="showModal({'name': 'show-report', 'title': 'Submit Report'})">Show Report Details</CvButton> -->
-      <CvButton style="margin: 0px 10px; text-align: center" type="default" v-on:click="showModal({'name': 'submit-witness-report', 'title': 'Submit Witness Report'})">Submit Witness Report</CvButton>
-
-      <h2 style="float:left">Welcome, Srgt. Jeffords</h2>
       <!-- <h4>Last analysis run: 11/11/2020</h4> -->
 
       <div>
@@ -99,16 +97,16 @@
             </cv-tile>
           </div>
           <div style="margin-left:10px">
-          <cv-tile style="border: 2px solid yellow; background-color:white; border-radius: 5px;" kind="standard">
-            <p style="font-weight: bold;">(11) Cases with moderate innacuracies need revision</p>
-            <p style="font-style: italic;"><a>View Reports</a></p>
-          </cv-tile>
+            <cv-tile style="border: 2px solid yellow; background-color:white; border-radius: 5px;" kind="standard">
+              <p style="text-align:left;font-weight: bold;">(11) Cases with moderate innacuracies need revision</p>
+              <p style="font-style: italic;float:right;bottom:10px;position:relative"><a>View Reports</a></p>
+            </cv-tile>
           </div>
           <div style="margin-left:10px">
-          <cv-tile style="border: 2px solid green; background-color:white; border-radius: 5px;" kind="standard">
-            <p style="font-weight: bold;">(20) Cases need no further revision</p>
-            <p style="font-style: italic;"><a>View Reports</a></p>
-          </cv-tile>
+            <cv-tile style="border: 2px solid green; background-color:white; border-radius: 5px;" kind="standard">
+              <p style="text-align:left;font-weight: bold;">(20) Cases need no further revision</p>
+              <p style="font-style: italic;float:right;bottom:10px;position:relative"><a>View Reports</a></p>
+            </cv-tile>
           </div>
 
         </div>
@@ -124,20 +122,20 @@
 
       <h5>Avaliable Sources For Analysis</h5>
       <div style="display:flex; align-items: center;justify-content: center; margin-bottom:30px">
-        <cv-tile style="margin-left:10px;margin-right:10px;border-radius: 5px;">
+        <cv-tile kind="clickable" style="margin-left:10px;margin-right:10px;border-radius: 5px;">
           <VideoFilled32 />
           <p style="font-size: 12px;">
             Videos Uploaded
           </p>
         </cv-tile>
-        <cv-tile style="margin-left:10px;margin-right:10px;border-radius: 5px;">
+        <cv-tile kind="clickable" style="margin-left:10px;margin-right:10px;border-radius: 5px;">
           <Image32 />
           <p style="font-size: 12px;">
             Photos Uploaded
           </p>
         </cv-tile>
 
-        <cv-tile style="margin-left:10px;margin-right:10px;border-radius: 5px;">
+        <cv-tile kind="clickable" style="margin-left:10px;margin-right:10px;border-radius: 5px;">
           <CameraAction32 />
           <p style="font-size: 12px;">
             Officer's bodycam
@@ -145,7 +143,7 @@
 
         </cv-tile>
 
-        <cv-tile style="margin-left:10px;margin-right:10px;border-radius: 5px;">
+        <cv-tile kind="clickable" style="margin-left:10px;margin-right:10px;border-radius: 5px;">
           <Folders32 />
           <p style="font-size: 12px;">
             Officer's reports
@@ -153,21 +151,21 @@
         </cv-tile>
 
 
-        <cv-tile style="margin-left:10px;margin-right:10px;border-radius: 5px;">
+        <cv-tile kind="clickable" style="margin-left:10px;margin-right:10px;border-radius: 5px;">
           <ChartCustom32 />
           <p style="font-size: 12px;">
             Another source
           </p>
         </cv-tile>
 
-        <cv-tile style="margin-left:10px;margin-right:10px;border-radius: 5px;">
+        <cv-tile kind="clickable" style="margin-left:10px;margin-right:10px;border-radius: 5px;">
           <ChartCustom32 />
           <p style="font-size: 12px;">
             Another source
           </p>
         </cv-tile>
 
-        <cv-tile style="margin-left:10px;margin-right:10px;border-radius: 5px;">
+        <cv-tile kind="clickable" style="margin-left:10px;margin-right:10px;border-radius: 5px;">
           <ChartCustom32 />
           <p style="font-size: 12px;">
             Another source
@@ -178,9 +176,10 @@
       </div>
 
 
-      <h2>Reports</h2>
+      <!-- <h2>Reports</h2> -->
       <h5>{{reports.length}} reports pending analysis</h5>
       <cv-data-table
+        :zebra=true
         :columns="report_columns"
         :pagination="basicPagination"   :overflow-menu="true" ref="table">
         <template v-if="use_htmlData" slot="data">
@@ -194,22 +193,13 @@
                <CvButton style="margin: 0px 10px; text-align: center" type="default" v-on:click="showModal({'name': 'show-report', 'title': 'Show Report', 'report': row})">Show Report Details</CvButton>
              </cv-data-table-cell>
 
-             <!-- <cv-data-table-cell>
-                 <cv-overflow-menu flip-menu style="margin: 0 auto;">
-                     <cv-overflow-menu-item>Edit</cv-overflow-menu-item>
-                     <cv-overflow-menu-item>Test</cv-overflow-menu-item>
-                 </cv-overflow-menu>
-             </cv-data-table-cell> -->
           </cv-data-table-row>
       </template></cv-data-table>
-
-      <!-- <CvButton style="" type="default" v-on:click="showModal({'name': 'run-analysis', 'title': 'Run Analysis'})">Run Analysis</CvButton> -->
-
       <h2>Statistics</h2>
 
     </div>
 
-    <modal name="show-report" height="auto">
+    <modal name="show-report" :scrollable="true" height="auto" style="margin-top:40px">
 
       <h2 align="center"> Analysis results for case #1231451 </h2>
 
@@ -308,7 +298,9 @@
                   <cv-button >Submit</cv-button>
             </cv-form>
     </modal>
-    <CvButton style="margin: 0px 10px; text-align: center" type="danger" v-on:click="hideModal({'name': 'login-modal', 'title': 'Login'})">Submit Report</CvButton>
+
+    <hr />
+    <CvButton  type="default" v-on:click="showModal({'name': 'submit-witness-report', 'title': 'Submit Witness Report'})">Submit Witness Report</CvButton>
 
 
   </div>

@@ -75,6 +75,9 @@ import CameraAction32 from '@carbon/icons-vue/es/camera--action/32';
 import Folders32 from '@carbon/icons-vue/es/folders/32';
 import ChartCustom32 from '@carbon/icons-vue/es/chart--custom/32';
 import CloseFilled32 from '@carbon/icons-vue/es/close--filled/32';
+import Home32 from '@carbon/icons-vue/es/home/32';
+import ChartClusterBar32 from '@carbon/icons-vue/es/chart--cluster-bar/32';
+import FolderShared32 from '@carbon/icons-vue/es/folder--shared/32';
 
 
 import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
@@ -91,7 +94,10 @@ Vue.use(CarbonIconsVue, {
     CameraAction32,
     Folders32,
     ChartCustom32,
-    CloseFilled32
+    CloseFilled32,
+    Home32,
+    ChartClusterBar32,
+    FolderShared32
   },
 });
 
