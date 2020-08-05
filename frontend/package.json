@@ -1,0 +1,81 @@
+{
+  "name": "hello-world",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint"
+  },
+  "dependencies": {
+    "@carbon/vue": "^2.27.0",
+    "@cycjimmy/jsmpeg-player": "^5.0.1",
+    "body-parser": "^1.19.0",
+    "bootstrap": "^4.5.1",
+    "bootstrap-vue": "^2.16.0",
+    "carbon-components": "^10.12.0",
+    "chart.js": "^2.9.3",
+    "fibers": "^5.0.0",
+    "jquery-tablesort": "0.0.11",
+    "jspdf": "^1.5.3",
+    "jszip": "^3.2.2",
+    "node-sass": "^4.11.0",
+    "sass-loader": "^7.1.0",
+    "semantic-ui": "^2.4.2",
+    "semantic-ui-css": "^2.4.1",
+    "semantic-ui-vue": "^0.10.1",
+    "v-data-table": "^2.1.0",
+    "vfc": "^1.1.2",
+    "vue": "^2.6.11",
+    "vue-card-element": "^0.1.2",
+    "vue-chartjs": "^3.5.0",
+    "vue-js-modal": "^1.3.28",
+    "vue-json-tree-view": "^2.1.4",
+    "vue-loader": "^15.9.3",
+    "vue-material": "^1.0.0-beta-11",
+    "vue-plotly": "^1.0.1",
+    "vue-router": "^3.1.3",
+    "vue-upload-component": "^2.8.20",
+    "vuetable-2": "^1.7.5"
+  },
+  "devDependencies": {
+    "@carbon/icons-vue": "^10.14.0",
+    "@nuxtjs/vuetify": "^1.9.0",
+    "@vue/cli-plugin-babel": "^3.5.0",
+    "@vue/cli-plugin-eslint": "^3.5.0",
+    "@vue/cli-service": "^3.5.0",
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.8.0",
+    "eslint-plugin-vue": "^5.0.0",
+    "sass": "^1.19.0",
+    "sass-loader": "^8.0.0",
+    "vue-cli-plugin-vuetify": "^2.0.2",
+    "vue-select": "^2.6.4",
+    "vue-template-compiler": "^2.6.11",
+    "vuetify-loader": "^1.3.0"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "eslint:recommended"
+    ],
+    "rules": {},
+    "parserOptions": {
+      "parser": "babel-eslint"
+    }
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {}
+    }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ]
+}

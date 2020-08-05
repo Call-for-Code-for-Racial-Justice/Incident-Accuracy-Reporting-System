@@ -1,0 +1,4 @@
+*node_modules*
+vision-inspector-dump/*csv
+backend/maximo-mobile-dump/.env
+.env*
