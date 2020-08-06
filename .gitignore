@@ -2,3 +2,4 @@
 vision-inspector-dump/*csv
 backend/maximo-mobile-dump/.env
 .env*
+bootstrap/

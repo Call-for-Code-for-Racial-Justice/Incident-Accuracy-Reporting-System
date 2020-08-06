@@ -1,4 +1,30 @@
 module.exports = {
+  pages: {
+    index: {
+      entry: 'src/main.js', //entry for the public page
+      // template: 'public/index.html', // source template
+      // filename: 'index.html' // output as dist/*
+    },
+    login: {
+      entry: 'src/login/main.js',
+      template: 'public/login.html',
+      filename: 'login.html'
+    },
+    witness: {
+      entry: 'src/witness/main.js',
+      // template: 'public/login.html',
+      // filename: 'login.html'
+    }
+  },
+  devServer: {
+    historyApiFallback: {
+      rewrites: [
+        { from: /\/index/, to: '/' },
+        { from: /\/login/, to: '/login.html' },
+        { from: /\/app/, to: '/' },
+      ]
+    }
+  },
   chainWebpack: config => {
     config.module
       .rule('vue')

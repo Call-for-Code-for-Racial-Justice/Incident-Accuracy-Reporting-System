@@ -6,15 +6,8 @@
 
 <head>
   <title>Lions of Justice</title>
-
-  <link href=`${publicPath}/styles.css` rel="stylesheet">
-
-  <link href=`${publicPath}/vendor/bootstrap/css/bootstrap.min.css` rel="stylesheet">
-  <link href=`${publicPath}/vendor/bootstrap/js/bootstrap.bundle.min.css` rel="stylesheet">
-
-  <!-- Custom styles for this template -->
-  <link href=`${publicPath}/vendor/fontawesome/css/all.css` rel="stylesheet">
-  <script src=`${publicPath}/vendor/jquery/jquery.min.js`></script>
+  <!-- <script src="https://d3js.org/d3.v4.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.2.4/vue.min.js" ></script> -->
 
 </head>
 
@@ -28,11 +21,6 @@
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-
-        <template slot="left-panels" v-if="areLeftPanels">
-        </template>
-        <template slot="right-panels" v-if="areRightPanels">
-        </template>
     </cv-header>
 
 
@@ -59,9 +47,6 @@
               Run Analysis
             </p> -->
           </cv-side-nav-link>
-
-
-
         </cv-side-nav-items>
     </cv-side-nav>
 
@@ -79,21 +64,18 @@
     </div> -->
 
     <h2 style="position:relative;margin-left: 100px;margin-bottom:30px">Welcome, Srgt. Jeffords</h2>
-    <div style="margin-left:10%;float: center;width:90%">
+    <div style="margin-left:8%;float: center;width:90%">
       <!-- <CvButton style="margin: 0px 10px; text-align: center" type="default" v-on:click="showModal({'name': 'show-report', 'title': 'Submit Report'})">Show Report Details</CvButton> -->
       <!-- <h4>Last analysis run: 11/11/2020</h4> -->
 
       <div>
 
-        <div style="display:flex; margin-bottom:20px">
+        <!-- <div style="display:flex; margin-bottom:20px">
           <div style="margin-left:10px">
             <cv-tile style="background-color:white; border: 2px solid red; border-radius: 5px;" kind="standard">
-            <!-- <div style="border: 2px solid red; border-radius: 5px;"> -->
               <CloseFilled32 style="float:left;margin-right:10px" fill="red"/>
               <p style="text-align:left;font-weight: bold;">(4) Cases with severe innacuracies need revision</p>
               <p style="font-style: italic;float:right;bottom:10px;position:relative"><a>View Reports</a></p>
-            <!-- </div> -->
-
             </cv-tile>
           </div>
           <div style="margin-left:10px">
@@ -108,8 +90,7 @@
               <p style="font-style: italic;float:right;bottom:10px;position:relative"><a>View Reports</a></p>
             </cv-tile>
           </div>
-
-        </div>
+        </div> -->
 
 
 
@@ -120,133 +101,384 @@
 
       </div>
 
+
+      <!-- HTML -->
+      <!--
+      <div class="row mb-4 ">
+    	  <div class="col-sm-4">
+    	    <div class="card error">
+    	      <div class="card-body"><i class="fa fa-2x fa-times-circle error-icon"></i>
+    	        <h5 class="card-title">(4) cases with severe inaccuracies need revision. </h5>
+    	      </div>
+    	    </div>
+    	  </div>
+    	  <div class="col-sm-4">
+    	    <div class="card warning">
+    	      <div class="card-body"><i class="fa fa-2x fa-exclamation-triangle warning-icon"></i>
+    	        <h5 class="card-title">(3) cases with warnings need revision.</h5>
+
+    	      </div>
+    	    </div>
+    	  </div>
+    	  <div class="col-sm-4">
+    	    <div class="card success" >
+    	      <div class="card-body"><i class="fa fa-2x fa-check-circle success-icon"></i>
+    	        <h5 class="card-title">Urna semper at at tellus nisl mauris molestie tortor egestas.</h5>
+
+    	      </div>
+    	    </div>
+    	  </div>
+    	</div>   -->
+
+
+<!-- <i class="fa fa-2x fa-times-circle error-icon"></i> -->
+      <b-row cols="3" class="mb-4">
+        <b-col>
+          <b-card
+            class="error"
+            style="border:3px solid #D01A11; min-height: 84px;"
+            title="">
+            <CloseFilled32 style="float:left" fill="red"/>
+            <b-card-text class="card-title">
+               (4) cases with severe inaccuracies need revision.
+            </b-card-text>
+          </b-card>
+        </b-col>
+        <b-col>
+          <b-card
+            class="warning"
+            style="border:3px solid #D68700; min-height: 84px;"
+            title="">
+            <WarningFilled32 style="float:left" fill="#D68700"/>
+            <b-card-text class="card-title">
+              (4) cases with severe inaccuracies need revision.
+            </b-card-text>
+          </b-card>
+        </b-col>
+        <b-col>
+          <b-card
+            class="success"
+            style="border:3px solid #6F8F56; min-height: 84px;"
+            title="">
+            <CheckmarkFilled32 style="float:left" fill="green" />
+            <b-card-text class="card-title">
+              (4) cases with severe inaccuracies need revision.
+            </b-card-text>
+          </b-card>
+        </b-col>
+      </b-row>
+
+
       <h5>Avaliable Sources For Analysis</h5>
-      <div style="display:flex; align-items: center;justify-content: center; margin-bottom:30px">
-        <cv-tile kind="clickable" style="margin-left:10px;margin-right:10px;border-radius: 5px;">
-          <VideoFilled32 />
-          <p style="font-size: 12px;">
-            Videos Uploaded
-          </p>
-        </cv-tile>
-        <cv-tile kind="clickable" style="margin-left:10px;margin-right:10px;border-radius: 5px;">
-          <Image32 />
-          <p style="font-size: 12px;">
-            Photos Uploaded
-          </p>
-        </cv-tile>
 
-        <cv-tile kind="clickable" style="margin-left:10px;margin-right:10px;border-radius: 5px;">
-          <CameraAction32 />
-          <p style="font-size: 12px;">
-            Officer's bodycam
-          </p>
+      <b-row cols="6" class="mt-3 mb-3"">
+        <b-col>
+          <b-card class="source">
+            <VideoFilled32 />
+            <b-card-text class="card-title">
+              Videos Uploaded
+            </b-card-text>
+          </b-card>
+        </b-col>
+        <b-col>
+          <b-card class="source">
+            <VideoFilled32 />
+            <b-card-text class="card-title">
+              Photos Uploaded
+            </b-card-text>
+          </b-card>
+        </b-col>
 
-        </cv-tile>
+        <b-col>
+          <b-card class="source">
+            <Image32 />
+            <b-card-text class="card-title">
+              Officer's Bodycam
+            </b-card-text>
+          </b-card>
+        </b-col>
 
-        <cv-tile kind="clickable" style="margin-left:10px;margin-right:10px;border-radius: 5px;">
-          <Folders32 />
-          <p style="font-size: 12px;">
-            Officer's reports
-          </p>
-        </cv-tile>
+        <b-col>
+          <b-card class="source">
+            <Folders32 />
+            <b-card-text class="card-title">
+              Officer's Reports
+            </b-card-text>
+          </b-card>
+        </b-col>
+
+        <b-col>
+          <b-card class="source">
+            <ChartCustom32 />
+            <b-card-text class="card-title">
+              Another source
+            </b-card-text>
+          </b-card>
+        </b-col>
+
+        <b-col>
+          <b-card class="source">
+            <ChartCustom32 />
+            <b-card-text class="card-title">
+              Another source
+            </b-card-text>
+          </b-card>
+        </b-col>
+      </b-row>
 
 
-        <cv-tile kind="clickable" style="margin-left:10px;margin-right:10px;border-radius: 5px;">
-          <ChartCustom32 />
-          <p style="font-size: 12px;">
-            Another source
-          </p>
-        </cv-tile>
+      <!-- <b-row cols="12" class="mb-4"> -->
+        <!-- <b-table class="col-12" hover :items="bootstrap_reports"></b-table> -->
+        <!-- <b-table-simple style="width:900px" hover>
+          <b-thead >
+            <b-tr>
+              <b-th>#</b-th>
+              <b-th>Name</b-th>
+              <b-th>Date</b-th>
+              <b-th>Report_type</b-th>
+              <b-th>Location</b-th>
+              <b-th></b-th>
+            </b-tr>
+          </b-thead>
+          <b-tbody>
+            <template v-for="row in bootstrap_reports">
+              <b-tr>
+                  <template v-if="row['status'] == 'error'">
+                    <b-td>
+                      <b-row cols=2>
+                        <CloseFilled32 style="" fill="red"/>
+                        <p>
+                          {{row['badge']}}
+                        </p>
+                      </b-row>
+                    </b-td>
+                  </template>
+                  <template v-else-if="row['status'] == 'warning'">
+                    <b-td>{{row['badge']}}</b-td>
+                  </template>
+                  <template v-else>
+                    <b-td>{{row['badge']}}</b-td>
+                  </template>
 
-        <cv-tile kind="clickable" style="margin-left:10px;margin-right:10px;border-radius: 5px;">
-          <ChartCustom32 />
-          <p style="font-size: 12px;">
-            Another source
-          </p>
-        </cv-tile>
+                  <b-td>{{row['name']}}</b-td>
+                  <b-td>{{row['date']}}</b-td>
+                  <b-td>{{row['report_type']}}</b-td>
+                  <b-td>{{row['location']}}</b-td>
+                  <b-td>View Report Details</b-td>
+              </b-tr>
+            </template>
+          </b-tbody>
+        </b-table-simple> -->
 
-        <cv-tile kind="clickable" style="margin-left:10px;margin-right:10px;border-radius: 5px;">
-          <ChartCustom32 />
-          <p style="font-size: 12px;">
-            Another source
-          </p>
-        </cv-tile>
+      <!-- </b-row> -->
 
-
-      </div>
-
-
-      <!-- <h2>Reports</h2> -->
+<b-row>
+    <b-col>
+  <b-card>
       <h5>{{reports.length}} reports pending analysis</h5>
       <cv-data-table
         :zebra=true
         :columns="report_columns"
-        :pagination="basicPagination"   :overflow-menu="true" ref="table">
+        :pagination="basicPagination" :overflow-menu="true" ref="table">
         <template v-if="use_htmlData" slot="data">
-          <cv-data-table-row v-for="(row, rowIndex) in reports" :key="`${rowIndex}`" :value="`${rowIndex}`">
-             <cv-data-table-cell><input type="text" :value="row[0]" style="border: none; background: none; width: 100%;"/></cv-data-table-cell>
-             <cv-data-table-cell><input type="text" :value="row[1]" style="border: none; background: none; width: 100%;"/></cv-data-table-cell>
-             <cv-data-table-cell><input type="text" :value="row[2]" style="border: none; background: none; width: 100%;"/></cv-data-table-cell>
-             <cv-data-table-cell><input type="text" :value="row[3]" style="border: none; background: none; width: 100%;"/></cv-data-table-cell>
-             <cv-data-table-cell><input type="text" :value="row[4]" style="border: none; background: none; width: 100%;"/></cv-data-table-cell>
+          <cv-data-table-row v-for="(row, rowIndex) in bootstrap_reports" :key="`${rowIndex}`" :value="`${rowIndex}`">
+             <template v-if="row['status'] == 'error'">
+               <cv-data-table-cell><CloseFilled32 style="" fill="red"/></cv-data-table-cell>
+             </template>
+             <template v-else-if="row['status'] == 'warning'">
+               <cv-data-table-cell><WarningFilled32 style="" fill="#D68700"/></cv-data-table-cell>
+             </template>
+             <template v-else>
+               <cv-data-table-cell><CheckmarkFilled32 style="" fill="green"/></cv-data-table-cell>
+             </template>
+
+             <cv-data-table-cell><input type="text" :value="row['number']" style="border: none; background: none; width: 100%;"/></cv-data-table-cell>
+             <cv-data-table-cell><input type="text" :value="row['name']" style="border: none; background: none; width: 100%;"/></cv-data-table-cell>
+             <cv-data-table-cell><input type="text" :value="row['date']" style="border: none; background: none; width: 100%;"/></cv-data-table-cell>
+             <cv-data-table-cell><input type="text" :value="row['report_type']" style="border: none; background: none; width: 100%;"/></cv-data-table-cell>
+             <cv-data-table-cell><input type="text" :value="row['location']" style="border: none; background: none; width: 100%;"/></cv-data-table-cell>
              <cv-data-table-cell>
                <CvButton style="margin: 0px 10px; text-align: center" type="default" v-on:click="showModal({'name': 'show-report', 'title': 'Show Report', 'report': row})">Show Report Details</CvButton>
+               <!-- <input type="text" style="border: none; background: none; width: 100%;" value="View Report Details" /> -->
              </cv-data-table-cell>
 
           </cv-data-table-row>
-      </template></cv-data-table>
+      </template>
+    </cv-data-table>
+  </b-card>
+
+  </b-col>
+</b-row>
+    <!-- End of home view -->
+
+
+    <!-- <ccv-pie-chart :data='chartData' :options='chartOptions'></ccv-pie-chart> -->
+    <b-row cols="1" class="mt-3 mb-1">
       <h2>Statistics</h2>
+    </b-row>
+    <b-row>
+      <b-col cols="12" md="8">
+        <b-card>
+          <ccv-simple-bar-chart :data='barChartData' :options='barChartOptions'></ccv-simple-bar-chart>
+          <ccv-grouped-bar-chart :data='groupedBarChartData' :options='groupedBarChartOptions'></ccv-grouped-bar-chart>
+        </b-card>
+      </b-col>
+      <b-col cols="6" md="4">
+        <b-card>
+          <ccv-donut-chart :data='chartData' :options='chartOptions'></ccv-donut-chart>
+        </b-card>
+      </b-col>
+
+    </b-row>
 
     </div>
 
-    <modal name="show-report" :scrollable="true" height="auto" style="margin-top:40px">
+    <modal name="show-report" :scrollable="true" width="60%" height="auto" style="margin-top:50px">
 
       <h2 align="center"> Analysis results for case #1231451 </h2>
+      <b-row cols="10" class="mt-5 ml-3">
+        <b-col>
+          <h5>Report Type</h5>
+        </b-col>
+        <b-col>
+          <p>Dolor, elementum</p>
+        </b-col>
+        <b-col>
+        </b-col>
+      </b-row>
 
-      <cv-tile
-        >
-        <h5>Details Placeholder</h5>
-        <p>Officer</p>
-        <p>Victim</p>
-        <p>Category</p>
-      </cv-tile>
-      <hr>
+      <b-row cols="10" class="mt-1 ml-3">
+        <b-col>
+          <h5>Officer</h5>
+        </b-col>
+        <b-col>
+          <p>Dolor, elementum</p>
+        </b-col>
+        <b-col>
+        </b-col>
+      </b-row>
 
-      <cv-tile
-        >
-        <h5>Video</h5><p>Footage of bodycam shows innacuracies</p>
-      </cv-tile>
-      <hr>
-      <cv-tile
-        >
-        <h5>Audio</h5><p>Audio from witness interview needs revision</p>
-      </cv-tile>
-      <hr>
+      <b-row cols="10" class="mt-1 ml-3">
+        <b-col>
+          <h5>Victim</h5>
+        </b-col>
+        <b-col>
+          <p>Dolor, elementum</p>
+        </b-col>
+        <b-col>
+        </b-col>
+      </b-row>
 
-      <cv-tile
-        >
-        <h5>Inaccuracies Detected:</h5><p></p>
+      <b-row cols="10" class="mt-1 ml-3">
+        <b-col>
+          <h5>Suspect</h5>
+        </b-col>
+        <b-col>
+          <p>Dolor, elementum</p>
+        </b-col>
+        <b-col>
+        </b-col>
+      </b-row>
+      <hr style="width:80%;border: 1px solid rgb(214,162,66)">
 
-      </cv-tile>
+      <b-row cols="10" class="mt-1 ml-3 mb-3">
+        <h5>Processed Elements</h5>
+      </b-row>
 
-      <cv-tile
-        >
-        <h5>Written Statement</h5><p></p>
+      <b-row cols="10" class="mt-1 ml-3">
+        <b-col>
+          <h4>20</h4>
+          <p>Photos</p>
+        </b-col>
+        <b-col>
+          <h4>2</h4>
+          <p>Videos</p>
+        </b-col>
+        <b-col>
+          <h4>2hr</h4>
+          <p>Bodycam Footage</p>
+        </b-col>
+        <b-col>
+          <h4>1</h4>
+          <p>Report</p>
+        </b-col>
+        <b-col>
+          <h4>1</h4>
+          <p>Audio Recording</p>
+        </b-col>
+      </b-row>
 
-      </cv-tile>
+      <hr style="width:80%;border: 1px solid rgb(214,162,66)">
+
+      <b-row cols="10" class="mt-1 ml-3">
+        <h5>Inaccuracies Detected</h5>
+      </b-row>
+
+      <b-row cols="10" class="mt-1 ml-3">
+        <b-col>
+          <h4 style="float:left">(2)</h4><h5>Severe inaccuracies</h5>
+        </b-col>
+        <b-col class="col-md-8"></b-col>
+      </b-row>
+
+      <b-card >
+        <b-card-sub-title class="mb-2">
+          <CloseFilled16 fill="red"/>
+          Footage of bodycam shows inaccuracies
+        </b-card-sub-title>
+
+        <b-card-text class="ml-3">
+          Description of inaccuracies
+        </b-card-text>
+        <a href="#" class="card-link ml-3">Call to action</a>
+      </b-card>
+      <b-card >
+        <b-card-sub-title class="mb-2">
+          <CloseFilled16 fill="red"/>
+          Audio from interviews shows inaccuracies
+        </b-card-sub-title>
+        <b-card-text class="ml-3">
+          Description of inaccuracies
+        </b-card-text>
+        <a href="#" class="card-link ml-3">Call to action</a>
+      </b-card>
+
+      <b-row cols="10" class="mt-1 ml-3">
+        <b-col>
+          <h4 style="float:left">(11)</h4><h5>Warnings</h5>
+        </b-col>
+        <b-col class="col-md-8"></b-col>
+      </b-row>
+
+      <b-card >
+        <b-card-sub-title class="mb-2"><WarningFilled16 fill="rgb(214,162,66)"/>Audio from interviews shows inaccuracies</b-card-sub-title>
+        <b-card-text class="ml-3">
+          Description of inaccuracies
+        </b-card-text>
+        <a href="#" class="card-link ml-3">Call to action</a>
+      </b-card>
+      <p>+Show more</p>
       <hr>
       <cv-text-area
+        label="Additional Comments"
         placeholder="Additional Comments">
       </cv-text-area>
+      <b-button class="ml-2">Send Report</b-button>
+      <div style="margin-top:70px">
+
+      </div>
+      <!-- <b-row class="mt-10">
+
+      </b-row> -->
     </modal>
 
     <modal name="submit-witness-report" height="auto">
 
       <h2 align="center"> Submit witness report </h2>
 
-      <cv-form style="margin-left:20px;margin-right:20px" @submit.prevent="stream">
+      <cv-form style="margin-left:20px;margin-right:20px" @submit.prevent="submitReport">
 
-                  <cv-select label="Incident Type">
+                  <cv-select label="Incident Type" v-model="incident_type">
                     <cv-select-option disabled selected hidden>Choose an incident type</cv-select-option>
                     <cv-select-option value="po_h">Police Harrassment</cv-select-option>
                     <cv-select-option value="po_b">Police Brutality</cv-select-option>
@@ -258,10 +490,11 @@
                     v-model="case_number">
                   </cv-text-input>
                   <cv-date-picker
+                    v-model="case_date"
                     kind="single">
                   </cv-date-picker>
 
-                  <cv-time-picker>
+                  <cv-time-picker v-model="case_location">
                   </cv-time-picker>
 
                   <cv-text-area
@@ -281,26 +514,12 @@
                     :removable=true
                     ref="fileUploader">
                   </cv-file-uploader>
-
-
-
-                  <!-- <cv-select label="Example select label">
-                    <cv-select-option disabled selected hidden>Choose an option</cv-select-option>
-                    <cv-select-optgroup label="Category 1">
-                      <cv-select-option value="cv-select-option1">cv-select-option 1</cv-select-option>
-                      <cv-select-option value="cv-select-option2">cv-select-option 2</cv-select-option>
-                    </cv-select-optgroup>
-                    <cv-select-optgroup label="Category 2">
-                      <cv-select-option value="cv-select-option3">cv-select-option 3</cv-select-option>
-                      <cv-select-option value="cv-select-option4">cv-select-option 4</cv-select-option>
-                    </cv-select-optgroup>
-                  </cv-select> -->
-                  <cv-button >Submit</cv-button>
+                  <cv-button>Submit</cv-button>
             </cv-form>
     </modal>
 
     <hr />
-    <CvButton  type="default" v-on:click="showModal({'name': 'submit-witness-report', 'title': 'Submit Witness Report'})">Submit Witness Report</CvButton>
+    <CvButton type="default" v-on:click="showModal({'name': 'submit-witness-report', 'title': 'Submit Witness Report'})">Submit Witness Report</CvButton>
 
 
   </div>
@@ -309,6 +528,7 @@
 </template>
 
 <script>
+  import Chart from "./components/Chart";
   import 'vfc/dist/vfc.css'
   import {
     Input
@@ -322,133 +542,10 @@
   import {
     Button
   } from 'vfc'
-  // import DemoLoginModal       from './components/modals/DemoLoginModal.vue'
-
-  // import 'vue-js-modal'
-  // import { Card } from 'v-card'
-  // import { DataTable } from 'v-data-table'
-  // import { Button } from 'vfc'
-
-
 
   export default {
     name: 'app',
     created() {
-      var zip = new this.JSZip();
-      var pdf = new this.jsPDF()
-      var JSMpeg = new this.JSMpeg()
-    },
-
-    directives: {
-      overlayImage: function(canvasElement, inference, url, opacity=1.0) {
-          // Get canvas context
-          console.log("inference")
-          console.log(inference)
-          console.log("loading overlay")
-          console.log("inference.value")
-          console.log(inference.value)
-          console.log(Object.keys(inference.value))
-          var ctx = canvasElement.getContext("2d");
-          var can_w = ctx.canvas.width
-          var can_h = ctx.canvas.height
-          var colors = ['red', 'blue', 'green', 'yellow', 'purple']
-          var heatmap = new Image
-          heatmap.id = "heatmap"
-          console.log('_id')
-          var i = new Image
-          i.id = "image"
-          i.onload = function() {
-              console.log("creating thumbnail canvas image")
-              var img_w = this.width
-              var img_h = this.height
-              var can_w = ctx.canvas.width //= 400
-              var can_h = ctx.canvas.height //= 500
-              // var hRatio = canvasElement.width / img_w    ;
-              // var vRatio = canvasElement.height / img_h  ;
-              console.log(`img_h ${img_h} img_w ${img_w} can_w ${can_w} can_h ${can_h}`)
-              var vRatio = 1
-              var hRatio = 1
-
-              ctx.canvas.width = img_w
-              ctx.canvas.height = img_h
-              console.log(`img_h ${img_h} img_w ${img_w} can_w ${ctx.canvas.width} can_h ${ctx.canvas.height}`)
-              var ratio = Math.min ( hRatio, vRatio )
-              console.log('ratio')
-              console.log(ratio)
-              ctx.globalAlpha = 0.9;
-              var centerShift_x = 0//( canvasElement.width - hRatio*img_w ) / 2;
-              var centerShift_y = 0//( canvasElement.height - vRatio*img_h ) / 2;
-              ctx.drawImage(i, 0, 0, img_w, img_h)//, centerShift_x,centerShift_y,img_w, img_h ) //, 100, 100 * imageObj.height / imageObj.width)
-              if (inference.value['analysis_type'] == 'object_detection') {
-                console.log("drawing boxes")
-                inference.value['classified'].map( (o, idx) => {
-                  // context.rect(x,y,width,height)
-                  // ctx.rect(20, 20, 150, 100);
-                  // var ratio = 0.5 // 0.7220216606498195
-                  // var y_offset = -150
-
-                  var tl_x = o['xmin'] * hRatio
-                  var tl_y = (o['ymin'] * vRatio)
-
-                  var w = (o['xmax'] - o['xmin']) * hRatio
-                  var h = (o['ymax'] - o['ymin']) * vRatio
-                  ctx.lineWidth = "6";
-                  ctx.strokeStyle = colors[idx % colors.length];
-                  ctx.fillStyle = colors[idx % colors.length];
-                  // ctx.strokeStyle = "blue";
-                  console.log(`xmin ${o['xmin']}, ymax ${o['ymax']}, hRatio ${hRatio} vRatio ${vRatio}`)
-                  console.log(`w ${w}, h ${h}, tl_x ${tl_x}, tl_y ${tl_y} ` )
-                  ctx.beginPath()
-                  ctx.font = "30px Arial";
-                  ctx.fillText(o['label'], o['xmin'] + 20, o['ymin'] + 20)
-                  ctx.rect( tl_x, tl_y, w, h )
-                  // ctx.rect( tl_x + centerShift_x, tl_y + centerShift_y, w, h )
-                  // ctx.rect( tl_x + centerShift_x, tl_y + centerShift_y + y_offset, w, h )
-                  ctx.stroke()
-                })
-              } else {
-                heatmap.onload = function() {
-                    console.log("drawing heatmap")
-                    var img_w = this.width
-                    var img_h = this.height
-                    var hRatio = canvasElement.width / img_w    ;
-                    var vRatio = canvasElement.height / img_h  ;
-                    var ratio  = Math.max ( hRatio, vRatio )
-                    ctx.globalAlpha = 0.4;
-                    ctx.drawImage(heatmap, 0, 0, img_w, img_h, 0,0,img_w*ratio, img_h*ratio ) //, 100, 100 * imageObj.height / imageObj.width)
-                    console.log("dims")
-                    console.log(this.width)
-                    console.log(this.height)
-                    // TODO, add text based on class
-                    // canvasElement.width = this.width
-                    // canvasElement.height = this.height
-                }
-                heatmap.style.opacity = 0.1
-                heatmap.style['z-index'] = 100
-                console.log("inference['value']")
-                console.log(inference['value'])
-                // if (inference['value']['ImageURL']) {
-                //   var s = inference['value']['ImageURL'].split('.')
-                //   var image_type = s[s.length - 1]
-                // }
-                // heatmap.src = 'data:image/' + image_type + ';base64,' + inference['value']['Heatmap/Boxes']
-                heatmap.src = inference['value']['heatmap']
-              }
-          }
-          // if (Object.keys(inference['value']).includes('ImageURL')) {
-          //   i.src = inference['value']['ImageURL']
-          // } else {
-            console.log("writing thumbnail")
-            // console.log('data:image/' + 'png' + ';base64,' + inference['value']['Thumbnail'])
-            // i.src = 'data:image/' + 'png' + ';base64,' + inference['value']['Thumbnail']
-            // i.src = url + inference['value']['thumbnail_path']
-            i.src = inference['value']['url'] + inference['value']['thumbnail_path']
-          // }
-
-          // console.log(`drawing image at ${inference['value']['ImageURL']}` )
-          console.log(`canvasElement.width ${canvasElement.width}` )
-          console.log(`canvasElement.height ${canvasElement.height}` )
-      }
     },
 
     data() {
@@ -463,10 +560,13 @@
         ],
         "basicPagination": false,
         "use_htmlData": true,
+
+        incident_type: "",
+        case_date: "",
+        case_location: "",
+        incident_address: "",
         case_number: "",
         incident_description: "",
-        publicPath: process.env.BASE_URL,
-        incident_address: "",
         isHidden: false,
         form: {
           function: '',
@@ -486,10 +586,6 @@
         query: '',
         tableData: [],
         selectedModel: {},
-        // token: (localStorage['token'] || ''),
-        // user_fields: [],
-        // user_type: '',
-        // user_input: [],
         captures: [],
         video: {},
         canvas: {},
@@ -540,12 +636,89 @@
         bad_labels: [],
         categories: [],
         sources: ['Officers body cams recordings', "Witness interviews audio recordings", "Witness interviews audio recordings"],
-        report_columns: ['Report Number', 'Officer', 'Date', 'Report Type', 'Location'],
+        report_columns: ['Status','Report Number', 'Officer', 'Date', 'Report Type', 'Location'],
+        bootstrap_reports: [
+          {status: "error", number: 1124124, name: "Mark", date: "12/12/2020", "report type": "", "location": "SF"},
+          {status: "warning", number: 1124124, name: "Mark", date: "12/12/2020", "report type": "", "location": "SF"},
+          {status: "success", number: 1124124, name: "Mark", date: "12/12/2020", "report type": "", "location": "SF"}
+        ],
         reports: [
          ["1124124", "Mark", "12/12/2020", "Dui praesent eu", "Dui praesent eu"],
          ["1124124", "Mark", "12/12/2020", "Dui praesent eu", "Dui praesent eu"],
          ["1124124", "Mark", "12/12/2020", "Dui praesent eu", "Dui praesent eu"]
         ],
+        chartData: [
+        		{ "group": "Error", "value": 25000},
+            { "group": "Warning", "value": 12000},
+            { "group": "Success", "value": 12000}
+        ],
+        barChartData: [
+            { "group": "Error", "value": 25000},
+            { "group": "Warning", "value": 12000},
+            { "group": "Success", "value": 12000}
+        ],
+        groupedBarChartData: [
+      		{
+      				"group": "Dataset 1",
+      				"key": "Q1",
+      				"value": -29123
+      		},
+      		{
+      				"group": "Dataset 1",
+      				"key": "Q2",
+      				"value": -35213
+      		},
+          {
+      				"group": "Dataset 1",
+      				"key": "Q2",
+      				"value": -35213
+      		},
+          {
+      				"group": "Dataset 1",
+      				"key": "Q2",
+      				"value": -35213
+      		},
+      		{
+      				"group": "Dataset 1",
+      				"key": "Q3",
+      				"value": 51213
+      		}],
+        groupedBarChartOptions: {
+        		"title": "Grouped bar (discrete)",
+        		"axes": {
+        				"left": {
+        						"mapsTo": "value"
+        				},
+        				"bottom": {
+        						"scaleType": "labels",
+        						"mapsTo": "key"
+        				}
+        		},
+        		"height": "400px"
+        },
+    		chartOptions: {
+      		"title": "Reports by status",
+      		"resizable": true,
+      		"donut": {
+      				"center": {
+      						"label": "Reports"
+      				}
+      		},
+      		"height": "400px"
+        },
+        barChartOptions: {
+        		"title": "Reports by time",
+        		"axes": {
+        				"left": {
+        						"mapsTo": "value"
+        				},
+        				"bottom": {
+        						"mapsTo": "group",
+        						"scaleType": "labels"
+        				}
+        		},
+        		"height": "400px"
+        },
         mobile_inference_headers: [
           "Thumbnail",
           "DataSetName",
@@ -561,7 +734,6 @@
           "Heatmap/Boxes": "Metadata4",
           "ImageURL": "Thumbnail"
         },
-        // inference_headers: [],
         inference_headers: [
           "ImageURL",
           "InferenceType",
@@ -599,22 +771,63 @@
       [Button.name]: Button
     },
     beforeMount() {
+      // let recaptchaScript = document.createElement('link')
+      // recaptchaScript.setAttribute('href', `/styles.css`)
+      // recaptchaScript.setAttribute('rel', stylesheet)
+      // document.head.appendChild(recaptchaScript)
 
-      // this.$data.selectedInference = "foobar"
-      // this.getInferences()
-      this.$data.token = localStorage.getItem('token')
-      this.$data.url = localStorage.getItem('url')
-
-      let recaptchaScript = document.createElement('script')
-      recaptchaScript.setAttribute('src', 'http://localhost:30000/scripts/jsmpeg.min.js')
+      let recaptchaScript = document.createElement('link')
+      recaptchaScript.setAttribute('link', `https://d3js.org/d3.v4.min.js`)
       document.head.appendChild(recaptchaScript)
-
     },
     mounted() {
 
+      var that = this;
+      var j = [{
+          "name": "John",
+          "age": 30,
+          "city": "New York"
+      },
+      {
+          "name": "Jane",
+          "age": 20,
+          "city": "San Francisco"
+      }];
+      // d3.select("body")
+      //       .selectAll("p")
+      //       .data(j)
+      //       .text(function (d) {
+      //           return d;
+      //       });
+
+      // d3.json(j,
+      //   function(error, data) {
+      //     if (error) throw error;
+      //
+      //     // Load the CSV data
+      //     // After the CSV has been loaded, the computed properties will automatically re-compute (root, tree, and then nodes & links…)
+      //
+      //     that.csv = data;
+      //   }
+      // );
+
     },
     methods: {
-
+      submitReport() {
+        let reportNumber = Math.floor(Math.random() * Math.floor(999999))
+        // {status: "error", number: 1124124, name: "Mark", date: "12/12/2020", "report type": "", "location": "SF"},
+        this.$data.bootstrap_reports.push({
+          number: reportNumber,
+          incident_type: this.$data.incident_type,
+          case_number: this.$data.case_number,
+          date: this.$data.case_date,
+          name: "Mark",
+          status: "error",
+          location: this.$data.case_location,
+          incident_description: this.$data.incident_description,
+          incident_address: this.$data.incident_address
+        })
+      },
       formatLine(inferenceId) {
         if (this.$data.inferenceDetails) {
         console.log("generating line graph for " + inferenceId)
@@ -624,14 +837,12 @@
         var d = []
         objects.map((o) => {
           var x = Array.from(Array(detections[o].length + 1).keys())
-          // d['data'].push({
           d.push({
             x: [0].concat(x),
             y: [0].concat(detections[o]),
             mode: 'lines',
             type: 'scatter',
             name: o
-            // mode:"lines+markers"
           })
           console.log(d)
         })
@@ -639,22 +850,15 @@
         this.$data.lineGraphData = d
         console.log("this.$data.lineGraphData")
         console.log(this.$data.lineGraphData)
-        // detections.map( (detection) )
         }
-        // this.$data.lineGraph =
-        // this.$data.circleGraph =
       },
       formatCircle() {
-        // console.log(this.$data.inferenceDetails)
         if (this.$data.inference_rows_filtered.length > 0) {
           var rows = this.$data.inference_rows_filtered
         } else {
           var rows = this.$data.inference_rows
         }
-
         console.log("generating line graph")
-        // var detections = this.$data.inferenceDetails[inferenceId]
-        // var objects = Object.keys(detections)
         var d = {
           values: [],
           labels: [],
@@ -849,10 +1053,9 @@
 
 </style>
 
-
-<!-- <style lang="scss">
-@import "./styles/carbon";
-</style> -->
+<style lang="css" scoped>
+  @import './../public/styles.css';
+</style>
 
 <!-- <script type="text/javascript" src="localhost:30000/scripts/jsmpeg.min.js"></script> -->
 
@@ -867,3 +1070,326 @@
     vertical-align: top;
   }
 </style> -->
+
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+  body{
+  	font-family: 'Inter', sans-serif;
+  	font-size:13px;
+  }
+   #wrapper {
+  	 min-height:100vh;
+      overflow-x: hidden;
+   }
+   .color-blue{
+  	 background-color:#1D3557;
+   }
+   .h2, h2 {
+       font-size: 1.8em;
+   }
+   .container-fluid, .container-lg, .container-md, .container-sm, .container-xl {
+       width: 100%;
+       padding-right: 30PX;
+       padding-left: 30PX;
+       margin-right: auto;
+       margin-left: auto;
+   }
+  #sidebar-wrapper {
+    min-height: 100vh;
+    margin-left: -15rem;
+    -webkit-b-transition: margin .25s ease-out;
+    -moz-b-transition: margin .25s ease-out;
+    -o-b-transition: margin .25s ease-out;
+    b-transition: margin .25s ease-out;
+  }
+
+  #sidebar-wrapper .sidebar-heading {
+    padding: 0.875rem 1.25rem;
+    font-size: 1.2rem;
+  }
+
+  #sidebar-wrapper .list-group {
+    width: 15rem;
+  }
+
+  #page-content-wrapper {
+    min-width: 100vw;
+  }
+
+  #wrapper.toggled #sidebar-wrapper {
+    margin-left: 0;
+  }
+  @media (max-width: 768px) {
+  	.no-marpad{
+  		display:none;
+  	}
+  	  }
+
+  @media (min-width: 768px) {
+    #sidebar-wrapper {
+      margin-left: 0;
+    }
+
+    #page-content-wrapper {
+      min-width: 0;
+      width: 100%;
+    }
+
+    #wrapper.toggled #sidebar-wrapper {
+      margin-left: -15rem;
+    }
+  }
+  /****** BOOTSb-trAP RE-WRITE */
+  .list-group-item {
+  	border:none;
+  	font-size:1.2em;
+  	}
+  .list-group-item:hover{
+  	background-color:#9FA2B4;
+  }
+  	.btn-primary {
+  	    color: #333333;
+  		    font-weight: bold;
+  			font-size:1em;
+  	    background-color: #E3B059;
+  	    border-color: #E3B059;
+  	}
+  	.btn-primary:hover {
+  	    color: #ffffff;
+  		    font-weight: bold;
+  	    background-color: #1D3557;
+  	    border-color: #1D3557;
+  	}
+
+  	.list-group-item.active {
+  	    z-index: 2;
+  	    color: #fff;
+  	    background-color: #9FA2B4;
+  	    border-color: #9FA2B4;
+  	}
+  .list-group-item i{
+  	margin-right:5px;
+  }
+
+  .fa-user{
+  	color: #E3B059;
+  }
+  .fa-sun{
+  	color: #ffffff;
+  }
+  .logo{
+  	width:50px;
+  }
+  .no-marpad {
+  	padding-right:0px;
+  }
+
+  .login{
+      margin-top: 3px;
+      margin-bottom: 9px;
+  }
+  .form-conb-trol {
+      display: block;
+      width: 100%;
+      height: calc(1.5em + .75rem + 2px);
+      padding: .375rem .75rem;
+      font-size: 1em;
+      font-weight: 400;
+      line-height: 1.5;
+      color: #333333;
+      background-color: b-transparent;
+      background-clip: padding-box;
+  	border:none;
+      border-bottom:3px solid #2C2F3D;
+  	border-radius:0px;
+      b-transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  }
+
+  .form-conb-trol:-moz-focusring {
+    color: b-transparent;
+    text-shadow: none;
+  }
+
+  .form-conb-trol:focus {
+    color: #495057;
+    background-color: b-transparent;
+  	border:none;
+    border-bottom:3px solid #80bdff;
+    border-color: ;
+    outline: 0;
+    box-shadow: none;
+  }
+
+  .img-fluid {
+      max-width: 100%;
+      height: 100%;
+  }
+  .total-width{
+  	width:100%;
+  }
+  label{
+  	font-weight:bold;
+  	font-size:1em;
+  }
+
+  .btn-link {
+      font-weight: bold;
+      color: #1D3557;
+      text-decoration: underline;
+  				font-size:1em;
+
+  }
+
+  .btn-link:hover {
+    color: #0056b3;
+    text-decoration: underline;
+  }
+
+  .btn-link:focus, .btn-link.focus {
+    text-decoration: underline;
+  }
+
+  .btn-link:disabled, .btn-link.disabled {
+    color: #6c757d;
+    pointer-events: none;
+  }
+  #login{
+  	padding:20px;
+
+  }
+
+  .card-title{
+  	font-size:16px;
+  	 margin-bottom: 0rem;
+  	font-weight:bold;
+  }
+
+  .error{
+  	border:3px solid #D01A11;
+  	    min-height: 84px;
+  }
+  .warning-icon{
+  	margin-right:5px;
+  	color:#D68700;
+  	float:left;
+  }
+  .success-icon{
+  	margin-right:5px;
+  	color:#6F8F56;
+  	float:left;
+  }
+  .error-icon{
+  	margin-right:5px;
+  	color:#D01A11;
+  	float:left;
+  }
+  .warning{
+  	border:3px solid #D68700;
+      min-height: 84px;
+  }
+  .success{
+  	border:3px solid #6F8F56;
+  	    min-height: 84px;
+  }
+  	.loading-overlay {
+  	  display: none;
+  	  background: rgba(255, 255, 255, 0.7);
+  	  position: fixed;
+  	  bottom: 0;
+  	  left: 0;
+  	  right: 0;
+  	  top: 0;
+  	  z-index: 9998;
+  	  align-items: center;
+  	  justify-content: center;
+  	}
+
+  	.loading-overlay.is-active {
+  	  display: flex;
+  	}
+
+  	.code {
+  	  font-family: monospace;
+  	/*   font-size: .9em; */
+  	  color: #dd4a68;
+  	  background-color: rgb(238, 238, 238);
+  	  padding: 0 3px;
+  	}
+
+  	.source-icon{
+  		margin-bottom:4px;
+  		color:#282B39;
+  	}
+  	.source .card-title{
+  		font-style: normal;
+  		font-weight: normal;
+  		font-size: 14px;
+  		line-height: 16px;
+  		text-align:center;
+  	}
+  	.source{
+  		text-align:center;
+  		background: #E9E9EA;
+  		border: 1px solid rgba(40, 43, 57, 0.3);
+  		box-sizing: border-box;
+  		border-radius: 10px;
+  	}
+
+
+  	@media (max-width: 575.98px) {
+  		b-table-simple {
+  		    border: 0;
+          display: flex;
+          flex-direction: row;
+  		  }
+
+  		  b-table-simple caption {
+  		    font-size: 1.3em;
+  		  }
+
+  		  b-table-simple b-thead {
+  		    border: none;
+  		    clip: rect(0 0 0 0);
+  		    height: 1px;
+  		    margin: -1px;
+  		    overflow: hidden;
+  		    padding: 0;
+  		    position: absolute;
+  		    width: 1px;
+  		  }
+
+  		  b-table-simple b-tr {
+  		    border-bottom: 3px solid #ddd;
+  		    display: block;
+  		    margin-bottom: .625em;
+  		  }
+
+  		  b-table-simple b-td {
+  		    border-bottom: 1px solid #ddd;
+  		    display: block;
+  		    font-size: .8em;
+  		    text-align: right;
+  		  }
+
+  		  b-table-simple b-td::before {
+  		    /*
+  		    * aria-label has no advantage, it won't be read inside a b-table-simple
+  		    content: atb-tr(aria-label);
+  		    */
+  		    content: atb-tr(data-label);
+  		    float: left;
+  		    font-weight: bold;
+  		    text-b-transform: uppercase;
+  		  }
+  		  b-td.text-center{
+  		  	text-align:right !important;
+  		  }
+  		  b-table-simple b-td:last-child {
+  		    border-bottom: 0;
+  		  }
+
+  	 }
+
+</style>

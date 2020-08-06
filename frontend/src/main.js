@@ -50,14 +50,6 @@ import SemanticUI from 'semantic-ui-vue';
 import 'semantic-ui-css/semantic.min.css';
 // import 'vue-select/dist/vue-select.css';
 
-/*
-TODO, readd this for carbon
-import CarbonComponentsVue from "@carbon/vue";
-import { CvModal } from '../../packages/core/src/';
-Vue.use(CarbonComponentsVue);
-*/
-
-
 // /*
 // import { CvButton } from '@carbon/vue/src/components/button';
 
@@ -75,10 +67,13 @@ import CameraAction32 from '@carbon/icons-vue/es/camera--action/32';
 import Folders32 from '@carbon/icons-vue/es/folders/32';
 import ChartCustom32 from '@carbon/icons-vue/es/chart--custom/32';
 import CloseFilled32 from '@carbon/icons-vue/es/close--filled/32';
+import CloseFilled16 from '@carbon/icons-vue/es/close--filled/16';
 import Home32 from '@carbon/icons-vue/es/home/32';
 import ChartClusterBar32 from '@carbon/icons-vue/es/chart--cluster-bar/32';
 import FolderShared32 from '@carbon/icons-vue/es/folder--shared/32';
-
+import WarningFilled32 from '@carbon/icons-vue/es/warning--filled/32';
+import WarningFilled16 from '@carbon/icons-vue/es/warning--filled/16';
+import CheckmarkFilled32 from '@carbon/icons-vue/es/checkmark--filled/32';
 
 import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
 Vue.use(BootstrapVue)
@@ -86,9 +81,11 @@ Vue.use(IconsPlugin)
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 
-
 Vue.use(CarbonIconsVue, {
   components: {
+    WarningFilled32,
+    WarningFilled16,
+    CheckmarkFilled32,
     VideoFilled32,
     Image32,
     CameraAction32,
@@ -97,9 +94,17 @@ Vue.use(CarbonIconsVue, {
     CloseFilled32,
     Home32,
     ChartClusterBar32,
-    FolderShared32
+    FolderShared32,
+    CloseFilled16
   },
 });
+
+
+// charts
+import "@carbon/charts/styles.css";
+import chartsVue from "@carbon/charts-vue";
+Vue.use(chartsVue);
+
 
 /*
 import {CvModal, CvList, CvSelect, CvFileUploader, CvDataTable, CvAccordion, CvAccordionItem, CvButton} from "@carbon/vue"
@@ -142,6 +147,9 @@ Object.defineProperty(Vue.prototype, '$jsPDF', { value: jsPDF });
 
 // Object.defineProperty(Vue.prototype, '$JSMpeg', { value: JSMpeg });
 
+import * as d3 from 'd3'
+
+
 new Vue({
   render: h => h(App),
 
@@ -150,6 +158,9 @@ new Vue({
       showModal: false
       // css: CssForBootstrap4
     }
+  },
+  created() {
+    this.d3 = d3
   }
 }).$mount('#app')
 
