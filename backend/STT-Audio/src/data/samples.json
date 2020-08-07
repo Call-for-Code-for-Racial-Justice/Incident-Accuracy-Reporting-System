@@ -1,0 +1,500 @@
+{
+  "ar-AR_BroadbandModel": [
+    {
+      "filename": "ar-AR_Broadband_sample1.wav",
+      "keywords": "الطقس , رياح معتدلة",
+      "speaker_labels": false
+    },
+    {
+      "filename": "ar-AR_Broadband_sample2.wav",
+      "keywords": "احلامنا , نستلهم",
+      "speaker_labels": false
+    }
+  ],
+  "en-GB_BroadbandModel": [
+    {
+      "filename": "en-GB_Broadband_sample1.wav",
+      "keywords": "important industry, affordable travel, business",
+      "speaker_labels": false
+    },
+    {
+      "filename": "en-GB_Broadband_sample2.wav",
+      "keywords": "consumer, quality, best practice",
+      "speaker_labels": false
+    }
+  ],
+  "en-GB_NarrowbandModel": [
+    {
+      "filename": "en-GB_Narrowband_sample1.wav",
+      "keywords": "heavy rain, northwest, UK",
+      "speaker_labels": false
+    },
+    {
+      "filename": "en-GB_Narrowband_sample2.wav",
+      "keywords": "Watson, sources across social media",
+      "speaker_labels": false
+    }
+  ],
+  "en-US_BroadbandModel": [
+    {
+      "filename": "en-US_Broadband_sample1.wav",
+      "keywords": "IBM, admired, AI, transformations, cognitive",
+      "speaker_labels": true
+    },
+    {
+      "filename": "en-US_Broadband_sample2.wav",
+      "keywords": "Artificial Intelligence, data, predict, learn",
+      "speaker_labels": true
+    }
+  ],
+  "en-US_ShortForm_NarrowbandModel": [
+    {
+      "filename": "english2.g712.wav",
+      "keywords": "twenty thousand dollars, filled out, car",
+      "speaker_labels": true
+    },
+    {
+      "filename": "english3.g712.wav",
+      "keywords": "new company, client, Chris",
+      "speaker_labels": true
+    }
+  ],
+  "en-US_NarrowbandModel": [
+    {
+      "filename": "english2.g712.wav",
+      "keywords": "twenty thousand dollars, filled out, car",
+      "speaker_labels": true
+    },
+    {
+      "filename": "english3.g712.wav",
+      "keywords": "new company, client, Chris",
+      "speaker_labels": true
+    },
+    {
+      "filename": "Us_English_Narrowband_Sample_1.wav",
+      "keywords": "course online, four hours, help",
+      "speaker_labels": false
+    },
+    {
+      "filename": "Us_English_Narrowband_Sample_2.wav",
+      "keywords": "ibm, customer experience, media data",
+      "speaker_labels": false
+    }
+  ],
+  "es-ES_BroadbandModel": [
+    {
+      "filename": "es-ES_Broadband_sample1.wav",
+      "keywords": "Roberto, Pedro",
+      "speaker_labels": true
+    },
+    {
+      "filename": "es-ES_Broadband_sample2.wav",
+      "keywords": "México, Grecia",
+      "speaker_labels": true
+    }
+  ],
+  "es-ES_NarrowbandModel": [
+    {
+      "filename": "es-ES_Narrowband_sample1.wav",
+      "keywords": "México, Grecia, diciembre",
+      "speaker_labels": true
+    },
+    {
+      "filename": "es-ES_Narrowband_sample2.wav",
+      "keywords": "Roberto, Madrid, fin de semana",
+      "speaker_labels": true
+    },
+    {
+      "filename": "Es_ES_spk24_8khz.wav",
+      "keywords": "quiero preguntarle, existen productos",
+      "speaker_labels": false
+    },
+    {
+      "filename": "Es_ES_spk19_8khz.wav",
+      "keywords": "preparando, regalos para la familia, sobrinos",
+      "speaker_labels": false
+    }
+  ],
+  "es-AR_BroadbandModel": [
+    {
+      "filename": "es-ES_Broadband_sample1.wav",
+      "keywords": "Roberto, Pedro",
+      "speaker_labels": true
+    },
+    {
+      "filename": "es-ES_Broadband_sample2.wav",
+      "keywords": "México, Grecia",
+      "speaker_labels": true
+    }
+  ],
+  "es-AR_NarrowbandModel": [
+    {
+      "filename": "es-ES_Narrowband_sample1.wav",
+      "keywords": "México, Grecia, diciembre",
+      "speaker_labels": true
+    },
+    {
+      "filename": "es-ES_Narrowband_sample2.wav",
+      "keywords": "Roberto, Madrid, fin de semana",
+      "speaker_labels": true
+    },
+    {
+      "filename": "Es_ES_spk24_8khz.wav",
+      "keywords": "quiero preguntarle, existen productos",
+      "speaker_labels": false
+    },
+    {
+      "filename": "Es_ES_spk19_8khz.wav",
+      "keywords": "preparando, regalos para la familia, sobrinos",
+      "speaker_labels": false
+    }
+  ],
+  "es-CL_BroadbandModel": [
+    {
+      "filename": "es-ES_Broadband_sample1.wav",
+      "keywords": "Roberto, Pedro",
+      "speaker_labels": true
+    },
+    {
+      "filename": "es-ES_Broadband_sample2.wav",
+      "keywords": "México, Grecia",
+      "speaker_labels": true
+    }
+  ],
+  "es-CL_NarrowbandModel": [
+    {
+      "filename": "es-ES_Narrowband_sample1.wav",
+      "keywords": "México, Grecia, diciembre",
+      "speaker_labels": true
+    },
+    {
+      "filename": "es-ES_Narrowband_sample2.wav",
+      "keywords": "Roberto, Madrid, fin de semana",
+      "speaker_labels": true
+    },
+    {
+      "filename": "Es_ES_spk24_8khz.wav",
+      "keywords": "quiero preguntarle, existen productos",
+      "speaker_labels": false
+    },
+    {
+      "filename": "Es_ES_spk19_8khz.wav",
+      "keywords": "preparando, regalos para la familia, sobrinos",
+      "speaker_labels": false
+    }
+  ],
+  "es-CO_BroadbandModel": [
+    {
+      "filename": "es-ES_Broadband_sample1.wav",
+      "keywords": "Roberto, Pedro",
+      "speaker_labels": true
+    },
+    {
+      "filename": "es-ES_Broadband_sample2.wav",
+      "keywords": "México, Grecia",
+      "speaker_labels": true
+    }
+  ],
+  "es-CO_NarrowbandModel": [
+    {
+      "filename": "es-ES_Narrowband_sample1.wav",
+      "keywords": "México, Grecia, diciembre",
+      "speaker_labels": true
+    },
+    {
+      "filename": "es-ES_Narrowband_sample2.wav",
+      "keywords": "Roberto, Madrid, fin de semana",
+      "speaker_labels": true
+    },
+    {
+      "filename": "Es_ES_spk24_8khz.wav",
+      "keywords": "quiero preguntarle, existen productos",
+      "speaker_labels": false
+    },
+    {
+      "filename": "Es_ES_spk19_8khz.wav",
+      "keywords": "preparando, regalos para la familia, sobrinos",
+      "speaker_labels": false
+    }
+  ],
+  "es-MX_BroadbandModel": [
+    {
+      "filename": "es-ES_Broadband_sample1.wav",
+      "keywords": "Roberto, Pedro",
+      "speaker_labels": true
+    },
+    {
+      "filename": "es-ES_Broadband_sample2.wav",
+      "keywords": "México, Grecia",
+      "speaker_labels": true
+    }
+  ],
+  "es-MX_NarrowbandModel": [
+    {
+      "filename": "es-ES_Narrowband_sample1.wav",
+      "keywords": "México, Grecia, diciembre",
+      "speaker_labels": true
+    },
+    {
+      "filename": "es-ES_Narrowband_sample2.wav",
+      "keywords": "Roberto, Madrid, fin de semana",
+      "speaker_labels": true
+    },
+    {
+      "filename": "Es_ES_spk24_8khz.wav",
+      "keywords": "quiero preguntarle, existen productos",
+      "speaker_labels": false
+    },
+    {
+      "filename": "Es_ES_spk19_8khz.wav",
+      "keywords": "preparando, regalos para la familia, sobrinos",
+      "speaker_labels": false
+    }
+  ],
+  "es-PE_BroadbandModel": [
+    {
+      "filename": "es-ES_Broadband_sample1.wav",
+      "keywords": "Roberto, Pedro",
+      "speaker_labels": true
+    },
+    {
+      "filename": "es-ES_Broadband_sample2.wav",
+      "keywords": "México, Grecia",
+      "speaker_labels": true
+    }
+  ],
+  "es-PE_NarrowbandModel": [
+    {
+      "filename": "es-ES_Narrowband_sample1.wav",
+      "keywords": "México, Grecia, diciembre",
+      "speaker_labels": true
+    },
+    {
+      "filename": "es-ES_Narrowband_sample2.wav",
+      "keywords": "Roberto, Madrid, fin de semana",
+      "speaker_labels": true
+    },
+    {
+      "filename": "Es_ES_spk24_8khz.wav",
+      "keywords": "quiero preguntarle, existen productos",
+      "speaker_labels": false
+    },
+    {
+      "filename": "Es_ES_spk19_8khz.wav",
+      "keywords": "preparando, regalos para la familia, sobrinos",
+      "speaker_labels": false
+    }
+  ],
+  "ja-JP_BroadbandModel": [
+    {
+      "filename": "ja-JP_Broadband_sample1.wav",
+      "keywords": "音声認識, ディープラーニング, 技術",
+      "speaker_labels": true
+    },
+    {
+      "filename": "ja-JP_Broadband_sample2.wav",
+      "keywords": "観光地, 水上バス",
+      "speaker_labels": true
+    },
+    {
+      "filename": "sample-Ja_JP-wide1.wav",
+      "keywords": "場所 , 今日",
+      "speaker_labels": false
+    },
+    {
+      "filename": "sample-Ja_JP-wide2.wav",
+      "keywords": "変更 , 給与 , コード",
+      "speaker_labels": false
+    }
+  ],
+  "ja-JP_NarrowbandModel": [
+    {
+      "filename": "sample-Ja_JP-narrow5.wav",
+      "keywords": "ご住所, ご本人, 生年月日",
+      "speaker_labels": true
+    },
+    {
+      "filename": "sample-Ja_JP-narrow6.wav",
+      "keywords": "東京都, お電話",
+      "speaker_labels": true
+    },
+    {
+      "filename": "sample-Ja_JP-narrow3.wav",
+      "keywords": "お客様 , お手数",
+      "speaker_labels": false
+    },
+    {
+      "filename": "sample-Ja_JP-narrow4.wav",
+      "keywords": "申し込み , 今回 , 通帳",
+      "speaker_labels": false
+    }
+  ],
+  "ko-KR_BroadbandModel": [
+    {
+      "filename": "ko-KR_BroadbandModel_sample1.wav",
+      "keywords": "네 명, 숙박, 호텔, 싱글룸, 두개, 예약",
+      "speaker_labels": false
+    },
+    {
+      "filename": "ko-KR_BroadbandModel_sample2.wav",
+      "keywords": "정오, 입금 완료, 당일 배송, 몇 시 수령",
+      "speaker_labels": false
+    }
+  ],
+  "ko-KR_NarrowbandModel": [
+    {
+      "filename": "ko-KR_NarrowbandModel_sample1.wav",
+      "keywords": "생명보험사, 상담원, 본인 확인, 성함, 생년월일, 휴대폰 번호",
+      "speaker_labels": false
+    },
+    {
+      "filename": "ko-KR_NarrowbandModel_sample2.wav",
+      "keywords": "본인 확인, 개인 정보, 성함, 생년월일, 휴대폰 번호",
+      "speaker_labels": false
+    }
+  ],
+  "de-DE_BroadbandModel": [
+    {
+      "filename": "de-DE_BroadbandModel_sample1.wav",
+      "keywords": "diskussion, künstlicher intelligenz, möglichkeiten, grundprinzipien",
+      "speaker_labels": false
+    },
+    {
+      "filename": "de-DE_BroadbandModel_sample2.wav",
+      "keywords": "schläfrig, gänseblümchen zu pflücken, weißes kaninchen",
+      "speaker_labels": false
+    }
+  ],
+  "de-DE_NarrowbandModel": [
+    {
+      "filename": "de-DE_NarrowbandModel_sample1.wav",
+      "keywords": "Augen, linden bäumen, Türme von Wien",
+      "speaker_labels": false
+    },
+    {
+      "filename": "de-DE_NarrowbandModel_sample2.wav",
+      "keywords": "Geige, mein Vater, Dorf",
+      "speaker_labels": false
+    }
+  ],
+  "pt-BR_BroadbandModel": [
+    {
+      "filename": "pt-BR_Sample1-16KHz.wav",
+      "keywords": "sistema da ibm, setor bancário, qualidade, necessidades dos clientes",
+      "speaker_labels": false
+    },
+    {
+      "filename": "pt-BR_Sample2-16KHz.wav",
+      "keywords": "médicos, informações, planos de tratamento",
+      "speaker_labels": false
+    }
+  ],
+  "pt-BR_NarrowbandModel": [
+    {
+      "filename": "pt-BR_Sample1-8KHz.wav",
+      "keywords": "cozinha, inovadoras receitas, criatividade",
+      "speaker_labels": false
+    },
+    {
+      "filename": "pt-BR_Sample2-8KHz.wav",
+      "keywords": "sistema, treinado por especialistas, setores diferentes",
+      "speaker_labels": false
+    }
+  ],
+  "zh-CN_BroadbandModel": [
+    {
+      "filename": "zh-CN_sample1_for_16k.wav",
+      "keywords": "沃 森 是 认知 , 大 数据 分析 能力",
+      "speaker_labels": false
+    },
+    {
+      "filename": "zh-CN_sample2_for_16k.wav",
+      "keywords": "技术 , 语音 , 的 用户 体验 , 人们 , 手机",
+      "speaker_labels": false
+    }
+  ],
+  "zh-CN_NarrowbandModel": [
+    {
+      "filename": "zh-CN_sample1_for_8k.wav",
+      "keywords": "公司 的 支持 , 理财 计划",
+      "speaker_labels": false
+    },
+    {
+      "filename": "zh-CN_sample2_for_8k.wav",
+      "keywords": "假期 , 安排",
+      "speaker_labels": false
+    }
+  ],
+  "fr-FR_BroadbandModel": [
+    {
+      "filename": "fr-FR_Broadband_sample1.wav",
+      "keywords": "durée du travail, loisirs",
+      "speaker_labels": false
+    },
+    {
+      "filename": "fr-FR_Broadband_sample2.wav",
+      "keywords": "conscience, esprit de fraternité, libres",
+      "speaker_labels": false
+    }
+  ],
+  "fr-FR_NarrowbandModel": [
+    {
+      "filename": "fr-FR_Narrowband_sample1.wav",
+      "keywords": "durée du travail, loisirs",
+      "speaker_labels": true
+    },
+    {
+      "filename": "fr-FR_Narrowband_sample2.wav",
+      "keywords": "conscience, esprit de fraternité, libres",
+      "speaker_labels": true
+    }
+  ],
+  "nl-NL_BroadbandModel": [
+    {
+      "filename": "dutch_duo_sample_2-mono-BB.wav",
+      "keywords": "bestelling, voertuig, auto, aanvraag",
+      "speaker_labels": false
+    },
+    {
+      "filename": "new_single2-mono.wav",
+      "keywords": "optimaliseren, klantervaring, de organisaties",
+      "speaker_labels": false
+    }
+  ],
+  "nl-NL_NarrowbandModel": [
+    {
+      "filename": "dutch_duo_sample_2-mono-NB.wav",
+      "keywords": "bestelling, voertuig, auto, aanvraag",
+      "speaker_labels": true
+    },
+    {
+      "filename": "new_single2-mono-NB.wav",
+      "keywords": "optimaliseren, klantervaring, de organisaties",
+      "speaker_labels": false
+    }
+  ],
+  "it-IT_BroadbandModel": [
+    {
+      "filename": "it-IT_BroadbandModel_sample1.wav",
+      "keywords": "assistente, intelligenza, tecnologia",
+      "speaker_labels": false
+    },
+    {
+      "filename": "it-IT_BroadbandModel_sample2.wav",
+      "keywords": "fattura, bollette, pagamento",
+      "speaker_labels": false
+    }
+  ],
+  "it-IT_NarrowbandModel": [
+    {
+      "filename": "it-IT_NarrowbandModel_sample1.wav",
+      "keywords": "assistente, intelligenza, tecnologia",
+      "speaker_labels": false
+    },
+    {
+      "filename": "it-IT_NarrowbandModel_sample2.wav",
+      "keywords": "fattura, bollette, pagamento",
+      "speaker_labels": false
+    }
+  ]
+}

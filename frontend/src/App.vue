@@ -458,6 +458,11 @@
         <a href="#" class="card-link ml-3">Call to action</a>
       </b-card>
       <p>+Show more</p>
+
+      <template v-if="bootstrap_reports[0].evidence.length > 0">
+        {{bootstrap_reports[0].evidence[0]}}
+      </template>
+
       <hr>
       <cv-text-area
         label="Additional Comments"
@@ -638,9 +643,9 @@
         sources: ['Officers body cams recordings', "Witness interviews audio recordings", "Witness interviews audio recordings"],
         report_columns: ['Status','Report Number', 'Officer', 'Date', 'Report Type', 'Location'],
         bootstrap_reports: [
-          {status: "error", number: 1124124, name: "Mark", date: "12/12/2020", "report type": "", "location": "SF"},
-          {status: "warning", number: 1124124, name: "Mark", date: "12/12/2020", "report type": "", "location": "SF"},
-          {status: "success", number: 1124124, name: "Mark", date: "12/12/2020", "report type": "", "location": "SF"}
+          {status: "error", number: 1124124, name: "Mark", date: "12/12/2020", "report type": "", "location": "SF", evidence: []},
+          {status: "warning", number: 1124124, name: "Mark", date: "12/12/2020", "report type": "", "location": "SF", evidence: []},
+          {status: "success", number: 1124124, name: "Mark", date: "12/12/2020", "report type": "", "location": "SF", evidence: []}
         ],
         reports: [
          ["1124124", "Mark", "12/12/2020", "Dui praesent eu", "Dui praesent eu"],
@@ -813,9 +818,34 @@
 
     },
     methods: {
+      uploadFile(file) {
+        const form = new FormData();
+        form.append('file', file);
+        let that = this
+        let options = {
+          method: "POST",
+          body: form
+        }
+        fetch("http://localhost:3000/transcribe", options).then((r) => {
+          console.log(r)
+          r.json().then( (payload) => {
+            console.log(payload)
+            let transcript = payload.result.results[0].alternatives[0].transcript
+            console.log(transcript)
+            that.$data.bootstrap_reports[0].evidence.push(transcript)
+          }).catch(err => console.log(`error parsing json ${err}`))
+        }).catch(err => console.log(`error posting file ${err}`))
+      },
       submitReport() {
         let reportNumber = Math.floor(Math.random() * Math.floor(999999))
         // {status: "error", number: 1124124, name: "Mark", date: "12/12/2020", "report type": "", "location": "SF"},
+        // let files = this.$refs.fileUploader.files
+        let files = this.$refs.fileUploader.internalFiles
+        files.map( (file) => {
+          console.log(file.file)
+          this.uploadFile(file.file)
+        })
+
         this.$data.bootstrap_reports.push({
           number: reportNumber,
           incident_type: this.$data.incident_type,
