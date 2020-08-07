@@ -5,3 +5,4 @@ backend/maximo-mobile-dump/.env
 bootstrap/
 backend/STT-Audio/node_modules
 backend/STT-Audio/uploads/
+backend/STT-Audio/.env
