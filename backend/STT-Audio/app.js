@@ -20,10 +20,10 @@ var FfmpegCommand = require('fluent-ffmpeg');
 var path = require('path');
 const fs = require('fs');
 var tmpdir = __dirname + '/tmpdir';
-    
+
 if (!fs.existsSync(tmpdir))
-      fs.mkdirSync(tmpdir);     
-           
+      fs.mkdirSync(tmpdir);
+
 
 //var converted_video_file = fs.openSync(__dirname + '/' + 'tmpdir' + '/' + 'stripped_audio.mp3', 'w');  //temporary file for converting videos
 
@@ -83,15 +83,15 @@ app.use(multer({dest:'./uploads/'}).any());
 
 app.post('/transcribe', (req, res) => {
   let files = req.files
-
-  files.map( (file) => {
+  let allResults = []
+  files.map( (file, idx) => {
 
     // check if file is a video - if so we need to run it through tool to convert to .mp3
     let extension = path.extname(file.originalname);
     let basename = path.basename(file.originalname);
     var transcribed_file = __dirname + '/' + file.path;
     var converted_video_file = __dirname + '/' + 'tmpdir' + '/' + 'stripped_audio.mp3'
-    
+
     if (extension == ".mp4") {
         convert(transcribed_file, converted_video_file, function(err){
         //convert(transcribed_file, __dirname + '/' + 'tmpdir' + '/' + 'stripped_audio.mp3', function(err){
@@ -112,10 +112,14 @@ app.post('/transcribe', (req, res) => {
     }
     speechToText.recognize(recognizeParams)
       .then(speechRecognitionResults => {
-        console.log(JSON.stringify(speechRecognitionResults, null, 2));
-        res.send(speechRecognitionResults)
+        console.log(JSON.stringify(speechRecognitionResults, null, 2))
+        allResults.push(speechRecognitionResults)
+        if (idx == (files.length - 1)) {
+          res.send(allResults)
+        }
       })
       .catch(err => {
+        res.send(500)
         console.log('error:', err);
     });
   })
@@ -140,7 +144,7 @@ function convert(input, output, callback) {
 
     FfmpegCommand(input)
         .output(output)
-        .on('end', function() {                    
+        .on('end', function() {
             console.log('conversion ended');
             callback(null);
         }).on('error', function(err){

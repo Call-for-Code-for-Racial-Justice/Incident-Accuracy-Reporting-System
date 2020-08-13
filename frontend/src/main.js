@@ -74,6 +74,9 @@ import FolderShared32 from '@carbon/icons-vue/es/folder--shared/32';
 import WarningFilled32 from '@carbon/icons-vue/es/warning--filled/32';
 import WarningFilled16 from '@carbon/icons-vue/es/warning--filled/16';
 import CheckmarkFilled32 from '@carbon/icons-vue/es/checkmark--filled/32';
+import ImproveRelevance32 from '@carbon/icons-vue/es/improve-relevance/32';
+import Police32 from '@carbon/icons-vue/es/police/32';
+
 
 import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
 Vue.use(BootstrapVue)
@@ -84,6 +87,8 @@ import 'bootstrap-vue/dist/bootstrap-vue.css'
 Vue.use(CarbonIconsVue, {
   components: {
     WarningFilled32,
+    Police32,
+    ImproveRelevance32,
     WarningFilled16,
     CheckmarkFilled32,
     VideoFilled32,
@@ -99,11 +104,17 @@ Vue.use(CarbonIconsVue, {
   },
 });
 
-
 // charts
 import "@carbon/charts/styles.css";
 import chartsVue from "@carbon/charts-vue";
 Vue.use(chartsVue);
+
+import L from 'leaflet';
+import 'leaflet/dist/leaflet.css';
+import { LMap, LTileLayer, LMarker } from 'vue2-leaflet';
+Vue.component('l-map', LMap);
+Vue.component('l-tile-layer', LTileLayer);
+Vue.component('l-marker', LMarker);
 
 
 /*

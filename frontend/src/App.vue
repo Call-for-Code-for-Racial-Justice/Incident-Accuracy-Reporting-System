@@ -94,10 +94,6 @@
 
 
 
-        <!-- <CvButton style="margin: 0px 10px; text-align: center" type="danger" v-on:click="showModal({'name': 'login-modal', 'title': 'Login'})">(4) Cases with innacuracies</CvButton> -->
-        <!-- <CvButton style="margin: 0px 10px; text-align: center" type="tertiary" v-on:click="showModal({'name': 'configure-model-modal', 'title': 'Configure Model'})">(4) Cases with warnings</CvButton> -->
-        <!-- <CvButton style="margin: 0px 10px; text-align: center" type="default" v-on:click="showModal({'name': 'configure-stream-modal', 'title': 'Stream RTSP'})">(14) Cases 100% Correct</CvButton> -->
-
 
       </div>
 
@@ -499,9 +495,8 @@
                     kind="single">
                   </cv-date-picker>
 
-                  <cv-time-picker v-model="case_location">
+                  <cv-time-picker v-model="case_time">
                   </cv-time-picker>
-
                   <cv-text-area
                     label="Port"
                     v-model="incident_description"
@@ -565,13 +560,14 @@
         ],
         "basicPagination": false,
         "use_htmlData": true,
-
+        badge_number: "",
         incident_type: "",
         case_date: "",
         case_location: "",
-        incident_address: "",
         case_number: "",
         incident_description: "",
+        case_time: "",
+        incident_address: "",
         isHidden: false,
         form: {
           function: '',
@@ -819,44 +815,92 @@
     },
     methods: {
       uploadFile(file) {
-        const form = new FormData();
-        form.append('file', file);
-        let that = this
-        let options = {
-          method: "POST",
-          body: form
-        }
-        fetch("http://localhost:3000/transcribe", options).then((r) => {
-          console.log(r)
-          r.json().then( (payload) => {
-            console.log(payload)
-            let transcript = payload.result.results[0].alternatives[0].transcript
-            console.log(transcript)
-            that.$data.bootstrap_reports[0].evidence.push(transcript)
-          }).catch(err => console.log(`error parsing json ${err}`))
-        }).catch(err => console.log(`error posting file ${err}`))
+        return new Promise( (resolve, reject) => {
+          const form = new FormData();
+          form.append('file', file);
+          let that = this
+          let options = {
+            method: "POST",
+            body: form
+          }
+          var reportsIdx = that.$data.bootstrap_reports.length - 1
+
+          // if file.type.includes()
+          // Send to STT if audio
+          fetch("http://localhost:3000/transcribe", options).then((r) => {
+            console.log(r)
+            r.json().then( (payload) => {
+              console.log(payload)
+              if (Object.keys(payload).includes('result')) {
+                // let transcript = payload.result.results[0].alternatives[0].transcript
+                let transcript = payload.result.results[0].alternatives[0].transcript
+                console.log(transcript)
+                if ( Object.keys(that.$data.bootstrap_reports[reportsIdx]).includes('evidence')) {
+                  that.$data.bootstrap_reports[reportsIdx].evidence.push(transcript)
+                } else {
+                  that.$data.bootstrap_reports[reportsIdx].evidence = [transcript]
+                }
+              } else {
+                console.log("no result received")
+              }
+            }).catch(err => console.log(`error parsing json ${err}`))
+          }).catch(err => console.log(`error posting file ${err}`))
+          // /*
+
+          // Store file in blockchain
+          let reader = new FileReader();
+          reader.readAsDataURL(file);
+          reader.onload = () => {
+            console.log("posting to ledger")
+            let blockchainPayload = {
+              digitalAssetFileName: file.name,
+              digitalAssetFileType: file.type,
+              digitalAssetFileBuffer: reader.result,
+              emailAddress: "foo@bar.net",
+            }
+            let blockchainOptions = {
+              method: "POST",
+              body: JSON.stringify(blockchainPayload),
+              headers: {
+                'Content-Type': 'application/json'
+              }
+            }
+            fetch("http://localhost:8081/createDigitalAsset", blockchainOptions).then((r) => {
+              console.log("file posted to json")
+              r.json().then((payload) => {
+                console.log(payload)
+                // return(payload)
+                resolve(payload)
+              }).catch(err => console.log(`error parsing json ${err}`))
+            }).catch(err => console.log(`error posting file ${err}`))
+          }
+        })
       },
       submitReport() {
+        //
         let reportNumber = Math.floor(Math.random() * Math.floor(999999))
         // {status: "error", number: 1124124, name: "Mark", date: "12/12/2020", "report type": "", "location": "SF"},
-        // let files = this.$refs.fileUploader.files
         let files = this.$refs.fileUploader.internalFiles
-        files.map( (file) => {
-          console.log(file.file)
-          this.uploadFile(file.file)
+        files.map((file, idx) => {
+          var result = this.uploadFile(file.file)
+          console.log(result)
+          if (idx == (files.length - 1)) {
+            var fileIds = []
+            this.$data.bootstrap_reports.push({
+              number: reportNumber,
+              incident_type: this.$data.incident_type,
+              case_number: this.$data.case_number,
+              date: this.$data.case_date,
+              badge_number: this.$data.badge_number,
+              name: "Mark",
+              status: "pending_review",
+              location: this.$data.case_location,
+              incident_description: this.$data.incident_description,
+              incident_address: this.$data.incident_address
+            })
+          }
         })
 
-        this.$data.bootstrap_reports.push({
-          number: reportNumber,
-          incident_type: this.$data.incident_type,
-          case_number: this.$data.case_number,
-          date: this.$data.case_date,
-          name: "Mark",
-          status: "error",
-          location: this.$data.case_location,
-          incident_description: this.$data.incident_description,
-          incident_address: this.$data.incident_address
-        })
       },
       formatLine(inferenceId) {
         if (this.$data.inferenceDetails) {
