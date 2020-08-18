@@ -10,9 +10,9 @@
 Expanding IBM Watson API's to Salesforce can allow for scalability and ingestion of data from more sources:
 ```
 //Watson Tone Analyzer
-String service_url = 'https://api.us-south.tone-analyzer.watson.cloud.ibm.com/instances/8ac7dee3-e3ba-4388-8790-ae7f1294854e';
-String username = '_Y2jF4P5QUvWFSplmfZ1gEt7imyU7KkbFUsOlKEbSm0W ';
-String password = '_Y2jF4P5QUvWFSplmfZ1gEt7imyU7KkbFUsOlKEbSm0W ';
+String service_url = 'https://api.us-south.tone-analyzer.watson.cloud.ibm.com/instances/xxx';
+String username = 'xxxx ';
+String password = 'xxxx';
 IBMToneAnalyzerV3 toneAnalyzer = new IBMToneAnalyzerV3('2017-09-21');
 toneAnalyzer.setEndPoint(service_url);
 toneAnalyzer.setUsernameAndPassword(username, password);
@@ -31,7 +31,7 @@ Salesforce makes it easy to store, combine audio with video recognition in Watso
 ```
 //Watson Visual Recognition
 String service_url = 'https://gateway-a.watsonplatform.net/visual-recognition/api/';
-String api_key = 'gEe0y5XYtAE2QkppnjIPTtmxJsHG6fCNDiXcky8o8Yc1';
+String api_key = 'zzzz';
 IBMWatsonAuthenticator authenticator = new IBMWatsonIAMAuthenticator(api_key);
 //TODO: Create Query to Batch all non processed video files
 IBMVisualRecognitionV3 visualRecognition = new IBMVisualRecognitionV3('2019-04-30', authenticator);
