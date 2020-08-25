@@ -23,10 +23,6 @@
       </button>
     </cv-header>
 
-
-
-
-
     <cv-side-nav style="background-color:#233554;width:80px" id="side-nav" fixed expanded>
         <cv-side-nav-items>
           <cv-side-nav-link color="white" style="margin-bottom:25px" href="javascript:void(0)">
@@ -35,18 +31,39 @@
               Home
             </p> -->
           </cv-side-nav-link >
+          <!-- <cv-side-nav-link style="margin-bottom:25px" href="javascript:void(0)"> -->
+            <!-- <ChartClusterBar32 fill="white" /> -->
+            <!-- <p style="color:white">
+              Run Analysis
+            </p> -->
+          <!-- </cv-side-nav-link> -->
+          <!-- <cv-side-nav-link style="margin-bottom:25px" href="javascript:void(0)"> -->
+            <!-- <FolderShared32 fill="white"/> -->
+            <!-- <p style="color:white">
+              Run Analysis
+            </p> -->
+          <!-- </cv-side-nav-link> -->
           <cv-side-nav-link style="margin-bottom:25px" href="javascript:void(0)">
-            <ChartClusterBar32 fill="white" />
+            <Police32 @click="changeUser('officer')" fill="white"/>
             <!-- <p style="color:white">
               Run Analysis
             </p> -->
           </cv-side-nav-link>
+
           <cv-side-nav-link style="margin-bottom:25px" href="javascript:void(0)">
-            <FolderShared32 fill="white"/>
+            <FolderShared32 @click="changeUser('detective')" fill="white"/>
             <!-- <p style="color:white">
               Run Analysis
             </p> -->
           </cv-side-nav-link>
+
+          <cv-side-nav-link style="margin-bottom:25px" href="javascript:void(0)">
+            <ImproveRelevance32 @click="changeUser('witness')" fill="white"/>
+            <!-- <p style="color:white">
+              Run Analysis
+            </p> -->
+          </cv-side-nav-link>
+
         </cv-side-nav-items>
     </cv-side-nav>
 
@@ -63,271 +80,429 @@
       </div>
     </div> -->
 
-    <h2 style="position:relative;margin-left: 100px;margin-bottom:30px">Welcome, Srgt. Jeffords</h2>
-    <div style="margin-left:8%;float: center;width:90%">
-      <!-- <CvButton style="margin: 0px 10px; text-align: center" type="default" v-on:click="showModal({'name': 'show-report', 'title': 'Submit Report'})">Show Report Details</CvButton> -->
-      <!-- <h4>Last analysis run: 11/11/2020</h4> -->
+    <template v-if="user_type == 'officer'">
+      <h2 style="position:relative;margin-left: 100px;margin-bottom:30px">Welcome, Srgt. Jeffords</h2>
+      <div style="margin-left:8%;float: center;width:90%">
+        <!-- <CvButton style="margin: 0px 10px; text-align: center" type="default" v-on:click="showModal({'name': 'show-report', 'title': 'Submit Report'})">Show Report Details</CvButton> -->
+        <!-- <h4>Last analysis run: 11/11/2020</h4> -->
 
-      <div>
+        <!-- HTML -->
+        <!--
+        <div class="row mb-4 ">
+      	  <div class="col-sm-4">
+      	    <div class="card error">
+      	      <div class="card-body"><i class="fa fa-2x fa-times-circle error-icon"></i>
+      	        <h5 class="card-title">(4) cases with severe inaccuracies need revision. </h5>
+      	      </div>
+      	    </div>
+      	  </div>
+      	  <div class="col-sm-4">
+      	    <div class="card warning">
+      	      <div class="card-body"><i class="fa fa-2x fa-exclamation-triangle warning-icon"></i>
+      	        <h5 class="card-title">(3) cases with warnings need revision.</h5>
 
-        <!-- <div style="display:flex; margin-bottom:20px">
-          <div style="margin-left:10px">
-            <cv-tile style="background-color:white; border: 2px solid red; border-radius: 5px;" kind="standard">
-              <CloseFilled32 style="float:left;margin-right:10px" fill="red"/>
-              <p style="text-align:left;font-weight: bold;">(4) Cases with severe innacuracies need revision</p>
-              <p style="font-style: italic;float:right;bottom:10px;position:relative"><a>View Reports</a></p>
-            </cv-tile>
-          </div>
-          <div style="margin-left:10px">
-            <cv-tile style="border: 2px solid yellow; background-color:white; border-radius: 5px;" kind="standard">
-              <p style="text-align:left;font-weight: bold;">(11) Cases with moderate innacuracies need revision</p>
-              <p style="font-style: italic;float:right;bottom:10px;position:relative"><a>View Reports</a></p>
-            </cv-tile>
-          </div>
-          <div style="margin-left:10px">
-            <cv-tile style="border: 2px solid green; background-color:white; border-radius: 5px;" kind="standard">
-              <p style="text-align:left;font-weight: bold;">(20) Cases need no further revision</p>
-              <p style="font-style: italic;float:right;bottom:10px;position:relative"><a>View Reports</a></p>
-            </cv-tile>
-          </div>
-        </div> -->
+      	      </div>
+      	    </div>
+      	  </div>
+      	  <div class="col-sm-4">
+      	    <div class="card success" >
+      	      <div class="card-body"><i class="fa fa-2x fa-check-circle success-icon"></i>
+      	        <h5 class="card-title">Urna semper at at tellus nisl mauris molestie tortor egestas.</h5>
+
+      	      </div>
+      	    </div>
+      	  </div>
+      	</div>   -->
 
 
+  <!-- <i class="fa fa-2x fa-times-circle error-icon"></i> -->
+        <b-row cols="3" class="mb-4">
+          <b-col>
+            <b-card
+              class="error"
+              style="border:3px solid #D01A11; min-height: 84px;"
+              title="">
+              <CloseFilled32 style="float:left" fill="red"/>
+              <b-card-text class="card-title">
+                 (4) cases with severe inaccuracies need revision.
+              </b-card-text>
+            </b-card>
+          </b-col>
+          <b-col>
+            <b-card
+              class="warning"
+              style="border:3px solid #D68700; min-height: 84px;"
+              title="">
+              <WarningFilled32 style="float:left" fill="#D68700"/>
+              <b-card-text class="card-title">
+                (4) cases with severe inaccuracies need revision.
+              </b-card-text>
+            </b-card>
+          </b-col>
+          <b-col>
+            <b-card
+              class="success"
+              style="border:3px solid #6F8F56; min-height: 84px;"
+              title="">
+              <CheckmarkFilled32 style="float:left" fill="green" />
+              <b-card-text class="card-title">
+                (4) cases with severe inaccuracies need revision.
+              </b-card-text>
+            </b-card>
+          </b-col>
+        </b-row>
 
+        <template v-if="user_type == 'officer'">
+
+          <h5>Avaliable Sources For Analysis</h5>
+
+          <b-row cols="6" class="mt-3 mb-3"">
+            <b-col>
+              <b-card class="source">
+                <VideoFilled32 />
+                <b-card-text class="card-title">
+                  Videos Uploaded
+                </b-card-text>
+              </b-card>
+            </b-col>
+            <b-col>
+              <b-card class="source">
+                <Image32 />
+                <b-card-text class="card-title">
+                  Photos Uploaded
+                </b-card-text>
+              </b-card>
+            </b-col>
+
+            <b-col>
+              <b-card class="source">
+                <VideoFilled32 />
+                <b-card-text class="card-title">
+                  Officer's Bodycam
+                </b-card-text>
+              </b-card>
+            </b-col>
+
+            <b-col>
+              <b-card class="source">
+                <Folders32 />
+                <b-card-text class="card-title">
+                  Officer's Reports
+                </b-card-text>
+              </b-card>
+            </b-col>
+
+            <b-col>
+              <b-card class="source">
+                <ChartCustom32 />
+                <b-card-text class="card-title">
+                  Another source
+                </b-card-text>
+              </b-card>
+            </b-col>
+
+            <b-col>
+              <b-card class="source">
+                <ChartCustom32 />
+                <b-card-text class="card-title">
+                  Another source
+                </b-card-text>
+              </b-card>
+            </b-col>
+          </b-row>
+        </template>
+
+  <b-row>
+      <b-col>
+    <b-card>
+        <h5>{{reports.length}} reports pending analysis</h5>
+        <!-- {{bootstrap_reports}} -->
+        <cv-data-table
+          :zebra=true
+          :columns="report_columns"
+          :pagination="basicPagination" :overflow-menu="true" ref="table">
+          <template v-if="use_htmlData" slot="data">
+            <cv-data-table-row v-for="(row, rowIndex) in bootstrap_reports" :key="`${rowIndex}`" :value="`${rowIndex}`">
+               <template v-if="row['status'] == 'error'">
+                 <cv-data-table-cell><CloseFilled32 style="" fill="red"/></cv-data-table-cell>
+               </template>
+               <template v-else-if="row['status'] == 'warning'">
+                 <cv-data-table-cell><WarningFilled32 style="" fill="#D68700"/></cv-data-table-cell>
+               </template>
+               <template v-else>
+                 <cv-data-table-cell><CheckmarkFilled32 style="" fill="green"/></cv-data-table-cell>
+               </template>
+
+               <cv-data-table-cell><input type="text" :value="row['number']" style="border: none; background: none; width: 100%;"/></cv-data-table-cell>
+               <cv-data-table-cell><input type="text" :value="row['name']" style="border: none; background: none; width: 100%;"/></cv-data-table-cell>
+               <cv-data-table-cell><input type="text" :value="row['date']" style="border: none; background: none; width: 100%;"/></cv-data-table-cell>
+               <cv-data-table-cell><input type="text" :value="row['report_type']" style="border: none; background: none; width: 100%;"/></cv-data-table-cell>
+               <cv-data-table-cell><input type="text" :value="row['location']" style="border: none; background: none; width: 100%;"/></cv-data-table-cell>
+               <cv-data-table-cell>
+                 <CvButton style="margin: 0px 10px; text-align: center" type="default" v-on:click="selected_report = row ; showModal({'name': 'show-report', 'title': 'Show Report', 'report': row})">Show Report Details</CvButton>
+                 <!-- <input type="text" style="border: none; background: none; width: 100%;" value="View Report Details" /> -->
+               </cv-data-table-cell>
+
+            </cv-data-table-row>
+        </template>
+      </cv-data-table>
+    </b-card>
+
+    </b-col>
+  </b-row>
+      <!-- End of home view -->
+
+
+      <!-- <ccv-pie-chart :data='chartData' :options='chartOptions'></ccv-pie-chart> -->
+      <b-row cols="1" class="mt-3 mb-1">
+        <h2>Statistics</h2>
+      </b-row>
+      <b-row>
+        <b-col cols="12" md="8">
+          <b-card>
+            <!-- <ccv-simple-bar-chart :data='barChartData' :options='barChartOptions'></ccv-simple-bar-chart> -->
+            <ccv-grouped-bar-chart :data='groupedBarChartData' :options='groupedBarChartOptions'></ccv-grouped-bar-chart>
+          </b-card>
+        </b-col>
+        <b-col cols="6" md="4">
+          <b-card>
+            <ccv-donut-chart :data='chartData' :options='chartOptions'></ccv-donut-chart>
+          </b-card>
+        </b-col>
+
+      </b-row>
 
       </div>
+    </template>
+
+    <template v-if="user_type == 'detective'">
+      <h2 style="position:relative;margin-left: 100px;margin-bottom:30px">Welcome, Detective. Reynolds</h2>
+      <div style="margin-left:8%;float: center;width:90%">
+
+        <b-row cols="3" class="mb-4">
+          <b-col>
+            <b-card
+              class="error"
+              style="border:3px solid #D01A11; min-height: 84px;"
+              title="">
+              <CloseFilled32 style="float:left" fill="red"/>
+              <b-card-text class="card-title">
+                 (4) cases with severe inaccuracies need revision.
+              </b-card-text>
+            </b-card>
+          </b-col>
+          <b-col>
+            <b-card
+              class="warning"
+              style="border:3px solid #D68700; min-height: 84px;"
+              title="">
+              <WarningFilled32 style="float:left" fill="#D68700"/>
+              <b-card-text class="card-title">
+                (4) cases with severe inaccuracies need revision.
+              </b-card-text>
+            </b-card>
+          </b-col>
+          <b-col>
+            <b-card
+              class="success"
+              style="border:3px solid #6F8F56; min-height: 84px;"
+              title="">
+              <CheckmarkFilled32 style="float:left" fill="green" />
+              <b-card-text class="card-title">
+                (4) cases with severe inaccuracies need revision.
+              </b-card-text>
+            </b-card>
+          </b-col>
+        </b-row>
+
+  <b-row>
+      <b-col>
+    <b-card>
+        <h5>{{reports.length}} reports pending analysis</h5>
+        <!-- {{bootstrap_reports}} -->
+        <cv-data-table
+          :zebra=true
+          :columns="report_columns"
+          :pagination="basicPagination" :overflow-menu="true" ref="table">
+          <template v-if="use_htmlData" slot="data">
+            <cv-data-table-row v-for="(row, rowIndex) in bootstrap_reports" :key="`${rowIndex}`" :value="`${rowIndex}`">
+               <template v-if="row['status'] == 'error'">
+                 <cv-data-table-cell><CloseFilled32 style="" fill="red"/></cv-data-table-cell>
+               </template>
+               <template v-else-if="row['status'] == 'warning'">
+                 <cv-data-table-cell><WarningFilled32 style="" fill="#D68700"/></cv-data-table-cell>
+               </template>
+               <template v-else>
+                 <cv-data-table-cell><CheckmarkFilled32 style="" fill="green"/></cv-data-table-cell>
+               </template>
+
+               <cv-data-table-cell><input type="text" :value="row['number']" style="border: none; background: none; width: 100%;"/></cv-data-table-cell>
+               <cv-data-table-cell><input type="text" :value="row['name']" style="border: none; background: none; width: 100%;"/></cv-data-table-cell>
+               <cv-data-table-cell><input type="text" :value="row['date']" style="border: none; background: none; width: 100%;"/></cv-data-table-cell>
+               <cv-data-table-cell><input type="text" :value="row['report_type']" style="border: none; background: none; width: 100%;"/></cv-data-table-cell>
+               <cv-data-table-cell><input type="text" :value="row['location']" style="border: none; background: none; width: 100%;"/></cv-data-table-cell>
+               <cv-data-table-cell>
+                 <CvButton style="margin: 0px 10px; text-align: center" type="default" v-on:click="selected_report = row ; showModal({'name': 'show-report', 'title': 'Show Report', 'report': row})">Show Report Details</CvButton>
+                 <!-- <input type="text" style="border: none; background: none; width: 100%;" value="View Report Details" /> -->
+               </cv-data-table-cell>
+
+            </cv-data-table-row>
+        </template>
+      </cv-data-table>
+    </b-card>
+
+    </b-col>
+  </b-row>
+      <!-- End of home view -->
 
 
-      <!-- HTML -->
-      <!--
-      <div class="row mb-4 ">
-    	  <div class="col-sm-4">
-    	    <div class="card error">
-    	      <div class="card-body"><i class="fa fa-2x fa-times-circle error-icon"></i>
-    	        <h5 class="card-title">(4) cases with severe inaccuracies need revision. </h5>
-    	      </div>
-    	    </div>
-    	  </div>
-    	  <div class="col-sm-4">
-    	    <div class="card warning">
-    	      <div class="card-body"><i class="fa fa-2x fa-exclamation-triangle warning-icon"></i>
-    	        <h5 class="card-title">(3) cases with warnings need revision.</h5>
-
-    	      </div>
-    	    </div>
-    	  </div>
-    	  <div class="col-sm-4">
-    	    <div class="card success" >
-    	      <div class="card-body"><i class="fa fa-2x fa-check-circle success-icon"></i>
-    	        <h5 class="card-title">Urna semper at at tellus nisl mauris molestie tortor egestas.</h5>
-
-    	      </div>
-    	    </div>
-    	  </div>
-    	</div>   -->
-
-
-<!-- <i class="fa fa-2x fa-times-circle error-icon"></i> -->
-      <b-row cols="3" class="mb-4">
-        <b-col>
-          <b-card
-            class="error"
-            style="border:3px solid #D01A11; min-height: 84px;"
-            title="">
-            <CloseFilled32 style="float:left" fill="red"/>
-            <b-card-text class="card-title">
-               (4) cases with severe inaccuracies need revision.
-            </b-card-text>
+      <!-- <ccv-pie-chart :data='chartData' :options='chartOptions'></ccv-pie-chart> -->
+      <b-row cols="1" class="mt-3 mb-1">
+        <h2>Statistics</h2>
+      </b-row>
+      <b-row>
+        <b-col cols="12" md="8">
+          <b-card>
+            <!-- <ccv-simple-bar-chart :data='barChartData' :options='barChartOptions'></ccv-simple-bar-chart> -->
+            <ccv-grouped-bar-chart :data='groupedBarChartData' :options='groupedBarChartOptions'></ccv-grouped-bar-chart>
           </b-card>
         </b-col>
-        <b-col>
-          <b-card
-            class="warning"
-            style="border:3px solid #D68700; min-height: 84px;"
-            title="">
-            <WarningFilled32 style="float:left" fill="#D68700"/>
-            <b-card-text class="card-title">
-              (4) cases with severe inaccuracies need revision.
-            </b-card-text>
+        <b-col cols="6" md="4">
+          <b-card>
+            <ccv-donut-chart :data='chartData' :options='chartOptions'></ccv-donut-chart>
           </b-card>
         </b-col>
-        <b-col>
-          <b-card
-            class="success"
-            style="border:3px solid #6F8F56; min-height: 84px;"
-            title="">
-            <CheckmarkFilled32 style="float:left" fill="green" />
-            <b-card-text class="card-title">
-              (4) cases with severe inaccuracies need revision.
-            </b-card-text>
-          </b-card>
-        </b-col>
+
       </b-row>
 
+      </div>
+    </template>
 
-      <h5>Avaliable Sources For Analysis</h5>
+    <template v-else-if="user_type == 'witness'">
+          <div style="margin-left:8%;float: center;width:90%">
+              <h2 align="center"> Submit Witness Report </h2>
+              <b-row class="mt-1">
+                <b-col >
+                  <cv-select label="Incident Type" v-model="incident_type">
+                    <cv-select-option disabled selected hidden>Choose an incident type</cv-select-option>
+                    <cv-select-option value="po_h">Police Harrassment</cv-select-option>
+                    <cv-select-option value="po_b">Police Brutality</cv-select-option>
+                  </cv-select>
+                </b-col>
+              </b-row>
+              <b-row class="mt-1">
+                <b-col>
+                  <cv-text-input
+                    label="Case Number (if applicable)"
+                    placeholder="Case Number"
+                    v-model="case_number">
+                  </cv-text-input>
+                </b-col>
+              </b-row>
+              <b-row class="mt-1">
+                <b-col>
+                  <cv-text-input
+                    label="Officer Name/ Badge Number"
+                    placeholder="Officer Name/ Badge Number"
+                    v-model="case_officer">
+                  </cv-text-input>
+                </b-col>
+              </b-row>
+              <b-row class="mt-1">
+                <b-col>
+                  <cv-date-picker
+                    v-model="case_date"
+                    kind="single">
+                  </cv-date-picker>
+                </b-col>
+              </b-row>
+              <b-row class="mt-1">
+                <b-col>
+                  <cv-time-picker v-model="case_location">
+                  </cv-time-picker>
+                </b-col>
+              </b-row>
+              <b-row class="mt-1">
+                <b-col>
+                  <cv-text-area
+                    label="Please describe incident"
+                    v-model="incident_description"
+                    placeholder="Incident Description">
+                  </cv-text-area>
+                </b-col>
+              </b-row>
 
-      <b-row cols="6" class="mt-3 mb-3"">
-        <b-col>
-          <b-card class="source">
-            <VideoFilled32 />
-            <b-card-text class="card-title">
-              Videos Uploaded
-            </b-card-text>
-          </b-card>
-        </b-col>
-        <b-col>
-          <b-card class="source">
-            <VideoFilled32 />
-            <b-card-text class="card-title">
-              Photos Uploaded
-            </b-card-text>
-          </b-card>
-        </b-col>
+              <b-row class="mt-2">
+                <b-col class="col-md-3">
+                  <cv-file-uploader
+                    label="Upload Files (Audio, Video)"
+                    helperText=""
+                    :multiple=true
+                    :removable=true
+                    :accept="['.jpg', '.png', '.mp4', '.wmv', '.flac', '.mp3']"
+                    ref="fileUploader">
+                  </cv-file-uploader>
+                </b-col>
+              </b-row>
 
-        <b-col>
-          <b-card class="source">
-            <Image32 />
-            <b-card-text class="card-title">
-              Officer's Bodycam
-            </b-card-text>
-          </b-card>
-        </b-col>
+              <b-row class="mt-1">
+                <b-col>
+                  <cv-text-input
+                    label="Street"
+                    placeholder="Street"
+                    v-model="incident_address">
+                  </cv-text-input>
+                </b-col>
+              </b-row>
 
-        <b-col>
-          <b-card class="source">
-            <Folders32 />
-            <b-card-text class="card-title">
-              Officer's Reports
-            </b-card-text>
-          </b-card>
-        </b-col>
+              <b-row class="mt-1">
+                <b-col>
+                  <cv-text-input
+                    label="City"
+                    placeholder="City"
+                    v-model="incident_city">
+                  </cv-text-input>
+                </b-col>
+              </b-row>
 
-        <b-col>
-          <b-card class="source">
-            <ChartCustom32 />
-            <b-card-text class="card-title">
-              Another source
-            </b-card-text>
-          </b-card>
-        </b-col>
+              <b-row class="mt-1">
+                <b-col>
+                  <cv-text-input
+                    label="State"
+                    placeholder="State"
+                    v-model="incident_state">
+                  </cv-text-input>
+                </b-col>
+              </b-row>
 
-        <b-col>
-          <b-card class="source">
-            <ChartCustom32 />
-            <b-card-text class="card-title">
-              Another source
-            </b-card-text>
-          </b-card>
-        </b-col>
-      </b-row>
+              <b-row class="mt-1">
+                <b-col>
+                  <cv-text-input
+                    label="Zip Code"
+                    placeholder="Zip Code"
+                    v-model="incident_zip">
+                  </cv-text-input>
+                </b-col>
+              </b-row>
 
+              <b-row class="mt-1">
+                <b-col>
+                  <l-map></l-map>
+                </b-col>
+              </b-row>
 
-      <!-- <b-row cols="12" class="mb-4"> -->
-        <!-- <b-table class="col-12" hover :items="bootstrap_reports"></b-table> -->
-        <!-- <b-table-simple style="width:900px" hover>
-          <b-thead >
-            <b-tr>
-              <b-th>#</b-th>
-              <b-th>Name</b-th>
-              <b-th>Date</b-th>
-              <b-th>Report_type</b-th>
-              <b-th>Location</b-th>
-              <b-th></b-th>
-            </b-tr>
-          </b-thead>
-          <b-tbody>
-            <template v-for="row in bootstrap_reports">
-              <b-tr>
-                  <template v-if="row['status'] == 'error'">
-                    <b-td>
-                      <b-row cols=2>
-                        <CloseFilled32 style="" fill="red"/>
-                        <p>
-                          {{row['badge']}}
-                        </p>
-                      </b-row>
-                    </b-td>
-                  </template>
-                  <template v-else-if="row['status'] == 'warning'">
-                    <b-td>{{row['badge']}}</b-td>
-                  </template>
-                  <template v-else>
-                    <b-td>{{row['badge']}}</b-td>
-                  </template>
+              <b-row>
+                <b-col>
+                    <cv-button @click="submitReport">Submit</cv-button>
+                </b-col>
+              </b-row>
+            <hr />
+          </div>
+    </template>
 
-                  <b-td>{{row['name']}}</b-td>
-                  <b-td>{{row['date']}}</b-td>
-                  <b-td>{{row['report_type']}}</b-td>
-                  <b-td>{{row['location']}}</b-td>
-                  <b-td>View Report Details</b-td>
-              </b-tr>
-            </template>
-          </b-tbody>
-        </b-table-simple> -->
-
-      <!-- </b-row> -->
-
-<b-row>
-    <b-col>
-  <b-card>
-      <h5>{{reports.length}} reports pending analysis</h5>
-      <cv-data-table
-        :zebra=true
-        :columns="report_columns"
-        :pagination="basicPagination" :overflow-menu="true" ref="table">
-        <template v-if="use_htmlData" slot="data">
-          <cv-data-table-row v-for="(row, rowIndex) in bootstrap_reports" :key="`${rowIndex}`" :value="`${rowIndex}`">
-             <template v-if="row['status'] == 'error'">
-               <cv-data-table-cell><CloseFilled32 style="" fill="red"/></cv-data-table-cell>
-             </template>
-             <template v-else-if="row['status'] == 'warning'">
-               <cv-data-table-cell><WarningFilled32 style="" fill="#D68700"/></cv-data-table-cell>
-             </template>
-             <template v-else>
-               <cv-data-table-cell><CheckmarkFilled32 style="" fill="green"/></cv-data-table-cell>
-             </template>
-
-             <cv-data-table-cell><input type="text" :value="row['number']" style="border: none; background: none; width: 100%;"/></cv-data-table-cell>
-             <cv-data-table-cell><input type="text" :value="row['name']" style="border: none; background: none; width: 100%;"/></cv-data-table-cell>
-             <cv-data-table-cell><input type="text" :value="row['date']" style="border: none; background: none; width: 100%;"/></cv-data-table-cell>
-             <cv-data-table-cell><input type="text" :value="row['report_type']" style="border: none; background: none; width: 100%;"/></cv-data-table-cell>
-             <cv-data-table-cell><input type="text" :value="row['location']" style="border: none; background: none; width: 100%;"/></cv-data-table-cell>
-             <cv-data-table-cell>
-               <CvButton style="margin: 0px 10px; text-align: center" type="default" v-on:click="showModal({'name': 'show-report', 'title': 'Show Report', 'report': row})">Show Report Details</CvButton>
-               <!-- <input type="text" style="border: none; background: none; width: 100%;" value="View Report Details" /> -->
-             </cv-data-table-cell>
-
-          </cv-data-table-row>
-      </template>
-    </cv-data-table>
-  </b-card>
-
-  </b-col>
-</b-row>
-    <!-- End of home view -->
-
-
-    <!-- <ccv-pie-chart :data='chartData' :options='chartOptions'></ccv-pie-chart> -->
-    <b-row cols="1" class="mt-3 mb-1">
-      <h2>Statistics</h2>
-    </b-row>
-    <b-row>
-      <b-col cols="12" md="8">
-        <b-card>
-          <ccv-simple-bar-chart :data='barChartData' :options='barChartOptions'></ccv-simple-bar-chart>
-          <ccv-grouped-bar-chart :data='groupedBarChartData' :options='groupedBarChartOptions'></ccv-grouped-bar-chart>
-        </b-card>
-      </b-col>
-      <b-col cols="6" md="4">
-        <b-card>
-          <ccv-donut-chart :data='chartData' :options='chartOptions'></ccv-donut-chart>
-        </b-card>
-      </b-col>
-
-    </b-row>
-
-    </div>
+    <modal name="report-submitted" :scrollable="true" width="60%" height="auto" style="margin-top:50px">
+      <h5>Report Submitted</h5>
+    </modal>
 
     <modal name="show-report" :scrollable="true" width="60%" height="auto" style="margin-top:50px">
 
@@ -337,6 +512,12 @@
           <h5>Report Type</h5>
         </b-col>
         <b-col>
+          <!-- <template v-if="selected_report && Object.keys(selected_report).includes(report_type)">
+            <p>{{selected_report.report_type}}</p>
+          </template>
+          <template v-else>
+            <p>Dolor, elementum</p>
+          </template> -->
           <p>Dolor, elementum</p>
         </b-col>
         <b-col>
@@ -453,18 +634,33 @@
         </b-card-text>
         <a href="#" class="card-link ml-3">Call to action</a>
       </b-card>
-      <p>+Show more</p>
 
-      <template v-if="bootstrap_reports[0].evidence.length > 0">
-        {{bootstrap_reports[0].evidence[0]}}
+      <hr style="width:80%;border: 1px solid rgb(214,162,66)">
+
+      <h5>Evidence</h5>
+
+      <template v-if="(Object.keys(selected_report).includes('evidence')) && (selected_report.evidence.length > 0)">
+        {{selected_report.evidence.join(',')}}
       </template>
 
-      <hr>
+      <hr style="width:80%;border: 1px solid rgb(214,162,66)">
+
       <cv-text-area
         label="Additional Comments"
         placeholder="Additional Comments">
       </cv-text-area>
-      <b-button class="ml-2">Send Report</b-button>
+
+      <template v-if="user_type == 'officer'">
+        <b-button @click="hideModal('show-report')" class="ml-2">Send Report</b-button>
+      </template>
+
+      <template v-else-if="user_type == 'detective'">
+        <b-button @click="hideModal('show-report')" class="ml-2">Send Report</b-button>
+        <b-button @click="hideModal('show-report')" class="ml-2">Reject</b-button>
+
+      </template>
+
+
       <div style="margin-top:70px">
 
       </div>
@@ -519,7 +715,7 @@
     </modal>
 
     <hr />
-    <CvButton type="default" v-on:click="showModal({'name': 'submit-witness-report', 'title': 'Submit Witness Report'})">Submit Witness Report</CvButton>
+    <!-- <CvButton type="default" v-on:click="showModal({'name': 'submit-witness-report', 'title': 'Submit Witness Report'})">Submit Witness Report</CvButton> -->
 
 
   </div>
@@ -550,7 +746,8 @@
 
     data() {
       return {
-        "columns": [
+
+        columns: [
           "Name",
           "Protocol",
           "Port",
@@ -558,13 +755,19 @@
           "Attached Groups",
           "Status"
         ],
-        "basicPagination": false,
-        "use_htmlData": true,
+        basicPagination: false,
+        use_htmlData: true,
+        user_type: "officer",
+        selected_report: {},
         badge_number: "",
         incident_type: "",
+        incident_city: "",
+        incident_state: "",
+        incident_zip: "",
         case_date: "",
         case_location: "",
         case_number: "",
+        case_officer: "",
         incident_description: "",
         case_time: "",
         incident_address: "",
@@ -660,27 +863,37 @@
         ],
         groupedBarChartData: [
       		{
-      				"group": "Dataset 1",
+      				"group": "Error",
       				"key": "Q1",
-      				"value": -29123
-      		},
-      		{
-      				"group": "Dataset 1",
-      				"key": "Q2",
-      				"value": -35213
+      				"value": 29123
       		},
           {
-      				"group": "Dataset 1",
-      				"key": "Q2",
-      				"value": -35213
+      				"group": "Success",
+      				"key": "Q1",
+      				"value": 24123
       		},
           {
-      				"group": "Dataset 1",
+      				"group": "Success",
       				"key": "Q2",
-      				"value": -35213
+      				"value": 24123
       		},
       		{
-      				"group": "Dataset 1",
+      				"group": "Error",
+      				"key": "Q2",
+      				"value": 35213
+      		},
+          {
+      				"group": "Error",
+      				"key": "Q2",
+      				"value": 35213
+      		},
+          {
+      				"group": "Warning",
+      				"key": "Q2",
+      				"value": 35213
+      		},
+      		{
+      				"group": "Warning",
       				"key": "Q3",
       				"value": 51213
       		}],
@@ -814,6 +1027,9 @@
 
     },
     methods: {
+      changeUser(type) {
+        this.$data.user_type = type
+      },
       uploadFile(file) {
         return new Promise( (resolve, reject) => {
           const form = new FormData();
@@ -823,26 +1039,30 @@
             method: "POST",
             body: form
           }
-          var reportsIdx = that.$data.bootstrap_reports.length - 1
+          var reportsIdx = that.$data.bootstrap_reports.length //- 1
 
           // if file.type.includes()
           // Send to STT if audio
           fetch("http://localhost:3000/transcribe", options).then((r) => {
             console.log(r)
-            r.json().then( (payload) => {
-              console.log(payload)
-              if (Object.keys(payload).includes('result')) {
-                // let transcript = payload.result.results[0].alternatives[0].transcript
-                let transcript = payload.result.results[0].alternatives[0].transcript
-                console.log(transcript)
-                if ( Object.keys(that.$data.bootstrap_reports[reportsIdx]).includes('evidence')) {
-                  that.$data.bootstrap_reports[reportsIdx].evidence.push(transcript)
+            r.json().then( (tResult) => {
+              console.log(tResult)
+              tResult.map( (payload) => {
+                if (Object.keys(payload).includes('result')) {
+                  // let transcript = payload.result.results[0].alternatives[0].transcript
+                  let transcript = payload.result.results[0].alternatives[0].transcript
+                  console.log(transcript)
+                  if ( Object.keys(that.$data.bootstrap_reports[reportsIdx]).includes('evidence')) {
+                    console.log()
+                    that.$data.bootstrap_reports[reportsIdx].evidence.push(transcript)
+                  } else {
+                    that.$data.bootstrap_reports[reportsIdx].evidence = [transcript]
+                  }
                 } else {
-                  that.$data.bootstrap_reports[reportsIdx].evidence = [transcript]
+                  console.log("no result received")
                 }
-              } else {
-                console.log("no result received")
-              }
+              })
+
             }).catch(err => console.log(`error parsing json ${err}`))
           }).catch(err => console.log(`error posting file ${err}`))
           // /*

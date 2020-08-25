@@ -10,18 +10,18 @@ module.exports = {
       template: 'public/login.html',
       filename: 'login.html'
     },
-    witness: {
-      entry: 'src/witness/main.js',
+    // witness: {
+      // entry: 'src/witness/main.js',
       // template: 'public/login.html',
       // filename: 'login.html'
-    }
+    // }
   },
   devServer: {
     historyApiFallback: {
       rewrites: [
         { from: /\/index/, to: '/' },
         { from: /\/login/, to: '/login.html' },
-        { from: /\/app/, to: '/' },
+        // { from: /\/witness/, to: '/' },
       ]
     }
   },

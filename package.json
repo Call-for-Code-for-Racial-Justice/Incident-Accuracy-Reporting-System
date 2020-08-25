@@ -2,6 +2,7 @@
   "dependencies": {
     "@carbon/icons-vue": "^10.11.0",
     "@carbon/vue": "^2.27.0",
-    "carbon-components": "^10.12.0"
+    "carbon-components": "^10.12.0",
+    "node-fetch": "^2.6.0"
   }
 }

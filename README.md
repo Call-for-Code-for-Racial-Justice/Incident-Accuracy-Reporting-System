@@ -11,3 +11,11 @@ cd frontend
 npm install
 npm run serve
 ```
+
+## Start Blockchain
+```
+cd backend/blockchain/local
+./startFabric.sh
+
+git clone https://github.com/IBM/Blockchain-for-maintaining-Digital-Assets
+```

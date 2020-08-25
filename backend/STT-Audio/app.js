@@ -75,11 +75,38 @@ const multer = require('multer')
 const cors = require('cors')
 app.use(cors())
 
-// var upload = multer({ dest: 'uploads/' }).single('audio')
 app.use(multer({dest:'./uploads/'}).any());
 
-// app.use(multer({dest:'./uploads/'}))
-// app.use(upload);
+
+
+
+  var genParams = function (extension, transcribed_file, converted_video_file) {
+    if (extension == ".mp4") {
+        convert(transcribed_file, converted_video_file, function(err){
+        //convert(transcribed_file, __dirname + '/' + 'tmpdir' + '/' + 'stripped_audio.mp3', function(err){
+        if(!err) {
+          console.log('conversion complete');
+          transcribed_file = converted_video_file;
+          // run file through Speech to text API and send back the transcript
+          const recognizeParams = {
+            audio: fs.createReadStream(converted_video_file),
+            contentType: 'application/octet-stream',
+          }
+          return recognizeParams
+        }
+        else {
+          console.log('conversion error')
+        }
+      });
+    } else {
+      // run file through Speech to text API and send back the transcript
+      const recognizeParams = {
+        audio: fs.createReadStream(transcribed_file),
+        contentType: 'application/octet-stream',
+      }
+      return recognizeParams
+    }
+  }
 
 app.post('/transcribe', (req, res) => {
   let files = req.files
@@ -98,30 +125,54 @@ app.post('/transcribe', (req, res) => {
         if(!err) {
           console.log('conversion complete');
           transcribed_file = converted_video_file;
+          // run file through Speech to text API and send back the transcript
+          const recognizeParams = {
+            audio: fs.createReadStream(converted_video_file),
+            contentType: 'application/octet-stream',
+          }
+          speechToText.recognize(recognizeParams)
+            .then(speechRecognitionResults => {
+              console.log(JSON.stringify(speechRecognitionResults, null, 2))
+              allResults.push(speechRecognitionResults)
+              console.log(`files_len ${files.length} idx ${idx}`)
+              if (idx == (files.length - 1)) {
+                console.log("done appending transcribed files")
+                console.log(res)
+                res.send(allResults)
+              }
+            })
+            .catch(err => {
+              res.send(500)
+              console.log('error:', err);
+          });
         }
         else {
           console.log('conversion error')
         }
       });
+    } else {
+      // run file through Speech to text API and send back the transcript
+      const recognizeParams = {
+        audio: fs.createReadStream(transcribed_file),
+        contentType: 'application/octet-stream',
+      }
+      speechToText.recognize(recognizeParams)
+        .then(speechRecognitionResults => {
+          console.log(JSON.stringify(speechRecognitionResults, null, 2))
+          allResults.push(speechRecognitionResults)
+          if (idx == (files.length - 1)) {
+            res.send(allResults)
+          }
+        })
+        .catch(err => {
+          res.send(500)
+          console.log('error:', err);
+      });
     }
+    // var recognizeParams = genParams(extension, transcribed_file, converted_video_file)
+    // console.log(recognizeParams)
+    // console.log(Object.keys(recognizeParams))
 
-    // run file through Speech to text API and send back the transcript
-    const recognizeParams = {
-      audio: fs.createReadStream(transcribed_file),
-      contentType: 'application/octet-stream',
-    }
-    speechToText.recognize(recognizeParams)
-      .then(speechRecognitionResults => {
-        console.log(JSON.stringify(speechRecognitionResults, null, 2))
-        allResults.push(speechRecognitionResults)
-        if (idx == (files.length - 1)) {
-          res.send(allResults)
-        }
-      })
-      .catch(err => {
-        res.send(500)
-        console.log('error:', err);
-    });
   })
 })
 
