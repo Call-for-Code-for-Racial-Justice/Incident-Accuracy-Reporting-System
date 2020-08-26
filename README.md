@@ -1,4 +1,13 @@
 
+# IARS
+
+Incident Accuracy Reporting System
+
+This solution starter was created by technologists from IBM.
+
+# Authors
+Osai Osaigbovo,Kalonji Bankole, Shonda Witherspoon, Abiola Asojo, Lucia Ramos, Brandon Kravitz, Danny Belitz, Laura Bennett, Tunde Olokodana, Debra Scott, Shalisha Witherspoon, Monica Martinez
+
 # Table of Content
    1. Overview
    2. The idea
