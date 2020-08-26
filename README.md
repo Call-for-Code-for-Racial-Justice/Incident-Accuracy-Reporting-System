@@ -3,7 +3,7 @@
 
 Incident Accuracy Reporting System
 
-!https://github.com/embrace-call-for-code/lions-of-justice/blob/master/design-assets/IARS_user_interface_design.png
+<img src="https://github.com/embrace-call-for-code/lions-of-justice/blob/master/design-assets/IARS_user_interface_design.png" alt="hi" class="inline"/>
 
 
 This solution starter was created by technologists from IBM.
