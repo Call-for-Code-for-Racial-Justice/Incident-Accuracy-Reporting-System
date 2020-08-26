@@ -25,9 +25,13 @@ This solution starter was created by technologists from IBM.
 ## Embrace Theme 
 ### Police & Judicial Reform and Accountability: 
 From traffic stops and arrests to sentencing and parole decisions, use technology to better analyze real-world data, provide insights, and make recommendations that will drive racial equality and reform across criminal justice and public safety.
+
 ### Problem Statement: 
 The lack of transparent and accurate data available to assess police behavioral infractions means, police reports can be falsified and contain other inaccuracies.
-### Hills: 
+
+This solution addresses the hill outlined below related to the problem statement above:
+
+### Hill: 
 Internal affairs and civilians (such as witnesses) can both contribute to incident reports, creating a tamper-proof record with all accounts of the incident.
 
 # 2. The Idea
@@ -40,6 +44,10 @@ A Content Management application for capturing statements from first-hand indivi
  
 # 3. How It Works
 
+## Solution:
+
+### Skills & Technologies Required
+
 The diagram describes the application flow
 
 <img src="https://github.com/embrace-call-for-code/lions-of-justice/blob/master/design-assets/IARS.png" width="100%" height="100%" alt="User Interface design"  class="inline"/>
@@ -50,7 +58,11 @@ The diagram below walks you through the dashboard flow
 
 # 4. Design 
 
+## Persona/ User
 
+## user journey: AS-IS Experience
+
+## user journey: TO-BE Experience
 
 # 5. Architecture
 
