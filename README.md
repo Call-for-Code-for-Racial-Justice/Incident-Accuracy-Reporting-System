@@ -61,7 +61,8 @@ The Component Model
 The Operational Model 
 
 <img src="https://github.com/embrace-call-for-code/lions-of-justice/blob/master/design-assets/IARS_operational_model.png" width="100%" height="100%" alt="User Interface design"  class="inline"/>
-# 11. The Team
+
+# The Team
 
 * Product Managers: Osai Osaigbovo
 
@@ -76,6 +77,7 @@ The Operational Model
 * IP Development Joseph Kozhaya
 
 * Special Thanks Cedric Cook, Calvin Lawrence
+
 # Getting started
 
 ## Prereqs
