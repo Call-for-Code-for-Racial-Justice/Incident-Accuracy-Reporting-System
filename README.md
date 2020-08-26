@@ -48,7 +48,7 @@ A Content Management application for capturing statements from first-hand indivi
 
 The Component Model
 
-<img src="https://github.com/embrace-call-for-code/lions-of-justice/blob/master/design-assets/IARS_component_model.png" alt="User Interface design" class="inline"/>
+<img src="https://github.com/embrace-call-for-code/lions-of-justice/blob/master/design-assets/IARS_component_model.png" width="250px" height="250px" alt="User Interface design" class="inline"/>
 
 # Getting started
 
