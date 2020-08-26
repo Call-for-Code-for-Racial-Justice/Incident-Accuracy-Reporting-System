@@ -3,6 +3,9 @@
 
 Incident Accuracy Reporting System
 
+![alt text](https://github.com/embrace-call-for-code/lions-of-justice/tree/master/design-assets/Screen Shot 2020-08-26 at 3.29.14 PM.png "User Interface")
+
+
 This solution starter was created by technologists from IBM.
 
 # Authors
