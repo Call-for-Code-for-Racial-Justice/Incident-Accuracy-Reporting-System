@@ -1,17 +1,17 @@
 
-#Table of Content
-    Overview
-    The idea
-    How it works
-    Diagrams
-    Documents
-    Technology
-    Getting started
-    PSOS Recommendations for Enhancements of Capabilities
-    Resources
-    License
+# Table of Content
+   1.Overview
+   2.The idea
+   3.How it works
+   4.Diagrams
+   5.Documents
+   6.Technology
+   7.Getting started
+   8.Recommendations for Enhancements of Capabilities
+   9.Resources
+   10.License
 
-#Overview
+# Overview
 
 # Getting started
 
