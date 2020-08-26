@@ -8,9 +8,6 @@ Incident Accuracy Reporting System
 
 This solution starter was created by technologists from IBM.
 
-# Authors
-Osai Osaigbovo,Kalonji Bankole, Shonda Witherspoon, Abiola Asojo, Lucia Ramos, Brandon Kravitz, Danny Belitz, Laura Bennett, Tunde Olokodana, Debra Scott, Shalisha Witherspoon, Monica Martinez
-
 # Table of Content
    1. Overview
    2. The idea
@@ -22,6 +19,7 @@ Osai Osaigbovo,Kalonji Bankole, Shonda Witherspoon, Abiola Asojo, Lucia Ramos, B
    8. Recommendations for Enhancements of Capabilities
    9. Resources
    10. License
+   11. The Team
 
 # 1. Overview
 ## Embrace Theme 
@@ -63,7 +61,22 @@ The Component Model
 The Operational Model 
 
 <img src="https://github.com/embrace-call-for-code/lions-of-justice/blob/master/design-assets/IARS_operational_model.png" width="100%" height="100%" alt="User Interface design"  class="inline"/>
+# 11. The Team
+The team
 
+* Product Managers: Osai Osaigbovo
+
+* Architects: Laura Bennett, Abiola Asojo , Osai Osaigbovo , Shalisha Witherspoon
+
+* Design: Lucia Ramos, Monica Martinez, Shonda Witherspoon
+
+* User Research: Debra Scott, Shalisha Witherspoon, Monica Martinez
+
+* Development: Kalonji Bankole, Laura Bennett, Brandon Kravitz, Danny Belitz, Tunde Olokodana, 
+
+* IP Development Joseph Kozhaya
+
+* Special Thanks Cedric Cook, Calvin Lawrence
 # Getting started
 
 ## Prereqs
