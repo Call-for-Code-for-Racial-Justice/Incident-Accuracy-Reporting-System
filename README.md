@@ -11,7 +11,24 @@
    9. Resources
    10. License
 
-# Overview
+# 1. Overview
+## Embrace Theme 
+### Police & Judicial Reform and Accountability: 
+From traffic stops and arrests to sentencing and parole decisions, use technology to better analyze real-world data, provide insights, and make recommendations that will drive racial equality and reform across criminal justice and public safety.
+### Problem Statement: 
+The lack of transparent and accurate data available to assess police behavioral infractions means, police reports can be falsified and contain other inaccuracies.
+### Hills: 
+Internal affairs and civilians (such as witnesses) can both contribute to incident reports, creating a tamper-proof record with all accounts of the incident.
+
+# 2. The Idea
+
+A Content Management application for capturing statements from first-hand individuals relating to police incident reports. 
+* Interface for first-hand individuals to input information or data related to incident report
+* Automated/Manual flagging of errors and inaccuracies contained in initial incident reports based on collected data
+* Cross reference report data with officer history on misconduct
+* Mechanism for disputing claims in incident reports
+ 
+
 
 # Getting started
 
