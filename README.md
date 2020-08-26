@@ -3,7 +3,7 @@
 
 Incident Accuracy Reporting System
 
-<img src="https://github.com/embrace-call-for-code/lions-of-justice/blob/master/design-assets/IARS_user_interface_design.png" alt="User Interface design" class="inline"/>
+<img src="https://github.com/embrace-call-for-code/lions-of-justice/blob/master/design-assets/IARS_user_interface_design.png" alt="User Interface design" border: 1px solid black class="inline"/>
 
 
 This solution starter was created by technologists from IBM.
@@ -48,7 +48,7 @@ A Content Management application for capturing statements from first-hand indivi
 
 The Component Model
 
-<img src="https://github.com/embrace-call-for-code/lions-of-justice/blob/master/design-assets/IARS_component_model.png" width="50%" height="50%" alt="User Interface design" class="inline"/>
+<img src="https://github.com/embrace-call-for-code/lions-of-justice/blob/master/design-assets/IARS_component_model.png" width="50%" height="50%" alt="User Interface design" border: 1px solid black class="inline"/>
 
 # Getting started
 
