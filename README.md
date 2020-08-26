@@ -46,6 +46,16 @@ A Content Management application for capturing statements from first-hand indivi
 
 ## Solution:
 
+
+### Consideration
+
+* If a 911 call is made, the event’s address, date, and time is logged as an incident. 
+
+* An incident may or may not be given a case number 
+* Incidents reported via app can be linked by provided case number (if known), or by correlating the submitted metadata(location, date, and time)  with a logged incident from the police department
+* If an event has not yet been logged as an incident by the police department (ex: occurring live at a protest), reported incidents submitted through app can be tagged as pending until a matching police incident can be linked once filed.  
+
+
 ### Skills & Technologies Required
 
 * Web Application built using Vue.js. This can be run locally or on IBM Cloud. The web application provides the dashboard and is at the core of the solution.
