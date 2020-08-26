@@ -48,12 +48,12 @@ A Content Management application for capturing statements from first-hand indivi
 
 ### Skills & Technologies Required
 
-* Web Application built using Vue.js. This can be run locally or on IBM Cloud.
-* Watson Speech To Text
+* Web Application built using Vue.js. This can be run locally or on IBM Cloud. The web application provides the dashboard and is at the core of the solution.
+* Watson Speech To Text. The Watson STT API is used to NLP on audio loaded by witnesses and victims.
 * Machine Learning - K-Means Clustering
-* Blockchain
 * The database is Cloudant (lite Tier) running on the IBM Cloud.
-* The storage for videos is IBM Cloud Object Storage. A free tier is available. 
+* The storage for documents(incident reports, videos, audios) is IBM Cloud Object Storage. A free tier is available. 
+* Blockchain: This was used to ensure that the submitted reports and information from victims and witnesses are tamper-proof. You can run the application without it.
 
 The diagram describes the application flow
 
