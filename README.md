@@ -48,6 +48,13 @@ A Content Management application for capturing statements from first-hand indivi
 
 ### Skills & Technologies Required
 
+* Web Application built using Vue.js. This can be run locally or on IBM Cloud.
+* Watson Speech To Text
+* Machine Learning - K-Means Clustering
+* Blockchain
+* The database is Cloudant (lite Tier) running on the IBM Cloud.
+* The storage for videos is IBM Cloud Object Storage. A free tier is available. 
+
 The diagram describes the application flow
 
 <img src="https://github.com/embrace-call-for-code/lions-of-justice/blob/master/design-assets/IARS.png" width="100%" height="100%" alt="User Interface design"  class="inline"/>
@@ -82,9 +89,9 @@ The Operational Model
 
 * Design: Lucia Ramos, Monica Martinez, Shonda Witherspoon
 
-* User Research: Debra Scott, Shalisha Witherspoon, Monica Martinez
+* User Research: Shonda Witherspoon, Debra Scott, Shalisha Witherspoon, Monica Martinez
 
-* Development: Kalonji Bankole, Laura Bennett, Brandon Kravitz, Danny Belitz, Tunde Olokodana, 
+* Development: Kalonji Bankole, Laura Bennett, Brandon Kravitz,  Tunde Olokodana, Danny Belitz
 
 * IP Development Joseph Kozhaya
 
