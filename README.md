@@ -42,11 +42,17 @@ A Content Management application for capturing statements from first-hand indivi
  
 # 3. How It Works
 
+The diagram describes the application flow
+
+<img src="https://github.com/embrace-call-for-code/lions-of-justice/blob/master/design-assets/IARS.png" width="100%" height="100%" alt="User Interface design"  class="inline"/>
+
+The diagram below walks you through the dashboard flow
+
+<img src="https://github.com/embrace-call-for-code/lions-of-justice/blob/master/design-assets/IARS_Dashboard_flow.png" width="100%" height="100%" alt="User Interface design"  class="inline"/>
+
 # 4. Design 
 
-<img src="https://github.com/embrace-call-for-code/lions-of-justice/blob/master/design-assets/IARS.png" width="50%" height="50%" alt="User Interface design"  class="inline"/>
 
-<img src="https://github.com/embrace-call-for-code/lions-of-justice/blob/master/design-assets/IARS_Dashboard_flow.png" width="50%" height="50%" alt="User Interface design"  class="inline"/>
 
 # 5. Architecture
 
