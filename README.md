@@ -40,7 +40,11 @@ A Content Management application for capturing statements from first-hand indivi
 * Cross reference report data with officer history on misconduct
 * Mechanism for disputing claims in incident reports
  
+# 3. How It Works
 
+# 4. Design 
+
+# 5. Architecture
 
 # Getting started
 
