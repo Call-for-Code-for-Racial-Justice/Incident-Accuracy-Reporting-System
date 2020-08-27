@@ -76,10 +76,19 @@ The diagram below walks you through the dashboard flow
 # 4. Design 
 
 ## Persona/ User
+Engaging personas emphasise how stories can engage and bring the personas to life. 
+
+<img src="https://github.com/embrace-call-for-code/lions-of-justice/blob/master/design-assets/UserPersonas.png" width="100%" height="100%" alt="User Interface design"  class="inline"/>
 
 ## user journey: AS-IS Experience
+As-is Scenario Maps help us to document collective understanding of user workflows and are best used as precursors to exploring new ideas or for finding the right problem to solve.
+
+<img src="https://github.com/embrace-call-for-code/lions-of-justice/blob/master/design-assets/Journeys%20as%20is.png" width="100%" height="100%" alt="User Interface design"  class="inline"/>
 
 ## user journey: TO-BE Experience
+To-be Scenario Maps can help the team envision a better future for our users. We use them as we’re coming up with potential solutions to see how our ideas would fit within our user’s world, and how they might address the their needs. A To-be Scenario Map is a great artifact to put in front of stakeholders and users to align on the team’s intent.
+
+<img src="https://github.com/embrace-call-for-code/lions-of-justice/blob/master/design-assets/Journeys%20to%20be.png" width="100%" height="100%" alt="User Interface design"  class="inline"/>
 
 # 5. Architecture
 
