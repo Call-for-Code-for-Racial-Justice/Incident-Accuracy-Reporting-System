@@ -13,7 +13,7 @@ This solution starter was created by technologists from IBM.
    3. [How it works](#3-how-it-works)
    4. [Diagrams](#4-design)
    5. [Documents](#5-architecture)
-   6. [The Team)(#6-the-team)
+   6. [The Team](#6-the-team)
    7. [Getting started](#7-getting-started)
    8. [IARS-Recommendations for Enhancements of Capabilities](#8-iars-recommendations-for-enhancements-of-capabilities)
    9. [Resources](#9-resources)
@@ -61,8 +61,8 @@ A Content Management application for capturing statements from first-hand indivi
 * [Cloudant](https://www.ibm.com/cloud/cloudant):  (lite Tier) is a distributed, document-oriented NoSQL database that is running on the IBM Cloud.
 * [Blockchain](https://hyperledger-fabric.readthedocs.io/en/release-1.4/): Based on the open-soure enterprise grade permissioned disributed ledger; Hyperledger Fabric. The blockchain network is an immutable transaction ledger. This was used to ensure that the submitted reports and information from victims and witnesses are tamper-proof. Each stored document has a hash tag that is stored in the Blockchain. You can run the application without it.
 * [IBM Cloud Object Storage](https://cloud.ibm.com/docs/cloud-object-storage?topic=cloud-object-storage-getting-started-cloud-object-storage): (lite tier) stores encrypted and dispersed data. Documents(incident reports, videos, audios) are  IBM Cloud Object Storage.
+* [FFmpeg](https://ffmpeg.org/): an open source, cross-platform solution to record, converrt and stream audio and videos. This was used to transcribe the audio portion of a video.
 * Machine Learning - K-Means Clustering
-
 
 
 The diagram describes the application flow
@@ -181,13 +181,17 @@ git clone https://github.com/IBM/Blockchain-for-maintaining-Digital-Assets
 xxxxxx
 
 ### Ideas for Extending IARS Technically
-xxxxx
+
+- Support for multi-cloud, multi-networks: deploying the application across any cloud platform or a multi-cloud platform. This is especially important if the system may want to be run across state lines and different Cloud platforms are used.  Also if different blockchain networks are used - it makes it easier to interconnect "mixed networks". Consider deploying on top of RH OpenShift.
+- Adding mobile support
+- Adding container security software: lifecycle vulnerability management for scanning containers (on RHM: Neuvector)
 
 
 # 9. Resources
 - [IBM Cloud](https://www.ibm.com/cloud)
 - [IBM Cloudant](https://cloud.ibm.com/docs/Cloudant?topic=cloudant-overview)
 - [Node.js](https://nodejs.org)
+- [IBM Blockchain Platform](https://www.ibm.com/blockchain/platform)
 
 
 # 10. License
