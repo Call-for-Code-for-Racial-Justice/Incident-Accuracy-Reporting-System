@@ -5,21 +5,19 @@ Incident Accuracy Reporting System
 
 <img src="https://github.com/embrace-call-for-code/lions-of-justice/blob/master/design-assets/IARS_user_interface_design.png" alt="User Interface design"  class="inline"/>
 
-
 This solution starter was created by technologists from IBM.
 
 # Table of Content
-   1. Overview
-   2. The idea
-   3. How it works
-   4. Diagrams
-   5. Documents
-   6. Technology
-   7. Getting started
-   8. Recommendations for Enhancements of Capabilities
-   9. Resources
-   10. License
-   11. The Team
+   1. [Overview](#1-overview)
+   2. [The idea](#2-the-idea)
+   3. [How it works](#3-how-it-works)
+   4. [Diagrams](#4-design)
+   5. [Documents](#5-architecture)
+   6. [The Team)(#6-the-team)
+   7. [Getting started](#7-getting-started)
+   8. [IARS-Recommendations for Enhancements of Capabilities](#8-iars-recommendations-for-enhancements-of-capabilities)
+   9. [Resources](#9-resources)
+   10. [License](#10-license)
 
 # 1. Overview
 ## Embrace Theme 
@@ -56,14 +54,16 @@ A Content Management application for capturing statements from first-hand indivi
 * If an event has not yet been logged as an incident by the police department (ex: occurring live at a protest), reported incidents submitted through app can be tagged as pending until a matching police incident can be linked once filed.  
 
 
-### Skills & Technologies Required
+### Included Technology Components
 
-* Web Application built using Vue.js. This can be run locally or on IBM Cloud. The web application provides the dashboard and is at the core of the solution.
-* Watson Speech To Text. The Watson STT API is used to NLP on audio loaded by witnesses and victims.
+* Web Application: built using the Vue.js frontend framework. This can be run locally or on IBM Cloud. The web application provides the dashboard and is at the core of the solution.
+* [Watson Speech To Text](https://www.ibm.com/cloud/watson-speech-to-text):  This is a IBM Cloud service that converts human voice into written text. This application uses it to create written transcripts from audio recordings loaded by witnesses and victims.
+* [Cloudant](https://www.ibm.com/cloud/cloudant):  (lite Tier) is a distributed, document-oriented NoSQL database that is running on the IBM Cloud.
+* [Blockchain](https://hyperledger-fabric.readthedocs.io/en/release-1.4/): Based on the open-soure enterprise grade permissioned disributed ledger; Hyperledger Fabric. The blockchain network is an immutable transaction ledger. This was used to ensure that the submitted reports and information from victims and witnesses are tamper-proof. Each stored document has a hash tag that is stored in the Blockchain. You can run the application without it.
+* [IBM Cloud Object Storage](https://cloud.ibm.com/docs/cloud-object-storage?topic=cloud-object-storage-getting-started-cloud-object-storage): (lite tier) stores encrypted and dispersed data. Documents(incident reports, videos, audios) are  IBM Cloud Object Storage.
 * Machine Learning - K-Means Clustering
-* The database is Cloudant (lite Tier) running on the IBM Cloud.
-* The storage for documents(incident reports, videos, audios) is IBM Cloud Object Storage. A free tier is available. 
-* Blockchain: This was used to ensure that the submitted reports and information from victims and witnesses are tamper-proof. You can run the application without it.
+
+
 
 The diagram describes the application flow
 
@@ -100,7 +100,7 @@ The Operational Model
 
 <img src="https://github.com/embrace-call-for-code/lions-of-justice/blob/master/design-assets/IARS_operational_model.png" width="100%" height="100%" alt="Operational Model"  class="inline"/>
 
-# The Team
+# 6. The Team
 
 * Product Managers: Osai Osaigbovo
 
@@ -116,24 +116,81 @@ The Operational Model
 
 * Special Thanks Cedric Cook, Calvin Lawrence
 
-# Getting started
+# 7. Getting started
 
-## Prereqs
-Install node and NPM (suggest using NVM https://github.com/nvm-sh/nvm#install--update-script )
+## Prerequisites
+- [Docker](https://www.docker.com/get-started) - Container-based software that standardizes a unit of software and enables developers to isolate their app from the environmen
+- [Node.js](https://nodejs.org/en/) - a JavaScript Framework
+- [NPM](https://github.com/nvm-sh/nvm#install--update-script)
+- Register for an [IBM Cloud](https://www.ibm.com/account/reg/us-en/signup?formid=urx-42793&eventid=cfc-2020?cm_mmc=OSocial_Blog-_-Audience+Developer_Developer+Conversation-_-WW_WW-_-cfc-2020-ghub-starterkit-cooperation_ov75914&cm_mmca1=000039JL&cm_mmca2=10008917) account.
+- Install and configure [IBM Cloud CLI](https://cloud.ibm.com/docs/cli?topic=cloud-cli-getting-started#overview).
 
-## Run application
+- Clone the [repository](https://github.com/embrace-call-for-code/psos).
+
+## Steps
+
+1. [Clone the repo](#1-clone-the-repo)
+1. [Run the application](#2-run-the-application)
+1. [Start and configure the Blockchain application](#3-start-and-configure-the-blockchain-application)
+
+> NOTE: Create an [IBM Cloud](https://cloud.ibm.com/registration) account, if you do not have one already
+
+## 1. Clone the repo
+
+```bash
+git clone https://github.com/embrace-call-for-code/lions-of-justice
 ```
-git clone https://github.ibm.com/kkbankol/embrace-lions-for-justice
-cd embrace-lions-for-justice
+## 2. Run the application
+
+To start the server for the web application
+
+```
+git clone https://github.com/embrace-call-for-code/lions-of-justice
+cd lions-of-justice
 cd frontend
 npm install
 npm run serve
 ```
 
-## Start Blockchain
+To start the web application (ensure you are in the same directory as whe)
+
+```
+npm start
+```
+
+## 3. Start and configure the Blockchain application
+
+This step will start the network in a docker image, create a network channel and join a peer
+
 ```
 cd backend/blockchain/local
 ./startFabric.sh
+```
 
+Follow the instructions in the following pattern to start the Blockchain application
+
+```
 git clone https://github.com/IBM/Blockchain-for-maintaining-Digital-Assets
 ```
+
+# 8. IARS Recommendations for Enhancements of Capabilities
+
+**Incident Accuracy Reporting System (IARS)**
+
+### Ideas for Extending IARS Functionality
+xxxxxx
+
+### Ideas for Extending IARS Technically
+xxxxx
+
+
+# 9. Resources
+- [IBM Cloud](https://www.ibm.com/cloud)
+- [IBM Cloudant](https://cloud.ibm.com/docs/Cloudant?topic=cloudant-overview)
+- [Node.js](https://nodejs.org)
+
+
+# 10. License
+
+This solution starter is made available under the [Apache 2 License](LICENSE).
+
