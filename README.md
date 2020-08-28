@@ -20,26 +20,26 @@ This solution starter was created by technologists from IBM.
    10. [License](#10-license)
 
 # 1. Overview
-## Embrace Theme 
-### Police & Judicial Reform and Accountability: 
+## Embrace Theme
+### Police & Judicial Reform and Accountability:
 From traffic stops and arrests to sentencing and parole decisions, use technology to better analyze real-world data, provide insights, and make recommendations that will drive racial equality and reform across criminal justice and public safety.
 
-### Problem Statement: 
+### Problem Statement:
 The lack of transparent and accurate data available to assess police behavioral infractions means, police reports can be falsified and contain other inaccuracies.
 
 This solution addresses the hill outlined below related to the problem statement above:
 
-### Hill: 
+### Hill:
 Internal affairs and civilians (such as witnesses) can both contribute to incident reports, creating a tamper-proof record with all accounts of the incident.
 
 # 2. The Idea
 
-A Content Management application for capturing statements from first-hand individuals relating to police incident reports. 
+A Content Management application for capturing statements from first-hand individuals relating to police incident reports.
 * Interface for first-hand individuals to input information or data related to incident report
 * Automated/Manual flagging of errors and inaccuracies contained in initial incident reports based on collected data
 * Cross reference report data with officer history on misconduct
 * Mechanism for disputing claims in incident reports
- 
+
 # 3. How It Works
 
 ## Solution:
@@ -47,9 +47,9 @@ A Content Management application for capturing statements from first-hand indivi
 
 ### Consideration
 
-* If a 911 call is made, the event’s address, date, and time is logged as an incident. 
+* If a 911 call is made, the event’s address, date, and time is logged as an incident.
 
-* An incident may or may not be given a case number 
+* An incident may or may not be given a case number
 * Incidents reported via app can be linked by provided case number (if known), or by correlating the submitted metadata(location, date, and time)  with a logged incident from the police department
 * If an event has not yet been logged as an incident by the police department (ex: occurring live at a protest), reported incidents submitted through app can be tagged as pending until a matching police incident can be linked once filed.  
 
@@ -63,7 +63,13 @@ A Content Management application for capturing statements from first-hand indivi
 * [IBM Cloud Object Storage](https://cloud.ibm.com/docs/cloud-object-storage?topic=cloud-object-storage-getting-started-cloud-object-storage): (lite tier) stores encrypted and dispersed data. Documents(incident reports, videos, audios) are  IBM Cloud Object Storage.
 * [FFmpeg](https://ffmpeg.org/): an open source, cross-platform solution to record, converrt and stream audio and videos. This was used to transcribe the audio portion of a video.
 * Machine Learning - K-Means Clustering
+<<<<<<< HEAD
+* The database is Cloudant (lite Tier) running on the IBM Cloud.
+* The storage for documents(incident reports, videos, audios) is IBM Cloud Object Storage. A free tier is available.
+* Blockchain: This was used to ensure that the submitted reports and information from victims and witnesses are tamper-proof. You can run the application without it.
+=======
 
+>>>>>>> dd136d308f2092abbbeda355e5adfde13869cde1
 
 The diagram describes the application flow
 
@@ -73,7 +79,7 @@ The diagram below walks you through the dashboard flow
 
 <img src="https://github.com/embrace-call-for-code/lions-of-justice/blob/master/design-assets/IARS_Dashboard_flow.png" width="100%" height="100%" alt="User Interface design"  class="inline"/>
 
-# 4. Design 
+# 4. Design
 
 ## Persona/ User
 Engaging personas emphasise how stories can engage and bring the personas to life.
@@ -83,22 +89,22 @@ Engaging personas emphasise how stories can engage and bring the personas to lif
 ## User journey: AS-IS Experience
 As-is Scenario Maps help us to document collective understanding of user workflows and are best used as precursors to exploring new ideas or for finding the right problem to solve.
 
-<img src="https://github.com/embrace-call-for-code/lions-of-justice/blob/master/design-assets/Journeys%20as%20is.png" width="100%" height="100%" alt="User Interface design"  class="inline"/>
+<img src="https://github.com/embrace-call-for-code/lions-of-justice/blob/master/design-assets/Journeys%20as%20is.png" width="70%" height="70%" alt="User Interface design"  class="inline"/>
 
 ## User journey: TO-BE Experience
 To-be Scenario Maps can help the team envision a better future for our users. We use them as we’re coming up with potential solutions to see how our ideas would fit within our user’s world, and how they might address the their needs. A To-be Scenario Map is a great artifact to put in front of stakeholders and users to align on the team’s intent.
 
-<img src="https://github.com/embrace-call-for-code/lions-of-justice/blob/master/design-assets/Journeys%20to%20be.png" width="100%" height="100%" alt="User Interface design"  class="inline"/>
+<img src="https://github.com/embrace-call-for-code/lions-of-justice/blob/master/design-assets/Journeys%20to%20be.png" width="70%" height="70%" alt="User Interface design"  class="inline"/>
 
 # 5. Architecture
 
 The Component Model
 
-<img src="https://github.com/embrace-call-for-code/lions-of-justice/blob/master/design-assets/IARS_component_model.png" width="100%" height="100%" alt="User Interface design"  class="inline"/>
+<img src="https://github.com/embrace-call-for-code/lions-of-justice/blob/master/design-assets/IARS_component_model.png" width="100%" height="100%" alt="Component Model"  class="inline"/>
 
-The Operational Model 
+The Operational Model
 
-<img src="https://github.com/embrace-call-for-code/lions-of-justice/blob/master/design-assets/IARS_operational_model.png" width="100%" height="100%" alt="User Interface design"  class="inline"/>
+<img src="https://github.com/embrace-call-for-code/lions-of-justice/blob/master/design-assets/IARS_operational_model.png" width="100%" height="100%" alt="Operational Model"  class="inline"/>
 
 # 6. The Team
 
@@ -125,40 +131,78 @@ The Operational Model
 - Register for an [IBM Cloud](https://www.ibm.com/account/reg/us-en/signup?formid=urx-42793&eventid=cfc-2020?cm_mmc=OSocial_Blog-_-Audience+Developer_Developer+Conversation-_-WW_WW-_-cfc-2020-ghub-starterkit-cooperation_ov75914&cm_mmca1=000039JL&cm_mmca2=10008917) account.
 - Install and configure [IBM Cloud CLI](https://cloud.ibm.com/docs/cli?topic=cloud-cli-getting-started#overview).
 
-- Clone the [repository](https://github.com/embrace-call-for-code/psos).
+
 
 ## Steps
 
 1. [Clone the repo](#1-clone-the-repo)
-1. [Run the application](#2-run-the-application)
-1. [Start and configure the Blockchain application](#3-start-and-configure-the-blockchain-application)
 
-> NOTE: Create an [IBM Cloud](https://cloud.ibm.com/registration) account, if you do not have one already
+2. [Provision Cloud Services](#2-provision-cloud-services)
 
-## 1. Clone the repo
+3. [Provision Blockchain Ledger](#3-provision-blockchain-ledger)
+
+4. [Start web application](#4-start-web-application)
+
+5. [Start and configure the Blockchain application](#5-start-and-configure-the-blockchain-application)
+
+
+#1. Clone the repo
+
+- Clone the [repository](https://github.com/embrace-call-for-code/lions-of-justice).
+Clone the [repository](https://github.com/embrace-call-for-code/lions-of-justice) locally. In a terminal, run:
 
 ```bash
-git clone https://github.com/embrace-call-for-code/lions-of-justice
+$ git clone https://github.com/embrace-call-for-code/lions-of-justice
 ```
-## 2. Run the application
 
-To start the server for the web application
+#2. Provision Cloud Services
+Create a Speech to Text service [here](https://cloud.ibm.com/catalog/services/speech-to-text). Once the service is created, place your credentials in the `backend/STT-Audio/.env` file like so.
 
 ```
-git clone https://github.com/embrace-call-for-code/lions-of-justice
-cd lions-of-justice
+SPEECH_TO_TEXT_IAM_APIKEY=<>
+SPEECH_TO_TEXT_URL=<>
+```
+
+Create an Object Storage service [here](https://cloud.ibm.com/catalog/services/cloud-object-storage)
+
+#3. Provision Blockchain Ledger
+
+After setting up the Object Storage and Speech to Text services, we'll need to then deploy a blockchain ledger. This ledger will keep track of all digital assets
+
+*Local Deployment*
+```
+cd backend/blockchain/local
+./startFabric.sh
+```
+
+*Cloud Deployment*
+If you will be hosting this application in the cloud, you'll also need to deploy a blockchain ledger in the cloud. To do so, provision an [IBM Cloud Kubernetes Service](https://cloud.ibm.com/kubernetes/catalog/cluster). This may take up to 20 minutes to provision.
+
+Once the Kubernetes cluster has been provisioned, next create a [IBM Blockchain Platform](https://cloud.ibm.com/catalog/services/blockchain-platform) service.
+
+#4. Start web application
+*Local Deployment*
+```
+git clone https://github.ibm.com/kkbankol/embrace-lions-for-justice
+cd embrace-lions-for-justice
+```
+
+Start frontend web app
+```
 cd frontend
 npm install
 npm run serve
 ```
 
-To start the web application (ensure you are in the same directory as whe)
-
+Start backend
 ```
+cd backend
 npm start
 ```
 
-## 3. Start and configure the Blockchain application
+#5. Start and configure the Blockchain application
+
+*Local Deployment Model*
 
 This step will start the network in a docker image, create a network channel and join a peer
 
@@ -167,6 +211,7 @@ cd backend/blockchain/local
 ./startFabric.sh
 ```
 
+*Using the IBM Cloud Deployment Model*
 Follow the instructions in the following pattern to start the Blockchain application
 
 ```
@@ -198,3 +243,4 @@ xxxxxx
 
 This solution starter is made available under the [Apache 2 License](LICENSE).
 
+>>>>>>> dd136d308f2092abbbeda355e5adfde13869cde1
