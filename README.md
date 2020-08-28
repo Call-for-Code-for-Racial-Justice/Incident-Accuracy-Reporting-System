@@ -56,7 +56,7 @@ A Content Management application for capturing statements from first-hand indivi
 
 ### Included Technology Components
 
-* Web Application: built using the Vue.js frontend framework. This can be run locally or on IBM Cloud. The web application provides the dashboard and is at the core of the solution.
+* Web Application: built using the [Vue.js](https://vuejs.org/) frontend framework. This can be run locally or on IBM Cloud. The web application provides the dashboard and is at the core of the solution.
 * [Watson Speech To Text](https://www.ibm.com/cloud/watson-speech-to-text):  This is a IBM Cloud service that converts human voice into written text. This application uses it to create written transcripts from audio recordings loaded by witnesses and victims.
 * [Cloudant](https://www.ibm.com/cloud/cloudant):  (lite Tier) is a distributed, document-oriented NoSQL database that is running on the IBM Cloud.
 * [Blockchain](https://hyperledger-fabric.readthedocs.io/en/release-1.4/): Based on the open-soure enterprise grade permissioned disributed ledger; Hyperledger Fabric. The blockchain network is an immutable transaction ledger. This was used to ensure that the submitted reports and information from victims and witnesses are tamper-proof. Each stored document has a hash tag that is stored in the Blockchain. You can run the application without it.
@@ -125,8 +125,6 @@ The Operational Model
 - Register for an [IBM Cloud](https://www.ibm.com/account/reg/us-en/signup?formid=urx-42793&eventid=cfc-2020?cm_mmc=OSocial_Blog-_-Audience+Developer_Developer+Conversation-_-WW_WW-_-cfc-2020-ghub-starterkit-cooperation_ov75914&cm_mmca1=000039JL&cm_mmca2=10008917) account.
 - Install and configure [IBM Cloud CLI](https://cloud.ibm.com/docs/cli?topic=cloud-cli-getting-started#overview).
 
-- Clone the [repository](https://github.com/embrace-call-for-code/psos).
-
 ## Steps
 
 1. [Clone the repo](#1-clone-the-repo)
@@ -192,6 +190,8 @@ xxxxxx
 - [IBM Cloudant](https://cloud.ibm.com/docs/Cloudant?topic=cloudant-overview)
 - [Node.js](https://nodejs.org)
 - [IBM Blockchain Platform](https://www.ibm.com/blockchain/platform)
+- [Watson Speech To Text](https://www.ibm.com/cloud/watson-speech-to-text)
+- [FFmpeg](https://ffmpeg.org/)
 
 
 # 10. License
