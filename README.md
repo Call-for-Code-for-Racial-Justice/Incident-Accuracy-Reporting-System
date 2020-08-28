@@ -172,22 +172,17 @@ If you will be hosting this application in the cloud, you'll also need to deploy
 
 Once the Kubernetes cluster has been provisioned, next create a [IBM Blockchain Platform](https://cloud.ibm.com/catalog/services/blockchain-platform) service.
 
-*Using the IBM Cloud Deployment Model*
-Follow the instructions in the following pattern to start the Blockchain application
-
-```
-git clone https://github.com/IBM/Blockchain-for-maintaining-Digital-Assets
-```
-
 
 ### 4. Start web application
 
 Then, configure the IBM Blockchain Platform as documented [here](https://github.com/kkbankol-ibm/Blockchain-for-maintaining-Digital-Assets?organization=kkbankol-ibm&organization=kkbankol-ibm#5-build-a-network)
 
 *Local Deployment*
+
+Ensure you are in the *./lions-for-justice* directory
+
 ```
-git clone https://github.ibm.com/kkbankol/embrace-lions-for-justice
-cd embrace-lions-for-justice
+cd lions-for-justice
 ```
 
 
