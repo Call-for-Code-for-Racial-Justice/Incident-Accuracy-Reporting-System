@@ -83,22 +83,22 @@ Engaging personas emphasise how stories can engage and bring the personas to lif
 ## User journey: AS-IS Experience
 As-is Scenario Maps help us to document collective understanding of user workflows and are best used as precursors to exploring new ideas or for finding the right problem to solve.
 
-<img src="https://github.com/embrace-call-for-code/lions-of-justice/blob/master/design-assets/Journeys%20as%20is.png" width="100%" height="100%" alt="User Interface design"  class="inline"/>
+<img src="https://github.com/embrace-call-for-code/lions-of-justice/blob/master/design-assets/Journeys%20as%20is.png" width="70%" height="70%" alt="User Interface design"  class="inline"/>
 
 ## User journey: TO-BE Experience
 To-be Scenario Maps can help the team envision a better future for our users. We use them as we’re coming up with potential solutions to see how our ideas would fit within our user’s world, and how they might address the their needs. A To-be Scenario Map is a great artifact to put in front of stakeholders and users to align on the team’s intent.
 
-<img src="https://github.com/embrace-call-for-code/lions-of-justice/blob/master/design-assets/Journeys%20to%20be.png" width="100%" height="100%" alt="User Interface design"  class="inline"/>
+<img src="https://github.com/embrace-call-for-code/lions-of-justice/blob/master/design-assets/Journeys%20to%20be.png" width="70%" height="70%" alt="User Interface design"  class="inline"/>
 
 # 5. Architecture
 
 The Component Model
 
-<img src="https://github.com/embrace-call-for-code/lions-of-justice/blob/master/design-assets/IARS_component_model.png" width="100%" height="100%" alt="User Interface design"  class="inline"/>
+<img src="https://github.com/embrace-call-for-code/lions-of-justice/blob/master/design-assets/IARS_component_model.png" width="100%" height="100%" alt="Component Model"  class="inline"/>
 
 The Operational Model 
 
-<img src="https://github.com/embrace-call-for-code/lions-of-justice/blob/master/design-assets/IARS_operational_model.png" width="100%" height="100%" alt="User Interface design"  class="inline"/>
+<img src="https://github.com/embrace-call-for-code/lions-of-justice/blob/master/design-assets/IARS_operational_model.png" width="100%" height="100%" alt="Operational Model"  class="inline"/>
 
 # The Team
 
