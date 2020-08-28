@@ -159,7 +159,7 @@ SPEECH_TO_TEXT_URL=<>
 
 Create an Object Storage service [here](https://cloud.ibm.com/catalog/services/cloud-object-storage)
 
-###3. Provision Blockchain Ledger
+### 3. Provision Blockchain Ledger
 
 After setting up the Object Storage and Speech to Text services, we'll need to then deploy a blockchain ledger. This ledger will keep track of all digital assets
 
@@ -175,7 +175,7 @@ If you will be hosting this application in the cloud, you'll also need to deploy
 Once the Kubernetes cluster has been provisioned, next create a [IBM Blockchain Platform](https://cloud.ibm.com/catalog/services/blockchain-platform) service.
 
 
-###4. Start web application
+### 4. Start web application
 
 Then, configure the IBM Blockchain Platform as documented [here](https://github.com/kkbankol-ibm/Blockchain-for-maintaining-Digital-Assets?organization=kkbankol-ibm&organization=kkbankol-ibm#5-build-a-network)
 
@@ -200,7 +200,7 @@ npm start
 ```
 
 
-#5. Start and configure the Blockchain application
+### 5. Start and configure the Blockchain application
 
 *Local Deployment Model*
 
