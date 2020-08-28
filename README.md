@@ -137,8 +137,6 @@ The Operational Model
 
 4. [Start web application](#4-start-web-application)
 
-5. [Start and configure the Blockchain application](#5-start-and-configure-the-blockchain-application)
-
 
 ### 1. Clone the repo
 
@@ -174,6 +172,13 @@ If you will be hosting this application in the cloud, you'll also need to deploy
 
 Once the Kubernetes cluster has been provisioned, next create a [IBM Blockchain Platform](https://cloud.ibm.com/catalog/services/blockchain-platform) service.
 
+*Using the IBM Cloud Deployment Model*
+Follow the instructions in the following pattern to start the Blockchain application
+
+```
+git clone https://github.com/IBM/Blockchain-for-maintaining-Digital-Assets
+```
+
 
 ### 4. Start web application
 
@@ -199,24 +204,6 @@ cd backend
 npm start
 ```
 
-
-### 5. Start and configure the Blockchain application
-
-*Local Deployment Model*
-
-This step will start the network in a docker image, create a network channel and join a peer
-
-```
-cd backend/blockchain/local
-./startFabric.sh
-```
-
-*Using the IBM Cloud Deployment Model*
-Follow the instructions in the following pattern to start the Blockchain application
-
-```
-git clone https://github.com/IBM/Blockchain-for-maintaining-Digital-Assets
-```
 
 # 8. IARS Recommendations for Enhancements of Capabilities
 
