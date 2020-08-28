@@ -160,6 +160,8 @@ If you will be hosting this application in the cloud, you'll also need to deploy
 
 Once the Kubernetes cluster has been provisioned, next create a [IBM Blockchain Platform](https://cloud.ibm.com/catalog/services/blockchain-platform) service.
 
+Then, configure the IBM Blockchain Platform as documented [here](https://github.com/kkbankol-ibm/Blockchain-for-maintaining-Digital-Assets?organization=kkbankol-ibm&organization=kkbankol-ibm#5-build-a-network)
+
 ### Start web application
 *Local Deployment*
 ```
@@ -180,14 +182,7 @@ cd backend
 npm start
 ```
 
-## 3. Start and configure the Blockchain application
-
-This step will start the network in a docker image, create a network channel and join a peer
-
-```
-cd backend/blockchain/local
-./startFabric.sh
-```
+### Start Blockchain Application.
 
 Follow the instructions in the following pattern to start the Blockchain application
 
