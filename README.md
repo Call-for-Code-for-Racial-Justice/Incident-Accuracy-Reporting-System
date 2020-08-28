@@ -142,7 +142,6 @@ The Operational Model
 
 ### 1. Clone the repo
 
-- Clone the [repository](https://github.com/embrace-call-for-code/lions-of-justice).
 Clone the [repository](https://github.com/embrace-call-for-code/lions-of-justice) locally. In a terminal, run:
 
 ```bash
