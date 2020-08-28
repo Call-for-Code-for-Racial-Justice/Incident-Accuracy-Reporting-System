@@ -168,14 +168,16 @@ cd backend/blockchain/local
 ```
 
 *Cloud Deployment*
+
 If you will be hosting this application in the cloud, you'll also need to deploy a blockchain ledger in the cloud. To do so, provision an [IBM Cloud Kubernetes Service](https://cloud.ibm.com/kubernetes/catalog/cluster). This may take up to 20 minutes to provision.
 
 Once the Kubernetes cluster has been provisioned, next create a [IBM Blockchain Platform](https://cloud.ibm.com/catalog/services/blockchain-platform) service.
 
+Then, configure the IBM Blockchain Platform as documented [here](https://github.com/kkbankol-ibm/Blockchain-for-maintaining-Digital-Assets?organization=kkbankol-ibm&organization=kkbankol-ibm#5-build-a-network)
+
 
 ### 4. Start web application
 
-Then, configure the IBM Blockchain Platform as documented [here](https://github.com/kkbankol-ibm/Blockchain-for-maintaining-Digital-Assets?organization=kkbankol-ibm&organization=kkbankol-ibm#5-build-a-network)
 
 *Local Deployment*
 
@@ -184,7 +186,6 @@ Ensure you are in the *./lions-for-justice* directory
 ```
 cd lions-for-justice
 ```
-
 
 Start frontend web app
 ```
