@@ -63,13 +63,6 @@ A Content Management application for capturing statements from first-hand indivi
 * [IBM Cloud Object Storage](https://cloud.ibm.com/docs/cloud-object-storage?topic=cloud-object-storage-getting-started-cloud-object-storage): (lite tier) stores encrypted and dispersed data. Documents(incident reports, videos, audios) are  IBM Cloud Object Storage.
 * [FFmpeg](https://ffmpeg.org/): an open source, cross-platform solution to record, converrt and stream audio and videos. This was used to transcribe the audio portion of a video.
 * Machine Learning - K-Means Clustering
-<<<<<<< HEAD
-* The database is Cloudant (lite Tier) running on the IBM Cloud.
-* The storage for documents(incident reports, videos, audios) is IBM Cloud Object Storage. A free tier is available.
-* Blockchain: This was used to ensure that the submitted reports and information from victims and witnesses are tamper-proof. You can run the application without it.
-=======
-
->>>>>>> dd136d308f2092abbbeda355e5adfde13869cde1
 
 The diagram describes the application flow
 
@@ -135,6 +128,7 @@ The Operational Model
 
 ## Steps
 
+
 1. [Clone the repo](#1-clone-the-repo)
 
 2. [Provision Cloud Services](#2-provision-cloud-services)
@@ -186,6 +180,7 @@ Once the Kubernetes cluster has been provisioned, next create a [IBM Blockchain 
 git clone https://github.ibm.com/kkbankol/embrace-lions-for-justice
 cd embrace-lions-for-justice
 ```
+
 
 Start frontend web app
 ```
@@ -242,5 +237,3 @@ xxxxxx
 # 10. License
 
 This solution starter is made available under the [Apache 2 License](LICENSE).
-
->>>>>>> dd136d308f2092abbbeda355e5adfde13869cde1
