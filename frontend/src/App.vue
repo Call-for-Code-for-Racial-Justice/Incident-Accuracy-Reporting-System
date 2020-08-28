@@ -27,41 +27,18 @@
         <cv-side-nav-items>
           <cv-side-nav-link color="white" style="margin-bottom:25px" href="javascript:void(0)">
             <Home32 fill="white"/>
-            <!-- <p style="color:white">
-              Home
-            </p> -->
           </cv-side-nav-link >
-          <!-- <cv-side-nav-link style="margin-bottom:25px" href="javascript:void(0)"> -->
-            <!-- <ChartClusterBar32 fill="white" /> -->
-            <!-- <p style="color:white">
-              Run Analysis
-            </p> -->
-          <!-- </cv-side-nav-link> -->
-          <!-- <cv-side-nav-link style="margin-bottom:25px" href="javascript:void(0)"> -->
-            <!-- <FolderShared32 fill="white"/> -->
-            <!-- <p style="color:white">
-              Run Analysis
-            </p> -->
-          <!-- </cv-side-nav-link> -->
           <cv-side-nav-link style="margin-bottom:25px" href="javascript:void(0)">
             <Police32 @click="changeUser('officer')" fill="white"/>
-            <!-- <p style="color:white">
-              Run Analysis
-            </p> -->
           </cv-side-nav-link>
 
           <cv-side-nav-link style="margin-bottom:25px" href="javascript:void(0)">
             <FolderShared32 @click="changeUser('detective')" fill="white"/>
-            <!-- <p style="color:white">
-              Run Analysis
-            </p> -->
+
           </cv-side-nav-link>
 
           <cv-side-nav-link style="margin-bottom:25px" href="javascript:void(0)">
             <ImproveRelevance32 @click="changeUser('witness')" fill="white"/>
-            <!-- <p style="color:white">
-              Run Analysis
-            </p> -->
           </cv-side-nav-link>
 
         </cv-side-nav-items>
@@ -69,53 +46,10 @@
 
 
     <!-- Bootstrap -->
-    <!-- <div class="d-flex" id="wrapper">
-      <div class="color-blue border-right" id="sidebar-wrapper">
-        <div class="sidebar-heading text-white">Police Department</div>
-        <div class="list-group list-group-flush">
-          <a href="#" class="list-group-item list-group-item-action color-blue text-white active"><i class="fa fa-home"></i>Home</a>
-          <a href="#" class="list-group-item list-group-item-action color-blue text-white"><i class="fa fa-chart-line"></i>Run analysis</a>
-          <a href="#" class="list-group-item list-group-item-action color-blue text-white"><i class="fa fa-diagnoses"></i>Other option</a>
-        </div>
-      </div>
-    </div> -->
 
     <template v-if="user_type == 'officer'">
       <h2 style="position:relative;margin-left: 100px;margin-bottom:30px">Welcome, Srgt. Jeffords</h2>
       <div style="margin-left:8%;float: center;width:90%">
-        <!-- <CvButton style="margin: 0px 10px; text-align: center" type="default" v-on:click="showModal({'name': 'show-report', 'title': 'Submit Report'})">Show Report Details</CvButton> -->
-        <!-- <h4>Last analysis run: 11/11/2020</h4> -->
-
-        <!-- HTML -->
-        <!--
-        <div class="row mb-4 ">
-      	  <div class="col-sm-4">
-      	    <div class="card error">
-      	      <div class="card-body"><i class="fa fa-2x fa-times-circle error-icon"></i>
-      	        <h5 class="card-title">(4) cases with severe inaccuracies need revision. </h5>
-      	      </div>
-      	    </div>
-      	  </div>
-      	  <div class="col-sm-4">
-      	    <div class="card warning">
-      	      <div class="card-body"><i class="fa fa-2x fa-exclamation-triangle warning-icon"></i>
-      	        <h5 class="card-title">(3) cases with warnings need revision.</h5>
-
-      	      </div>
-      	    </div>
-      	  </div>
-      	  <div class="col-sm-4">
-      	    <div class="card success" >
-      	      <div class="card-body"><i class="fa fa-2x fa-check-circle success-icon"></i>
-      	        <h5 class="card-title">Urna semper at at tellus nisl mauris molestie tortor egestas.</h5>
-
-      	      </div>
-      	    </div>
-      	  </div>
-      	</div>   -->
-
-
-  <!-- <i class="fa fa-2x fa-times-circle error-icon"></i> -->
         <b-row cols="3" class="mb-4">
           <b-col>
             <b-card
@@ -1007,24 +941,6 @@
           "age": 20,
           "city": "San Francisco"
       }];
-      // d3.select("body")
-      //       .selectAll("p")
-      //       .data(j)
-      //       .text(function (d) {
-      //           return d;
-      //       });
-
-      // d3.json(j,
-      //   function(error, data) {
-      //     if (error) throw error;
-      //
-      //     // Load the CSV data
-      //     // After the CSV has been loaded, the computed properties will automatically re-compute (root, tree, and then nodes & links…)
-      //
-      //     that.csv = data;
-      //   }
-      // );
-
     },
     methods: {
       changeUser(type) {
@@ -1199,45 +1115,6 @@
         // })
 
       },
-      /*
-      login() {
-        console.log("requesting token")
-        console.log(this.$data.input)
-        if (this.$data.input.length > 0) {
-          // localStorage.setItem('paiv_url', this.$data.input[0])
-          // localStorage.setItem('paiv_user', this.$data.input[1])
-          // localStorage.setItem('paiv_password', this.$data.input[2])
-          this.$data.url = this.$data.input[0]
-          this.$data.username = this.$data.input[1]
-          this.$data.password = this.$data.input[2]
-        }
-        var options = {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json"
-          },
-          body: JSON.stringify({
-            username: username,
-            password: password,
-            grant_type: "password"
-          })
-        }
-        console.log("token options")
-        console.log(options)
-        console.log("fetching from: " + url + "/api/tokens")
-        fetch(url + "/api/tokens", options).then((r) => {
-          r.json().then((t) => {
-            console.log("token received: " + t.token)
-            token = t.token
-            tokenRefreshTime = Date.now()
-            resolve(t.token)
-          })
-        }).catch((err) => {
-          console.log("error finding token")
-          console.log(err)
-          reject(err)
-        })
-      },*/
       showModal(config) {
         console.log("opening modal")
         console.log(Object.keys(config))
@@ -1275,40 +1152,6 @@
 
   }
 </script>
-
-<!-- TODO, finish modal -->
-<!-- <script type="text/x-template" id="modal-template">
-  <transition name="modal">
-    <div class="modal-mask">
-      <div class="modal-wrapper">
-        <div class="modal-container">
-
-          <div class="modal-header">
-            <slot name="header">
-              default header
-            </slot>
-          </div>
-
-          <div class="modal-body">
-            <slot name="body">
-              default body
-            </slot>
-          </div>
-
-          <div class="modal-footer">
-            <slot name="footer">
-              default footer
-              <button class="modal-default-button" @click="$emit('close')">
-                OK
-              </button>
-            </slot>
-          </div>
-        </div>
-      </div>
-    </div>
-  </transition>
-</script> -->
-
 
 <style>
   #app {
