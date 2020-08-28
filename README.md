@@ -63,13 +63,6 @@ A Content Management application for capturing statements from first-hand indivi
 * [IBM Cloud Object Storage](https://cloud.ibm.com/docs/cloud-object-storage?topic=cloud-object-storage-getting-started-cloud-object-storage): (lite tier) stores encrypted and dispersed data. Documents(incident reports, videos, audios) are  IBM Cloud Object Storage.
 * [FFmpeg](https://ffmpeg.org/): an open source, cross-platform solution to record, converrt and stream audio and videos. This was used to transcribe the audio portion of a video.
 * Machine Learning - K-Means Clustering
-<<<<<<< HEAD
-* The database is Cloudant (lite Tier) running on the IBM Cloud.
-* The storage for documents(incident reports, videos, audios) is IBM Cloud Object Storage. A free tier is available.
-* Blockchain: This was used to ensure that the submitted reports and information from victims and witnesses are tamper-proof. You can run the application without it.
-=======
-
->>>>>>> dd136d308f2092abbbeda355e5adfde13869cde1
 
 The diagram describes the application flow
 
@@ -131,11 +124,32 @@ The Operational Model
 - Register for an [IBM Cloud](https://www.ibm.com/account/reg/us-en/signup?formid=urx-42793&eventid=cfc-2020?cm_mmc=OSocial_Blog-_-Audience+Developer_Developer+Conversation-_-WW_WW-_-cfc-2020-ghub-starterkit-cooperation_ov75914&cm_mmca1=000039JL&cm_mmca2=10008917) account.
 - Install and configure [IBM Cloud CLI](https://cloud.ibm.com/docs/cli?topic=cloud-cli-getting-started#overview).
 
-- Clone the [repository](https://github.com/embrace-call-for-code/psos).
+
 
 ## Steps
 
-### Provision Cloud Services
+
+1. [Clone the repo](#1-clone-the-repo)
+
+2. [Provision Cloud Services](#2-provision-cloud-services)
+
+3. [Provision Blockchain Ledger](#3-provision-blockchain-ledger)
+
+4. [Start web application](#4-start-web-application)
+
+5. [Start and configure the Blockchain application](#5-start-and-configure-the-blockchain-application)
+
+
+#1. Clone the repo
+
+- Clone the [repository](https://github.com/embrace-call-for-code/lions-of-justice).
+Clone the [repository](https://github.com/embrace-call-for-code/lions-of-justice) locally. In a terminal, run:
+
+```bash
+$ git clone https://github.com/embrace-call-for-code/lions-of-justice
+```
+
+#2. Provision Cloud Services
 Create a Speech to Text service [here](https://cloud.ibm.com/catalog/services/speech-to-text). Once the service is created, place your credentials in the `backend/STT-Audio/.env` file like so.
 
 ```
@@ -145,7 +159,7 @@ SPEECH_TO_TEXT_URL=<>
 
 Create an Object Storage service [here](https://cloud.ibm.com/catalog/services/cloud-object-storage)
 
-### Provision Blockchain Ledger
+#3. Provision Blockchain Ledger
 
 After setting up the Object Storage and Speech to Text services, we'll need to then deploy a blockchain ledger. This ledger will keep track of all digital assets
 
@@ -160,14 +174,17 @@ If you will be hosting this application in the cloud, you'll also need to deploy
 
 Once the Kubernetes cluster has been provisioned, next create a [IBM Blockchain Platform](https://cloud.ibm.com/catalog/services/blockchain-platform) service.
 
+
+#4. Start web application
+
 Then, configure the IBM Blockchain Platform as documented [here](https://github.com/kkbankol-ibm/Blockchain-for-maintaining-Digital-Assets?organization=kkbankol-ibm&organization=kkbankol-ibm#5-build-a-network)
 
-### Start web application
 *Local Deployment*
 ```
 git clone https://github.ibm.com/kkbankol/embrace-lions-for-justice
 cd embrace-lions-for-justice
 ```
+
 
 Start frontend web app
 ```
@@ -182,8 +199,19 @@ cd backend
 npm start
 ```
 
-### Start Blockchain Application.
 
+#5. Start and configure the Blockchain application
+
+*Local Deployment Model*
+
+This step will start the network in a docker image, create a network channel and join a peer
+
+```
+cd backend/blockchain/local
+./startFabric.sh
+```
+
+*Using the IBM Cloud Deployment Model*
 Follow the instructions in the following pattern to start the Blockchain application
 
 ```
@@ -214,5 +242,3 @@ xxxxxx
 # 10. License
 
 This solution starter is made available under the [Apache 2 License](LICENSE).
-
->>>>>>> dd136d308f2092abbbeda355e5adfde13869cde1
