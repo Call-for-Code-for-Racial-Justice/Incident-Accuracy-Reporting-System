@@ -68,7 +68,7 @@ The diagram describes the application flow
 
 <img src="https://github.com/embrace-call-for-code/lions-of-justice/blob/master/design-assets/IARS.png" width="100%" height="100%" alt="User Interface design"  class="inline"/>
 
-The diagram below walks you through the dashboard flow
+The diagram below outlines the dashboard flow
 
 <img src="https://github.com/embrace-call-for-code/lions-of-justice/blob/master/design-assets/IARS_Dashboard_flow.png" width="100%" height="100%" alt="User Interface design"  class="inline"/>
 
@@ -80,9 +80,9 @@ Engaging personas emphasise how stories can engage and bring the personas to lif
 <img src="https://github.com/embrace-call-for-code/lions-of-justice/blob/master/design-assets/UserPersonas.png" width="100%" height="100%" alt="User Interface design"  class="inline"/>
 
 ## User journey: AS-IS Experience
-As-is Scenario Maps help us to document collective understanding of user workflows and are best used as precursors to exploring new ideas or for finding the right problem to solve.
+As-is Scenario Maps help us to document collective understanding of user workflows and are best used as precursors to exploring new ideas or for finding the right problem to solve. The AS-IS map was developed based on information gathered via user research and validated with users.
 
-<img src="https://github.com/embrace-call-for-code/lions-of-justice/blob/master/design-assets/Journeys%20as%20is.png" width="70%" height="70%" alt="User Interface design"  class="inline"/>
+<img src="https://github.com/embrace-call-for-code/lions-of-justice/blob/master/design-assets/Journeys%20as%20is.png" width="70%" height="70%" alt="AS-IS experience design"  class="inline"/>
 
 ## User journey: TO-BE Experience
 To-be Scenario Maps can help the team envision a better future for our users. We use them as we’re coming up with potential solutions to see how our ideas would fit within our user’s world, and how they might address the their needs. A To-be Scenario Map is a great artifact to put in front of stakeholders and users to align on the team’s intent.
@@ -206,11 +206,16 @@ npm start
 **Incident Accuracy Reporting System (IARS)**
 
 ### Ideas for Extending IARS Functionality
-xxxxxx
+* Internal Affair access to unofficial Complaints investigation matched with available evidence in App
+* Transparency of Police Chief action throughout a police misconduct investigation and recommendation outcome
+* Collaboration of isolated systems with Internal Affairs investigation  evidence & recommendations
+* Provide victim/witness of Police misconduct investigation outcomes and enable capability for victim to obtain reports
+
 
 ### Ideas for Extending IARS Technically
 
 - Support for multi-cloud, multi-networks: deploying the application across any cloud platform or a multi-cloud platform. This is especially important if the system may want to be run across state lines and different Cloud platforms are used.  Also if different blockchain networks are used - it makes it easier to interconnect "mixed networks". Consider deploying on top of RH OpenShift.
+- Add a ML filter to ensure accuracy of posted evidence from the public
 - Adding mobile support
 - Adding container security software: lifecycle vulnerability management for scanning containers (on RHM: Neuvector)
 
