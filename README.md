@@ -85,10 +85,17 @@ As-is Scenario Maps help us to document collective understanding of user workflo
 <img src="https://github.com/embrace-call-for-code/lions-of-justice/blob/master/design-assets/Journeys%20as%20is.png" width="70%" height="70%" alt="AS-IS experience design"  class="inline"/>
 
 ## User journey: TO-BE Experience
-To-be Scenario Maps can help the team envision a better future for our users. We use them as we’re coming up with potential solutions to see how our ideas would fit within our user’s world, and how they might address the their needs. A To-be Scenario Map is a great artifact to put in front of stakeholders and users to align on the team’s intent.
+Similarly to the AS IS journey,this journey reflects the future predicted proesses. Since this takes place in the future, we  tailor these phases based on what we'd like the user journey to look like, imagining the impact of our solution in their journey. We also did user research to reflect this journeys based on our solution.
 
 <img src="https://github.com/embrace-call-for-code/lions-of-justice/blob/master/design-assets/Journeys%20to%20be.png" width="70%" height="70%" alt="User Interface design"  class="inline"/>
 
+## Prototyping - Wireframes
+We used prototype digital user interfaces at low and mid-fidelity to quickly get feedback. We tested this wireframes with our users and iterated this wireframes to better suit them. 
+
+<img src="https://github.com/embrace-call-for-code/lions-of-justice/blob/master/design-assets/Asset%201.png" width="40%" height="40%" alt="Wireframes low definition"  class="inline"/>
+
+## Prototyping - User testing results
+<img src="https://github.com/embrace-call-for-code/lions-of-justice/blob/master/design-assets/testing%20results.png" width="40%" height="40%" alt="Wireframes low definition"  class="inline"/>
 # 5. Architecture
 
 The Component Model
