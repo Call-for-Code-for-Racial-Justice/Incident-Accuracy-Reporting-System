@@ -92,10 +92,12 @@ Similarly to the AS IS journey,this journey reflects the future predicted proess
 ## Prototyping - Wireframes
 We used prototype digital user interfaces at low and mid-fidelity to quickly get feedback. We tested this wireframes with our users and iterated this wireframes to better suit them. 
 
-<img src="https://github.com/embrace-call-for-code/lions-of-justice/blob/master/design-assets/Asset%201.png" width="40%" height="40%" alt="Wireframes low definition"  class="inline"/>
+<img src="https://github.com/embrace-call-for-code/lions-of-justice/blob/master/design-assets/Asset%201.png" width="90%" height="90%" alt="Wireframes low definition"  class="inline"/>
 
 ## Prototyping - User testing results
-<img src="https://github.com/embrace-call-for-code/lions-of-justice/blob/master/design-assets/testing%20results.png" width="40%" height="40%" alt="Wireframes low definition"  class="inline"/>
+<img src="https://github.com/embrace-call-for-code/lions-of-justice/blob/master/design-assets/testing%20results.png" width="90%" height="90%" alt="User testing results. Feedback Matrix"  class="inline"/>
+
+
 # 5. Architecture
 
 The Component Model
