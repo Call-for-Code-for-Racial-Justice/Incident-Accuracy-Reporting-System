@@ -96,7 +96,7 @@ We used prototype digital user interfaces at low and mid-fidelity to quickly get
 
 This is an example of the App at mid-fidelity. 
 
-<img src="https://github.com/embrace-call-for-code/lions-of-justice/blob/master/design-assets/Mobile%20app.png" width="100%" height="100%" alt="Wireframes low definition"  class="inline"/>
+<img src="https://github.com/embrace-call-for-code/lions-of-justice/blob/master/design-assets/Mobile%20app.png" width="60%" height="60%" alt="Wireframes low definition"  class="inline"/>
 
 ## Prototyping - User testing results
 <img src="https://github.com/embrace-call-for-code/lions-of-justice/blob/master/design-assets/testing%20results.png" width="80%" height="80%" alt="User testing results. Feedback Matrix"  class="inline"/>
