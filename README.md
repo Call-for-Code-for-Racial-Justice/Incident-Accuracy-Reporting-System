@@ -228,7 +228,7 @@ npm start
 ### Ideas for Extending IARS Technically
 
 - Support for multi-cloud, multi-networks: deploying the application across any cloud platform or a multi-cloud platform. This is especially important if the system may want to be run across state lines and different Cloud platforms are used.  Also if different blockchain networks are used - it makes it easier to interconnect "mixed networks". Consider deploying on top of RH OpenShift.
-- Add a ML filter to ensure accuracy of posted evidence from the public
+- Add a Quantitative evaluation of the k-Means clustering algorithm, in addition to the qualitative approach of this project. Other machine learning or clustering techniques can also be explored.
 - Adding mobile support
 - Adding container security software: lifecycle vulnerability management for scanning containers (on RHM: Neuvector)
 
