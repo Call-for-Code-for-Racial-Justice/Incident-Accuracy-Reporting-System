@@ -124,10 +124,7 @@ The Operational Model
 - Register for an [IBM Cloud](https://www.ibm.com/account/reg/us-en/signup?formid=urx-42793&eventid=cfc-2020?cm_mmc=OSocial_Blog-_-Audience+Developer_Developer+Conversation-_-WW_WW-_-cfc-2020-ghub-starterkit-cooperation_ov75914&cm_mmca1=000039JL&cm_mmca2=10008917) account.
 - Install and configure [IBM Cloud CLI](https://cloud.ibm.com/docs/cli?topic=cloud-cli-getting-started#overview).
 
-
-
 ## Steps
-
 
 1. [Clone the repo](#1-clone-the-repo)
 
@@ -140,51 +137,81 @@ The Operational Model
 5. [Start and configure the Blockchain application](#5-start-and-configure-the-blockchain-application)
 
 
-#1. Clone the repo
+### 1. Clone the repo
 
-- Clone the [repository](https://github.com/embrace-call-for-code/lions-of-justice).
-Clone the [repository](https://github.com/embrace-call-for-code/lions-of-justice) locally. In a terminal, run:
+Clone this [repository](https://github.com/embrace-call-for-code/lions-of-justice) locally. In a terminal, run:
 
 ```bash
-$ git clone https://github.com/embrace-call-for-code/lions-of-justice
+git clone https://github.com/embrace-call-for-code/lions-of-justice
 ```
 
-#2. Provision Cloud Services
-Create a Speech to Text service [here](https://cloud.ibm.com/catalog/services/speech-to-text). Once the service is created, place your credentials in the `backend/STT-Audio/.env` file like so.
-
+Clone blockchain asset tracking repository
+```bash
+git clone https://github.com/kkbankol-ibm/Blockchain-for-maintaining-Digital-Assets
 ```
+
+### 2. Provision Cloud Services
+Create a Speech to Text service [here](https://cloud.ibm.com/catalog/services/speech-to-text).
+
+Once the service is created, place your credentials into a file at `backend/STT-Audio/.env` file like so.
+
+```bash
 SPEECH_TO_TEXT_IAM_APIKEY=<>
 SPEECH_TO_TEXT_URL=<>
 ```
 
 Create an Object Storage service [here](https://cloud.ibm.com/catalog/services/cloud-object-storage)
+```
+```
 
-#3. Provision Blockchain Ledger
+### 3. Provision Blockchain Ledger
 
-After setting up the Object Storage and Speech to Text services, we'll need to then deploy a blockchain ledger. This ledger will keep track of all digital assets
+After provisioning the Object Storage and Speech to Text services, we'll need to then deploy a blockchain ledger. This ledger will keep track of all digital assets that have been uploaded. There are two ways to deploy a ledger, either locally or in the cloud.
 
-*Local Deployment*
+**Local Deployment**
+If you plan to run this application on your local development machine, you can simply deploy a blockchain ledger locally like so. This step will start the network in a series of docker images, create a network channel and join a peer
 ```
 cd backend/blockchain/local
 ./startFabric.sh
 ```
 
-*Cloud Deployment*
-If you will be hosting this application in the cloud, you'll also need to deploy a blockchain ledger in the cloud. To do so, provision an [IBM Cloud Kubernetes Service](https://cloud.ibm.com/kubernetes/catalog/cluster). This may take up to 20 minutes to provision.
+<!-- **Cloud Deployment**
+
+Otherwise, if you will be hosting this application in the cloud, you'll instead need to provision a IBM Blockchain Platform instance.
+
+To do so, provision an [IBM Cloud Kubernetes Service](https://cloud.ibm.com/kubernetes/catalog/cluster). This may take up to 20 minutes to provision.
 
 Once the Kubernetes cluster has been provisioned, next create a [IBM Blockchain Platform](https://cloud.ibm.com/catalog/services/blockchain-platform) service.
 
+Then, configure the IBM Blockchain Platform instance as documented in steps 5, 6, and 7 [here](https://github.com/kkbankol-ibm/Blockchain-for-maintaining-Digital-Assets?organization=kkbankol-ibm&organization=kkbankol-ibm#5-build-a-network) -->
 
-#4. Start web application
+### 4. Deploy Blockchain App
 
-Then, configure the IBM Blockchain Platform as documented [here](https://github.com/kkbankol-ibm/Blockchain-for-maintaining-Digital-Assets?organization=kkbankol-ibm&organization=kkbankol-ibm#5-build-a-network)
+Once the blockchain ledger is up and running, we'll deploy an application to track uploaded media on the ledger. This works by taking a hash of a file and storing it on the blockchain ledger. Then, the original file is placed in a Cloud Object Storage instance. If the file is tampered with in the Object Storage, it will no longer match the hash, and an alert will be generated.
 
-*Local Deployment*
 ```
-git clone https://github.ibm.com/kkbankol/embrace-lions-for-justice
+git clone https://github.com/IBM/Blockchain-for-maintaining-Digital-Assets
+```
+
+Fill out configuration file as directed [here](https://github.com/IBM/Blockchain-for-maintaining-Digital-Assets#update-application-connection-profile)
+
+<!-- **Local Deployment**
+```
+
+``` -->
+
+<!-- **Cloud Deployment**
+```
+
+``` -->
+
+
+### 4. Start web application
+
+<!-- **Local Deployment** -->
+```
 cd embrace-lions-for-justice
 ```
-
 
 Start frontend web app
 ```
@@ -197,25 +224,6 @@ Start backend
 ```
 cd backend
 npm start
-```
-
-
-#5. Start and configure the Blockchain application
-
-*Local Deployment Model*
-
-This step will start the network in a docker image, create a network channel and join a peer
-
-```
-cd backend/blockchain/local
-./startFabric.sh
-```
-
-*Using the IBM Cloud Deployment Model*
-Follow the instructions in the following pattern to start the Blockchain application
-
-```
-git clone https://github.com/IBM/Blockchain-for-maintaining-Digital-Assets
 ```
 
 # 8. IARS Recommendations for Enhancements of Capabilities
@@ -236,7 +244,7 @@ xxxxxx
 - [IBM Cloud](https://www.ibm.com/cloud)
 - [IBM Cloudant](https://cloud.ibm.com/docs/Cloudant?topic=cloudant-overview)
 - [Node.js](https://nodejs.org)
-- [IBM Blockchain Platform](https://www.ibm.com/blockchain/platform)
+<!-- - [IBM Blockchain Platform](https://www.ibm.com/blockchain/platform) -->
 
 
 # 10. License
