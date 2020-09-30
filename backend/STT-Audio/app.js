@@ -33,11 +33,7 @@ const { IamTokenManager } = require('ibm-watson/auth');
 // Bootstrap application settings
 require('./config/express')(app);
 
-const serviceUrl = process.env.SPEECH_TO_TEXT_URL;
 
-const tokenManager = new IamTokenManager({
-  apikey: process.env.SPEECH_TO_TEXT_IAM_APIKEY || '<iam_apikey>',
-});
 
 
 app.get('/', (req, res) => res.render('index'));
@@ -50,11 +46,28 @@ const SpeechToTextV1 = require('ibm-watson/speech-to-text/v1');
 const { IamAuthenticator } = require('ibm-watson/auth');
 
 
+const multer = require('multer')
+const cors = require('cors')
+app.use(cors())
+
+app.use(multer({dest:'./uploads/'}).any());
+
 // const recognizeStream = speechToText.recognizeUsingWebSocket(params);
 // fs.createReadStream(__dirname + '/resources/speech.wav').pipe(recognizeStream);
 
+if (process.env.SPEECH_TO_TEXT_URL && process.env.SPEECH_TO_TEXT_IAM_APIKEY) {
+
+}
+
+
+const serviceUrl = process.env.SPEECH_TO_TEXT_URL;
+
+const tokenManager = new IamTokenManager({
+  apikey: process.env.SPEECH_TO_TEXT_IAM_APIKEY || '<iam_apikey>',
+});
+
 const auth = new IamAuthenticator({
-  apikey: process.env.SPEECH_TO_TEXT_IAM_APIKEY,
+  apikey: process.env.SPEECH_TO_TEXT_IAM_APIKEY || '<iam_apikey>',
   // httpsAgent, // not necessary if using Basic or BearerToken authentication
   proxy: false,
 })
@@ -63,7 +76,7 @@ const speechToText = new SpeechToTextV1({
   // See: https://github.com/watson-developer-cloud/node-sdk#authentication
   authenticator: auth,
   url: process.env.SPEECH_TO_TEXT_URL,
-  apikey: process.env.SPEECH_TO_TEXT_IAM_APIKEY
+  apikey: process.env.SPEECH_TO_TEXT_IAM_APIKEY || '<iam_apikey>'
 });
 
 const params = {
@@ -71,48 +84,47 @@ const params = {
   objectMode: true,
 };
 
-const multer = require('multer')
-const cors = require('cors')
-app.use(cors())
-
-app.use(multer({dest:'./uploads/'}).any());
-
-
-
-
-  var genParams = function (extension, transcribed_file, converted_video_file) {
-    if (extension == ".mp4") {
-        convert(transcribed_file, converted_video_file, function(err){
-        //convert(transcribed_file, __dirname + '/' + 'tmpdir' + '/' + 'stripped_audio.mp3', function(err){
-        if(!err) {
-          console.log('conversion complete');
-          transcribed_file = converted_video_file;
-          // run file through Speech to text API and send back the transcript
-          const recognizeParams = {
-            audio: fs.createReadStream(converted_video_file),
-            contentType: 'application/octet-stream',
-          }
-          return recognizeParams
+var genParams = function (extension, transcribed_file, converted_video_file) {
+  if (extension == ".mp4") {
+      convert(transcribed_file, converted_video_file, function(err){
+      //convert(transcribed_file, __dirname + '/' + 'tmpdir' + '/' + 'stripped_audio.mp3', function(err){
+      if(!err) {
+        console.log('conversion complete');
+        transcribed_file = converted_video_file;
+        // run file through Speech to text API and send back the transcript
+        const recognizeParams = {
+          audio: fs.createReadStream(converted_video_file),
+          contentType: 'application/octet-stream',
         }
-        else {
-          console.log('conversion error')
-        }
-      });
-    } else {
-      // run file through Speech to text API and send back the transcript
-      const recognizeParams = {
-        audio: fs.createReadStream(transcribed_file),
-        contentType: 'application/octet-stream',
+        return recognizeParams
       }
-      return recognizeParams
+      else {
+        console.log('conversion error')
+      }
+    });
+  } else {
+    // run file through Speech to text API and send back the transcript
+    const recognizeParams = {
+      audio: fs.createReadStream(transcribed_file),
+      contentType: 'application/octet-stream',
     }
+    return recognizeParams
   }
+}
+
 
 app.post('/transcribe', (req, res) => {
   let files = req.files
   let allResults = []
+  // let languageModel = req.body.model || "en-US_BroadbandModel"
+  console.log(req.headers)
+  if (Object.keys(req.headers).includes('X-Language')) {
+    var languageModel = req.headers['X-Language']
+  } else {
+    var languageModel = "en-US_BroadbandModel"
+  }
+  console.log(`transcribing using model ${languageModel}`)
   files.map( (file, idx) => {
-
     // check if file is a video - if so we need to run it through tool to convert to .mp3
     let extension = path.extname(file.originalname);
     let basename = path.basename(file.originalname);
@@ -129,6 +141,7 @@ app.post('/transcribe', (req, res) => {
           const recognizeParams = {
             audio: fs.createReadStream(converted_video_file),
             contentType: 'application/octet-stream',
+            model: languageModel
           }
           speechToText.recognize(recognizeParams)
             .then(speechRecognitionResults => {

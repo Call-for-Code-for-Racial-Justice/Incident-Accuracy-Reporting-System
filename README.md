@@ -62,13 +62,13 @@ A Content Management application for capturing statements from first-hand indivi
 * [Blockchain](https://hyperledger-fabric.readthedocs.io/en/release-1.4/): Based on the open-soure enterprise grade permissioned disributed ledger; Hyperledger Fabric. The blockchain network is an immutable transaction ledger. This was used to ensure that the submitted reports and information from victims and witnesses are tamper-proof. Each stored document has a hash tag that is stored in the Blockchain. You can run the application without it.
 * [IBM Cloud Object Storage](https://cloud.ibm.com/docs/cloud-object-storage?topic=cloud-object-storage-getting-started-cloud-object-storage): (lite tier) stores encrypted and dispersed data. Documents(incident reports, videos, audios) are  IBM Cloud Object Storage.
 * [FFmpeg](https://ffmpeg.org/): an open source, cross-platform solution to record, converrt and stream audio and videos. This was used to transcribe the audio portion of a video.
-* Machine Learning - K-Means Clustering
+* Machine Learning - The application uses unsupervised k-Means Clustering. Features were first extracted from the various statements submitted by witnesses using the term-frequency inverse-document-frequency (TFIDF) technique before applying the clustering algorithm for consistency check.
 
 The diagram describes the application flow
 
 <img src="https://github.com/embrace-call-for-code/lions-of-justice/blob/master/design-assets/IARS.png" width="100%" height="100%" alt="User Interface design"  class="inline"/>
 
-The diagram below walks you through the dashboard flow
+The diagram below outlines the dashboard flow
 
 <img src="https://github.com/embrace-call-for-code/lions-of-justice/blob/master/design-assets/IARS_Dashboard_flow.png" width="100%" height="100%" alt="User Interface design"  class="inline"/>
 
@@ -80,14 +80,27 @@ Engaging personas emphasise how stories can engage and bring the personas to lif
 <img src="https://github.com/embrace-call-for-code/lions-of-justice/blob/master/design-assets/UserPersonas.png" width="100%" height="100%" alt="User Interface design"  class="inline"/>
 
 ## User journey: AS-IS Experience
-As-is Scenario Maps help us to document collective understanding of user workflows and are best used as precursors to exploring new ideas or for finding the right problem to solve.
+As-is Scenario Maps help us to document collective understanding of user workflows and are best used as precursors to exploring new ideas or for finding the right problem to solve. The AS-IS map was developed based on information gathered via user research and validated with users.
 
-<img src="https://github.com/embrace-call-for-code/lions-of-justice/blob/master/design-assets/Journeys%20as%20is.png" width="70%" height="70%" alt="User Interface design"  class="inline"/>
+<img src="https://github.com/embrace-call-for-code/lions-of-justice/blob/master/design-assets/Journeys%20as%20is.png" width="70%" height="70%" alt="AS-IS experience design"  class="inline"/>
 
 ## User journey: TO-BE Experience
-To-be Scenario Maps can help the team envision a better future for our users. We use them as we’re coming up with potential solutions to see how our ideas would fit within our user’s world, and how they might address the their needs. A To-be Scenario Map is a great artifact to put in front of stakeholders and users to align on the team’s intent.
+Similarly to the AS IS journey,this journey reflects the future predicted proesses. Since this takes place in the future, we  tailor these phases based on what we'd like the user journey to look like, imagining the impact of our solution in their journey. We also did user research to reflect this journeys based on our solution.
 
 <img src="https://github.com/embrace-call-for-code/lions-of-justice/blob/master/design-assets/Journeys%20to%20be.png" width="70%" height="70%" alt="User Interface design"  class="inline"/>
+
+## Prototyping - Wireframes
+We used prototype digital user interfaces at low and mid-fidelity to quickly get feedback. We tested this wireframes with our users and iterated this wireframes to better suit them. This in an example of the Police officer Dashboard at low-fidelity.
+
+<img src="https://github.com/embrace-call-for-code/lions-of-justice/blob/master/design-assets/Asset%201.png" width="100%" height="100%" alt="Wireframes low definition"  class="inline"/>
+
+This is an example of the App at mid-fidelity.
+
+<img src="https://github.com/embrace-call-for-code/lions-of-justice/blob/master/design-assets/MobileApp.png" width="50%" height="50%" alt="Wireframes low definition"  class="inline"/>
+
+## Prototyping - User testing results
+<img src="https://github.com/embrace-call-for-code/lions-of-justice/blob/master/design-assets/testing%20results.png" width="80%" height="80%" alt="User testing results. Feedback Matrix"  class="inline"/>
+
 
 # 5. Architecture
 
@@ -133,8 +146,6 @@ The Operational Model
 3. [Provision Blockchain Ledger](#3-provision-blockchain-ledger)
 
 4. [Start web application](#4-start-web-application)
-
-5. [Start and configure the Blockchain application](#5-start-and-configure-the-blockchain-application)
 
 
 ### 1. Clone the repo
@@ -206,7 +217,7 @@ Fill out configuration file as directed [here](https://github.com/IBM/Blockchain
 ``` -->
 
 
-### 4. Start web application
+### 5. Start web application
 
 <!-- **Local Deployment** -->
 ```
@@ -231,11 +242,16 @@ npm start
 **Incident Accuracy Reporting System (IARS)**
 
 ### Ideas for Extending IARS Functionality
-xxxxxx
+* Internal Affair access to unofficial Complaints investigation matched with available evidence in App
+* Transparency of Police Chief action throughout a police misconduct investigation and recommendation outcome
+* Collaboration of isolated systems with Internal Affairs investigation  evidence & recommendations
+* Provide victim/witness of Police misconduct investigation outcomes and enable capability for victim to obtain reports
+
 
 ### Ideas for Extending IARS Technically
 
 - Support for multi-cloud, multi-networks: deploying the application across any cloud platform or a multi-cloud platform. This is especially important if the system may want to be run across state lines and different Cloud platforms are used.  Also if different blockchain networks are used - it makes it easier to interconnect "mixed networks". Consider deploying on top of RH OpenShift.
+- Add a Quantitative evaluation of the k-Means clustering algorithm, in addition to the qualitative approach of this project. Other machine learning or clustering techniques can also be explored.
 - Adding mobile support
 - Adding container security software: lifecycle vulnerability management for scanning containers (on RHM: Neuvector)
 

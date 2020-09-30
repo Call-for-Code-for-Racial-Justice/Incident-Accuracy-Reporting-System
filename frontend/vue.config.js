@@ -23,7 +23,10 @@ module.exports = {
         { from: /\/login/, to: '/login.html' },
         // { from: /\/witness/, to: '/' },
       ]
-    }
+    },
+    disableHostCheck: true,
+    host: '0.0.0.0',
+    port: 8080    
   },
   chainWebpack: config => {
     config.module

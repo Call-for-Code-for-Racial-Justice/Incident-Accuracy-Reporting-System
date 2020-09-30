@@ -168,10 +168,21 @@
                </template>
 
                <cv-data-table-cell><input type="text" :value="row['number']" style="border: none; background: none; width: 100%;"/></cv-data-table-cell>
-               <cv-data-table-cell><input type="text" :value="row['name']" style="border: none; background: none; width: 100%;"/></cv-data-table-cell>
-               <cv-data-table-cell><input type="text" :value="row['date']" style="border: none; background: none; width: 100%;"/></cv-data-table-cell>
-               <cv-data-table-cell><input type="text" :value="row['report_type']" style="border: none; background: none; width: 100%;"/></cv-data-table-cell>
-               <cv-data-table-cell><input type="text" :value="row['location']" style="border: none; background: none; width: 100%;"/></cv-data-table-cell>
+               <cv-data-table-cell><input type="text" :value="row['case_officer']" style="border: none; background: none; width: 100%;"/></cv-data-table-cell>
+               <cv-data-table-cell><input type="text" :value="row['case_date']" style="border: none; background: none; width: 100%;"/></cv-data-table-cell>
+               <cv-data-table-cell><input type="text" :value="row['incident_type']" style="border: none; background: none; width: 100%;"/></cv-data-table-cell>
+               <cv-data-table-cell>
+
+                 <input type="text" :value="row['location']" style="border: none; background: none; width: 100%;"/>
+                 <!-- <template v-if="Object.keys(row).includes('location')">
+                   <input type="text" :value="row['location']" style="border: none; background: none; width: 100%;"/>
+                 </template>
+                 <template v-else-if="Object.keys(row).includes('location')">
+                   <input type="text" :value="row['location']" style="border: none; background: none; width: 100%;"/>
+                 </template> -->
+
+               </cv-data-table-cell>
+               <!--  incident_address incident_city incident_state -->
                <cv-data-table-cell>
                  <CvButton style="margin: 0px 10px; text-align: center" type="default" v-on:click="selected_report = row ; showModal({'name': 'show-report', 'title': 'Show Report', 'report': row})">Show Report Details</CvButton>
                  <!-- <input type="text" style="border: none; background: none; width: 100%;" value="View Report Details" /> -->
@@ -221,7 +232,7 @@
               title="">
               <CloseFilled32 style="float:left" fill="red"/>
               <b-card-text class="card-title">
-                 (4) cases with severe inaccuracies need revision.
+                 (3) cases with severe inaccuracies need revision.
               </b-card-text>
             </b-card>
           </b-col>
@@ -232,7 +243,7 @@
               title="">
               <WarningFilled32 style="float:left" fill="#D68700"/>
               <b-card-text class="card-title">
-                (4) cases with severe inaccuracies need revision.
+                (6) cases with minor inaccuracies need revision.
               </b-card-text>
             </b-card>
           </b-col>
@@ -243,7 +254,7 @@
               title="">
               <CheckmarkFilled32 style="float:left" fill="green" />
               <b-card-text class="card-title">
-                (4) cases with severe inaccuracies need revision.
+                (4) cases do not need any revision.
               </b-card-text>
             </b-card>
           </b-col>
@@ -271,9 +282,9 @@
                </template>
 
                <cv-data-table-cell><input type="text" :value="row['number']" style="border: none; background: none; width: 100%;"/></cv-data-table-cell>
-               <cv-data-table-cell><input type="text" :value="row['name']" style="border: none; background: none; width: 100%;"/></cv-data-table-cell>
-               <cv-data-table-cell><input type="text" :value="row['date']" style="border: none; background: none; width: 100%;"/></cv-data-table-cell>
-               <cv-data-table-cell><input type="text" :value="row['report_type']" style="border: none; background: none; width: 100%;"/></cv-data-table-cell>
+               <cv-data-table-cell><input type="text" :value="row['case_officer']" style="border: none; background: none; width: 100%;"/></cv-data-table-cell>
+               <cv-data-table-cell><input type="text" :value="row['case_date']" style="border: none; background: none; width: 100%;"/></cv-data-table-cell>
+               <cv-data-table-cell><input type="text" :value="row['incident_type']" style="border: none; background: none; width: 100%;"/></cv-data-table-cell>
                <cv-data-table-cell><input type="text" :value="row['location']" style="border: none; background: none; width: 100%;"/></cv-data-table-cell>
                <cv-data-table-cell>
                  <CvButton style="margin: 0px 10px; text-align: center" type="default" v-on:click="selected_report = row ; showModal({'name': 'show-report', 'title': 'Show Report', 'report': row})">Show Report Details</CvButton>
@@ -352,7 +363,7 @@
               </b-row>
               <b-row class="mt-1">
                 <b-col>
-                  <cv-time-picker v-model="case_location">
+                  <cv-time-picker v-model="case_time">
                   </cv-time-picker>
                 </b-col>
               </b-row>
@@ -363,6 +374,20 @@
                     v-model="incident_description"
                     placeholder="Incident Description">
                   </cv-text-area>
+                </b-col>
+              </b-row>
+
+              <b-row class="mt-1">
+                <b-col>
+                  <cv-select label="Audio Language" v-model="language">
+                    <cv-select-option selected value="en-US_BroadbandModel">English</cv-select-option>
+                    <cv-select-option value="es-ES_BroadbandModel">Spanish</cv-select-option>
+                    <cv-select-option value="fr-CA_BroadbandModel">French</cv-select-option>
+                    <cv-select-option value="it-IT_BroadbandModel">Italian</cv-select-option>
+                    <cv-select-option value="ja-JP_BroadbandModel">Japanese</cv-select-option>
+                    <cv-select-option value="ja-JP_BroadbandModel">Japanese</cv-select-option>
+                    <cv-select-option value="ko-KR_BroadbandModel">Korean</cv-select-option>
+                  </cv-select>
                 </b-col>
               </b-row>
 
@@ -434,8 +459,11 @@
           </div>
     </template>
 
-    <modal name="report-submitted" :scrollable="true" width="60%" height="auto" style="margin-top:50px">
-      <h5>Report Submitted</h5>
+    <modal name="report-submitted" width="60%" height="200px" style="margin-top:50px">
+      <div style="text-align:center;margin-top:15px">
+        <h2 >Witness Report Submitted</h2>
+      </div>
+      <b-button style="position: absolute;bottom:5px;right:10px;" @click="hideModal('report-submitted')" class="ml-2">Close</b-button>
     </modal>
 
     <modal name="show-report" :scrollable="true" width="60%" height="auto" style="margin-top:50px">
@@ -574,7 +602,10 @@
       <h5>Evidence</h5>
 
       <template v-if="(Object.keys(selected_report).includes('evidence')) && (selected_report.evidence.length > 0)">
-        {{selected_report.evidence.join(',')}}
+        <div v-for="evidence in selected_report.evidence">
+          {{e}}
+        </div>
+        <!-- {{selected_report.evidence.join(',')}} -->
       </template>
 
       <hr style="width:80%;border: 1px solid rgb(214,162,66)">
@@ -689,6 +720,7 @@
           "Attached Groups",
           "Status"
         ],
+        language: "",
         basicPagination: false,
         use_htmlData: true,
         user_type: "officer",
@@ -699,6 +731,7 @@
         incident_state: "",
         incident_zip: "",
         case_date: "",
+        case_time: "",
         case_location: "",
         case_number: "",
         case_officer: "",
@@ -776,9 +809,9 @@
         sources: ['Officers body cams recordings', "Witness interviews audio recordings", "Witness interviews audio recordings"],
         report_columns: ['Status','Report Number', 'Officer', 'Date', 'Report Type', 'Location'],
         bootstrap_reports: [
-          {status: "error", number: 1124124, name: "Mark", date: "12/12/2020", "report type": "", "location": "SF", evidence: []},
-          {status: "warning", number: 1124124, name: "Mark", date: "12/12/2020", "report type": "", "location": "SF", evidence: []},
-          {status: "success", number: 1124124, name: "Mark", date: "12/12/2020", "report type": "", "location": "SF", evidence: []}
+          {status: "error", incident_type: "Harrassment", number: 9122134, case_officer: "Mark", case_date: "12/12/2020", "report type": "", "location": "SF", evidence: []},
+          {status: "warning", incident_type: "Harrassment", number: 1325124, case_officer: "Mark", case_date: "12/12/2020", "report type": "", "location": "SF", evidence: []},
+          {status: "success", incident_type: "Negligence", number: 3124524, case_officer: "Mark", case_date: "12/12/2020", "report type": "", "location": "SF", evidence: []}
         ],
         reports: [
          ["1124124", "Mark", "12/12/2020", "Dui praesent eu", "Dui praesent eu"],
@@ -949,17 +982,25 @@
       uploadFile(file) {
         return new Promise( (resolve, reject) => {
           const form = new FormData();
+          const headers = new Headers();
+          if (this.$data.language) {
+            headers.append('X-Language', this.$data.language)
+          }
           form.append('file', file);
           let that = this
           let options = {
             method: "POST",
-            body: form
+            body: form,
+            headers: headers
           }
+
           var reportsIdx = that.$data.bootstrap_reports.length //- 1
 
           // if file.type.includes()
           // Send to STT if audio
+          // if ()
           fetch("http://localhost:3000/transcribe", options).then((r) => {
+
             console.log(r)
             r.json().then( (tResult) => {
               console.log(tResult)
@@ -978,7 +1019,6 @@
                   console.log("no result received")
                 }
               })
-
             }).catch(err => console.log(`error parsing json ${err}`))
           }).catch(err => console.log(`error posting file ${err}`))
           // /*
@@ -1005,7 +1045,6 @@
               console.log("file posted to json")
               r.json().then((payload) => {
                 console.log(payload)
-                // return(payload)
                 resolve(payload)
               }).catch(err => console.log(`error parsing json ${err}`))
             }).catch(err => console.log(`error posting file ${err}`))
@@ -1015,6 +1054,7 @@
       submitReport() {
         //
         let reportNumber = Math.floor(Math.random() * Math.floor(999999))
+        this.showModal({'name': 'report-submitted'})
         // {status: "error", number: 1124124, name: "Mark", date: "12/12/2020", "report type": "", "location": "SF"},
         let files = this.$refs.fileUploader.internalFiles
         files.map((file, idx) => {
@@ -1022,15 +1062,23 @@
           console.log(result)
           if (idx == (files.length - 1)) {
             var fileIds = []
+            var incident_address = this.$data.incident_address
+            var incident_city = this.$data.incident_city
+            var incident_state = this.$data.incident_state
+            var incident_zip = this.$data.incident_zip
+
+            var location = `${incident_address}, ${incident_city}, ${incident_state} ${incident_zip}`
             this.$data.bootstrap_reports.push({
               number: reportNumber,
               incident_type: this.$data.incident_type,
               case_number: this.$data.case_number,
-              date: this.$data.case_date,
-              badge_number: this.$data.badge_number,
-              name: "Mark",
+              case_date: this.$data.case_date,
+              case_time: this.$data.case_time,
+              // badge_number: this.$data.badge_number,
+              // name: "Mark",
+              case_officer: this.$data.case_officer,
               status: "pending_review",
-              location: this.$data.case_location,
+              location: location,
               incident_description: this.$data.incident_description,
               incident_address: this.$data.incident_address
             })
