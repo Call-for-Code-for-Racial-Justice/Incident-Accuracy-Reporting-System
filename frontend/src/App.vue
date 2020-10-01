@@ -998,7 +998,6 @@
 
           // if file.type.includes()
           // Send to STT if audio
-          // if ()
           fetch("http://localhost:3000/transcribe", options).then((r) => {
 
             console.log(r)
