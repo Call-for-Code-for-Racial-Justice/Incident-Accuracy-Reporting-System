@@ -57,11 +57,11 @@ A Content Management application for capturing statements from first-hand indivi
 ### Included Technology Components
 
 * Web Application: built using the Vue.js frontend framework. This can be run locally or on IBM Cloud. The web application provides the dashboard and is at the core of the solution.
-* [Watson Speech To Text](https://www.ibm.com/cloud/watson-speech-to-text):  This is a IBM Cloud service that converts human voice into written text. This application uses it to create written transcripts from audio recordings loaded by witnesses and victims.
+* [Watson Speech To Text](https://www.ibm.com/cloud/watson-speech-to-text):  This is an IBM Cloud service that converts human voice into written text. This application uses it to create written transcripts from audio recordings loaded by witnesses and victims.
 * [Cloudant](https://www.ibm.com/cloud/cloudant):  (lite Tier) is a distributed, document-oriented NoSQL database that is running on the IBM Cloud.
 * [Blockchain](https://hyperledger-fabric.readthedocs.io/en/release-1.4/): Based on the open-soure enterprise grade permissioned disributed ledger; Hyperledger Fabric. The blockchain network is an immutable transaction ledger. This was used to ensure that the submitted reports and information from victims and witnesses are tamper-proof. Each stored document has a hash tag that is stored in the Blockchain. You can run the application without it.
-* [IBM Cloud Object Storage](https://cloud.ibm.com/docs/cloud-object-storage?topic=cloud-object-storage-getting-started-cloud-object-storage): (lite tier) stores encrypted and dispersed data. Documents(incident reports, videos, audios) are  IBM Cloud Object Storage.
-* [FFmpeg](https://ffmpeg.org/): an open source, cross-platform solution to record, converrt and stream audio and videos. This was used to transcribe the audio portion of a video.
+* [IBM Cloud Object Storage](https://cloud.ibm.com/docs/cloud-object-storage?topic=cloud-object-storage-getting-started-cloud-object-storage): (lite tier) stores encrypted and dispersed data. Documents(incident reports, videos, audios) are saved on IBM Cloud Object Storage.
+* [FFmpeg](https://ffmpeg.org/): an open source, cross-platform solution to record, convert and stream audio and videos. This was used to transcribe the audio portion of a video.
 * Machine Learning - The application uses unsupervised k-Means Clustering. Features were first extracted from the various statements submitted by witnesses using the term-frequency inverse-document-frequency (TFIDF) technique before applying the clustering algorithm for consistency check.
 
 The diagram describes the application flow
@@ -70,7 +70,7 @@ The diagram describes the application flow
 
 The diagram below outlines the dashboard flow
 
-<img src="https://github.com/embrace-call-for-code/lions-of-justice/blob/master/design-assets/IARS_Dashboard_flow.png" width="100%" height="100%" alt="User Interface design"  class="inline"/>
+<img src="https://github.com/embrace-call-for-code/lions-of-justice/blob/master/design-assets/IARS_Dashboard.png" width="100%" height="100%" alt="User Interface design"  class="inline"/>
 
 # 4. Design
 
