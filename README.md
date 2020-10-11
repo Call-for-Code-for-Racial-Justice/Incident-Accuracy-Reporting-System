@@ -51,7 +51,7 @@ This solution starter was created by technologists from IBM.
 ## 1. Overview
 
 ### What is the problem?
-We currently live in an environment where we are finding more instances where law enforcement agencies are racially biased and are conducting unlawful practices and policies (e.g. "dirty policing"). The practices and policies are shaping the methodology by which data is created which increases inaccurate, skewed or systemaically biased information.  The lack of transparent and accurate data available to assess police behavioral infractions means, police reports can be falsified and covered up.
+We currently live in an environment where we are finding more instances where law enforcement agencies are racially biased and are conducting unlawful practices and policies (e.g. "dirty policing"). The practices and policies are shaping the methodology by which data is created which increases inaccurate, skewed or systemically biased information.  The lack of transparent and accurate data available to assess police behavioral infractions means, police reports can be falsified and covered up.
 
 ### How can technology help?
 
@@ -64,7 +64,7 @@ The intersection of IBM Watson APIs and Hyperledger Blockchain technology enable
 
 The lack of faith in our policing system has citizens looking for justice and a need to regain faith in those who are paid to protect us.
 
-With the Incident Accuracy Reporting System, law enforcement can once again build that faith by creating a platform where all those involved or witnesses can provide relavant documentation about an incident.
+With the Incident Accuracy Reporting System, law enforcement can once again build that faith by creating a platform where all those involved or witnesses can provide relevant documentation about an incident.
 
 Specifically, the platform is a content management application for capturing statements, videos, and audio feeds from first-hand individuals relating to police incident reports.  It provides a(n):
 
@@ -107,7 +107,7 @@ Content Management application backed by artificial intelligence and a distribut
 
 * [Watson Speech To Text](https://www.ibm.com/cloud/watson-speech-to-text):  This is an IBM Cloud service that converts human voice into written text. This application uses it to create written transcripts from audio recordings loaded by witnesses and victims.
 
-* [Watson Language Translator](https://cloud.ibm.com/apidocs/language-translator): Tranlates text from one language to another
+* [Watson Language Translator](https://cloud.ibm.com/apidocs/language-translator): Translates text from one language to another
 
 * [Cloudant](https://www.ibm.com/cloud/cloudant):  (lite Tier) is a distributed, document-oriented NoSQL database that is running on the IBM Cloud.
 
@@ -120,7 +120,7 @@ Content Management application backed by artificial intelligence and a distribut
 
 * [FFmpeg](https://ffmpeg.org/): an open source, cross-platform solution to record, convert and stream audio and videos. This was used to transcribe the audio portion of a video.
 
-* [Blockchain](https://hyperledger-fabric.readthedocs.io/en/release-1.4/): Based on the open-soure enterprise grade permissioned disributed ledger; Hyperledger Fabric. The blockchain network is an immutable transaction ledger. This was used to ensure that the submitted reports and information from victims and witnesses are tamper-proof. Each stored document has a hash tag that is stored in the Blockchain. You can run the application without it.
+* [Blockchain](https://hyperledger-fabric.readthedocs.io/en/release-1.4/): Based on the open-soure enterprise grade permissioned distributed ledger; Hyperledger Fabric. The blockchain network is an immutable transaction ledger. This was used to ensure that the submitted reports and information from victims and witnesses are tamper-proof. Each stored document has a hash tag that is stored in the Blockchain. You can run the application without it.
 
 
 ### Technology Concepts
