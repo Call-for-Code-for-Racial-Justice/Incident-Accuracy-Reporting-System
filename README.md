@@ -9,31 +9,31 @@ This solution starter was created by technologists from IBM.
 ## Authors
 
 
-* Abiola Asojo
+* [Abiola Asojo](https://www.linkedin.com/in/abiola-asojo/)
 
-* Kalonji Bankole
+* [Kalonji Bankole](https://developer.ibm.com/profiles/kkbankol/)
 
-* Danny Belitz
+* [Danny Belitz](https://www.linkedin.com/in/dannybelitz/)
 
-* Laura Bennett
+* [Laura Bennett](https://www.linkedin.com/in/lbenn/)
 
-* Brandon Kravitz
+* [Brandon Kravitz](https://www.linkedin.com/in/brandon-k-06570945/)
 
-* Monica Martinez
+* [Monica Martinez](https://www.linkedin.com/in/monica-martinez-22b4662/)
 
-* Tunde Olokodana
+* [Tunde Olokodana](https://www.linkedin.com/in/tunde-olokode-b6ba093a/)
 
-* Osai Osaigbovo
+* [Osai Osaigbovo](https://www.linkedin.com/in/osai-osaigbovo-0153213/)
 
-* Lucia Ramos
+* [Lucia Ramos](https://www.linkedin.com/in/silvia-lucia-ramos-quispe-b96307ba/)
 
-* Debra Scott
+* [Debra Scott](https://www.linkedin.com/in/debra-scott-aa358410/)
 
-* Shalisha Witherspoon
+* [Shalisha Witherspoon](https://www.linkedin.com/in/shalisha-witherspoon-792a65b8/)
 
-* Shonda Witherspoon
+* [Shonda Witherspoon](https://www.linkedin.com/in/shonda-witherspoon-417a67b8/)
 
-* Special Thanks Cedric Cook, Calvin Lawrence, Joseph Kozhaya
+* Special Thanks [Cedric Cook](https://www.linkedin.com/in/cedriccook/), [Calvin Lawrence](https://www.linkedin.com/in/lawrencecalvin/), [Joseph Kozhaya](https://www.linkedin.com/in/joe-kozhaya-b574b533/)
 
 
 ## Contents
