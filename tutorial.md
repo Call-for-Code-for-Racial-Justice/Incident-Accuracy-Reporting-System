@@ -7,10 +7,30 @@ title: 		#Required=true - Title of the content. In general, use task-oriented ph
 subtitle: 		#Required=true - Subtitle of the content. Use fewer than 140 characters, including spaces. Make it tweetable. Include product and service names here. For component hub pages, this should be a short phrase that defines the component.
 meta_title: 		#Required=false - This is the title used for SEO purposes. Front-load with SEO keywords. If none is specified, the title is used.
 authors: 		#Required=false - List the authors who contributed to writing the content. The author listed first is the primary author, who is responsible for maintaining the content. If no authors are specified, the author defaults to "IBM Developer Staff".
-  - name: 		#Required=true
-    email: 		#Required=true
-  - name: 		#Required=true
-    email: 		#Required=true
+  - name: 		Laura Bennett
+    email: 		lbenn@us.ibm.com
+  - name: 		Abiola Asojo
+    email: 		Abiola.Asojo@ibm.com
+  - name: 		Kalonji Bankole
+    email: 		kkbankol@us.ibm.com
+  - name: 		Danny Belitz
+    email: 		Danny.Belitz-CIC.Netherlands@ibm.com
+  - name: 		Brandon Kravitz
+    email: 		Brandon.Kravitz@ibm.com
+  - name: 		Monica Martinez
+    email: 		martimon@us.ibm.com
+  - name: 		Tunde Olokodana
+    email: 		Tunde.Olokodana@ibm.com
+  - name: 		Osai Osaigbovo
+    email: 		ooosaigb@us.ibm.com
+  - name: 		Lucia Ramos
+    email: 		Silvia.Ramos@ibm.com
+  - name: 		Debra Scott
+    email: 		scottdc@us.ibm.com
+  - name: 		Shalisha Witherspoon
+    email: 		Shalisha.Witherspoon@ibm.com
+  - name: 		Shonda Witherspoon
+    email: 		Shonda.Adena.Witherspoon@ibm.com
 
 completed_date: 		#Required=true - This date is when the content was originally published. The date format is YYYY-MM-DD.
 last_updated: 		#Required=false - This date is when the content was significantly updated. The date format is YYYY-MM-DD.
@@ -23,7 +43,7 @@ meta_keywords: 		#Required=false - This is a set of keywords used for SEO purpos
 primary_tag: 		#Required=true - Select the 1 tag that represents the primary focus for the content. You can specify additional tags on the "tags:" element. (Primary tags can only be the slugs from either the https://github.ibm.com/IBMCode/Definitions/blob/master/tags.yml file or the https://github.ibm.com/IBMCode/Definitions/blob/master/components.yml file.)
 tags: 		#Required=false - Select the 1 or more tags that represent what the content is about. Do not duplicate what you specify for the "primary_tag:". Less is more. (Tags can only be the slugs from the https://github.ibm.com/IBMCode/Definitions/blob/master/tags.yml file.)
 components: 		#Required=false - Select the 1 or more components that represent what the content is about. Do not duplicate what you specify for the "primary_tag:". Less is more. (Components can only be the slugs from the https://github.ibm.com/IBMCode/Definitions/blob/master/components.yml file.)
-services: 		#Required=false - Select the 1 or more services that are specifically in use by the content. Less is more. (Services can only be the slugs from the https://github.ibm.com/IBMCode/Definitions/blob/master/services.yml file.) 
+services: 		#Required=false - Select the 1 or more services that are specifically in use by the content. Less is more. (Services can only be the slugs from the https://github.ibm.com/IBMCode/Definitions/blob/master/services.yml file.)
 runtimes: 		#Required=false - Select the 1 or more runtimes that are specifically in use by the content. Less is more. (Runtimes can only be the slugs from the https://github.ibm.com/IBMCode/Definitions/blob/master/runtimes.yml file.)
 related_content: 		#Required=false - Specify 1 to 6 pieces of closely related content.
   - type: 		#Required=true announcements|articles|blogs|collections|events|models|patterns|podcast_episodes|podcasts|series|tutorials|videos|link_cards|conferences
@@ -49,6 +69,11 @@ page_links_to: 		#Required=false - Provide a full URL of a piece of content or a
 ---
 ## Markdown goes here and below
 
+## Incident Accuracy Reporting System (IARS)
+
+<img src="https://github.com/embrace-call-for-code/lions-of-justice/blob/master/design-assets/IARS_user_interface_design.png" alt="User Interface design"  class="inline"/>
+
+This solution starter was created by technologists from IBM.
 We currently live in an environment where we are finding more instances where law enforcement agencies are racially biased and are conducting unlawful practices and policies (e.g. "dirty policing"). The practices and policies are shaping the methodology by which data is created which increases inaccurate, skewed or systemically biased information.  The lack of transparent and accurate data available to assess police behavioral infractions means, police reports can be falsified and covered up.
 
 This tutorial shows you how to create a content management application that captures statements, videos, and audio feeds from first-hand individuals relating to police incident reports.  It provides a(n):
