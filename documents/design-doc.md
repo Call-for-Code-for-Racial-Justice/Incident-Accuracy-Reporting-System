@@ -6,7 +6,7 @@
 
 
 
-# 4. Design
+# Design
 
 ## Persona/ User
 Engaging personas emphasise how stories can engage and bring the personas to life.
