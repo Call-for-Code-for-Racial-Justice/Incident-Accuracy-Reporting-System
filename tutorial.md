@@ -3,8 +3,8 @@
 draft: 		#Required=true (true|false) - If false, the content is published. If true, the content is in draft state on our staging server.
 ignore_prod: 		#Required=false (true|false) - If true, the changes to the content do not show on the live site. If false, the changes are published to the live site.
 display_in_listing: 		#Required=false (true|false) - If set to true (the default value), nothing happens. If set to false, the page will exist but it won't be displayed in hubs, archives, or search. Set this to false when you use the page_links_to metadata.
-title: 		#Required=true - Title of the content. In general, use task-oriented phrases. Use fewer than 55 characters, including spaces. Front-load with SEO keywords. Include product and service names here, if length allows.
-subtitle: 		#Required=true - Subtitle of the content. Use fewer than 140 characters, including spaces. Make it tweetable. Include product and service names here. For component hub pages, this should be a short phrase that defines the component.
+title: 		#Required=true - Creating an intelligent and secure content management application. In general, use task-oriented phrases. Use fewer than 55 characters, including spaces. Front-load with SEO keywords. Include product and service names here, if length allows.
+subtitle: 		#Required=true - Integrate Hyperledger Blockchain, Watson Speech to Text and Language Translator to ensure document accuracy and security. Use fewer than 140 characters, including spaces. Make it tweetable. Include product and service names here. For component hub pages, this should be a short phrase that defines the component.
 meta_title: 		#Required=false - This is the title used for SEO purposes. Front-load with SEO keywords. If none is specified, the title is used.
 authors: 		#Required=false - List the authors who contributed to writing the content. The author listed first is the primary author, who is responsible for maintaining the content. If no authors are specified, the author defaults to "IBM Developer Staff".
   - name: 		Laura Bennett
