@@ -109,14 +109,14 @@ Content Management application backed by artificial intelligence and a distribut
 
 * [Watson Language Translator](https://cloud.ibm.com/apidocs/language-translator): Translates text from one language to another
 
-* [Cloudant](https://www.ibm.com/cloud/cloudant):  (lite Tier) is a distributed, document-oriented NoSQL database that is running on the IBM Cloud.
-
 * [IBM Cloud Object Storage](https://cloud.ibm.com/docs/cloud-object-storage?topic=cloud-object-storage-getting-started-cloud-object-storage): (lite tier) stores encrypted and dispersed data. Documents(incident reports, videos, audios) are saved on IBM Cloud Object Storage.
 
 
 ### Open Source Technology
 
 * [Vue.js](https://vuejs.org/): An open-source model-view-viewmodel front end JavaScript framework for building user interfaces and single-page applications
+
+* [Docker](https://www.docker.com/): Docker is a set of platform as a service products that use OS-level virtualization to deliver software in packages called containers. Containers are isolated from one another and bundle their own software, libraries and configuration files; they can communicate with each other through well-defined channels
 
 * [FFmpeg](https://ffmpeg.org/): an open source, cross-platform solution to record, convert and stream audio and videos. This was used to transcribe the audio portion of a video.
 
@@ -151,7 +151,9 @@ Content Management application backed by artificial intelligence and a distribut
 
 3. [Provision Blockchain Ledger](#3-provision-blockchain-ledger)
 
-4. [Start web application](#4-start-web-application)
+4. [Install, Instantiate Smart Contracts and Deploy Blockchain Application](#4-Install-Instantiate-Smart-Contracts-and-Deploy-Blockchain-Application)
+
+5. [Start web application](#5-start-web-application)
 
 
 ### 1. Clone the repo
@@ -190,7 +192,7 @@ Provision the following services:
 </details>
 
 
-Add the credentials for each respective service to the `.env` file you created earlier:
+Add the credentials for both the `Speech to Text` and `Language Translator` service to the `.env` file you created earlier. **Note** you will add the credentials for the `ObjectStore` service when you parpare to deploy the Blockchain app in step 4. 
 
 ```
 
@@ -206,40 +208,198 @@ LANGUAGE_TRANSLATOR_URL=
 
 After provisioning the Object Storage,  Speech to Text and Language Translator services, we'll need to then deploy a blockchain ledger. This ledger will keep track of all digital assets that have been uploaded. There are two ways to deploy a ledger, either locally or in the cloud.  For this pattern, we will focus on deploying the Blockchain locally.
 
+
 **Local Deployment**
 
+
+* **Clone Blockchain Application**
+
+First clone the repo that contains the Blockchain applicaiton code:
+```
+git clone https://github.com/IBM/Blockchain-for-maintaining-Digital-Assets
+```
+
+
+* **Clean up outdated Docker images**
+
+Make sure you don't have any old Hyperledger Fabric images lying around.
+
+Check this by issuing the following commands:
+```
+./stopFabric.sh
+docker rmi -f $(docker images -q)
+
+docker ps
+docker images
+```
+You should see no images listed at this point.
+
+* **Update script to install the chaincode**
+
+Update the following file `installChaincode.sh` found in the `Blockchain-for-maintaining-Digital-Assets/local/` directory
+
+Update the variable `CONTRACT_PATH` with the path of where you installed your `Blockchain-for-maintaining-Digital-Assets` repo. As an example:
+
+``
+export CONTRACT_PATH='/Users/laurabennett/2020/EMBRACE-Challenge'
+``
+
+
+
+### 4. Install Instantiate Smart Contracts and Deploy Blockchain Application
+
+
+* **Configure the Cloud Object Storage Instance**
+You will first need to configure your IBM Cloud Object Storage instance and during this process you will add in your IBM Cloud Object Storage credentials to your the `config.json` file find in the follwoing directory: `Blockchain-for-maintaining-Digital-Assets/server/config`.
+
+
+ - Go to your IBM Cloud Object Storage instance and go to `Buckets` in the left hand navigation pane and click on `Create bucket`. Choose `Standard` under Predefined buckets. Provide a `Unique bucket name` as per the naming rules specified. Skip the `Upload files` step and click `Next`. Skip the `Test bucket out` step and click `Next`. Once the bucket is successfully created, obtain the following information from the webpage:
+        - Under `Bucket details`, obtain the bucket name and specify it as cos_bucketName in the config.json.
+        - Under `Service Credentials`, obtain the apikey and resource_instance_id values and specify them as the cos_apiKeyId and cos_serviceInstanceId respectively in the config.json.
+        - Under `Endpoints`, obtain the `Public` endpoint and specify this value as the cos_endpoint in the config.json file<br><p align="center"><img src="https://user-images.githubusercontent.com/8854447/85887092-2838dc00-b7b5-11ea-8dbd-e70da8f2c9b3.gif"></p><br>
+    
+You will now change to the directory where you installed `Blockchain-for-maintaining-Digital-Assets`. 
+
+Once all this is done, your `Blockchain-for-maintaining-Digital-Assets/server/config/config.json` should look something like this:
+
+```bash
+ {
+    "channel_name": "mychannel",
+    "smart_contract_name": "blockchain-for-maintaining-digital-assets",
+    "connection_file": "Org1MSP_profile.json",
+    "appAdmin": "app-admin",
+    "appAdminSecret": "app-adminpw",
+    "orgMSPID": "Org1MSP",
+    "caName": "184.172.229.220:31844",
+    "peerName": "184.172.229.220:30884",
+    "gatewayDiscovery": { "enabled": true, "asLocalhost": false },
+    "smtpHost": "smtp.mailtrap.io",
+    "smtpPort": 2525,
+    "smtpUserName": "cb49e25f8cbe5f",
+    "smtpPassword": "3734c09cfdj05f",
+    "senderEmail": "no-reply@digitalassetscodepattern.com",
+    "cos_endpoint": "s3.us-south.cloud-object-storage.appdomain.cloud",
+    "cos_apiKeyId": "QrC2rLBkjEmS755xR88_78seDgD2ai8DIQxVd74G21Je",
+    "cos_serviceInstanceId": "crn:v1:bluemix:public:cloud-object-storage:global:a/86ac1b16b6f8b9639124a38d8edbd301:2f8d9627-46ff-46e9-a053-9d3e7121eedf::",
+    "cos_bucketName": "blockchain-digital-assets-bucket"
+ }
+```
+
+
+* **Start the Blockchain network**
 This step will start the network in a series of docker images, create a network channel and join a peer.
 ```
 cd lions-of-justice/backend/blockchain/local
 ./startFabric.sh
 ```
 
-### 4. Deploy Blockchain App
+Upon successfull completion, you should see the following:
+
+``
+2020-10-13 17:32:46.599 UTC [channelCmd] InitCmdFactory -> INFO 001 Endorser and orderer connections initialized
+2020-10-13 17:32:46.612 UTC [cli.common] readBlock -> INFO 002 Received block: 0
+2020-10-13 17:32:46.862 UTC [channelCmd] InitCmdFactory -> INFO 001 Endorser and orderer connections initialized
+2020-10-13 17:32:46.948 UTC [channelCmd] executeJoin -> INFO 002 Successfully submitted proposal to join channel
+``
+
+* **Install and Instantiate the Smart Contracts onto the Network**
+This step will install, instantiate and test a smart contract on the network
+```
+cd lions-of-justice/backend/blockchain/local
+./installChaincode.sh
+```
+
+Upon successful completion, you should see the following:
+
+``
++ LANGUAGE=golang
++ export CONTRACT_PATH=/Users/laurabennett/2020/EMBRACE-Challenge
++ CONTRACT_PATH=/Users/laurabennett/2020/EMBRACE-Challenge
++ echo 'Copying Chaincode to cli container'
+Copying Chaincode to cli container
++ docker cp /Users/laurabennett/2020/EMBRACE-Challenge/Blockchain-for-maintaining-Digital-Assets/contract/ cli:/opt/gopath/src/github.com/asset
++ echo 'Install and Instantiate Chaincode'
+Install and Instantiate Chaincode
++ docker exec -e CORE_PEER_LOCALMSPID=Org1MSP -e CORE_PEER_MSPCONFIGPATH=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp cli peer chaincode install -n asset -v 1.0 -p /opt/gopath/src/github.com/asset -l node
+2020-10-13 18:04:56.309 UTC [chaincodeCmd] checkChaincodeCmdParams -> INFO 001 Using default escc
+2020-10-13 18:04:56.309 UTC [chaincodeCmd] checkChaincodeCmdParams -> INFO 002 Using default vscc
+2020-10-13 18:04:56.335 UTC [chaincodeCmd] install -> INFO 003 Installed remotely response:<status:200 payload:"OK" > 
++ sleep 5
++ docker exec -e CORE_PEER_LOCALMSPID=Org1MSP -e CORE_PEER_MSPCONFIGPATH=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp cli peer chaincode instantiate -l node -o orderer.example.com:7050 -C mychannel -n asset -v 1.0 -c '{"Args":[]}' -P 'OR ("Org1MSP.member")'
+2020-10-13 18:05:01.608 UTC [chaincodeCmd] checkChaincodeCmdParams -> INFO 001 Using default escc
+2020-10-13 18:05:01.608 UTC [chaincodeCmd] checkChaincodeCmdParams -> INFO 002 Using default vscc
++ echo 'Chaincode Instantiated'
+Chaincode Instantiated
++ sleep 10
++ echo 'Test Chaincode'
+Test Chaincode
++ docker exec -e CORE_PEER_LOCALMSPID=Org1MSP -e CORE_PEER_MSPCONFIGPATH=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp cli peer chaincode invoke -o orderer.example.com:7050 -C mychannel -n asset -c '{"Args":["queryAllDigitalAssets"]}'
+2020-10-13 18:05:40.265 UTC [chaincodeCmd] chaincodeInvokeOrQuery -> INFO 001 Chaincode invoke successful. result: status:200 payload:"[]" 
+``
+
 
 Once the blockchain ledger is up and running, we'll deploy an application to track uploaded media on the ledger. This works by taking a hash of a file and storing it on the blockchain ledger. Then, the original file is placed in a Cloud Object Storage instance. If the file is tampered with in the Object Storage, it will no longer match the hash, and an alert will be generated.
 
-```
-git clone https://github.com/IBM/Blockchain-for-maintaining-Digital-Assets
-```
 
-Fill out configuration file as directed [here](https://github.com/IBM/Blockchain-for-maintaining-Digital-Assets#update-application-connection-profile)
+* **Install dependencies and Start the Blockchain applicaton**
 
-<!-- **Local Deployment**
-```
+#### In a new terminal, navigate to the [`server`](web-app/server) directory:
 
-``` -->
-
-<!-- **Cloud Deployment**
-```
-
-``` -->
+  ```bash
+  cd Blockchain-for-maintaining-digital-assets/web-app/server/
+  ```
 
 
-### 5. Start web application
+#### Build the node dependencies:
+
+  ```bash
+  npm install
+  ```
+
+
+#### Start the server:
+
+  ```bash
+  npm start
+  ```
+
+
+#### In a separate terminal, navigate to the [`client`](web-app/client) directory:
+
+  ```bash
+  cd Blockchain-for-maintaining-digital-assets/web-app/client/
+  ```
+  
+  
+#### Build the node dependencies:
+
+  ```bash
+  npm install
+  ```
+
+
+#### Start the client:
+
+  ```bash
+  npm run serve
+  ```
+
+Once both the server and client have successfully started, the UI can be accessed at [http://localhost:8080/?#/](http://localhost:8080/?#/).
+
+Main page of application:
+<br>
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/8854447/71941831-28063f00-3189-11ea-9f02-dfe2f78a6cbb.png">
+</p>
+<br>
+
+
+
+### 5. Start Lions-of-Justice web application
 
 <!-- **Local Deployment** -->
 ```
-cd embrace-lions-for-justice
+cd lions-of-justice
 ```
 
 Start frontend web app
@@ -252,8 +412,11 @@ npm run serve
 Start backend
 ```
 cd backend
+npm install
 npm start
 ```
+
+
 
 ## 8. IARS Recommendations for Enhancements of Capabilities
 

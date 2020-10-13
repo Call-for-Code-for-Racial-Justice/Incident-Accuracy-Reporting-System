@@ -1,0 +1,8 @@
+{
+    "index": {
+        "fields": ["type", "assetHash"]
+    },
+    "ddoc": "typeAndAssetHashIndexDoc",
+    "name": "typeAndAssetHashIndex",
+    "type": "json"
+}
