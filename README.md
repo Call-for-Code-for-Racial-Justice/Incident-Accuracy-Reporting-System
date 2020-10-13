@@ -90,7 +90,7 @@ Content Management application backed by artificial intelligence and a distribut
 
 ### The Component Model
 
-<img src="https://github.com/embrace-call-for-code/lions-of-justice/blob/master/design-assets/IARS_component_model.png" width="100%" height="100%" alt="Component Model"  class="inline"/>
+<img src="../images/IARS.png" width="100%" height="100%" alt="Component Model"  class="inline"/>
 
 ### The Operational Model
 
@@ -391,7 +391,7 @@ Once the blockchain ledger is up and running, we'll deploy an application to tra
 
 Once both the server and client have successfully started, the UI can be accessed at [http://localhost:8080/?#/](http://localhost:8080/?#/).
 
-Main page of application:
+Main page of Blockchain application:
 <br>
 <p align="center">
   <img src="https://user-images.githubusercontent.com/8854447/71941831-28063f00-3189-11ea-9f02-dfe2f78a6cbb.png">
