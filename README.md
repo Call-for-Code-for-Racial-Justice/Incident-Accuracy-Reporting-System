@@ -76,6 +76,8 @@ Specifically, the platform is a content management application for capturing sta
 
 ## 3. How It Works
 
+**Note** This project is currently scoped for the United States.  We fully expect that international parties will eventually contribute to extend the scope to support law enforcement agencies globally.
+
 * If a 911 call is made, the event’s address, date, and time is logged as an incident.
 
 * An incident may or may not be given a case number
@@ -167,7 +169,7 @@ git clone https://github.com/embrace-call-for-code/lions-of-justice
 
 ### 2. Provision Cloud Services
 
-Create a `.env` file by copying the `lions-of-justice/backend/STT-Audio/env.example` in the same directory.
+Create a `.env` file by copying the `lions-of-justice/backend/STT-Audio/env-example` in the same directory.
 
 Provision the following services:
 
