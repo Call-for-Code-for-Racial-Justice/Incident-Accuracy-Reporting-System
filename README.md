@@ -76,6 +76,8 @@ Specifically, the platform is a content management application for capturing sta
 
 ## 3. How It Works
 
+**Note** This project is currently scoped for the United States.  We fully expect that international parties will eventually contribute to extend the scope to support law enforcement agencies globally.
+
 * If a 911 call is made, the event’s address, date, and time is logged as an incident.
 
 * An incident may or may not be given a case number
@@ -167,7 +169,7 @@ git clone https://github.com/embrace-call-for-code/lions-of-justice
 
 ### 2. Provision Cloud Services
 
-Create a `.env` file by copying the `lions-of-justice/backend/STT-Audio/env.example` in the same directory.
+Create a `.env` file by copying the `lions-of-justice/backend/STT-Audio/env-example` in the same directory.
 
 Provision the following services:
 
@@ -192,7 +194,7 @@ Provision the following services:
 </details>
 
 
-Add the credentials for both the `Speech to Text` and `Language Translator` service to the `.env` file you created earlier. **Note** you will add the credentials for the `ObjectStore` service when you parpare to deploy the Blockchain app in step 4. 
+Add the credentials for both the `Speech to Text` and `Language Translator` service to the `.env` file you created earlier. **Note** you will add the credentials for the `ObjectStore` service when you prepare to deploy the Blockchain app in step 4. 
 
 ```
 
@@ -214,7 +216,7 @@ After provisioning the Object Storage,  Speech to Text and Language Translator s
 
 * **Clone Blockchain Application**
 
-First clone the repo that contains the Blockchain applicaiton code:
+First clone the repo that contains the Blockchain application code:
 ```
 git clone https://github.com/IBM/Blockchain-for-maintaining-Digital-Assets
 ```
@@ -250,7 +252,8 @@ export CONTRACT_PATH='/Users/laurabennett/2020/EMBRACE-Challenge'
 
 
 * **Configure the Cloud Object Storage Instance**
-You will first need to configure your IBM Cloud Object Storage instance and during this process you will add in your IBM Cloud Object Storage credentials to your the `config.json` file find in the follwoing directory: `Blockchain-for-maintaining-Digital-Assets/server/config`.
+
+You will first need to configure your IBM Cloud Object Storage instance and during this process you will add in your IBM Cloud Object Storage credentials to your the `config.json` file find in the following directory: `Blockchain-for-maintaining-Digital-Assets/server/config`.
 
 
  - Go to your IBM Cloud Object Storage instance and go to `Buckets` in the left hand navigation pane and click on `Create bucket`. Choose `Standard` under Predefined buckets. Provide a `Unique bucket name` as per the naming rules specified. Skip the `Upload files` step and click `Next`. Skip the `Test bucket out` step and click `Next`. Once the bucket is successfully created, obtain the following information from the webpage:
@@ -287,22 +290,24 @@ Once all this is done, your `Blockchain-for-maintaining-Digital-Assets/server/co
 
 
 * **Start the Blockchain network**
+
 This step will start the network in a series of docker images, create a network channel and join a peer.
 ```
 cd lions-of-justice/backend/blockchain/local
 ./startFabric.sh
 ```
 
-Upon successfull completion, you should see the following:
+Upon successful completion, you should see the following:
 
-``
+```bash
 2020-10-13 17:32:46.599 UTC [channelCmd] InitCmdFactory -> INFO 001 Endorser and orderer connections initialized
 2020-10-13 17:32:46.612 UTC [cli.common] readBlock -> INFO 002 Received block: 0
 2020-10-13 17:32:46.862 UTC [channelCmd] InitCmdFactory -> INFO 001 Endorser and orderer connections initialized
 2020-10-13 17:32:46.948 UTC [channelCmd] executeJoin -> INFO 002 Successfully submitted proposal to join channel
-``
+```
 
 * **Install and Instantiate the Smart Contracts onto the Network**
+
 This step will install, instantiate and test a smart contract on the network
 ```
 cd lions-of-justice/backend/blockchain/local
@@ -311,7 +316,7 @@ cd lions-of-justice/backend/blockchain/local
 
 Upon successful completion, you should see the following:
 
-``
+```bash
 + LANGUAGE=golang
 + export CONTRACT_PATH=/Users/laurabennett/2020/EMBRACE-Challenge
 + CONTRACT_PATH=/Users/laurabennett/2020/EMBRACE-Challenge
@@ -335,13 +340,13 @@ Chaincode Instantiated
 Test Chaincode
 + docker exec -e CORE_PEER_LOCALMSPID=Org1MSP -e CORE_PEER_MSPCONFIGPATH=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp cli peer chaincode invoke -o orderer.example.com:7050 -C mychannel -n asset -c '{"Args":["queryAllDigitalAssets"]}'
 2020-10-13 18:05:40.265 UTC [chaincodeCmd] chaincodeInvokeOrQuery -> INFO 001 Chaincode invoke successful. result: status:200 payload:"[]" 
-``
+```
 
 
 Once the blockchain ledger is up and running, we'll deploy an application to track uploaded media on the ledger. This works by taking a hash of a file and storing it on the blockchain ledger. Then, the original file is placed in a Cloud Object Storage instance. If the file is tampered with in the Object Storage, it will no longer match the hash, and an alert will be generated.
 
 
-* **Install dependencies and Start the Blockchain applicaton**
+* **Install dependencies and Start the Blockchain application**
 
 #### In a new terminal, navigate to the [`server`](web-app/server) directory:
 
