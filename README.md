@@ -90,7 +90,7 @@ Content Management application backed by artificial intelligence and a distribut
 
 ### The Component Model
 
-<img src="../images/IARS.png" width="100%" height="100%" alt="Component Model"  class="inline"/>
+<img src="./images/IARS.png" width="100%" height="100%" alt="Component Model"  class="inline"/>
 
 ### The Operational Model
 
