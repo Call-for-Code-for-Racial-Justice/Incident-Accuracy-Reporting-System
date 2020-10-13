@@ -1,0 +1,52 @@
+{
+    "name": "blockchain-for-maintaining-digital-assets",
+    "version": "0.0.1",
+    "description": "Digital Assets Smart Contract",
+    "main": "index.js",
+    "engines": {
+        "node": ">=8",
+        "npm": ">=5"
+    },
+    "scripts": {
+        "lint": "eslint .",
+        "pretest": "npm run lint",
+        "test": "nyc mocha --recursive",
+        "start": "fabric-chaincode-node start"
+    },
+    "engineStrict": true,
+    "author": "IBM",
+    "license": "Apache-2.0",
+    "dependencies": {
+        "eslint": "^6.8.0",
+        "fabric-contract-api": "1.4.2",
+        "fabric-shim": "^1.4.4"
+    },
+    "devDependencies": {
+        "chai": "^4.2.0",
+        "chai-as-promised": "^7.1.1",
+        "sinon": "^7.4.1",
+        "sinon-chai": "^3.4.0",
+        "winston": "^3.2.1"
+    },
+    "nyc": {
+        "exclude": [
+            ".eslintrc.js",
+            "coverage/**",
+            "test/**"
+        ],
+        "reporter": [
+            "text-summary",
+            "html"
+        ],
+        "all": true,
+        "check-coverage": true,
+        "statements": 100,
+        "branches": 100,
+        "functions": 100,
+        "lines": 100
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/IBM/Blockchain-for-maintaining-Digital-Assets"
+    }
+}
