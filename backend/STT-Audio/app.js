@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+ // Bringing in Dependencies
+
 const express = require('express');
 require('dotenv').config({ silent: true });
 //var ffmpeg = require('/usr/local/bin/ffmpeg');
@@ -30,7 +32,7 @@ if (!fs.existsSync(tmpdir))
 
 
 
-//var converted_video_file = fs.openSync(__dirname + '/' + 'tmpdir' + '/' + 'stripped_audio.mp3', 'w');  //temporary file for converting videos
+// starting up the application
 
 const app = express();
 const { IamTokenManager } = require('ibm-watson/auth');
@@ -41,7 +43,7 @@ require('./config/express')(app);
 
 
 
-
+//Initiating and configuring the Cloud Services
 app.get('/', (req, res) => res.render('index'));
 
 
@@ -100,7 +102,7 @@ const translator = new LanguageTranslatorV3({
 });
 
 
-// Speech to Text Params
+// Define the Speech to Text Params
  var genParams = function (extension, transcribed_file, converted_video_file) {
     if (extension == ".mp4") {
         convert(transcribed_file, converted_video_file, function(err){
@@ -131,6 +133,7 @@ const translator = new LanguageTranslatorV3({
 }
 
 
+// Call for initiating the app
 app.post('/transcribe', (req, res) => {
   let files = req.files
   let allResults = []
@@ -141,6 +144,8 @@ app.post('/transcribe', (req, res) => {
 
   // let languageModel = req.body.model || "en-US_BroadbandModel"
   console.log(req.headers)
+
+  // find out what language the assets is written or spoken in
   if (Object.keys(req.headers).includes('x-language')) {
     var languageModel = req.headers['x-language']
   } else {
@@ -149,7 +154,7 @@ app.post('/transcribe', (req, res) => {
   console.log(`transcribing using model ${languageModel}`)
 
 
-
+  // Transcribe the audio / video file
   files.map( (file, idx) => {
     // check if file is a video - if so we need to run it through tool to convert to .mp3
     let extension = path.extname(file.originalname);
@@ -178,7 +183,7 @@ app.post('/transcribe', (req, res) => {
        profanityFilter: true
     }
      
-    // Convert from speach to text
+    // Convert from speech to text
     speechToText.recognize(recognizeParams)
         .then(speechRecognitionResults => {
           console.log(JSON.stringify(speechRecognitionResults, null, 2))
