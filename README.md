@@ -21,7 +21,7 @@ This solution starter was created by technologists from IBM.
 
 * [Monica Martinez](https://www.linkedin.com/in/monica-martinez-22b4662/)
 
-* [Tunde Olokodana](https://www.linkedin.com/in/tunde-olokode-b6ba093a/)
+* [Tunde Olokodana](https://www.linkedin.com/in/tunde-olokodana-5245902b/)
 
 * [Osai Osaigbovo](https://www.linkedin.com/in/osai-osaigbovo-0153213/)
 
