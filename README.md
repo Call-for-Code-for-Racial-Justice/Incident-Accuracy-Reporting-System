@@ -111,6 +111,8 @@ Content Management application backed by artificial intelligence and a distribut
 
 * [Watson Language Translator](https://cloud.ibm.com/apidocs/language-translator): Translates text from one language to another
 
+* [IBM Watson Studio](https://www.ibm.com/cloud/watson-studio): Build, run and manage AI models. 
+
 * [IBM Cloud Object Storage](https://cloud.ibm.com/docs/cloud-object-storage?topic=cloud-object-storage-getting-started-cloud-object-storage): (lite tier) stores encrypted and dispersed data. Documents(incident reports, videos, audios) are saved on IBM Cloud Object Storage.
 
 
@@ -123,6 +125,8 @@ Content Management application backed by artificial intelligence and a distribut
 * [FFmpeg](https://ffmpeg.org/): an open source, cross-platform solution to record, convert and stream audio and videos. This was used to transcribe the audio portion of a video.
 
 * [Blockchain](https://hyperledger-fabric.readthedocs.io/en/release-1.4/): Based on the open-soure enterprise grade permissioned distributed ledger; Hyperledger Fabric. The blockchain network is an immutable transaction ledger. This was used to ensure that the submitted reports and information from victims and witnesses are tamper-proof. Each stored document has a hash tag that is stored in the Blockchain. You can run the application without it.
+
+* [scikit-learn](https://scikit-learn.org/stable/): Scikit-learn open source machine learning library for the Python programming language. It features various classification, regression and clustering algorithms including support vector machines, random forests, gradient boosting, k-means and DBSCAN, and is designed to interoperate with the Python numerical and scientific libraries NumPy and SciPy.
 
 
 ### Technology Concepts
