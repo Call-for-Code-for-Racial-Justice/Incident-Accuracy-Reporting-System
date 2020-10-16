@@ -133,6 +133,19 @@ Content Management application backed by artificial intelligence and a distribut
 
 * Machine Learning - The application uses unsupervised k-Means Clustering. Features were first extracted from the various statements submitted by witnesses using the term-frequency inverse-document-frequency (TFIDF) technique before applying the clustering algorithm for consistency check.
 
+### k-Means Clustering
+
+#### Introduction
+k-Means clustering is an unsupervised machine learning algorithm which does not require a labeled dataset with an input-output mapping. It is preferred for this project due to its efficiency in documents analysis by grouping them into clustered partitions based on the content of the documents. It also eliminates the cost of labeling a dataset and saves the time for doing so. Each document represents a datapoint. Specifically in this case, each witness' statement is a document which forms a datapoint in a cluster.
+
+#### Feature Extraction
+There are different feature extraction methods that can be used in text analysis problems such as bag of words, binary representation and term frequency - inverse document frequency (TFIDF) etc. TFIDF is selected for this project because of its efficiency in finding similarity groups in a set of documents. Term frequency (TF) is the fractional measure of the number of times a word or a term appears in a document while inverse document frequency (IDF) measures how imortant a term is, since frequency does not necessarily mean importance. The final output from the feature extraction is presented to the kmeans algorithm in vectorized form. Prior to the feature extraction, stop words which are regarded as noise are removed and stemming is used to reduce the words to their root words.
+
+#### Clustering Process
+The desired number of clusters is first specified. In this project, the number of clusters with an optimal clustering performance is automatically generated using the elbow method. A centroid is then randomly initialized for each cluster. A centroid refers to a positional mean value. Datapoints are attached to the clusters based on their closeness to the centroids. After each iteration, a new centroid is calculated for each cluster by finding the mean position of all the current points in the cluster. The process is repeated until the centroid position converges and all the points have been assigned. The clustering performance was measured using the silhouette score. Perfectly separated clusters will have a silhouette score of 1 while severely overlapping clusters will have a silhouette score of 0.
+
+#### Application to this Project
+Each document is an incident statement from a witness. If a police report is available, it will also be added to the dataset. If there is consistency between the police report and the statements from the witnesses, the datapoint representing the police report will appear in one of the clusters, otherwise, it will stand out as an outlier, not belonging to any cluster. The clusters in this case could mean that the witnesses shared different aspects of the incident or reported the incident from different perspectives. It could also mean that different incidents happening in the same location around the same time were reported by different witnesses. In otherwords, this project could also be used to tie a police report to the appropriate incident.
 
 ## 7. Getting Started
 
