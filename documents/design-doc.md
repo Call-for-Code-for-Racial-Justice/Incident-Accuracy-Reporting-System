@@ -24,4 +24,4 @@ Similarly to the AS IS journey,this journey reflects the future predicted proess
 <img src="https://github.com/embrace-call-for-code/lions-of-justice/blob/master/design-assets/Journeys%20to%20be.png" width="70%" height="70%" alt="User Interface design"  class="inline"/>
 
 
-<p style="font-size:12px">The photographs <a href="https://unsplash.com/">Unsplash</a> – A large collection of royalty-free photographs neatly organized in categories and tags.</p>
+<p style="font-size:12px">The photographs used in these designs are from <a href="https://unsplash.com/">Unsplash</a> – A large collection of royalty-free photographs neatly organized in categories and tags.</p>
