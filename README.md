@@ -2,7 +2,7 @@
 # Incident Accuracy Reporting System (IARS)
 
 
-<img src="https://github.com/embrace-call-for-code/lions-of-justice/blob/master/design-assets/IARS_user_interface_design.png" alt="User Interface design"  class="inline"/>
+<img src="https://github.com/embrace-call-for-code/Incident-Accuracy-Reporting-System/blob/master/design-assets/IARS_user_interface_design.png" alt="User Interface design"  class="inline"/>
 
 This solution starter was created by technologists from IBM.
 
@@ -94,7 +94,7 @@ Content Management application backed by artificial intelligence and a distribut
 
 ### The Operational Model
 
-<img src="https://github.com/embrace-call-for-code/lions-of-justice/blob/master/design-assets/IARS_operational_model.png" width="100%" height="100%" alt="Operational Model"  class="inline"/>
+<img src="https://github.com/embrace-call-for-code/Incident-Accuracy-Reporting-System/blob/master/design-assets/IARS_operational_model.png" width="100%" height="100%" alt="Operational Model"  class="inline"/>
 
 ## 5. Documents
 
@@ -181,16 +181,16 @@ Each document is an incident statement from a witness. If a police report is ava
 
 ### 1. Clone the repo
 
-Clone this [repository](https://github.com/embrace-call-for-code/lions-of-justice) locally. In a terminal, run:
+Clone this [repository](https://github.com/Call-for-Code-for-Racial-Justice/Incident-Accuracy-Reporting-System) locally. In a terminal, run:
 
 ```bash
-git clone https://github.com/embrace-call-for-code/lions-of-justice
+git clone https://github.com/embrace-call-for-code/Incident-Accuracy-Reporting-System
 ```
 
 
 ### 2. Provision Cloud Services
 
-Create a `.env` file by copying the `lions-of-justice/backend/STT-Audio/env-example` in the same directory.
+Create a `.env` file by copying the `Incident-Accuracy-Reporting-System/backend/STT-Audio/env-example` in the same directory.
 
 Provision the following services:
 
@@ -278,9 +278,12 @@ You will first need to configure your IBM Cloud Object Storage instance and duri
 
 
  - Go to your IBM Cloud Object Storage instance and go to `Buckets` in the left hand navigation pane and click on `Create bucket`. Choose `Standard` under Predefined buckets. Provide a `Unique bucket name` as per the naming rules specified. Skip the `Upload files` step and click `Next`. Skip the `Test bucket out` step and click `Next`. Once the bucket is successfully created, obtain the following information from the webpage:
+
         - Under `Bucket details`, obtain the bucket name and specify it as cos_bucketName in the config.json.
         - Under `Service Credentials`, obtain the apikey and resource_instance_id values and specify them as the cos_apiKeyId and cos_serviceInstanceId respectively in the config.json.
-        - Under `Endpoints`, obtain the `Public` endpoint and specify this value as the cos_endpoint in the config.json file<br><p align="center"><img src="https://user-images.githubusercontent.com/8854447/85887092-2838dc00-b7b5-11ea-8dbd-e70da8f2c9b3.gif"></p><br>
+        - Under `Endpoints`, obtain the `Public` endpoint and specify this value as the cos_endpoint in the config.json file
+
+        <br><p align="center"><img src="https://user-images.githubusercontent.com/8854447/85887092-2838dc00-b7b5-11ea-8dbd-e70da8f2c9b3.gif"></p><br>
     
 You will now change to the directory where you installed `Blockchain-for-maintaining-Digital-Assets`. 
 
@@ -314,7 +317,7 @@ Once all this is done, your `Blockchain-for-maintaining-Digital-Assets/server/co
 
 This step will start the network in a series of docker images, create a network channel and join a peer.
 ```
-cd lions-of-justice/backend/blockchain/local
+cd Incident-Accuracy-Reporting-System/backend/blockchain/local
 ./startFabric.sh
 ```
 
@@ -331,7 +334,7 @@ Upon successful completion, you should see the following:
 
 This step will install, instantiate and test a smart contract on the network
 ```
-cd lions-of-justice/backend/blockchain/local
+cd Incident-Accuracy-Reporting-System/backend/blockchain/local
 ./installChaincode.sh
 ```
 
@@ -421,11 +424,11 @@ Main page of Blockchain application:
 
 
 
-### 5. Start Lions-of-Justice web application
+### 5. Start Incident Accuracy Reporting System web application
 
 <!-- **Local Deployment** -->
 ```
-cd lions-of-justice
+cd Incident-Accuracy-Reporting-System
 ```
 
 Start frontend web app
