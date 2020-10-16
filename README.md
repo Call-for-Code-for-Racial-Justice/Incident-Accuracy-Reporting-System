@@ -2,7 +2,7 @@
 # Incident Accuracy Reporting System (IARS)
 
 
-<img src="https://github.com/embrace-call-for-code/Incident-Accuracy-Reporting-System/blob/master/design-assets/IARS_user_interface_design.png" alt="User Interface design"  class="inline"/>
+<img src="https://github.com/Call-for-Code-for-Racial-Justice/Incident-Accuracy-Reporting-System/blob/master/design-assets/IARS_user_interface_design.png" alt="User Interface design"  class="inline"/>
 
 This solution starter was created by technologists from IBM.
 
@@ -94,7 +94,7 @@ Content Management application backed by artificial intelligence and a distribut
 
 ### The Operational Model
 
-<img src="https://github.com/embrace-call-for-code/Incident-Accuracy-Reporting-System/blob/master/design-assets/IARS_operational_model.png" width="100%" height="100%" alt="Operational Model"  class="inline"/>
+<img src="https://github.com/Call-for-Code-for-Racial-Justice/Incident-Accuracy-Reporting-System/blob/master/design-assets/IARS_operational_model.png" width="100%" height="100%" alt="Operational Model"  class="inline"/>
 
 ## 5. Documents
 
@@ -278,12 +278,9 @@ You will first need to configure your IBM Cloud Object Storage instance and duri
 
 
  - Go to your IBM Cloud Object Storage instance and go to `Buckets` in the left hand navigation pane and click on `Create bucket`. Choose `Standard` under Predefined buckets. Provide a `Unique bucket name` as per the naming rules specified. Skip the `Upload files` step and click `Next`. Skip the `Test bucket out` step and click `Next`. Once the bucket is successfully created, obtain the following information from the webpage:
-
         - Under `Bucket details`, obtain the bucket name and specify it as cos_bucketName in the config.json.
         - Under `Service Credentials`, obtain the apikey and resource_instance_id values and specify them as the cos_apiKeyId and cos_serviceInstanceId respectively in the config.json.
-        - Under `Endpoints`, obtain the `Public` endpoint and specify this value as the cos_endpoint in the config.json file
-
-        <br><p align="center"><img src="https://user-images.githubusercontent.com/8854447/85887092-2838dc00-b7b5-11ea-8dbd-e70da8f2c9b3.gif"></p><br>
+        - Under `Endpoints`, obtain the `Public` endpoint and specify this value as the cos_endpoint in the config.json file<br><p align="center"><img src="https://user-images.githubusercontent.com/8854447/85887092-2838dc00-b7b5-11ea-8dbd-e70da8f2c9b3.gif"></p><br>
     
 You will now change to the directory where you installed `Blockchain-for-maintaining-Digital-Assets`. 
 
