@@ -22,3 +22,6 @@ As-is Scenario Maps help us to document collective understanding of user workflo
 Similarly to the AS IS journey,this journey reflects the future predicted proesses. Since this takes place in the future, we  tailor these phases based on what we'd like the user journey to look like, imagining the impact of our solution in their journey. We also did user research to reflect this journeys based on our solution.
 
 <img src="https://github.com/embrace-call-for-code/lions-of-justice/blob/master/design-assets/Journeys%20to%20be.png" width="70%" height="70%" alt="User Interface design"  class="inline"/>
+
+
+<p style="font-size:12px">The photographs <a href="https://unsplash.com/">Unsplash</a> – A large collection of royalty-free photographs neatly organized in categories and tags.</p>
