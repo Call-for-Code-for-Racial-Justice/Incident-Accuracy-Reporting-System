@@ -55,7 +55,7 @@ We currently live in an environment where we are finding more instances where la
 
 ### How can technology help?
 
-From traffic stops and arrests to sentencing and parole decisions, using technology leads to better analysis of real-world data, provides insights, and makes recommendations that will drive racial equality and reform across criminal justice and public safety.  Policing agencies should consider piloting technology to improve operational efficiencies and outcomes. Given that current times have led to decreased number of resources and increased public scrutiny of law enforcement activity, technology is a solution that could address these issues.  Internal affairs and civilians (such as witnesses) can both contribute to incident reports, creating a tamper-proof record with all accounts of the incident.
+From traffic stops and arrests to sentencing and parole decisions, using technology leads to better analysis of real-world data, provides insights, and makes recommendations that will drive racial equality and reform across criminal justice and public safety.  Policing agencies should consider piloting technology to improve operational efficiencies and outcomes. Given that current times have led to decreased number of resources and increased public scrutiny of law enforcement activity, technology is a solution that could address these issues.  Internal affairs and civilians (such as witnesses) can both contribute to incident reports, creating a record with all accounts of the incident.
 
 The intersection of IBM Watson APIs and Hyperledger Blockchain technology enables users to ensure consistency of information and a secure immutable permissioned ledger of documents. As more agencies are trying to show transparency and ensure that their officers are all operating above board; using AI and Blockchain can help to facilitate those objectives.
 
@@ -124,7 +124,7 @@ Content Management application backed by artificial intelligence and a distribut
 
 * [FFmpeg](https://ffmpeg.org/): an open source, cross-platform solution to record, convert and stream audio and videos. This was used to transcribe the audio portion of a video.
 
-* [Blockchain](https://hyperledger-fabric.readthedocs.io/en/release-1.4/): Based on the open-soure enterprise grade permissioned distributed ledger; Hyperledger Fabric. The blockchain network is an immutable transaction ledger. This was used to ensure that the submitted reports and information from victims and witnesses are tamper-proof. Each stored document has a hash tag that is stored in the Blockchain. You can run the application without it.
+* [Blockchain](https://hyperledger-fabric.readthedocs.io/en/release-1.4/): Based on the open-soure enterprise grade permissioned distributed ledger; Hyperledger Fabric. The blockchain network is an immutable transaction ledger. This was used to ensure that the submitted reports and information from victims and witnesses are secure. Each stored document has a hash tag that is stored in the Blockchain. You can run the application without it.
 
 * [scikit-learn](https://scikit-learn.org/stable/): Scikit-learn open source machine learning library for the Python programming language. It features various classification, regression and clustering algorithms including support vector machines, random forests, gradient boosting, k-means and DBSCAN, and is designed to interoperate with the Python numerical and scientific libraries NumPy and SciPy.
 
