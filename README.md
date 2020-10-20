@@ -95,9 +95,9 @@ Content Management application backed by artificial intelligence and a distribut
 #### Flow
 1. User uploads documents to the platform
 2. If documents contain video or audio, run the document through Watson Speech to Text and create transcript
-3. If transcript is in non-English language; tranlate to English using Language Translator
-4. Validate document with other case documetns using SCIkit learn
-5. Store docuemnts in Cloud Objector Store linked to a hash stored in the Hyperledger blockchain
+3. If transcript is in non-English language; translate to English using Language Translator
+4. Validate document with other case documents using SCIkit learn
+5. Store documents in Cloud Object Store linked to a hash stored in the Hyperledger blockchain
 
 ### The Operational Model
 
