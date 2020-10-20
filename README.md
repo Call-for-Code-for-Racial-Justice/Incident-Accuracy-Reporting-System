@@ -92,6 +92,13 @@ Content Management application backed by artificial intelligence and a distribut
 
 <img src="./images/iars-flow.png" width="100%" height="100%" alt="Component Model"  class="inline"/>
 
+#### Flow
+1. User uploads documents to the platform
+2. If documents contain video or audio, run the document through Watson Speech to Text and create transcript
+3. If transcript is in non-English language; tranlate to English using Language Translator
+4. Validate document with other case documetns using SCIkit learn
+5. Store docuemnts in Cloud Objector Store linked to a hash stored in the Hyperledger blockchain
+
 ### The Operational Model
 
 <img src="https://github.com/Call-for-Code-for-Racial-Justice/Incident-Accuracy-Reporting-System/blob/master/design-assets/IARS_operational_model.png" width="100%" height="100%" alt="Operational Model"  class="inline"/>
