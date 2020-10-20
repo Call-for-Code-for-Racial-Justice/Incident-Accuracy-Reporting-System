@@ -15,7 +15,7 @@ This solution starter was created by technologists from IBM.
 
 * [Danny Belitz](https://www.linkedin.com/in/dannybelitz/)
 
-* [Laura Bennett](https://www.linkedin.com/in/lbenn/)
+* [Laura Bennett](https://developer.ibm.com/profiles/lbenn/)
 
 * [Brandon Kravitz](https://www.linkedin.com/in/brandon-k-06570945/)
 
@@ -31,7 +31,7 @@ This solution starter was created by technologists from IBM.
 
 * [Shalisha Witherspoon](https://www.linkedin.com/in/shalisha-witherspoon-792a65b8/)
 
-* [Shonda Witherspoon](https://www.linkedin.com/in/shonda-witherspoon-417a67b8/)
+* [Shonda Witherspoon](https://developer.ibm.com/profiles/shonda.adena.witherspoon/)
 
 * Special Thanks [Cedric Cook](https://www.linkedin.com/in/cedriccook/), [Calvin Lawrence](https://www.linkedin.com/in/lawrencecalvin/), [Joseph Kozhaya](https://www.linkedin.com/in/joe-kozhaya-b574b533/)
 
