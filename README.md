@@ -25,7 +25,7 @@ This solution starter was created by technologists from IBM.
 
 * [Osai Osaigbovo](https://www.linkedin.com/in/osai-osaigbovo-0153213/)
 
-* [Lucia Ramos](https://www.linkedin.com/in/silvia-lucia-ramos-quispe-b96307ba/)
+* [Lucia Ramos](https://www.linkedin.com/in/luciaramos/)
 
 * [Debra Scott](https://www.linkedin.com/in/debra-scott-aa358410/)
 
