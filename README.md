@@ -2,7 +2,7 @@
 # Incident Accuracy Reporting System (IARS)
 
 
-<img src="https://github.com/Call-for-Code-for-Racial-Justice/Incident-Accuracy-Reporting-System/blob/master/design-assets/IARS_user_interface_design.png" alt="User Interface design"  class="inline"/>
+<img src="./design-assets/IARS_user_interface_design.png" alt="User Interface design"  class="inline"/>
 
 This solution starter was created by technologists from IBM.
 
@@ -101,7 +101,7 @@ Content Management application backed by artificial intelligence and a distribut
 
 ### The Operational Model
 
-<img src="https://github.com/Call-for-Code-for-Racial-Justice/Incident-Accuracy-Reporting-System/blob/master/design-assets/IARS_operational_model.png" width="100%" height="100%" alt="Operational Model"  class="inline"/>
+<img src="./design-assets/IARS_operational_model.png" width="100%" height="100%" alt="Operational Model"  class="inline"/>
 
 ## 5. Documents
 
