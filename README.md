@@ -101,7 +101,7 @@ Content Management application backed by artificial intelligence and a distribut
 
 ### The Operational Model
 
-<img src="./design-assets/IARS_operational_model.png" width="100%" height="100%" alt="Operational Model"  class="inline"/>
+<img src="https://dev-to-uploads.s3.amazonaws.com/i/w4twx94yv771fodvioi3.png" width="100%" height="100%" alt="Operational Model"  class="inline"/>
 
 ## 5. Documents
 
