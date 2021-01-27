@@ -268,7 +268,7 @@ You should see no images listed at this point.
 
 Update the following file `installChaincode.sh` found in the `Incident-Accuracy-Reporting-System/backend/blockchain/local` directory
 
-Update the variable `CONTRACT_PATH` with the path of where you installed your `Incident-Accuracy-Reporting-System` repo. As an example:
+Update the variable `CONTRACT_PATH` with the path of where you installed your `Blockchain-for-maintaining-Digital-Assets` repo. As an example:
 
 ``
 export CONTRACT_PATH='/Users/laurabennett/2020/EMBRACE-Challenge'
