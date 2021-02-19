@@ -10,29 +10,17 @@ This solution starter was created by technologists from IBM.
 
 
 * [Abiola Asojo](https://www.linkedin.com/in/abiola-asojo/)
-
 * [Kalonji Bankole](https://developer.ibm.com/profiles/kkbankol/)
-
 * [Danny Belitz](https://www.linkedin.com/in/dannybelitz/)
-
 * [Laura Bennett](https://developer.ibm.com/profiles/lbenn/)
-
 * [Brandon Kravitz](https://www.linkedin.com/in/brandon-k-06570945/)
-
 * [Monica Martinez](https://www.linkedin.com/in/monica-martinez-22b4662/)
-
 * [Tunde Olokodana](https://www.linkedin.com/in/tunde-olokodana-5245902b/)
-
 * [Osai Osaigbovo](https://www.linkedin.com/in/osai-osaigbovo-0153213/)
-
 * [Lucia Ramos](https://www.linkedin.com/in/luciaramos/)
-
 * [Debra Scott](https://www.linkedin.com/in/debra-scott-aa358410/)
-
 * [Shalisha Witherspoon](https://www.linkedin.com/in/shalisha-witherspoon-792a65b8/)
-
 * [Shonda Witherspoon](https://developer.ibm.com/profiles/shonda.adena.witherspoon/)
-
 * Special Thanks [Cedric Cook](https://www.linkedin.com/in/cedriccook/), [Calvin Lawrence](https://www.linkedin.com/in/lawrencecalvin/), [Joseph Kozhaya](https://www.linkedin.com/in/joe-kozhaya-b574b533/)
 
 
@@ -191,7 +179,7 @@ Each document is an incident statement from a witness. If a police report is ava
 Clone this [repository](https://github.com/Call-for-Code-for-Racial-Justice/Incident-Accuracy-Reporting-System) locally. In a terminal, run:
 
 ```bash
-git clone https://github.com/embrace-call-for-code/Incident-Accuracy-Reporting-System
+git clone https://github.com/Call-for-Code-for-Racial-Justice/Incident-Accuracy-Reporting-System
 ```
 
 
