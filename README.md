@@ -254,7 +254,7 @@ You should see no images listed at this point.
 
 * **Update script to install the chaincode**
 
-Update the following file `installChaincode.sh` found in the `Blockchain-for-maintaining-Digital-Assets/local/` directory
+Update the following file `installChaincode.sh` found in the `Incident-Accuracy-Reporting-System/backend/blockchain/local` directory
 
 Update the variable `CONTRACT_PATH` with the path of where you installed your `Blockchain-for-maintaining-Digital-Assets` repo. As an example:
 
