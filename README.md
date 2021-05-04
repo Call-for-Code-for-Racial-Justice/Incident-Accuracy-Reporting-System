@@ -1,6 +1,6 @@
+[![License](https://img.shields.io/badge/License-Apache2-blue.svg)](https://www.apache.org/licenses/LICENSE-2.0) [![Community](https://img.shields.io/badge/Join-Community-blue.svg)](https://developer.ibm.com/callforcode/racial-justice/get-started/)
 
 # Incident Accuracy Reporting System (IARS)
-
 
 <img src="./design-assets/IARS_user_interface_design.png" alt="User Interface design"  class="inline"/>
 
@@ -157,7 +157,7 @@ Each document is an incident statement from a witness. If a police report is ava
 
 * [NPM](https://github.com/nvm-sh/nvm#install--update-script)
 
-* Register for an [IBM Cloud](https://www.ibm.com/account/reg/us-en/signup?formid=urx-42793&eventid=cfc-2020?cm_mmc=OSocial_Blog-_-Audience+Developer_Developer+Conversation-_-WW_WW-_-cfc-2020-ghub-starterkit-cooperation_ov75914&cm_mmca1=000039JL&cm_mmca2=10008917) account.
+* Register for an [IBM Cloud](https://developer.ibm.com/callforcode/racial-justice/get-started/) account.
 
 * Install and configure [IBM Cloud CLI](https://cloud.ibm.com/docs/cli?topic=cloud-cli-getting-started#overview).
 
