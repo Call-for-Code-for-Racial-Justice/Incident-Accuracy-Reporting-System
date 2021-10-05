@@ -1,6 +1,6 @@
 ---
-name: Roadmap Template
-about: Template for issues we're pursuimg
+name: New Issue Template
+about: Template for issues we're pursuing
 title: ''
 labels: ''
 assignees: ''
