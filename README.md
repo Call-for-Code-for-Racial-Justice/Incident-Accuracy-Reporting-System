@@ -432,7 +432,7 @@ npm run serve
 
 Start backend
 ```
-cd backend
+cd backend/STT-Audio
 npm install
 npm start
 ```
