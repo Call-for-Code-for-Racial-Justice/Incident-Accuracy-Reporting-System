@@ -20,6 +20,7 @@ jobs:
         uses: actions/cache@v2
           # npm cache files are stored in `~/.npm` on Linux/macOS 
           # please see linked reference in PR request
+        with:
           path: ~/.npm
           key: npm-${{ hashFiles('package-lock.json') }}
           restore-keys: npm-
