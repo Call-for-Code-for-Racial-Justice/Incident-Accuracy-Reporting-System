@@ -69,7 +69,7 @@ Specifically, the platform is a content management application for capturing sta
 * If a 911 call is made, the event’s address, date, and time is logged as an incident.
 
 * An incident may or may not be given a case number
-* Incidents reported via app can be linked by provided case number (if known), or by correlating the submitted metadata(location, date, and time)  with a logged incident from the police department
+* Incidents reported via app can be linked by provided case number (if known), or by correlating the submitted metadata (location, date, and time) with a logged incident from the police department
 * If an event has not yet been logged as an incident by the police department (ex: occurring live at a protest), reported incidents submitted through app can be tagged as pending until a matching police incident can be linked once filed.
 
 ## 4. Architecture
@@ -102,20 +102,20 @@ Content Management application backed by artificial intelligence and a distribut
 
 ### IBM Technology
 
-* [Watson Speech To Text](https://www.ibm.com/cloud/watson-speech-to-text):  This is an IBM Cloud service that converts human voice into written text. This application uses it to create written transcripts from audio recordings loaded by witnesses and victims.
+* [Watson Speech To Text](https://www.ibm.com/cloud/watson-speech-to-text): This is an IBM Cloud service that converts human voice into written text. This application uses it to create written transcripts from audio recordings loaded by witnesses and victims.
 
 * [Watson Language Translator](https://cloud.ibm.com/apidocs/language-translator): Translates text from one language to another
 
 * [IBM Watson Studio](https://www.ibm.com/cloud/watson-studio): Build, run and manage AI models. 
 
-* [IBM Cloud Object Storage](https://cloud.ibm.com/docs/cloud-object-storage?topic=cloud-object-storage-getting-started-cloud-object-storage): (lite tier) stores encrypted and dispersed data. Documents(incident reports, videos, audios) are saved on IBM Cloud Object Storage.
+* [IBM Cloud Object Storage](https://cloud.ibm.com/docs/cloud-object-storage?topic=cloud-object-storage-getting-started-cloud-object-storage): (lite tier) stores encrypted and dispersed data. Documents (incident reports, videos, audios) are saved on IBM Cloud Object Storage.
 
 
 ### Open Source Technology
 
 * [Vue.js](https://vuejs.org/): An open-source model-view-viewmodel front end JavaScript framework for building user interfaces and single-page applications
 
-* [Docker](https://www.docker.com/): Docker is a set of platform as a service products that use OS-level virtualization to deliver software in packages called containers. Containers are isolated from one another and bundle their own software, libraries and configuration files; they can communicate with each other through well-defined channels
+* [Docker](https://www.docker.com/): Docker is a set of platform as a service products that use OS-level virtualization to deliver software in packages called containers. Containers are isolated from one another and bundle their own software, libraries and configuration files; they can communicate with each other through well-defined channels.
 
 * [FFmpeg](https://ffmpeg.org/): an open source, cross-platform solution to record, convert and stream audio and videos. This was used to transcribe the audio portion of a video.
 
@@ -269,7 +269,7 @@ export CONTRACT_PATH='/Users/laurabennett/2020/EMBRACE-Challenge'
 
 * **Configure the Cloud Object Storage Instance**
 
-You will first need to configure your IBM Cloud Object Storage instance and during this process you will add in your IBM Cloud Object Storage credentials to your the `config.json` file find in the following directory: `Blockchain-for-maintaining-Digital-Assets/server/config`.
+You will first need to configure your IBM Cloud Object Storage instance and during this process you will add in your IBM Cloud Object Storage credentials to your `config.json` file find in the following directory: `Blockchain-for-maintaining-Digital-Assets/server/config`.
 
 
  - Go to your IBM Cloud Object Storage instance and go to `Buckets` in the left hand navigation pane and click on `Create bucket`. Choose `Standard` under Predefined buckets. Provide a `Unique bucket name` as per the naming rules specified. Skip the `Upload files` step and click `Next`. Skip the `Test bucket out` step and click `Next`. Once the bucket is successfully created, obtain the following information from the webpage:
