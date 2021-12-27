@@ -1,6 +1,0 @@
----
-applications:
-- name: speech-to-text-demo
-  path: .
-  command: npm start
-  memory: 512M
