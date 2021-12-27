@@ -1,9 +1,0 @@
-*node_modules*
-vision-inspector-dump/*csv
-backend/maximo-mobile-dump/.env
-.env*
-bootstrap/
-backend/STT-Audio/node_modules
-backend/STT-Audio/uploads/
-backend/STT-Audio/.env
-.DS_store
