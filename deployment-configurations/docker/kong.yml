@@ -11,4 +11,13 @@
      paths:
      - /mock
      strip_path: true
+# - host: localhost
+#   name: incident_service
+#   port: 9080
+#   protocol: http
+#   routes:
+#   - name: some_route
+#     paths:
+#     - /something
+#     strip_path: false
     
