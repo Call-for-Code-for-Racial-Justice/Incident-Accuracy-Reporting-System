@@ -59,6 +59,8 @@ services:
       POSTGRES_USER: "${POSTGRES_USER}"
       POSTGRES_PASSWORD: "${POSTGRES_PASSWORD}"
       POSTGRES_DB: "incidents"
-    user: "${UID}:${GID}"
     volumes:
-      - ../../.data/incident_database:/var/lib/postgresql/data
+      - incident_database_volume:/var/lib/postgresql/data
+
+volumes:
+  incident_database_volume:
