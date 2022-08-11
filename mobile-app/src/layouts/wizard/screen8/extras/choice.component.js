@@ -1,6 +1,8 @@
 import React from 'react';
 import { Dimensions, StyleSheet } from "react-native";
 
+import { useNavigation } from "@react-navigation/native";
+
 import {
   IndexPath,
   Layout,
@@ -9,8 +11,17 @@ import {
 } from "@ui-kitten/components";
 
 export const ChoiceScreen = () => {
+  const navigation = useNavigation();
+
   const choices=['No','Yes'];
   const [selectedIndex, setSelectedIndex] = React.useState(new IndexPath(0));
+
+  const onSelectHandler = (index) => {
+    setSelectedIndex(index);
+    if( index==2 ) {
+      navigation.navigate('Details');
+    }
+  }
 
   return (
     <Layout style={styles.topContainer}>
@@ -18,7 +29,7 @@ export const ChoiceScreen = () => {
         label='May we contact you?'
         value={choices[selectedIndex.row]}
         selectedIndex={selectedIndex}
-        onSelect={index => setSelectedIndex(index)}
+        onSelect={onSelectHandler}
         >
           <SelectItem title='No' />
           <SelectItem title='Yes' />
