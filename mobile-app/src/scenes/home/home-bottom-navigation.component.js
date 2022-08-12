@@ -3,7 +3,7 @@ import { Animated } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 import { Icon } from '@ui-kitten/components';
-import { BottomNavigationTab, Divider, StyleService } from '@ui-kitten/components';
+import { BottomNavigationTab, Divider, StyleService, useTheme } from '@ui-kitten/components';
 
 import { BrandBottomNavigation } from '../../components/brand-bottom-navigation.component';
 
@@ -36,6 +36,7 @@ export const HomeBottomNavigation = ({ navigation, state, descriptors }) => {
   const focusedRoute = state.routes[state.index];
   const { tabBarVisible } = descriptors[focusedRoute.key].options;
   const safeAreaInsets = useSafeAreaInsets();
+  const theme = useTheme();
 
   const transforms = useVisibilityAnimation(tabBarVisible);
 
@@ -44,7 +45,7 @@ export const HomeBottomNavigation = ({ navigation, state, descriptors }) => {
   };
 
   return (
-    <Animated.View style={[styles.container, transforms, { paddingBottom: tabBarVisible ? safeAreaInsets.bottom : 0 }]}>
+    <Animated.View style={[styles.container, transforms, { backgroundColor: theme['background-basic-color-1'], paddingBottom: tabBarVisible ? safeAreaInsets.bottom : 0 }]}>
       <Divider />
       <BrandBottomNavigation
         appearance='noIndicator'

@@ -59,7 +59,7 @@ export const TopMenuNavigation = () => {
 
 const styles = StyleSheet.create({
   navContainer: {
-    paddingTop: 32,
+    paddingTop: 64,
   },
   titleContainer: {
     flexDirection: 'row',

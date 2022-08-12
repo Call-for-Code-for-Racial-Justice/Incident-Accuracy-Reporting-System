@@ -13,7 +13,6 @@ export const SafeAreaLayout = ({
 }) => {
   const theme = useTheme();
   const insetsConfig = useSafeAreaInsets();
-
   const backgroundColor = theme[`background-basic-color-${props.level}`];
 
   return (

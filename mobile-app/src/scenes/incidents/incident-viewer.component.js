@@ -18,9 +18,7 @@ export const IncidentViewerScreen = ({ route, navigation }) => {
   );
 
   return (
-    <SafeAreaLayout
-      style={styles.container}
-      insets='top'>
+    <SafeAreaLayout style={styles.container} insets="top" level='2'>
       <TopNavigation
         title='Incident Viewer'
         accessoryLeft={renderBackAction}

@@ -68,7 +68,7 @@ export const CreateWizardScreen7 = ({ route, navigation }) => {
   );
 
   return (
-    <SafeAreaLayout style={styles.container} insets="top">
+    <SafeAreaLayout style={styles.container} insets="top" level='2'>
       <TopNavigation
         title={<Text>Summary</Text>}
         alignment="center"

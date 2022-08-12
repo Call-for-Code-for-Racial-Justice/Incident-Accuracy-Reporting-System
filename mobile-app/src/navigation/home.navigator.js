@@ -21,7 +21,7 @@ const ROOT_ROUTES = ['Incidents', 'Create Wizard', 'About'];
 const TabBarVisibilityOptions = ({ route }) => {
   const isNestedRoute = route.state?.index > 0;
   const isRootRoute = ROOT_ROUTES.includes(route.name);
-
+  
   return { tabBarVisible: isRootRoute && !isNestedRoute };
 };
 

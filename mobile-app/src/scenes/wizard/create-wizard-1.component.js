@@ -20,8 +20,8 @@ export const CreateWizardScreen1 = ({ route, navigation }) => {
   );
 
   const nextPageHandler = () => {
-    if( incident.isLive ) {
-      setTimestamp( new Date().getTime() );
+    if (incident.isLive) {
+      setTimestamp(new Date().getTime());
       navigation.navigate('Page3')
     } else {
       navigation.navigate('Page2')
@@ -31,7 +31,7 @@ export const CreateWizardScreen1 = ({ route, navigation }) => {
   const renderNextAction = () => (
     <Button
       style={styles.navButton}
-      disabled={incident.isLive==null}
+      disabled={incident.isLive == null}
       appearance="outline"
       accessoryRight={ArrowIosForwardIcon}
       size='small'
@@ -42,7 +42,7 @@ export const CreateWizardScreen1 = ({ route, navigation }) => {
   );
 
   return (
-    <SafeAreaLayout style={styles.container} insets="top">
+    <SafeAreaLayout style={styles.container} insets="top" level='2'>
       <TopNavigation
         accessoryRight={renderNextAction}
       />
