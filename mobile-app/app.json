@@ -3,7 +3,7 @@
     "name": "Incident Accuracy Reporting System",
     "slug": "iars",
     "version": "1.0.0",
-    "owner": "CallForCodeIBM",
+    "owner": "callforcodeibm",
     "orientation": "portrait",
     "icon": "./src/assets/images/icon-iars.png",
     "userInterfaceStyle": "light",

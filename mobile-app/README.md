@@ -3,8 +3,8 @@ This is the public component of the project allowing community members to submit
 
 ## Demo the app
 To demo the app on your phone by scanning the QR code below.<br />
-![QR code](./src/assests/images/mobile_app-qrcode.png)
-> If this does not work, get the latest QR code from this [site]().
+<img title='QR code' src='./src/assets/images/mobile_app-qrcode.png' width='35%' height='35%' />
+> If this does not work, get the latest QR code from this [site](https://expo.dev/@callforcodeibm/iars?serviceType=classic&distribution=expo-go ).
 
 ## Build the app
 > Requirements:  Expo, Expo Go, Git, NodeJS
