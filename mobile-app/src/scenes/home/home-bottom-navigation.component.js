@@ -36,7 +36,7 @@ export const HomeBottomNavigation = ({ navigation, state, descriptors }) => {
   const focusedRoute = state.routes[state.index];
   const { tabBarVisible } = descriptors[focusedRoute.key].options;
   const safeAreaInsets = useSafeAreaInsets();
-  const theme = useTheme();
+  const themeSettings = useTheme();
 
   const transforms = useVisibilityAnimation(tabBarVisible);
 
@@ -45,7 +45,7 @@ export const HomeBottomNavigation = ({ navigation, state, descriptors }) => {
   };
 
   return (
-    <Animated.View style={[styles.container, transforms, { backgroundColor: theme['background-basic-color-1'], paddingBottom: tabBarVisible ? safeAreaInsets.bottom : 0 }]}>
+    <Animated.View style={[styles.container, transforms, { backgroundColor: themeSettings['background-basic-color-1'], paddingBottom: tabBarVisible ? safeAreaInsets.bottom : 0 }]}>
       <Divider />
       <BrandBottomNavigation
         appearance='noIndicator'

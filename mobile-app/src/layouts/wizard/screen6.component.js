@@ -44,9 +44,10 @@ const styles = StyleSheet.create({
   },
   contentContainer: {
     flex: 1,
-    width: '95%',
-    minHeight: '90%',
-    margin: 10
+    width: '100%',
+    minHeight: '100%',
+    paddingLeft: 10,
+    paddingRight: 10,
   },
   descriptionContainer: {
     minHeight: 100

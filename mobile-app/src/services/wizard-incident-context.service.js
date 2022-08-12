@@ -11,7 +11,7 @@ const wizardIncidentContext = createContext({
   setViewpoint: (newView) => { },
   setDescription: (newDescription) => { },
   setFiles: (newFiles) => { },
-  resetId: () => { },
+  resetIncident: () => { },
 });
 
 export const WizardIncidentContextProvider = (props) => {
@@ -41,7 +41,7 @@ export const WizardIncidentContextProvider = (props) => {
     }
   };
 
-  const resetIdHandler = () => {
+  const resetIncidentHandler = () => {
     setIncident({
       id: null,
       timestamp: null,
@@ -53,7 +53,8 @@ export const WizardIncidentContextProvider = (props) => {
       viewpoint: null,
       description: null,
       files: null
-    })
+    });
+    setIdHandler();
   }
 
   setIdHandler();
@@ -153,7 +154,7 @@ export const WizardIncidentContextProvider = (props) => {
         setViewpoint: setViewpointHandler,
         setDescription: setDescriptionHandler,
         setFiles: setFilesHandler,
-        resetId: resetIdHandler
+        resetIncident: resetIncidentHandler
       }}
     >
       {props.children}

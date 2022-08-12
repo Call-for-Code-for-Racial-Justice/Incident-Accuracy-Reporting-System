@@ -35,7 +35,7 @@ const TabNavigator = () => (
 );
 
 export default () => {
-  const { incidentNumber } = useContext(contactContext);
+  const { contactDetails } = useContext(contactContext);
 
   return (
     <>
@@ -43,7 +43,7 @@ export default () => {
         <Text category='h5'>Thanks for your submission.</Text>
         <Layout style={styles.incidentContainer}>
           <Text category='p1' style={styles.incidentTitle}>Incident: </Text>
-          <Text category="p1">{incidentNumber}</Text>
+          <Text category="p1">{contactDetails.incidentId}</Text>
         </Layout>
       </Layout>
       <NavigationContainer independent={true}>

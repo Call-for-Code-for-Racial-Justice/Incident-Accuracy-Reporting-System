@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { StyleSheet, View } from "react-native";
+import { StyleSheet } from "react-native";
 
 import {
   Button,
@@ -13,7 +13,7 @@ import ContentView from "../../layouts/wizard/screen8";
 import contactContext from "../../services/contact-context.service";
 
 export const CreateWizardScreen8 = ({ route, navigation }) => {
-  const { contactDetails } = useContext(contactContext);
+  const { contactDetails, resetContactDetails } = useContext(contactContext);
 
   const PaperPlaneOulineIcon = () => (
     <Icon style={styles.navIcon} fill="#8F9BB3" name="paper-plane-outline" />
@@ -22,6 +22,9 @@ export const CreateWizardScreen8 = ({ route, navigation }) => {
   const onSubmitHandler = () => {
     //API call to add contact details
     console.log(contactDetails);
+
+    //reset
+    resetContactDetails();
     
     navigation.reset({
       index: 0,
@@ -44,7 +47,7 @@ export const CreateWizardScreen8 = ({ route, navigation }) => {
   );
 
   return (
-    <SafeAreaLayout style={styles.container} insets="top" level='2'>
+    <SafeAreaLayout style={styles.container} level='2'>
       <TopNavigation
         accessoryRight={renderSubmitAction}
       />

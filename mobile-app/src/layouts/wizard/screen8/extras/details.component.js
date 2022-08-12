@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { Dimensions, StyleSheet } from "react-native";
+import { StyleSheet } from "react-native";
 
 import {
   Divider,
@@ -12,16 +12,16 @@ import {
 
 import contactContext from '../../../../services/contact-context.service';
 
-export const DetailScreen = () => {
-  const { setEmailAddress, setPhoneNumber, setContactOption, setPhoneContactOption } = useContext(contactContext);
+const PHONE_CONTACT_OPTIONS = ['Call', 'Text'];
+const CONTACT_OPTIONS = ['E-Mail', 'Phone'];
 
+export const DetailScreen = () => {
+  const { contactDetails, setEmailAddress, setPhoneNumber, setContactOption, setPhoneContactOption } = useContext(contactContext);
+  
   const [emailAddressInput, setEmailAddressInput] = useState('');
   const [phoneNumberInput, setPhoneNumberInput] = useState('');
-  const [phoneMethodIndex, setPhoneMethodIndex] = useState(new IndexPath(0));
-  const [contactMethodIndex, setContactMethodIndex] = useState(new IndexPath(0));
-
-  const phoneOptions = ['Call', 'Text'];
-  const contactOptions = ['E-Mail', 'Phone'];
+  const [phoneMethodIndex, setPhoneMethodIndex] = useState(new IndexPath(PHONE_CONTACT_OPTIONS.indexOf(contactDetails.phoneContactOption)));
+  const [contactMethodIndex, setContactMethodIndex] = useState(new IndexPath(CONTACT_OPTIONS.indexOf(contactDetails.contactOption)));
 
   const onEmailAddressEndEditingHandler = () => {
     setEmailAddress(emailAddressInput);
@@ -33,12 +33,12 @@ export const DetailScreen = () => {
 
   const phoneContactOptionOnSelectHandler = (index) => {
     setPhoneMethodIndex(index);
-    setPhoneContactOption(index==1?'call':'text');
+    setPhoneContactOption(PHONE_CONTACT_OPTIONS[index.row]);
   }
 
   const contactOptionOnSelectHandler = (index) => {
     setContactMethodIndex(index);
-    setContactOption(index==1?'call':'text');
+    setContactOption(CONTACT_OPTIONS[index.row]);
   }
 
   return (
@@ -66,7 +66,7 @@ export const DetailScreen = () => {
       />
       <Select
         label="Preferred"
-        value={phoneOptions[phoneMethodIndex.row]}
+        value={PHONE_CONTACT_OPTIONS[phoneMethodIndex.row]}
         selectedIndex={phoneMethodIndex}
         onSelect={phoneContactOptionOnSelectHandler}
         >
@@ -76,7 +76,7 @@ export const DetailScreen = () => {
       <Divider style={styles.divider} />
       <Select
         label="Preferred contact method"
-        value={contactOptions[contactMethodIndex.row]}
+        value={CONTACT_OPTIONS[contactMethodIndex.row]}
         selectedIndex={contactMethodIndex}
         onSelect={contactOptionOnSelectHandler}>
           <SelectItem title='E-mail'/>

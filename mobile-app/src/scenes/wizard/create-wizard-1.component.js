@@ -24,6 +24,7 @@ export const CreateWizardScreen1 = ({ route, navigation }) => {
       setTimestamp(new Date().getTime());
       navigation.navigate('Page3')
     } else {
+      setTimestamp(null);
       navigation.navigate('Page2')
     }
   }
@@ -42,7 +43,7 @@ export const CreateWizardScreen1 = ({ route, navigation }) => {
   );
 
   return (
-    <SafeAreaLayout style={styles.container} insets="top" level='2'>
+    <SafeAreaLayout style={styles.container} level='2'>
       <TopNavigation
         accessoryRight={renderNextAction}
       />

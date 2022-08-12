@@ -22,9 +22,9 @@ const TopTabBar = ({ navigation, state }) => (
 
 const TabNavigator = ({ incident }) => (
   <Navigator tabBar={props => <TopTabBar {...props} />}>
-    <Screen name='Info' component={InfoScreen} initialParams={{incident: incident}} />
-    <Screen name='Files' component={FilesScreen} initialParams={{files: incident.files}} />
-    <Screen name='GPS' component={GPSScreen} initialParams={{gps: incident.gps, textLocation: incident.textLocation}} />
+    <Screen name='Info' component={InfoScreen} options={{headerShown: false}} initialParams={{incident: incident}} />
+    <Screen name='Files' component={FilesScreen} options={{headerShown: false}} initialParams={{files: incident.files}} />
+    <Screen name='GPS' component={GPSScreen} options={{headerShown: false}} initialParams={{gps: incident.gps, textLocation: incident.textLocation}} />
   </Navigator>
 );
 

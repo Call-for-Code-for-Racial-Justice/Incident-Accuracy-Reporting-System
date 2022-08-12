@@ -7,6 +7,7 @@ const contactContext = createContext({
   setEmailAddress: (value) => {},
   setPhoneContactOption: (value) => {},
   setContactOption: (value) => {},
+  resetContactDetails: () => {}
 });
 
 export const ContactContextProvider = (props) => {
@@ -14,9 +15,19 @@ export const ContactContextProvider = (props) => {
     incidentId: null,
     emailAddress: null,
     phoneNumber: null,
-    phoneContactOption: null,
-    contactOption: null
+    phoneContactOption: 'Call',
+    contactOption: 'E-Mail'
   });
+
+  const resetContactDetailsHandler = () => {
+    setContactDetails({
+      incidentId: null,
+      emailAddress: null,
+      phoneNumber: null,
+      phoneContactOption: 'Call',
+      contactOption: 'E-Mail'
+    });
+  }
 
   const setIncidentIdHandler = (newValue) => {
     setContactDetails(
@@ -72,6 +83,7 @@ export const ContactContextProvider = (props) => {
         setEmailAddress: setEmailAddressHandler,
         setPhoneContactOption: setPhoneContactOptionHandler,
         setContactOption: setContactOptionHandler,
+        resetContactDetails: resetContactDetailsHandler
       }}
     >
       {props.children}

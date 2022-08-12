@@ -3,7 +3,8 @@ import React, { createContext, useState } from "react";
 const mediaContext = createContext({
   mediaDetails: {},
   updateAttachments: (op, item) => {},
-  setIsCameraEnabled: (item) => {}
+  setIsCameraEnabled: (item) => {},
+  resetMediaDetails: () => {},
 });
 
 export const MediaContextProvider = (props) => {
@@ -39,12 +40,20 @@ export const MediaContextProvider = (props) => {
     );
   }
 
+  const resetMediaDetailsHandler = () => {
+    setMediaDetails({
+      attachments: [],
+      isCameraEnabled: false
+    });
+  }
+
   return (
     <mediaContext.Provider
       value={{
         mediaDetails: mediaDetails,
         updateAttachments: updateAttachmentsHandler,
         setIsCameraEnabled: setIsCameraEnabledHandler,
+        resetMediaDetails: resetMediaDetailsHandler
       }}
     >
       {props.children}

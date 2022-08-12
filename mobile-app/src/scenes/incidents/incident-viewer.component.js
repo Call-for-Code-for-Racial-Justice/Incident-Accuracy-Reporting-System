@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet } from 'react-native';
 
-import { TopNavigation, TopNavigationAction } from '@ui-kitten/components';
+import { TopNavigation, TopNavigationAction, Text } from '@ui-kitten/components';
 
 import { SafeAreaLayout } from '../../components/safe-area-layout.component';
 import { ArrowIosBackIcon } from '../../components/icons';
@@ -17,10 +17,15 @@ export const IncidentViewerScreen = ({ route, navigation }) => {
     />
   );
 
+  const renderTitle = () => (
+    <Text category='h5'>Incident Viewer</Text>
+  );
+
   return (
-    <SafeAreaLayout style={styles.container} insets="top" level='2'>
+    <SafeAreaLayout style={styles.container} level='2'>
       <TopNavigation
-        title='Incident Viewer'
+        title={renderTitle}
+        alignment="center"
         accessoryLeft={renderBackAction}
       />
       <ContentView incident={incident} />
@@ -32,5 +37,5 @@ export const IncidentViewerScreen = ({ route, navigation }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-  },
+  }
 });

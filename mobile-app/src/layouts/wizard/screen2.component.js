@@ -83,7 +83,6 @@ export default () => {
         onChangeText={newValue => onTimeChangeHandler(newValue)}
       />
       <Text category='s1' appearance='hint'>{TIME_ERROR_MSG_EXAMPLE}</Text>
-      <Divider />
       { error && <Text style={styles.errorText} category='h5' status='danger'>{error}</Text>}
     </Layout>
   );

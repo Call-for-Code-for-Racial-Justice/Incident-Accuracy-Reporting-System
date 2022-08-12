@@ -37,8 +37,8 @@ export const GPSContent = ({ gps }) => {
         initialRegion={{
           latitude: gps.latitude,
           longitude: gps.longitude,
-          latitudeDelta: 0.05,
-          longitudeDelta: 0.04,
+          latitudeDelta: 0.01,
+          longitudeDelta: 0.01,
         }}
       >
         <Marker coordinate={gps} />

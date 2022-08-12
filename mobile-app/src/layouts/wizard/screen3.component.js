@@ -2,7 +2,7 @@ import React, { useContext, useState} from 'react';
 import { Dimensions, StyleSheet } from "react-native";
 
 import {
-  Divider,
+  IndexPath,
   Layout,
   Menu,
   MenuItem,
@@ -14,8 +14,8 @@ import wizardIncidentContext from "../../services/wizard-incident-context.servic
 export default () => {
   const { incident, setIncidentType, setViewpoint } = useContext(wizardIncidentContext);
 
-  const [incidentTypeSelectedIndex, setIncidentTypeSelectedIndex] = useState(incident.incidentType===null ? -1 : (incident.incidentType==='Harrassment' ? 1 : 2));
-  const [viewpointSelectedIndex, setViewpointSelectedIndex] = useState(incident.viewpoint===null ? -1 : (incident.viewpoint==='Witness' ? 1 : 2));
+  const [incidentTypeSelectedIndex, setIncidentTypeSelectedIndex] = useState(incident.incidentType===null ? -1 : (incident.incidentType==='Harrassment' ? new IndexPath(0) : new IndexPath(1)));
+  const [viewpointSelectedIndex, setViewpointSelectedIndex] = useState(incident.viewpoint===null ? -1 : (incident.viewpoint==='Witness' ? new IndexPath(0) : new IndexPath(1)));
 
   const onTypeSelectHandler = (index) => {
     const incidentType = index==1 ? 'Harrassment' : 'Negligence';
@@ -32,7 +32,7 @@ export default () => {
   return (
     <Layout style={styles.container}>
       <Layout style={styles.contentContainer} >
-        <Text category='h5' style={styles.titleContainer}>Select the Incident Type?</Text>
+        <Text category='h6' style={styles.titleContainer}>Select the Incident Type?</Text>
         <Menu
           contentContainerStyle={styles.menuContainer}
           selectedIndex={incidentTypeSelectedIndex}
@@ -42,9 +42,8 @@ export default () => {
           <MenuItem title="Negligence" />
         </Menu>
       </Layout>
-      <Divider />
       <Layout style={styles.contentContainer} >
-        <Text category='h5' style={styles.titleContainer}>Select the Viewpoint?</Text>
+        <Text category='h6' style={styles.titleContainer}>Select the Viewpoint?</Text>
         <Menu
           contentContainerStyle={styles.menuContainer}
           selectedIndex={viewpointSelectedIndex}
@@ -60,11 +59,12 @@ export default () => {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    flexDirection: 'column',
     width: '100%'
   },
   contentContainer: {
     flex: 1,
+    minHeight: 145,
     width: '100%',
     marginTop: 15,
   },

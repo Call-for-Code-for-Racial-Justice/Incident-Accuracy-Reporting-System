@@ -10,8 +10,6 @@ import { CreateWizardScreen6 } from '../scenes/wizard/create-wizard-6.component'
 import { CreateWizardScreen7 } from '../scenes/wizard/create-wizard-7.component';
 import { CreateWizardScreen8 } from '../scenes/wizard/create-wizard-8.component';
 
-
-
 const Stack = createStackNavigator();
 
 export const CreateWizardNavigator = () => {

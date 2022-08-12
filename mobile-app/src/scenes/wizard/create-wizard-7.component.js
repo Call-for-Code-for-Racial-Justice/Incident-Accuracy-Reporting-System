@@ -16,11 +16,13 @@ import ContentView from "../../layouts/wizard/screen7";
 import incidentsContext from "../../services/incidents-context.service";
 import wizardIncidentContext from "../../services/wizard-incident-context.service";
 import contactContext from '../../services/contact-context.service';
+import mediaContext from "../../services/media-context.service";
 
 export const CreateWizardScreen7 = ({ route, navigation }) => {
   const { updateIncidents } = useContext(incidentsContext);
-  const { incident, setIsDraft, resetId } = useContext(wizardIncidentContext);
-  const { setIncidentId } = useContext(contactContext);
+  const { incident, setIsDraft, resetIncident } = useContext(wizardIncidentContext);
+  const { setIncidentId} = useContext(contactContext);
+  const { resetMediaDetails } = useContext(mediaContext);
 
   const ArrowIosBackIcon = () => (
     <Icon style={styles.navIcon} fill="#8F9BB3" name="arrow-ios-back" />
@@ -33,10 +35,14 @@ export const CreateWizardScreen7 = ({ route, navigation }) => {
   const submitIncidentHandler = () => {
     //api call to submit
 
+    //set data
     setIsDraft(false);
     setIncidentId(incident.id);
     updateIncidents("ADD", incident);
-    resetId();
+
+    //reset
+    resetIncident();
+    resetMediaDetails();
 
     navigation.navigate('Page8');
   }
@@ -67,10 +73,14 @@ export const CreateWizardScreen7 = ({ route, navigation }) => {
     </Button>
   );
 
+  const renderTitle = () => (
+    <Text category='h5'>Summary</Text>
+  );
+
   return (
-    <SafeAreaLayout style={styles.container} insets="top" level='2'>
+    <SafeAreaLayout style={styles.container} level='2'>
       <TopNavigation
-        title={<Text>Summary</Text>}
+        title={renderTitle}
         alignment="center"
         accessoryLeft={renderBackAction}
         accessoryRight={renderSubmitAction}

@@ -32,7 +32,7 @@ const FilesScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 5
+
   },
   empty: {
     paddingTop: 8,

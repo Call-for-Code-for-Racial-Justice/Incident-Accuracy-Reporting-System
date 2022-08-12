@@ -3,6 +3,7 @@ import { StyleSheet } from "react-native";
 
 import {
   Divider,
+  IndexPath,
   Layout,
   Menu,
   MenuItem,
@@ -13,7 +14,7 @@ import wizardIncidentContext from '../../services/wizard-incident-context.servic
 
 export default () => {
   const { incident, setIsLive } = useContext(wizardIncidentContext);
-  const [selectedIndex, setSelectedIndex] = useState(incident.isLive==null ? -1 : (incident.IsLive ? 1 : 2));
+  const [selectedIndex, setSelectedIndex] = useState(incident.isLive==null ? -1 : (incident.IsLive ? new IndexPath(0) : new IndexPath(1)));
 
   const onSelectHandler = (index) => {
     setIsLive(index==1);
