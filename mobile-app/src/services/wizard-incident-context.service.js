@@ -11,6 +11,7 @@ const wizardIncidentContext = createContext({
   setViewpoint: (newView) => { },
   setDescription: (newDescription) => { },
   setFiles: (newFiles) => { },
+  resetId: () => { },
 });
 
 export const WizardIncidentContextProvider = (props) => {
@@ -39,6 +40,21 @@ export const WizardIncidentContextProvider = (props) => {
       );
     }
   };
+
+  const resetIdHandler = () => {
+    setIncident({
+      id: null,
+      timestamp: null,
+      isLive: null,
+      isDraft: null,
+      textLocation: null,
+      gps: null,
+      incidentType: null,
+      viewpoint: null,
+      description: null,
+      files: null
+    })
+  }
 
   setIdHandler();
 
@@ -114,21 +130,13 @@ export const WizardIncidentContextProvider = (props) => {
     );
   };
 
-  const setFilesHandler = (op, item) => {
-    if( op==="ADD" ) {
-      setIncident(
-        (prevState) => ({
-          ...prevState,
-          files: [...item]
-        })
-      );
-    } if ( op==="REMOVE" ) {
-      let newFileList = incident.files.filter( x => { x.uri !== item.uri });
+  const setFilesHandler = (newFiles) => {
+    setIncident(
       (prevState) => ({
         ...prevState,
-        files: newFileList
-      });
-    }
+        files: newFiles
+      })
+    );
   };
 
   return (
@@ -144,7 +152,8 @@ export const WizardIncidentContextProvider = (props) => {
         setIncidentType: setIncidentTypeHandler,
         setViewpoint: setViewpointHandler,
         setDescription: setDescriptionHandler,
-        setFiles: setFilesHandler
+        setFiles: setFilesHandler,
+        resetId: resetIdHandler
       }}
     >
       {props.children}

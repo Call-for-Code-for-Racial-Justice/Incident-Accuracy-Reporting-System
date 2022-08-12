@@ -1,34 +1,18 @@
 import React from 'react';
 import { StyleSheet } from 'react-native';
 
-import { Layout, Text } from '@ui-kitten/components';
-
-import { GPSContent } from './render-items.component';
+import { GPSContent, GPSDescriptionContent } from './render-items.component';
 
 const GPSScreen = ({ route }) => {
   const gps = route.params.gps;
+  const textLocation = route.params.textLocation;
 
   return (
     <>
       { gps && <GPSContent gps={gps} /> }
-      { !gps && 
-        <Layout style={styles.container} >
-          <Text category='s1' style={styles.empty}>None found.</Text> 
-        </Layout>
-      }
+      { !gps && <GPSDescriptionContent textLocation={textLocation} /> }
     </>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    padding: 5
-  },
-  empty: {
-    paddingTop: 8,
-    paddingBottom: 8
-  },
-});
 
 export default GPSScreen;

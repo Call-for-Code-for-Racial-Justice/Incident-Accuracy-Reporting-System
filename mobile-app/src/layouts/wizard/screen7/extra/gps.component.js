@@ -1,11 +1,8 @@
 import React, { useContext } from 'react';
-import { StyleSheet } from 'react-native';
 
-import { Layout, Text } from '@ui-kitten/components';
+import { GPSContent, GPSDescriptionContent } from './render-items.component';
 
-import { GPSContent } from './render-items.component';
-
-import wizardIncidentContext from '../../../../services/wizard-incident-content.service';
+import wizardIncidentContext from '../../../../services/wizard-incident-context.service';
 
 const GPSScreen = () => {
   const { incident } = useContext(wizardIncidentContext);
@@ -14,24 +11,9 @@ const GPSScreen = () => {
   return (
     <>
       { gps && <GPSContent gps={gps} /> }
-      { !gps && 
-        <Layout style={styles.container} >
-          <Text category='s1' style={styles.empty}>{incident.textLoction}</Text> 
-        </Layout>
-      }
+      { !gps && <GPSDescriptionContent textLocation={incident.textLocation} /> }
     </>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    padding: 5
-  },
-  empty: {
-    paddingTop: 8,
-    paddingBottom: 8
-  },
-});
 
 export default GPSScreen;

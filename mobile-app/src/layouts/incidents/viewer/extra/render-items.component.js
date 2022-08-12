@@ -47,6 +47,19 @@ export const GPSContent = ({ gps }) => {
   );
 };
 
+export const GPSDescriptionContent = ({ textLocation }) => {
+  return (
+    <Layout style={stylesRenderItems.gpsDescriptionContainer}>
+      <Input
+        value={textLocation}
+        label="Location Description"
+        style={stylesRenderItems.gpsDescriptionInput}
+        disabled
+      />
+    </Layout>
+  )
+};
+
 export const InfoContent = ({ incident }) => {
   const incidentDate = moment(new Date(incident.timestamp)).format('MM/DD/YYYY hh:mm a');
 
@@ -129,5 +142,12 @@ const stylesRenderItems = StyleSheet.create({
   infoInput: {
     flex: 1,
     margin: 2,
-  }
+  },
+  gpsDescriptionContainer: {
+    flex: 1
+  },
+  gpsDescriptionInput: {
+    flex: 1,
+    margin: 5
+  },
 });

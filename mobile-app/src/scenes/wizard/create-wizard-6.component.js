@@ -10,7 +10,7 @@ import {
 import { SafeAreaLayout } from "../../components/safe-area-layout.component";
 import ContentView from "../../layouts/wizard/screen6.component";
 
-import wizardIncidentContext from "../../services/wizard-incident-content.service";
+import wizardIncidentContext from "../../services/wizard-incident-context.service";
 
 export const CreateWizardScreen6 = ({ route, navigation }) => {
   const { incident } = useContext(wizardIncidentContext);

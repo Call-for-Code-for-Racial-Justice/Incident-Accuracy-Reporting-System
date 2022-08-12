@@ -24,7 +24,7 @@ const TabNavigator = ({ incident }) => (
   <Navigator tabBar={props => <TopTabBar {...props} />}>
     <Screen name='Info' component={InfoScreen} initialParams={{incident: incident}} />
     <Screen name='Files' component={FilesScreen} initialParams={{files: incident.files}} />
-    <Screen name='GPS' component={GPSScreen} initialParams={{gps: incident.gps}} />
+    <Screen name='GPS' component={GPSScreen} initialParams={{gps: incident.gps, textLocation: incident.textLocation}} />
   </Navigator>
 );
 

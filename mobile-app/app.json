@@ -1,10 +1,11 @@
 {
   "expo": {
-    "name": "iars-mobile-app",
-    "slug": "iars-mobile-app",
+    "name": "Incident Accuracy Reporting System",
+    "slug": "iars",
     "version": "1.0.0",
+    "owner": "CallForCodeIBM",
     "orientation": "portrait",
-    "icon": "./src/assets/images/icon.png",
+    "icon": "./src/assets/images/icon-iars.png",
     "userInterfaceStyle": "light",
     "splash": {
       "image": "./src/assets/images/splash.png",

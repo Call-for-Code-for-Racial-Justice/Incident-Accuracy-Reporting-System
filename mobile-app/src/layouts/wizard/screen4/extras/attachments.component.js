@@ -3,11 +3,13 @@ import { Dimensions, Image, ImageBackground, StyleSheet, View, TouchableOpacity,
 
 import { Layout, Icon } from "@ui-kitten/components";
 
-import mediaContext from '../store/media-context';
+import mediaContext from '../../../../services/media-context.service';
 
 export const AttachmentsScreen = ({ route }) => {
-  const { attachments, updateAttachments } = useContext(mediaContext);
+  const { mediaDetails, updateAttachments } = useContext(mediaContext);
   const windowSize = Dimensions.get('window');
+
+  const attachments = mediaDetails.attachments;
 
   const DeleteIcon = () => (
     <Icon style={styles.trashIcon} fill='#8F9BB3' name='trash-outline' />

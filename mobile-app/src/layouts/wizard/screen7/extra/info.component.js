@@ -5,7 +5,7 @@ import { Layout } from '@ui-kitten/components';
 
 import { InfoContent } from './render-items.component';
 
-import wizardIncidentContext from '../../../../services/wizard-incident-content.service';
+import wizardIncidentContext from '../../../../services/wizard-incident-context.service';
 
 const InfoScreen = () => {
   const { incident } = useContext(wizardIncidentContext);

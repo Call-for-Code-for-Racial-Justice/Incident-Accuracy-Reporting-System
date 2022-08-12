@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import { Dimensions, StyleSheet } from "react-native";
 
 import {
@@ -6,18 +6,40 @@ import {
   IndexPath,
   Input,
   Layout,
-  RadioGroup,
-  Radio,
   Select,
   SelectItem,
-  Text
 } from "@ui-kitten/components";
 
+import contactContext from '../../../../services/contact-context.service';
+
 export const DetailScreen = () => {
+  const { setEmailAddress, setPhoneNumber, setContactOption, setPhoneContactOption } = useContext(contactContext);
+
+  const [emailAddressInput, setEmailAddressInput] = useState('');
+  const [phoneNumberInput, setPhoneNumberInput] = useState('');
+  const [phoneMethodIndex, setPhoneMethodIndex] = useState(new IndexPath(0));
+  const [contactMethodIndex, setContactMethodIndex] = useState(new IndexPath(0));
+
   const phoneOptions = ['Call', 'Text'];
   const contactOptions = ['E-Mail', 'Phone'];
-  const [phoneMethodIndex, setPhoneMethodIndex] = React.useState(new IndexPath(0));
-  const [contactMethodIndex, setContactMethodIndex] = React.useState(new IndexPath(0));
+
+  const onEmailAddressEndEditingHandler = () => {
+    setEmailAddress(emailAddressInput);
+  }
+
+  const onPhoneNumberEndEditingHandler = () => {
+    setPhoneNumber(phoneNumberInput);
+  }
+
+  const phoneContactOptionOnSelectHandler = (index) => {
+    setPhoneMethodIndex(index);
+    setPhoneContactOption(index==1?'call':'text');
+  }
+
+  const contactOptionOnSelectHandler = (index) => {
+    setContactMethodIndex(index);
+    setContactOption(index==1?'call':'text');
+  }
 
   return (
     <Layout style={styles.contentContainer} >
@@ -27,6 +49,9 @@ export const DetailScreen = () => {
         style={styles.infoInput}
         keyboardType="email-address"
         textContentType="emailAddress"
+        value={emailAddressInput}
+        onChangeText={(newValue) => setEmailAddressInput(newValue)}
+        onEndEditing={(event) => onEmailAddressEndEditingHandler(event)}
       />
       <Divider style={styles.divider} />
       <Input
@@ -35,12 +60,15 @@ export const DetailScreen = () => {
         style={styles.infoInput}
         keyboardType="phone-pad"
         textContentType="telephoneNumber"
+        value={phoneNumberInput}
+        onChangeText={(newValue) => setPhoneNumberInput(newValue)}
+        onEndEditing={(event) => onPhoneNumberEndEditingHandler(event)}
       />
       <Select
         label="Preferred"
         value={phoneOptions[phoneMethodIndex.row]}
         selectedIndex={phoneMethodIndex}
-        onSelect={index => setPhoneMethodIndex(index)}
+        onSelect={phoneContactOptionOnSelectHandler}
         >
           <SelectItem title='Call' />
           <SelectItem title='Text' />
@@ -50,7 +78,7 @@ export const DetailScreen = () => {
         label="Preferred contact method"
         value={contactOptions[contactMethodIndex.row]}
         selectedIndex={contactMethodIndex}
-        onSelect={index => setContactMethodIndex(index)}>
+        onSelect={contactOptionOnSelectHandler}>
           <SelectItem title='E-mail'/>
           <SelectItem title='Phone'/>
       </Select>

@@ -3,7 +3,7 @@ import moment from 'moment';
 
 import { LayoutList } from "../../components/layout-list.component";
 
-import incidentsContext from '../../services/incidents-content.service';
+import incidentsContext from '../../services/incidents-context.service';
 
 export const IncidentsListScreen = ({ navigation }) => {
   const { incidents } = useContext(incidentsContext);

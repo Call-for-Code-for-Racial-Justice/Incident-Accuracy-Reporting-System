@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { StyleSheet, View } from "react-native";
 
 import {
@@ -10,12 +10,19 @@ import {
 import { SafeAreaLayout } from "../../components/safe-area-layout.component";
 import ContentView from "../../layouts/wizard/screen8";
 
+import contactContext from "../../services/contact-context.service";
+
 export const CreateWizardScreen8 = ({ route, navigation }) => {
+  const { contactDetails } = useContext(contactContext);
+
   const PaperPlaneOulineIcon = () => (
     <Icon style={styles.navIcon} fill="#8F9BB3" name="paper-plane-outline" />
   );
 
   const onSubmitHandler = () => {
+    //API call to add contact details
+    console.log(contactDetails);
+    
     navigation.reset({
       index: 0,
       routes: [{ name: 'Page1' }]

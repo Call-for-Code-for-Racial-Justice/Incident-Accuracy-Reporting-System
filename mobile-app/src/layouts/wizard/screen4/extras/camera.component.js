@@ -6,16 +6,17 @@ import * as MediaLibrary from 'expo-media-library';
 
 import { Button, ButtonGroup, Icon, Layout, Text } from '@ui-kitten/components';
 
-import mediaContext from '../store/media-context';
+import mediaContext from '../../../../services/media-context.service';
 
 export const CameraScreen = ({ navigation }) => {
+  const { mediaDetails, setIsCameraEnabled, updateAttachments } = useContext(mediaContext);
+  
   const [hasCameraPermission, setHasCameraPermission] = useState(false);
   const [hasCamerarollPermission, setHasCamerarollPermission] = useState(false);
-
   const [type, setType] = useState(CameraType.back);
   const ref = useRef(null);
 
-  const { isCameraEnabled, setIsCameraEnabled, updateAttachments } = useContext(mediaContext);
+  const isCameraEnabled = mediaDetails.isCameraEnabled;
 
   useEffect(() => {
     (async () => {
@@ -44,7 +45,6 @@ export const CameraScreen = ({ navigation }) => {
       const photo = await camera.takePictureAsync()
       updateAttachments('ADD', photo);
       const result = await MediaLibrary.saveToLibraryAsync(photo.uri);
-      console.log(result);
     }
   }
 

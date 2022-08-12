@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Dimensions, StyleSheet } from "react-native";
 
 import { NavigationContainer } from '@react-navigation/native';
@@ -15,6 +15,8 @@ import { ChoiceScreen } from './extras/choice.component';
 import { DetailScreen } from './extras/details.component';
 
 const { Navigator, Screen } = createMaterialTopTabNavigator();
+
+import contactContext from '../../../services/contact-context.service';
 
 const TopTabBar = ({ navigation, state }) => (
   <TabBar
@@ -33,7 +35,7 @@ const TabNavigator = () => (
 );
 
 export default () => {
-  const incidentNumber = "IC334A95";
+  const { incidentNumber } = useContext(contactContext);
 
   return (
     <>

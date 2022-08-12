@@ -1,5 +1,5 @@
-import React from "react";
-import { StyleSheet, View } from "react-native";
+import React, { useContext } from "react";
+import { StyleSheet } from "react-native";
 
 import {
   Button,
@@ -11,7 +11,13 @@ import {
 import { SafeAreaLayout } from "../../components/safe-area-layout.component";
 import ContentView from "../../layouts/wizard/screen4";
 
+import mediaContext from "../../services/media-context.service";
+import wizardIncidentContext from '../../services/wizard-incident-context.service';
+
 export const CreateWizardScreen4 = ({ route, navigation }) => {
+  const { mediaDetails } = useContext(mediaContext);
+  const { setFiles } = useContext(wizardIncidentContext);
+
   const ArrowIosBackIcon = (style) => (
     <Icon style={styles.navIcon} fill="#8F9BB3" name="arrow-ios-back" />
   );
@@ -19,6 +25,11 @@ export const CreateWizardScreen4 = ({ route, navigation }) => {
   const ArrowIosForwardIcon = () => (
     <Icon style={styles.navIcon} fill="#8F9BB3" name="arrow-ios-forward" />
   );
+
+  const onNextPressHandler = async () => {
+    setFiles(mediaDetails.attachments);
+    navigation.navigate('Page5');
+  }
 
   const renderBackAction = () => (
     <Button
@@ -40,7 +51,7 @@ export const CreateWizardScreen4 = ({ route, navigation }) => {
       appearance="outline"
       accessoryRight={ArrowIosForwardIcon}
       size='small'
-      onPress={() => navigation.navigate('Page5')}
+      onPress={onNextPressHandler}
     >
       NEXT
     </Button>

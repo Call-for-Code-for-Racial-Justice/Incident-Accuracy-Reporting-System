@@ -11,7 +11,7 @@ import {
   Text,
 } from "@ui-kitten/components";
 
-import wizardIncidentContext from "../../services/wizard-incident-content.service";
+import wizardIncidentContext from "../../services/wizard-incident-context.service";
 
 export default () => {
   const { incident, setGPS, setTextLocation } = useContext(wizardIncidentContext);

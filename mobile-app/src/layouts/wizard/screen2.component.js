@@ -11,7 +11,7 @@ import {
   Text,
 } from "@ui-kitten/components";
 
-import wizardIncidentContext from '../../services/wizard-incident-content.service';
+import wizardIncidentContext from '../../services/wizard-incident-context.service';
 
 const CalendarIcon = (props) => (
   <Icon {...props} name='calendar' />
