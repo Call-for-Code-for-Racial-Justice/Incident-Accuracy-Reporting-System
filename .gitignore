@@ -22,3 +22,4 @@ buildNumber.properties
 
 .data/*
 .env
+.vscode

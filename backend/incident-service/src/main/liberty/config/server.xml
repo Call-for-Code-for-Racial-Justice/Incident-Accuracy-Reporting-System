@@ -5,6 +5,12 @@
     <featureManager>
         <feature>jakartaee-9.1</feature>
         <feature>microProfile-5.0</feature>
+        <feature>restfulWS-3.0</feature>
+        <feature>jsonb-2.0</feature>
+        <feature>jsonp-2.0</feature>
+        <feature>cdi-3.0</feature>
+        <feature>persistence-3.0</feature>
+        <feature>jdbc-4.3</feature>
     </featureManager>
 
     <!-- This template enables security. To get the full use of all the capabilities, a keystore and user registry are required. -->
@@ -39,4 +45,39 @@
 
     <!-- Default SSL configuration enables trust for default certificates from the Java runtime -->
     <ssl id="defaultSSLConfig" trustDefaultCerts="true" />
+
+    <dataSource id="DefaultDataSource"
+                jndiName="jdbc/postgres"
+                jdbcDriverRef="postgresql-driver"
+                type="javax.sql.ConnectionPoolDataSource"
+                transactional="true">
+        <properties serverName="localhost"
+                             portNumber="15432"
+                             databaseName="incidents"
+                             user=""
+                             password=""/>
+    </dataSource>
+
+    <dataSource id="DefaultDataSourceNonJta"
+                jndiName="jdbc/postgresnonjta"
+                jdbcDriverRef="postgresql-driver"
+                type="javax.sql.ConnectionPoolDataSource"
+                transactional="false">
+        <properties serverName="localhost"
+                             portNumber="15432"
+                             databaseName="incidents"
+                             user=""
+                             password=""/>
+    </dataSource>
+
+    <jdbcDriver id="postgresql-driver"
+        libraryRef="postgresqlLib"
+        javax.sql.XADataSource="org.postgresql.xa.PGXADataSource"
+        javax.sql.ConnectionPoolDataSource="org.postgresql.ds.PGConnectionPoolDataSource"
+        javax.sql.DataSource="org.postgresql.ds.PGPoolingDataSource"/>
+
+
+    <library id="postgresqlLib">
+        <fileset dir="${shared.resource.dir}" includes="p*.jar"/>
+    </library>
 </server>
