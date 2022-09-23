@@ -8,8 +8,8 @@ services:
       - "9000:9000"
       - "9001:9001"
     environment:
-      MINIO_ROOT_USER: minioadmin
-      MINIO_ROOT_PASSWORD: minioadmin
+      MINIO_ROOT_USER: ${MINIO_ROOT_USER}
+      MINIO_ROOT_PASSWORD: ${MINIO_ROOT_PASSWORD}
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:9000/minio/health/live"]
       interval: 30s
@@ -23,7 +23,6 @@ services:
     build:
       dockerfile: configurations/docker/Dockerfile-maven-debug
       context: ../../
-    restart: always
     ports:
       - "9080:9080"
     volumes:
