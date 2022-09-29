@@ -7,8 +7,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
+
 import java.util.List;
-import java.util.Properties;
 
 import org.eclipse.microprofile.openapi.annotations.Operation;
 import org.eclipse.microprofile.openapi.annotations.responses.APIResponse;
@@ -18,12 +18,9 @@ import com.ibm.websphere.jaxrs20.multipart.IAttachment;
 
 import jakarta.activation.DataHandler;
 
-import jakarta.ws.rs.GET;
 import jakarta.ws.rs.POST;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.Consumes;
-import jakarta.ws.rs.Produces;
-import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 
 import io.minio.BucketExistsArgs;
@@ -42,7 +39,7 @@ public class MediaUploadService {
     @APIResponses({
             @APIResponse(responseCode = "200", description = "Successfully inserted media into storage."),
             @APIResponse(responseCode = "500", description = "Problem encountered while processing uploaded media.") })
-    @Operation(summary = "Accept array of images and move them into s3 storage.")
+    @Operation(summary = "Accept array of media files (image or video) then move into s3 storage.")
     public Response postFormData(List<IAttachment> attachments)
             throws IOException, InvalidKeyException, NoSuchAlgorithmException, IllegalArgumentException {
 
