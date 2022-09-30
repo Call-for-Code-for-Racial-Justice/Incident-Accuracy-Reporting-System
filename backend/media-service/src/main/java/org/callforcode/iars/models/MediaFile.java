@@ -70,7 +70,7 @@ public class MediaFile {
                 name, mf.name)
                 && Objects.equals(size, mf.size) 
                 && Objects.equals(created, mf.created)
-                && Objects.equals(uploaded, mf.uploaded)
+                && Objects.equals(uploaded, mf.uploaded);
     }
 
     @Override
@@ -83,14 +83,14 @@ public class MediaFile {
         return "MediaFile: " + jsonb.toJson(this);
     }
 
-    public static class SystemLoadSerializer implements Serializer<Object> {
+    public static class MediaFileSerializer implements Serializer<Object> {
         @Override
         public byte[] serialize(String topic, Object data) {
             return jsonb.toJson(data).getBytes();
         }
     }
 
-    public static class SystemLoadDeserializer implements Deserializer<MediaFile> {
+    public static class MediaFileDeserializer implements Deserializer<MediaFile> {
         @Override
         public MediaFile deserialize(String topic, byte[] data) {
             if (data == null)

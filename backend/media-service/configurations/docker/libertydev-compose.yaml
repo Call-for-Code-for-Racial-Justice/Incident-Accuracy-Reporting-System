@@ -4,24 +4,27 @@ services:
   iars-zookeeper:
     container_name: iars-zookeeper
     image: confluentinc/cp-zookeeper:7.0.1
+    ports:
+      - "2181:2181"
+      - "2000:2000"
     environment:
       ZOOKEEPER_CLIENT_PORT: 2181
       ZOOKEEPER_TICK_TIME: 2000
 
   iars-broker:
-    container_name: broker
+    container_name: iars-broker
     image: confluentinc/cp-kafka:7.0.1
     ports:
     # To learn about configuring Kafka for access across networks see
     # https://www.confluent.io/blog/kafka-client-cannot-connect-to-broker-on-aws-on-docker-etc/
       - "9092:9092"
     depends_on:
-      - zookeeper
+      - iars-zookeeper
     environment:
       KAFKA_BROKER_ID: 1
-      KAFKA_ZOOKEEPER_CONNECT: 'zookeeper:2181'
+      KAFKA_ZOOKEEPER_CONNECT: 'iars-zookeeper:2181'
       KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_INTERNAL:PLAINTEXT
-      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://localhost:9092,PLAINTEXT_INTERNAL://broker:29092
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://localhost:9092,PLAINTEXT_INTERNAL://iars-broker:29092
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
       KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
       KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
@@ -79,14 +82,14 @@ services:
     volumes:
       - .data/mongodb:/data/db
 
-  iars-media:
-    container_name: iars-media
-    build:
-      dockerfile: configurations/docker/Dockerfile-maven-debug
-      context: ../../
-    ports:
-      - "9080:9080"
-    volumes:
-      - ../../src:/usr/src/app/src
-      - .data/target:/usr/src/app/target
-      - ${HOME}/.m2:/root/.m2
+  # iars-media:
+  #   container_name: iars-media
+  #   build:
+  #     dockerfile: configurations/docker/Dockerfile-maven-debug
+  #     context: ../../
+  #   ports:
+  #     - "9080:9080"
+  #   volumes:
+  #     - ../../src:/usr/src/app/src
+  #     - .data/target:/usr/src/app/target
+  #     - ${HOME}/.m2:/root/.m2

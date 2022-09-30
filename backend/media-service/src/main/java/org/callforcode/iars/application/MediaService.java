@@ -16,6 +16,8 @@ import java.util.logging.Logger;
 import javax.validation.Validator;
 import javax.validation.ConstraintViolation;
 
+import javax.inject.Inject;
+
 import org.apache.commons.compress.utils.FileNameUtils;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang3.RandomStringUtils;
@@ -37,7 +39,6 @@ import com.ibm.websphere.jaxrs20.multipart.IAttachment;
 import javax.activation.DataHandler;
 
 import javax.enterprise.context.ApplicationScoped;
-import javax.inject.Inject;
 import javax.json.JsonArray;
 import javax.json.JsonArrayBuilder;
 import javax.json.Json;
@@ -78,7 +79,8 @@ import org.callforcode.iars.models.MediaFile;
 @ApplicationScoped
 public class MediaService {
     private static Logger logger = Logger.getLogger(MediaService.class.getName());
-    private FlowableEmitter<Message<String>> propertyNameEmitter;
+    
+    private FlowableEmitter<Message<String>> newMediaUploadEmitter;
 
     @POST
     @Consumes("multipart/form-data")
@@ -102,15 +104,10 @@ public class MediaService {
             InputStream stream = dataHandler.getInputStream();
 
             String contentType = dataHandler.getContentType();
-            System.out.println("Content-type: " + contentType);
-            String fileName = dataHandler.getName();
-            if (fileName.equals("incident_number")) {
-                String incidentNumber = (String) dataHandler.getContent();
-                media.setIncidentNumber(incidentNumber);
-                continue;
-            }
+            logger.info("Content-type: " + contentType);
+            String keyName = dataHandler.getName();
 
-            if (fileName == null) {
+            if( keyName.equals("incident_number") ) {
                 StringBuilder sb = new StringBuilder();
                 BufferedReader br = new BufferedReader(new InputStreamReader(stream));
                 String line = null;
@@ -129,8 +126,11 @@ public class MediaService {
                         }
                     }
                 }
-                System.out.println("Non-file attachment value: " + sb.toString());
+                media.setIncidentNumber(sb.toString());
+                logger.info("Non-file attachment value: " + sb.toString());
             } else {
+                System.out.println("Adding: " + keyName);
+                String fileName = keyName;
                 File tmpFile = new File(fileName);
                 OutputStream output = new FileOutputStream(tmpFile, false);
                 stream.transferTo(output);
@@ -192,32 +192,24 @@ public class MediaService {
                 minioClient.uploadObject(
                         UploadObjectArgs.builder()
                                 .bucket(bucketName)
-                                .object(tmpFile.getName())
+                                .object(mf.getName())
                                 .filename(tmpFile.getAbsolutePath())
                                 .build());
                 tmp = String.format("Successfully added %s to bucket %s", tmpFile.getAbsolutePath(),
                         bucketName);
                 logger.info(tmp);
-
-                //
-                MediaFile tmpMF = new MediaFile();
-                tmpMF.setName(tmpFile.getName());
             }
+
+            media.setFiles(files);
         } catch (MinioException e) {
             logger.warning("Error occurred: " + e.getLocalizedMessage());
             logger.warning("HTTP trace: " + e.httpTrace());
         }
 
-        return Response.ok("done").build();
-    }
+        Message<String> message = Message.of(media.toString());
+        newMediaUploadEmitter.onNext(message);
 
-    @Outgoing("newMediaUpload")
-    // tag::SPMHeader[]
-    public Publisher<Message<String>> sendNewMediaReceived() {
-        // end::SPMHeader[]
-        Flowable<Message<String>> flowable = Flowable.create(emitter -> this.propertyNameEmitter = emitter,
-                BackpressureStrategy.BUFFER);
-        return flowable;
+        return Response.ok("done").build();
     }
 
     @Incoming("mediaCommittedToIncident")
@@ -226,5 +218,12 @@ public class MediaService {
         String incidentNumber = um.getIncidentNumber();
 
         // do something with the data
+    }
+
+    @Outgoing("newMediaUpload")
+    public Publisher<Message<String>> sendPropertyName() {
+        Flowable<Message<String>> flowable = Flowable.create(emitter ->
+                this.newMediaUploadEmitter = emitter, BackpressureStrategy.BUFFER);
+        return flowable;
     }
 }

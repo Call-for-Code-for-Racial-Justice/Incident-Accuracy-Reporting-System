@@ -5,12 +5,12 @@
     <featureManager>
         <feature>jakartaee-8.0</feature>
         <feature>microProfile-3.3</feature>
-        <feature>restfulWS-3.0</feature>
-        <feature>restfulWSClient-3.0</feature>
+        <!-- <feature>restfulWS-3.0</feature>
+        <feature>restfulWSClient-3.0</feature> -->
         <feature>jaxrs-2.1</feature>
+        <feature>jsonb-1.0</feature>
         <feature>cdi-2.0</feature>
         <feature>concurrent-1.0</feature>
-        <feature>jsonb-1.0</feature>
         <feature>mpHealth-2.2</feature>
         <feature>mpConfig-1.4</feature>
         <feature>mpReactiveMessaging-1.0</feature>

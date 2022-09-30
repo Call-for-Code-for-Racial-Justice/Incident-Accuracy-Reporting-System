@@ -58,14 +58,14 @@ public class UnprocessedMedia {
         return "Media: " + jsonb.toJson(this);
     }
 
-    public static class SystemLoadSerializer implements Serializer<Object> {
+    public static class UnprocessedMediaSerializer implements Serializer<Object> {
         @Override
         public byte[] serialize(String topic, Object data) {
             return jsonb.toJson(data).getBytes();
         }
     }
 
-    public static class SystemLoadDeserializer implements Deserializer<UnprocessedMedia> {
+    public static class UnprocessedMediaDeserializer implements Deserializer<UnprocessedMedia> {
         @Override
         public UnprocessedMedia deserialize(String topic, byte[] data) {
             if (data == null)
