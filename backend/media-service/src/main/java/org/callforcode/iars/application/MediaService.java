@@ -79,7 +79,7 @@ import org.callforcode.iars.models.MediaFile;
 @ApplicationScoped
 public class MediaService {
     private static Logger logger = Logger.getLogger(MediaService.class.getName());
-    
+
     private FlowableEmitter<Message<String>> newMediaUploadEmitter;
 
     @POST
@@ -107,7 +107,7 @@ public class MediaService {
             logger.info("Content-type: " + contentType);
             String keyName = dataHandler.getName();
 
-            if( keyName.equals("incident_number") ) {
+            if (keyName.equals("incident_number")) {
                 StringBuilder sb = new StringBuilder();
                 BufferedReader br = new BufferedReader(new InputStreamReader(stream));
                 String line = null;
@@ -222,8 +222,8 @@ public class MediaService {
 
     @Outgoing("newMediaUpload")
     public Publisher<Message<String>> sendPropertyName() {
-        Flowable<Message<String>> flowable = Flowable.create(emitter ->
-                this.newMediaUploadEmitter = emitter, BackpressureStrategy.BUFFER);
+        Flowable<Message<String>> flowable = Flowable.create(emitter -> this.newMediaUploadEmitter = emitter,
+                BackpressureStrategy.BUFFER);
         return flowable;
     }
 }

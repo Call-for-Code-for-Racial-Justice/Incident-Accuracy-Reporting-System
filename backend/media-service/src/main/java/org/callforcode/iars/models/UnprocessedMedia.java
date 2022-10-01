@@ -55,7 +55,7 @@ public class UnprocessedMedia {
 
     @Override
     public String toString() {
-        return "Media: " + jsonb.toJson(this);
+        return "UnprocessedMedia: " + jsonb.toJson(this);
     }
 
     public static class UnprocessedMediaSerializer implements Serializer<Object> {
