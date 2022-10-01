@@ -9,4 +9,7 @@ buildNumber.properties
 .mvn/timing.properties
 # https://github.com/takari/maven-wrapper#usage-without-binary-jar
 .mvn/wrapper/maven-wrapper.jar
-configurations/docker/.data
+
+local-development/.data
+local-development/.env
+.vscode
