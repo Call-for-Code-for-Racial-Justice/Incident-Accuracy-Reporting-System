@@ -11,7 +11,6 @@ import javax.validation.constraints.NotEmpty;
 import org.apache.kafka.common.serialization.Deserializer;
 import org.apache.kafka.common.serialization.Serializer;
 
-// tag::Media[]
 public class Media {
     private static final Jsonb jsonb = JsonbBuilder.create();
 
@@ -74,4 +73,3 @@ public class Media {
         }
     }
 }
-// end::Media[]

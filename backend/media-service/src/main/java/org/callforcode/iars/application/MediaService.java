@@ -10,25 +10,11 @@ import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import java.util.Set;
 import java.util.logging.Logger;
-
-import javax.validation.Validator;
-import javax.validation.ConstraintViolation;
-
-import javax.inject.Inject;
 
 import org.apache.commons.compress.utils.FileNameUtils;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang3.RandomStringUtils;
-import org.bson.Document;
-import org.bson.types.ObjectId;
-
-import com.mongodb.client.FindIterable;
-import com.mongodb.client.MongoCollection;
-import com.mongodb.client.MongoDatabase;
-import com.mongodb.client.result.DeleteResult;
-import com.mongodb.client.result.UpdateResult;
 
 import org.eclipse.microprofile.openapi.annotations.Operation;
 import org.eclipse.microprofile.openapi.annotations.responses.APIResponse;
@@ -39,18 +25,10 @@ import com.ibm.websphere.jaxrs20.multipart.IAttachment;
 import javax.activation.DataHandler;
 
 import javax.enterprise.context.ApplicationScoped;
-import javax.json.JsonArray;
-import javax.json.JsonArrayBuilder;
-import javax.json.Json;
+import javax.inject.Inject;
 import javax.ws.rs.Consumes;
-import javax.ws.rs.DELETE;
-import javax.ws.rs.GET;
-import javax.ws.rs.PUT;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
-import javax.ws.rs.Produces;
-import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
 import io.minio.BucketExistsArgs;
@@ -71,9 +49,9 @@ import io.reactivex.rxjava3.core.BackpressureStrategy;
 import io.reactivex.rxjava3.core.Flowable;
 import io.reactivex.rxjava3.core.FlowableEmitter;
 
-import org.callforcode.iars.models.UnprocessedMedia;
 import org.callforcode.iars.models.Media;
 import org.callforcode.iars.models.MediaFile;
+import org.callforcode.iars.models.UnprocessedMedia;
 
 @Path("/upload")
 @ApplicationScoped
@@ -81,6 +59,9 @@ public class MediaService {
     private static Logger logger = Logger.getLogger(MediaService.class.getName());
 
     private FlowableEmitter<Message<String>> newMediaUploadEmitter;
+
+    @Inject
+    MediaResource mediaManager;
 
     @POST
     @Consumes("multipart/form-data")
@@ -209,6 +190,10 @@ public class MediaService {
         Message<String> message = Message.of(media.toString());
         newMediaUploadEmitter.onNext(message);
 
+        if (!media.getIncidentNumber().isEmpty() && media.getFiles() != null) {
+            mediaManager.add(media);
+        }
+
         return Response.ok("done").build();
     }
 
@@ -216,6 +201,14 @@ public class MediaService {
     public void processNewMedia(UnprocessedMedia um) {
         logger.info("processNewMedia: " + um);
         String incidentNumber = um.getIncidentNumber();
+
+        Media media = mediaManager.lookup(incidentNumber);
+        if (media != null && media.getFiles().size() == um.getFiles().size()) {
+            logger.info(media.toString());
+            mediaManager.remove(incidentNumber);
+        } else {
+            logger.warning("Problem locating incident: " + incidentNumber);
+        }
 
         // do something with the data
     }

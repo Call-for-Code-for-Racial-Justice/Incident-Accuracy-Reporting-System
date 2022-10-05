@@ -11,7 +11,8 @@ import javax.validation.constraints.NotEmpty;
 import org.apache.kafka.common.serialization.Deserializer;
 import org.apache.kafka.common.serialization.Serializer;
 
-// tag::MediaFile[]
+import com.mongodb.BasicDBObject;
+
 public class MediaFile {
     private static final Jsonb jsonb = JsonbBuilder.create();
 
@@ -68,7 +69,7 @@ public class MediaFile {
         MediaFile mf = (MediaFile) o;
         return Objects.equals(
                 name, mf.name)
-                && Objects.equals(size, mf.size) 
+                && Objects.equals(size, mf.size)
                 && Objects.equals(created, mf.created)
                 && Objects.equals(uploaded, mf.uploaded);
     }
@@ -81,6 +82,15 @@ public class MediaFile {
     @Override
     public String toString() {
         return "MediaFile: " + jsonb.toJson(this);
+    }
+
+    public BasicDBObject toBasicDBObject() {
+        BasicDBObject b = new BasicDBObject();
+        b.put("name", this.name);
+        b.put("size", this.size);
+        b.put("created", this.created);
+        b.put("uploaded", this.uploaded);
+        return b;
     }
 
     public static class MediaFileSerializer implements Serializer<Object> {
@@ -99,4 +109,3 @@ public class MediaFile {
         }
     }
 }
-// end::MediaFile[]
