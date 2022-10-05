@@ -2,13 +2,14 @@ package org.callforcode.iars.dao;
 
 import java.util.List;
 
-import org.callforcode.iars.models.Incident;
+import javax.enterprise.context.ApplicationScoped;
+import javax.enterprise.context.RequestScoped;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 
-import jakarta.enterprise.context.RequestScoped;
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.PersistenceContext;
+import org.callforcode.iars.dbModels.Incident;
 
-@RequestScoped
+@ApplicationScoped
 public class IncidentDao {
 
     @PersistenceContext(name = "jpa-unit")
@@ -34,9 +35,14 @@ public class IncidentDao {
         return em.createNamedQuery("Incident.findAll", Incident.class).getResultList();
     }
 
-    public List<Incident> find(String incidentType, String location) {
+    public Incident findByIncidentNumber(String incidentNumber) {
+        return em.createNamedQuery("Incident.findByIncidentNumber", Incident.class)
+            .setParameter("incidentNumber", incidentNumber).getSingleResult();
+    }
+
+    public List<Incident> find(String incidentType, String textLocation) {
         return em.createNamedQuery("Incident.find", Incident.class)
             .setParameter("incidentType", incidentType)
-            .setParameter("location", location).getResultList();
+            .setParameter("textLocation", textLocation).getResultList();
     }
 }
