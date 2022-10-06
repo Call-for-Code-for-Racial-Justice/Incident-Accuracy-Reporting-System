@@ -83,12 +83,11 @@ public class IncidentResource {
             ArrayList<IncidentMedia> incidentMedia = new ArrayList<>();
             for (var file : media.files) {
                 IncidentMedia im = new IncidentMedia();
+                
                 im.setFilename(file.filename);
                 im.setSize(file.size);
-
-                Date d = new Date(file.uploaded);
-                im.setUploaded(d);
-
+                im.setUploaded(new Date(file.uploadedTimestamp));
+                im.setCreated(new Date(file.createdTimestamp));
                 im.setIncident(i);
                 
                 incidentMedia.add(im);

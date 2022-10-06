@@ -41,6 +41,10 @@ public class IncidentMedia implements Serializable {
     @NotNull
     @Column(name = "uploaded")
     private Date uploaded;
+
+    @NotNull
+    @Column(name = "created")
+    private Date created;
     
     public int getId() {
         return id;
@@ -80,6 +84,14 @@ public class IncidentMedia implements Serializable {
 
     public void setIncident(Incident value) {
         this.incident = value;
+    }
+
+    public Date getCreated() {
+        return created;
+    }
+
+    public void setCreated(Date value) {
+        this.created = value;
     }
 
     @Override
