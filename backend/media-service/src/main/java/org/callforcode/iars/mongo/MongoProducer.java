@@ -18,25 +18,11 @@ import com.mongodb.client.MongoDatabase;
 
 @ApplicationScoped
 public class MongoProducer {
-        @Inject
-        @ConfigProperty(name = "mongo.hostname", defaultValue = "localhost")
-        String hostname;
-
-        @Inject
-        @ConfigProperty(name = "mongo.port", defaultValue = "27017")
-        int port;
-
-        @Inject
-        @ConfigProperty(name = "mongo.dbname", defaultValue = "media")
-        String dbName;
-
-        @Inject
-        @ConfigProperty(name = "mongo.user")
-        String user;
-
-        @Inject
-        @ConfigProperty(name = "mongo.pass.encoded")
-        String encodedPass;
+        String  hostname    = System.getenv("MONGO_HOSTNAME");
+        Integer port        = Integer.valueOf( System.getenv("MONGO_PORT") );
+        String  dbName      = System.getenv("MONGO_DATABASE");
+        String  user        = System.getenv("MONGO_USER");
+        String  encodedPass = System.getenv("MONGO_PASS_ENCODED");
 
         @Produces
         public MongoClient createMongo() {

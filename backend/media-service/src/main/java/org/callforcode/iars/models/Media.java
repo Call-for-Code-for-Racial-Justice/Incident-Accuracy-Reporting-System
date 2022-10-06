@@ -54,7 +54,7 @@ public class Media {
 
     @Override
     public String toString() {
-        return "Media: " + jsonb.toJson(this);
+        return jsonb.toJson(this);
     }
 
     public static class MediaSerializer implements Serializer<Object> {

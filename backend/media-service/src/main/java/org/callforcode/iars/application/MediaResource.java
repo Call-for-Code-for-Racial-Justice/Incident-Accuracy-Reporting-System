@@ -100,8 +100,8 @@ public class MediaResource {
                         MediaFile mf = new MediaFile();
                         mf.setName(file.getString("name"));
                         mf.setSize(file.getLong("size"));
-                        mf.setCreated(file.getDate("created"));
-                        mf.setUploaded(file.getDate("uploaded"));
+                        mf.setCreated(file.getDate("createdDate"));
+                        mf.setUploaded(file.getDate("uploadedDate"));
 
                         System.out.println(mf);
 

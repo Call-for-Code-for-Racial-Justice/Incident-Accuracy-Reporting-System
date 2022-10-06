@@ -12,4 +12,7 @@ buildNumber.properties
 
 local-development/.data
 local-development/.env
+
+src/liberty/server.env
+
 .vscode

@@ -31,6 +31,8 @@ import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.core.Response;
 
+import org.eclipse.microprofile.config.inject.ConfigProperty;
+
 import io.minio.BucketExistsArgs;
 import io.minio.MakeBucketArgs;
 import io.minio.MinioClient;
@@ -59,6 +61,11 @@ public class MediaService {
     private static Logger logger = Logger.getLogger(MediaService.class.getName());
 
     private FlowableEmitter<Message<String>> newMediaUploadEmitter;
+
+    String s3Endpoint   = System.getenv("S3_ENDPOINT");
+    String s3BucketName = System.getenv("S3_BUCKET");
+    String s3AccessKey  = System.getenv("S3_ACCESS_KEY");
+    String s3SecretKey  = System.getenv("S3_SECRET_KEY");
 
     @Inject
     MediaResource mediaManager;
@@ -141,20 +148,16 @@ public class MediaService {
             String tmp = null;
 
             // init object storage client
-            String endpoint = "http://minio:9000";
-            String bucketName = "iars";
-            String accessKey = "iars";
-            String secretKey = "cfc#1234";
             MinioClient minioClient = MinioClient.builder()
-                    .endpoint(endpoint)
+                    .endpoint(s3Endpoint)
                     .credentials(
-                            accessKey, secretKey)
+                            s3AccessKey, s3SecretKey)
                     .build();
-            boolean found = minioClient.bucketExists(BucketExistsArgs.builder().bucket(bucketName).build());
+            boolean found = minioClient.bucketExists(BucketExistsArgs.builder().bucket(s3BucketName).build());
             if (!found) {
-                minioClient.makeBucket(MakeBucketArgs.builder().bucket(bucketName).build());
+                minioClient.makeBucket(MakeBucketArgs.builder().bucket(s3BucketName).build());
             } else {
-                tmp = String.format("Bucket %s already exists.", bucketName);
+                tmp = String.format("Bucket %s already exists.", s3BucketName);
                 logger.info(tmp);
             }
 
@@ -172,12 +175,12 @@ public class MediaService {
                 // Upload file to bucket
                 minioClient.uploadObject(
                         UploadObjectArgs.builder()
-                                .bucket(bucketName)
+                                .bucket(s3BucketName)
                                 .object(mf.getName())
                                 .filename(tmpFile.getAbsolutePath())
                                 .build());
                 tmp = String.format("Successfully added %s to bucket %s", tmpFile.getAbsolutePath(),
-                        bucketName);
+                        s3BucketName);
                 logger.info(tmp);
             }
 

@@ -22,11 +22,17 @@ public class MediaFile {
     @NotEmpty(message = "Size must be a non-negative integer!")
     private Long size;
 
-    @NotEmpty(message = "Created must be a date!")
-    private Date created;
+    @NotEmpty(message = "Created must be a Java date object!")
+    private Date createdDate;
+
+    @NotEmpty(message = "Created must be a Java date timestamp!")
+    private Long createdTimestamp;
 
     @NotEmpty(message = "Uploaded must be a date!")
-    private Date uploaded;
+    private Date uploadedDate;
+
+    @NotEmpty(message = "Uploaded must be a date timestamp!")
+    private Long uploadedTimestamp;
 
     public String getName() {
         return name;
@@ -44,20 +50,30 @@ public class MediaFile {
         this.size = size;
     }
 
-    public Date getCreated() {
-        return created;
+    public Date getCreatedDate() {
+        return createdDate;
     }
 
-    public void setCreated(Date created) {
-        this.created = created;
+    public Long getCreatedTimestamp() {
+        return createdTimestamp;
     }
 
-    public Date getUploaded() {
-        return uploaded;
+    public void setCreated(Date createdDate) {
+        this.createdDate = createdDate;
+        this.createdTimestamp = createdDate.getTime();
     }
 
-    public void setUploaded(Date uploaded) {
-        this.uploaded = uploaded;
+    public Date getUploadedDate() {
+        return uploadedDate;
+    }
+
+    public Long getUploadedTimestamp() {
+        return uploadedTimestamp;
+    }
+
+    public void setUploaded(Date uploadedDate) {
+        this.uploadedDate = uploadedDate;
+        this.uploadedTimestamp = uploadedDate.getTime();
     }
 
     @Override
@@ -70,26 +86,26 @@ public class MediaFile {
         return Objects.equals(
                 name, mf.name)
                 && Objects.equals(size, mf.size)
-                && Objects.equals(created, mf.created)
-                && Objects.equals(uploaded, mf.uploaded);
+                && Objects.equals(createdDate, mf.createdDate)
+                && Objects.equals(uploadedDate, mf.uploadedDate);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, size, created, uploaded);
+        return Objects.hash(name, size, createdDate, createdTimestamp, uploadedDate, uploadedTimestamp);
     }
 
     @Override
     public String toString() {
-        return "MediaFile: " + jsonb.toJson(this);
+        return jsonb.toJson(this);
     }
 
     public BasicDBObject toBasicDBObject() {
         BasicDBObject b = new BasicDBObject();
         b.put("name", this.name);
         b.put("size", this.size);
-        b.put("created", this.created);
-        b.put("uploaded", this.uploaded);
+        b.put("createdDate", this.createdDate);
+        b.put("uploadedDate", this.uploadedDate);
         return b;
     }
 
