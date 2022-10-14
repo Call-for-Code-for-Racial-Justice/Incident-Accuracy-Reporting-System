@@ -3,8 +3,16 @@
 
     <!-- Enable features -->
     <featureManager>
-        <feature>jakartaee-9.1</feature>
-        <feature>microProfile-5.0</feature>
+        <feature>jaxrs-2.1</feature>
+        <feature>jsonb-1.0</feature>
+        <feature>jsonp-1.1</feature>
+        <feature>cdi-2.0</feature>
+        <feature>jpa-2.2</feature>
+        <feature>jdbc-4.2</feature>
+        <feature>concurrent-1.0</feature>
+        <feature>mpHealth-2.2</feature>
+        <feature>mpConfig-1.4</feature>
+        <feature>mpReactiveMessaging-1.0</feature>
     </featureManager>
 
     <!-- This template enables security. To get the full use of all the capabilities, a keystore and user registry are required. -->
@@ -28,6 +36,7 @@
 
     <!-- To access this server from a remote client add a host attribute to the following element, e.g. host="*" -->
     <httpEndpoint id="defaultHttpEndpoint"
+                  host="*"
                   httpPort="9080"
                   httpsPort="9443" />
 
@@ -39,4 +48,39 @@
 
     <!-- Default SSL configuration enables trust for default certificates from the Java runtime -->
     <ssl id="defaultSSLConfig" trustDefaultCerts="true" />
+
+    <dataSource id="DefaultDataSource"
+                jndiName="jdbc/postgres"
+                jdbcDriverRef="postgresql-driver"
+                type="javax.sql.ConnectionPoolDataSource"
+                transactional="true">
+        <properties serverName="localhost"
+                             portNumber="15432"
+                             databaseName="incidents"
+                             user="${env.INCIDENT_DB_USER}"
+                             password="${env.INCIDENT_DB_PASS}"/>
+    </dataSource>
+
+    <dataSource id="DefaultDataSourceNonJta"
+                jndiName="jdbc/postgresnonjta"
+                jdbcDriverRef="postgresql-driver"
+                type="javax.sql.ConnectionPoolDataSource"
+                transactional="false">
+        <properties serverName="localhost"
+                             portNumber="15432"
+                             databaseName="incidents"
+                             user="${env.INCIDENT_DB_USER}"
+                             password="${env.INCIDENT_DB_PASS}"/>
+    </dataSource>
+
+    <jdbcDriver id="postgresql-driver"
+        libraryRef="postgresqlLib"
+        javax.sql.XADataSource="org.postgresql.xa.PGXADataSource"
+        javax.sql.ConnectionPoolDataSource="org.postgresql.ds.PGConnectionPoolDataSource"
+        javax.sql.DataSource="org.postgresql.ds.PGPoolingDataSource"/>
+
+
+    <library id="postgresqlLib">
+        <fileset dir="${shared.resource.dir}" includes="p*.jar"/>
+    </library>
 </server>

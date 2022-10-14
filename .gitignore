@@ -22,5 +22,9 @@ buildNumber.properties
 
 .data/*
 .env
+<<<<<<< HEAD
 
 *.vscode*
+=======
+.vscode
+>>>>>>> origin/incident-service

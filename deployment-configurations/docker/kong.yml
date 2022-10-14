@@ -2,22 +2,21 @@
  _transform: true
 
  services:
- - host: mockbin.org
-   name: example_service
-   port: 80
-   protocol: http
-   routes:
-   - name: example_route
-     paths:
-     - /mock
-     strip_path: true
-# - host: localhost
-#   name: incident_service
-#   port: 9080
-#   protocol: http
-#   routes:
-#   - name: some_route
-#     paths:
-#     - /something
-#     strip_path: false
+  - name: incident_service
+    host: 192.168.1.20
+    port: 9080
+    protocol: http
+    routes:
+    - name: incidents
+      paths:
+      - /incident-service
+      strip_path: false
+  
+  # - name: media_service
+  #   host: localhost
+  #   port: 9090
+  #   routes: 
+  #   - name: media
+  #     paths:
+  #     - /media-upload
     
