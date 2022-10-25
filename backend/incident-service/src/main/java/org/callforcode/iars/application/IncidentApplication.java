@@ -1,9 +1,9 @@
-package org.callforcode.iars.rest;
+package org.callforcode.iars.application;
 
 import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.core.Application;
 
 @ApplicationPath("api")
-public class RestApplication extends Application {
+public class IncidentApplication extends Application {
 
 }

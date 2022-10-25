@@ -1,4 +1,4 @@
-package org.callforcode.iars.rest;
+package org.callforcode.iars.application;
 
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
@@ -25,22 +25,24 @@ import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.transaction.Transactional;
 import javax.ws.rs.Consumes;
+import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
 @ApplicationScoped
-@Path("incidents")
-public class IncidentResource {
-    private static Logger logger = Logger.getLogger(IncidentResource.class.getName());
+@Path("/")
+public class IncidentService {
+    private static Logger logger = Logger.getLogger(IncidentService.class.getName());
 
     @Inject
     private IncidentDao dao;
 
     @POST
+    @Path("/report")
     @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
     @Transactional
     public Response createIncident(NewIncident newIncident) {
-
         Incident incident = new Incident();
         incident.setIncidentNumber(newIncident.getIncidentNumber());
         incident.setIncidentType(newIncident.getIncidentType());
@@ -57,9 +59,11 @@ public class IncidentResource {
             incident.setLongitude(gps.getLongitude());
         }
 
+        System.out.println("Incident: " + incident.toString());
+
         try {
             dao.create(incident);
-            return Response.status(Response.Status.CREATED).entity(incident).build();    
+            return Response.status(Response.Status.CREATED).entity(incident).build();
         } catch (Exception ex) {
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR).build();
         }

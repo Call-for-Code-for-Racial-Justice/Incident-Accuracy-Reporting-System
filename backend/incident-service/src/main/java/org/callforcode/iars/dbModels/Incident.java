@@ -18,6 +18,12 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
+// import javax.json.bind.Jsonb;
+// import javax.json.bind.JsonbBuilder;
+
+// import org.apache.kafka.common.serialization.Deserializer;
+// import org.apache.kafka.common.serialization.Serializer;
+
 @Entity
 @Table(name = "Incident")
 @NamedQuery(name = "Incident.findAll", query = "SELECT i FROM Incident i")
@@ -26,6 +32,7 @@ import javax.validation.constraints.NotNull;
 public class Incident implements Serializable {
 
     private static final long serialVersionUID = 1L;
+    //private static final Jsonb jsonb = JsonbBuilder.create();
 
     @NotNull
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -227,5 +234,22 @@ public class Incident implements Serializable {
     @Override
     public String toString() {
         return "Incident [id=" + id + ", incidentType=" + incidentType + ", textLocation=" + textLocation + "]";
+        //return jsonb.toJson(this);
     }
+
+    // public static class IncidentSerializer implements Serializer<Object> {
+    //     @Override
+    //     public byte[] serialize(String topic, Object data) {
+    //         return jsonb.toJson(data).getBytes();
+    //     }
+    // }
+
+    // public static class IncidentDeserializer implements Deserializer<Incident> {
+    //     @Override
+    //     public Incident deserialize(String topic, byte[] data) {
+    //         if (data == null)
+    //             return null;
+    //         return jsonb.fromJson(new String(data), Incident.class);
+    //     }
+    // }
 }

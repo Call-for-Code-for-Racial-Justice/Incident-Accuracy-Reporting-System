@@ -1,11 +1,6 @@
 package org.callforcode.iars.models;
 
-import javax.json.bind.Jsonb;
-import javax.json.bind.JsonbBuilder;
-
 public class MediaFile {
-    private static final Jsonb jsonb = JsonbBuilder.create();
-
     public long size;
     public long uploadedTimestamp;
     public String uploadedDate;

@@ -37,14 +37,14 @@
     <!-- To access this server from a remote client add a host attribute to the following element, e.g. host="*" -->
     <httpEndpoint id="defaultHttpEndpoint"
                   host="*"
-                  httpPort="9080"
-                  httpsPort="9443" />
+                  httpPort="20080"
+                  httpsPort="20443" />
 
     <!-- Automatically expand WAR files and EAR files -->
     <applicationManager autoExpand="true"/>
 
     <!-- Configures the application on a specified context root -->
-    <webApplication contextRoot="/incident-service" location="incident-service.war" />
+    <webApplication contextRoot="/incident" location="incident-service.war" />
 
     <!-- Default SSL configuration enables trust for default certificates from the Java runtime -->
     <ssl id="defaultSSLConfig" trustDefaultCerts="true" />
@@ -54,11 +54,11 @@
                 jdbcDriverRef="postgresql-driver"
                 type="javax.sql.ConnectionPoolDataSource"
                 transactional="true">
-        <properties serverName="localhost"
-                             portNumber="15432"
-                             databaseName="incidents"
-                             user="${env.INCIDENT_DB_USER}"
-                             password="${env.INCIDENT_DB_PASS}"/>
+        <properties serverName="${env.INCIDENT_DB_HOST}"
+                    portNumber="${env.INCIDENT_DB_PORT}"
+                    databaseName="${env.INCIDENT_DB_NAME}"
+                    user="${env.INCIDENT_DB_USER}"
+                    password="${env.INCIDENT_DB_PASS}"/>
     </dataSource>
 
     <dataSource id="DefaultDataSourceNonJta"
@@ -66,11 +66,11 @@
                 jdbcDriverRef="postgresql-driver"
                 type="javax.sql.ConnectionPoolDataSource"
                 transactional="false">
-        <properties serverName="localhost"
-                             portNumber="15432"
-                             databaseName="incidents"
-                             user="${env.INCIDENT_DB_USER}"
-                             password="${env.INCIDENT_DB_PASS}"/>
+        <properties serverName="${env.INCIDENT_DB_HOST}"
+                    portNumber="${env.INCIDENT_DB_PORT}"
+                    databaseName="${env.INCIDENT_DB_NAME}"
+                    user="${env.INCIDENT_DB_USER}"
+                    password="${env.INCIDENT_DB_PASS}"/>
     </dataSource>
 
     <jdbcDriver id="postgresql-driver"

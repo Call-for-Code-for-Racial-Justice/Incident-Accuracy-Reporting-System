@@ -1,0 +1,94 @@
+version: "3"
+
+services:
+  iars-zookeeper:
+    container_name: iars-zookeeper
+    image: confluentinc/cp-zookeeper:7.0.1
+    ports:
+      - "2181:2181"
+      - "2000:2000"
+    environment:
+      ZOOKEEPER_CLIENT_PORT: 2181
+      ZOOKEEPER_TICK_TIME: 2000
+
+  iars-broker:
+    container_name: iars-broker
+    image: confluentinc/cp-kafka:7.0.1
+    ports:
+      # To learn about configuring Kafka for access across networks see
+      # https://www.confluent.io/blog/kafka-client-cannot-connect-to-broker-on-aws-on-docker-etc/
+      - "9092:9092"
+    depends_on:
+      - iars-zookeeper
+    environment:
+      KAFKA_BROKER_ID: 1
+      KAFKA_ZOOKEEPER_CONNECT: "iars-zookeeper:2181"
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_INTERNAL:PLAINTEXT
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://localhost:9092,PLAINTEXT_INTERNAL://iars-broker:29092
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+      KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
+      KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
+
+  iars-kong:
+    container_name: iars-kong
+    image: kong/kong-gateway:2.8.1.2-alpine
+    restart: always
+    ports:
+      - "8000:8000"
+      - "8001:8001"
+      - "8002:8002"
+      - "8003:8003"
+      - "8004:8004"
+      - "8443:8443"
+      - "8444:8444"
+      - "8445:8445"
+    environment:
+      - KONG_DATABASE=off
+      - KONG_DECLARATIVE_CONFIG=/kong/declarative/kong.yml
+      - KONG_PROXY_ACCESS_LOG=/dev/stdout
+      - KONG_ADMIN_ACCESS_LOG=/dev/stdout
+      - KONG_PROXY_ERROR_LOG=/dev/stderr
+      - KONG_ADMIN_ERROR_LOG=/dev/stderr
+      - KONG_ADMIN_LISTEN=0.0.0.0:8001
+      - KONG_ADMIN_GUI_URL=http://0.0.0.0:8002
+    volumes:
+      - ./kong.yml:/kong/declarative/kong.yml
+
+  iars-incident-postgres:
+    container_name: iars-incident-postgres
+    image: postgres:14.4
+    ports:
+      - "15432:5432"
+    environment:
+      POSTGRES_USER: "${POSTGRES_USER}"
+      POSTGRES_PASSWORD: "${POSTGRES_PASSWORD}"
+      POSTGRES_DB: "${POSTGRES_DB}"
+    volumes:
+      - .data/postgres:/var/lib/postgresql/data
+
+  iars-incident-pgadmin:
+    container_name: iars-incident-pgadmin
+    image: dpage/pgadmin4
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: "${PGADMIN_DEFAULT_EMAIL}"
+      PGADMIN_DEFAULT_PASSWORD: "${PGADMIN_DEFAULT_PASSWORD}"
+    ports:
+      - "5050:80"
+    volumes:
+      - ./pgadmin4-server.json:/pgadmin4/servers.json
+    depends_on:
+      - "iars-incident-postgres"
+
+  # iars-media:
+  #   container_name: iars-media
+  #   image: iars-incident-service
+  #   build:
+  #     dockerfile: configurations/docker/Dockerfile-maven
+  #     context: .
+  #   ports:
+  #     - "9080:9080"
+  #   volumes:
+  #     - ../src:/usr/src/app/src
+  #     - .data/target:/usr/src/app/target
+  #     - ${HOME}/.m2:/root/.m2

@@ -9,4 +9,9 @@ buildNumber.properties
 .mvn/timing.properties
 # https://github.com/takari/maven-wrapper#usage-without-binary-jar
 .mvn/wrapper/maven-wrapper.jar
-server.env
+
+local-development/.data
+local-development/.env
+local-development/pgadmin4-server.json
+
+src/main/liberty/config/server.env

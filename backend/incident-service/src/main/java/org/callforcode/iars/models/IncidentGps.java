@@ -8,16 +8,16 @@ public class IncidentGps {
         return latitude;
     }
 
-    public void setLatitude(long value) {
-        this.latitude = value;
+    public void setLatitude(float latitude) {
+        this.latitude = latitude;
     }
 
     public float getLongitude() {
         return longitude;
     }
 
-    public void setLongitude(long value) {
-        this.longitude = value;
+    public void setLongitude(float longitude) {
+        this.longitude = longitude;
     }
     
     public IncidentGps() {
