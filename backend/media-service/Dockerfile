@@ -1,9 +1,13 @@
-FROM icr.io/appcafe/open-liberty:kernel-slim-java11-openj9-ubi
+FROM maven:3.8.6-openjdk-11-slim AS BUILD
 
-COPY --chown=1001:0 /src/main/liberty/config /config
+COPY src /usr/src/app/src
+COPY pom.xml /usr/src/app/
+RUN mvn -f /usr/src/app/pom.xml clean package
 
-RUN features.sh
+FROM open-liberty:22.0.0.9-full-java11-openj9
 
-COPY --chown=1001:0 target/*.war /config/apps
+COPY src/main/liberty/config/server.xml /config/
+COPY --from=BUILD /usr/src/app/target/media-service.war /config/apps/
 
 RUN configure.sh
+EXPOSE 9080

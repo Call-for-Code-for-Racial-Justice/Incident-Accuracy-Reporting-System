@@ -10,7 +10,6 @@ import javax.validation.ConstraintViolation;
 
 import org.bson.Document;
 
-import com.mongodb.BasicDBList;
 import com.mongodb.BasicDBObject;
 import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
@@ -23,7 +22,6 @@ import javax.json.JsonArray;
 import javax.json.JsonArrayBuilder;
 import javax.json.Json;
 
-import org.callforcode.iars.models.UnprocessedMedia;
 import org.callforcode.iars.models.Media;
 import org.callforcode.iars.models.MediaFile;
 

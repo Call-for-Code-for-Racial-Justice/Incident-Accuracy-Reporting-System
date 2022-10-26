@@ -22,9 +22,8 @@ buildNumber.properties
 
 .data/*
 .env
-<<<<<<< HEAD
 
 *.vscode*
-=======
-.vscode
->>>>>>> origin/incident-service
+
+deployment-configurations/docker/.data
+deployment-configurations/docker/.env

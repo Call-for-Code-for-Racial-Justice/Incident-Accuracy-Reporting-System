@@ -190,7 +190,9 @@ public class MediaService {
             logger.warning("HTTP trace: " + e.httpTrace());
         }
 
-        Message<String> message = Message.of(media.toString());
+        String mediaStr = media.toString();
+        System.out.println("MEDIA OBJECT: " + mediaStr);
+        Message<String> message = Message.of(mediaStr);
         newMediaUploadEmitter.onNext(message);
 
         if (!media.getIncidentNumber().isEmpty() && media.getFiles() != null) {

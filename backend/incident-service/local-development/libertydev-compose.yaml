@@ -80,12 +80,12 @@ services:
     depends_on:
       - "iars-incident-postgres"
 
-  # iars-media:
-  #   container_name: iars-media
+  # iars-incident:
+  #   container_name: iars-incident
   #   image: iars-incident-service
   #   build:
-  #     dockerfile: configurations/docker/Dockerfile-maven
-  #     context: .
+  #     dockerfile: ../Dockerfile
+  #     context: ..
   #   ports:
   #     - "9080:9080"
   #   volumes:
