@@ -27,3 +27,4 @@ buildNumber.properties
 
 deployment-configurations/docker/.data
 deployment-configurations/docker/.env
+deployment-configurations/docker/pgadmin4-server.json
