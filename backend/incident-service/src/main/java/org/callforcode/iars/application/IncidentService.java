@@ -51,7 +51,8 @@ public class IncidentService {
         incident.setTextLocation(newIncident.getTextLocation());
         incident.setViewpoint(newIncident.getViewpoint());
         incident.setDescription(newIncident.getDescription());
-        incident.setReportedDate(new Date(newIncident.getTimestamp()));
+        // timestamp comes in as seconds, need to convert to milliseconds
+        incident.setReportedDate(new Date(newIncident.getTimestamp() * 1000));
 
         IncidentGps gps = newIncident.getGps();
         if (gps != null) {
@@ -90,8 +91,8 @@ public class IncidentService {
                 
                 im.setFilename(file.filename);
                 im.setSize(file.size);
-                im.setUploaded(new Date(file.uploadedTimestamp));
-                im.setCreated(new Date(file.createdTimestamp));
+                im.setUploaded(new Date(file.uploadedTimestamp * 1000));
+                im.setCreated(new Date(file.createdTimestamp * 1000));
                 im.setIncident(i);
                 
                 incidentMedia.add(im);
