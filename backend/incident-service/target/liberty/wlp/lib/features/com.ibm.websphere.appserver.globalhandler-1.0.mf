@@ -1,0 +1,22 @@
+Created-By: 11.0.14.1 (International Business Machines Corporation)
+IBM-AppliesTo: io.openliberty;productVersion="22.0.0.11"
+IBM-Feature-Version: 2
+IBM-InstallTo: core
+IBM-License-Agreement: wlp/lafiles/LA
+IBM-ProductID: io.openliberty
+IBM-SPI-Package: com.ibm.wsspi.webservices.handler
+Subsystem-Content: com.ibm.websphere.appserver.spi.globalhandler_1.0-javadoc.zip; type=file; location:="dev/spi/ibm/javadoc/com.ibm.websphere.appserver.spi.globalhandler_1.0-javadoc.zip",
+ io.openliberty.servlet.api-3.0; apiJar=false; ibm.tolerates:="3.1,4.0,5.0,6.0"; type="osgi.subsystem.feature",
+ io.openliberty.globalhandler1.0.internal.ee-6.0; ibm.tolerates:="9.0, 10.0"; type="osgi.subsystem.feature",
+ com.ibm.websphere.appserver.spi.globalhandler; location:="dev/spi/ibm/,lib/"; type=jar; version="[1.0.0,1.0.200)"
+Subsystem-Description: %description
+Subsystem-License: https://www.eclipse.org/legal/epl-v10.html
+Subsystem-Localization: OSGI-INF/l10n/com.ibm.websphere.appserver.globalhandler-1.0
+Subsystem-ManifestVersion: 1
+Subsystem-SymbolicName: com.ibm.websphere.appserver.globalhandler-1.0; visibility:=private; singleton:=false
+Subsystem-Type: osgi.subsystem.feature
+Subsystem-Vendor: IBM Corp.
+Subsystem-Version: 1.0.0
+Tool: Bnd-6.3.0.202206012108
+WLP-Activation-Type: parallel
+WLP-DisableAllFeatures-OnConflict: false

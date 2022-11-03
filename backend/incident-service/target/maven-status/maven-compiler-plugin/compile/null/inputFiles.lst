@@ -1,0 +1,12 @@
+/home/nitekon1/repos/Incident-Accuracy-Reporting-System/backend/incident-service/src/main/java/org/callforcode/iars/dao/IncidentDao.java
+/home/nitekon1/repos/Incident-Accuracy-Reporting-System/backend/incident-service/src/main/java/org/callforcode/iars/application/IncidentApplication.java
+/home/nitekon1/repos/Incident-Accuracy-Reporting-System/backend/incident-service/src/main/java/org/callforcode/iars/application/IncidentService.java
+/home/nitekon1/repos/Incident-Accuracy-Reporting-System/backend/incident-service/src/main/java/org/callforcode/iars/models/IncidentGps.java
+/home/nitekon1/repos/Incident-Accuracy-Reporting-System/backend/incident-service/src/main/java/org/callforcode/iars/models/MediaCommitted.java
+/home/nitekon1/repos/Incident-Accuracy-Reporting-System/backend/incident-service/src/main/java/org/callforcode/iars/dbModels/Incident.java
+/home/nitekon1/repos/Incident-Accuracy-Reporting-System/backend/incident-service/src/main/java/org/callforcode/iars/models/MediaFile.java
+/home/nitekon1/repos/Incident-Accuracy-Reporting-System/backend/incident-service/src/main/java/org/callforcode/iars/models/NewIncident.java
+/home/nitekon1/repos/Incident-Accuracy-Reporting-System/backend/incident-service/src/main/java/org/callforcode/iars/dbModels/IncidentMedia.java
+/home/nitekon1/repos/Incident-Accuracy-Reporting-System/backend/incident-service/src/main/java/org/callforcode/iars/models/Media.java
+/home/nitekon1/repos/Incident-Accuracy-Reporting-System/backend/incident-service/src/main/java/org/callforcode/health/IncidentLivenessCheck.java
+/home/nitekon1/repos/Incident-Accuracy-Reporting-System/backend/incident-service/src/main/java/org/callforcode/health/IncidentReadinessCheck.java

@@ -1,0 +1,47 @@
+Created-By: 11.0.14.1 (International Business Machines Corporation)
+IBM-App-ForceRestart: uninstall,
+ install
+IBM-AppliesTo: io.openliberty;productVersion="22.0.0.11"
+IBM-Feature-Version: 2
+IBM-InstallTo: core
+IBM-License-Agreement: wlp/lafiles/LA
+IBM-ProductID: io.openliberty
+Subsystem-Content: wadl2java; type=file; location:="bin/jaxrs/wadl2java",
+ wadl2java.bat; type=file; location:="bin/jaxrs/wadl2java.bat",
+ wadl2java.jar; type=file; location:="bin/jaxrs/tools/wadl2java.jar"; version="[1.0.0,1.0.200)",
+ com.ibm.websphere.appserver.internal.optional.jaxb-2.2; type="osgi.subsystem.feature",
+ com.ibm.websphere.appserver.containerServices-1.0; type="osgi.subsystem.feature",
+ com.ibm.websphere.appserver.httpcommons-1.0; type="osgi.subsystem.feature",
+ com.ibm.websphere.appserver.injection-1.0; type="osgi.subsystem.feature",
+ com.ibm.websphere.appserver.servlet-4.0; type="osgi.subsystem.feature",
+ com.ibm.websphere.appserver.classloading-1.0; type="osgi.subsystem.feature",
+ com.ibm.websphere.appserver.eeCompatible-8.0; type="osgi.subsystem.feature",
+ com.ibm.websphere.appserver.globalhandler-1.0; type="osgi.subsystem.feature",
+ com.ibm.websphere.appserver.javax.jaxrs-2.1; type="osgi.subsystem.feature",
+ com.ibm.websphere.appserver.internal.cxf.common-3.2; type="osgi.subsystem.feature",
+ com.ibm.websphere.appserver.internal.optional.jaxws-2.2; type="osgi.subsystem.feature",
+ com.ibm.ws.org.apache.cxf.cxf.tools.common.3.2; type=jar; version="[1.0.0,1.0.200)",
+ com.ibm.ws.org.apache.cxf.cxf.tools.wadlto.jaxrs.3.2; type=jar; version="[1.0.0,1.0.200)",
+ com.ibm.ws.jaxrs.2.0.tools; type=jar; version="[1.0.0,1.0.200)",
+ com.ibm.websphere.appserver.api.jaxrs20; location:="dev/api/ibm/,lib/"; version="[1.1.0,1.1.200)",
+ com.ibm.ws.jaxrs.2.1.common; version="[1.0.0,1.0.200)",
+ com.ibm.ws.jaxrs.2.x.config; version="[1.0.0,1.0.200)",
+ com.ibm.ws.org.apache.cxf.cxf.rt.frontend.jaxrs.3.2; version="[1.0.0,1.0.200)",
+ com.ibm.ws.org.apache.cxf.cxf.rt.rs.client.3.2; version="[1.0.0,1.0.200)",
+ com.ibm.ws.org.apache.cxf.cxf.rt.rs.service.description.3.2; version="[1.0.0,1.0.200)",
+ com.ibm.ws.org.apache.cxf.cxf.rt.rs.sse.3.2; version="[1.0.0,1.0.200)",
+ com.ibm.ws.jaxrs.2.0.web; version="[1.0.0,1.0.200)",
+ com.ibm.ws.jaxrs.2.1.server; version="[1.0.0,1.0.200)",
+ com.ibm.ws.jaxrs.2.0.client; version="[1.0.0,1.0.200)"
+Subsystem-Description: %description
+Subsystem-License: https://www.eclipse.org/legal/epl-v10.html
+Subsystem-Localization: OSGI-INF/l10n/com.ibm.websphere.appserver.internal.jaxrs-2.1
+Subsystem-ManifestVersion: 1
+Subsystem-Name: Internal Java RESTful Services 2.1
+Subsystem-SymbolicName: com.ibm.websphere.appserver.internal.jaxrs-2.1; visibility:=private; singleton:=true
+Subsystem-Type: osgi.subsystem.feature
+Subsystem-Vendor: IBM Corp.
+Subsystem-Version: 1.0.0
+Tool: Bnd-6.3.0.202206012108
+WLP-Activation-Type: parallel
+WLP-DisableAllFeatures-OnConflict: false

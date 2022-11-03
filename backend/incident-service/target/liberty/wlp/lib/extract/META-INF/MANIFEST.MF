@@ -1,0 +1,37 @@
+Manifest-Version: 1.0
+Archive-Content-Type: install
+Archive-Root: wlp/
+Build-Identifier: SNAPSHOT-Mon Oct 10 15:03:52 UTC 2022
+Bundle-Copyright: Copyright (c) 1999, 2022 IBM Corporation and others.
+  All rights reserved. This program and the accompanying materials are
+  made available under the terms of the Eclipse Public License v1.0 wh
+ ich accompanies this distribution, and is available at http://www.ecl
+ ipse.org/legal/epl-v10.html.
+Bundle-Description: Self extracting jar tools; version=1.0
+Bundle-License: Eclipse Public License; url=https://www.eclipse.org/le
+ gal/epl-v10.html
+Bundle-ManifestVersion: 2
+Bundle-Name: WLP Lib Extract
+Bundle-SCM: connection=scm:git:https://github.com/OpenLiberty/open-lib
+ erty.git, developerConnection=scm:git:https://github.com:OpenLiberty/
+ open-liberty.git, url=https://github.com/OpenLiberty/open-liberty/tre
+ e/release
+Bundle-SymbolicName: wlp.lib.extract
+Bundle-Vendor: IBM
+Bundle-Version: 1.0.70.cl221120221010-1540
+Can-Redefine-Classes: false
+Can-Retransform-Classes: true
+Created-By: 11.0.14.1 (International Business Machines Corporation)
+Export-Package: wlp.lib.extract;version="1.0.16"
+Extract-Installer: true
+IBM-Java-Options: -Xshareclasses:name=liberty-%u,nonfatal,cacheDirPerm
+ =1000 -XX:ShareClassesEnableBCI -Xscmx80m -XX:+EnableHCR -Djdk.attach
+ .allowAttachSelf=true
+Import-Package: javax.xml.parsers,org.w3c.dom
+Launcher-Agent-Class: wlp.lib.extract.agent.EnvCheck
+Main-Class: wlp.lib.extract.SelfExtract
+Map-Based-Self-Extractor: wlp.lib.extract.MapBasedSelfExtractor
+Private-Package: wlp.lib.extract.platform,wlp.lib.extract.agent
+Require-Capability: osgi.ee;filter:="(&(osgi.ee=JavaSE)(version=1.7))"
+Tool: Bnd-6.3.0.202206012108
+

@@ -1,0 +1,32 @@
+Created-By: 11.0.14.1 (International Business Machines Corporation)
+IBM-AppliesTo: io.openliberty;productVersion="22.0.0.11"
+IBM-Feature-Version: 2
+IBM-InstallTo: core
+IBM-License-Agreement: wlp/lafiles/LA
+IBM-ProductID: io.openliberty
+IBM-SPI-Package: javax.cache,
+ javax.cache.annotation,
+ javax.cache.configuration,
+ javax.cache.event,
+ javax.cache.expiry,
+ javax.cache.integration,
+ javax.cache.management,
+ javax.cache.processor,
+ javax.cache.spi,
+ io.openliberty.jcache
+Subsystem-Content: com.ibm.websphere.appserver.eeCompatible-8.0; ibm.tolerates:="6.0,7.0,9.0,10.0"; type="osgi.subsystem.feature",
+ com.ibm.websphere.appserver.classloading-1.0; type="osgi.subsystem.feature",
+ io.openliberty.jcache.internal1.1.ee-6.0; ibm.tolerates:="9.0"; type="osgi.subsystem.feature",
+ io.openliberty.jcache.internal; version="[1.0.0,1.0.200)",
+ com.ibm.ws.serialization; version="[1.0.0,1.0.200)"
+Subsystem-Description: %description
+Subsystem-License: https://www.eclipse.org/legal/epl-v10.html
+Subsystem-Localization: OSGI-INF/l10n/io.openliberty.jcache.internal-1.1
+Subsystem-ManifestVersion: 1
+Subsystem-Name: Java Caching (JCache) 1.1
+Subsystem-SymbolicName: io.openliberty.jcache.internal-1.1; visibility:=private; singleton:=true
+Subsystem-Type: osgi.subsystem.feature
+Subsystem-Vendor: IBM Corp.
+Subsystem-Version: 1.1
+Tool: Bnd-6.3.0.202206012108
+WLP-DisableAllFeatures-OnConflict: false

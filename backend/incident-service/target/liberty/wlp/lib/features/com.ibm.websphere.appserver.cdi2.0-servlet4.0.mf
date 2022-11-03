@@ -1,0 +1,22 @@
+Created-By: 11.0.14.1 (International Business Machines Corporation)
+IBM-AppliesTo: io.openliberty;productVersion="22.0.0.11"
+IBM-Feature-Version: 2
+IBM-Install-Policy: when-satisfied
+IBM-InstallTo: core
+IBM-License-Agreement: wlp/lafiles/LA
+IBM-ProductID: io.openliberty
+IBM-Provision-Capability: osgi.identity; filter:="(&(type=osgi.subsystem.feature)(osgi.identity=com.ibm.websphere.appserver.cdi-2.0))",
+ osgi.identity; filter:="(&(type=osgi.subsystem.feature)(osgi.identity=com.ibm.websphere.appserver.servlet-4.0))"
+Subsystem-Content: com.ibm.ws.cdi.2.0.web; version="[1.0.0,1.0.200)",
+ com.ibm.ws.cdi.web; version="[1.0.0,1.0.200)",
+ com.ibm.websphere.javaee.jsp.2.3; location:="dev/api/spec/,lib/"; mavenCoordinates="javax.servlet.jsp:javax.servlet.jsp-api:2.3.1"; version="[1.0.0,1.0.200)"
+Subsystem-Description: %description
+Subsystem-License: https://www.eclipse.org/legal/epl-v10.html
+Subsystem-Localization: OSGI-INF/l10n/com.ibm.websphere.appserver.cdi2.0-servlet4.0
+Subsystem-ManifestVersion: 1
+Subsystem-SymbolicName: com.ibm.websphere.appserver.cdi2.0-servlet4.0; visibility:=private; singleton:=false
+Subsystem-Type: osgi.subsystem.feature
+Subsystem-Vendor: IBM Corp.
+Subsystem-Version: 1.0.0
+Tool: Bnd-6.3.0.202206012108
+WLP-Activation-Type: parallel

@@ -1,0 +1,19 @@
+Created-By: 11.0.14.1 (International Business Machines Corporation)
+IBM-AppliesTo: io.openliberty;productVersion="22.0.0.11"
+IBM-Feature-Version: 2
+IBM-InstallTo: core
+IBM-License-Agreement: wlp/lafiles/LA
+IBM-ProductID: io.openliberty
+Subsystem-Content: com.ibm.websphere.appserver.eeCompatible-7.0; ibm.tolerates:="6.0, 8.0"; type="osgi.subsystem.feature",
+ com.ibm.websphere.javaee.ejb.3.2; location:="dev/api/spec/,lib/"; mavenCoordinates="javax.ejb:javax.ejb-api:3.2"; version="[1.0.0,1.0.200)"
+Subsystem-Description: %description
+Subsystem-License: https://www.eclipse.org/legal/epl-v10.html
+Subsystem-Localization: OSGI-INF/l10n/com.ibm.websphere.appserver.javax.ejb-3.2
+Subsystem-ManifestVersion: 1
+Subsystem-SymbolicName: com.ibm.websphere.appserver.javax.ejb-3.2; visibility:=private; singleton:=true
+Subsystem-Type: osgi.subsystem.feature
+Subsystem-Vendor: IBM Corp.
+Subsystem-Version: 1.0.0
+Tool: Bnd-6.3.0.202206012108
+WLP-Activation-Type: parallel
+WLP-DisableAllFeatures-OnConflict: false

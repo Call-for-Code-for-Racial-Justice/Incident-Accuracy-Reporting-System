@@ -1,0 +1,27 @@
+Created-By: 11.0.14.1 (International Business Machines Corporation)
+IBM-API-Package: com.ibm.websphere.endpoint; type="ibm-api"
+IBM-AppliesTo: io.openliberty;productVersion="22.0.0.11"
+IBM-Feature-Version: 2
+IBM-InstallTo: core
+IBM-License-Agreement: wlp/lafiles/LA
+IBM-Process-Types: server,
+ client
+IBM-ProductID: io.openliberty
+Subsystem-Content: com.ibm.websphere.appserver.api.endpoint_1.0-javadoc.zip; type=file; location:="dev/api/ibm/javadoc/com.ibm.websphere.appserver.api.endpoint_1.0-javadoc.zip",
+ com.ibm.websphere.appserver.api.endpoint; location:="dev/api/ibm/,lib/"; type=jar; version="[1.0.0,1.0.200)",
+ com.ibm.ws.channelfw; version="[1.0.0,1.0.200)",
+ com.ibm.ws.timer; version="[1.0.0,1.0.200)",
+ io.openliberty.endpoint; version="[1.0.0,1.0.200)",
+ com.ibm.ws.wsbytebuffer; version="[1.0.0,1.0.200)",
+ io.openliberty.accesslists.internal; version="[1.0.0,1.0.200)"
+Subsystem-Description: %description
+Subsystem-License: https://www.eclipse.org/legal/epl-v10.html
+Subsystem-Localization: OSGI-INF/l10n/com.ibm.websphere.appserver.channelfw-1.0
+Subsystem-ManifestVersion: 1
+Subsystem-SymbolicName: com.ibm.websphere.appserver.channelfw-1.0; visibility:=private; singleton:=false
+Subsystem-Type: osgi.subsystem.feature
+Subsystem-Vendor: IBM Corp.
+Subsystem-Version: 1.0.0
+Tool: Bnd-6.3.0.202206012108
+WLP-Activation-Type: parallel
+WLP-DisableAllFeatures-OnConflict: false

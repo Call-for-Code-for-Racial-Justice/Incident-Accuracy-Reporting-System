@@ -1,0 +1,28 @@
+Created-By: 11.0.14.1 (International Business Machines Corporation)
+IBM-App-ForceRestart: uninstall,
+ install
+IBM-AppliesTo: io.openliberty;productVersion="22.0.0.11"
+IBM-Feature-Version: 2
+IBM-InstallTo: core
+IBM-License-Agreement: wlp/lafiles/LA
+IBM-ProductID: io.openliberty
+Subsystem-Content: com.ibm.websphere.appserver.api.jaxrs20_1.1-javadoc.zip; type=file; location:="dev/api/ibm/javadoc/com.ibm.websphere.appserver.api.jaxrs20_1.1-javadoc.zip",
+ io.openliberty.servlet.api-4.0; type="osgi.subsystem.feature",
+ com.ibm.websphere.appserver.javax.annotation-1.3; apiJar=false; type="osgi.subsystem.feature",
+ com.ibm.websphere.appserver.eeCompatible-8.0; type="osgi.subsystem.feature",
+ com.ibm.websphere.appserver.api.jaxrs20; location:="dev/api/ibm/,lib/"; version="[1.1.0,1.1.200)",
+ com.ibm.websphere.javaee.activation.1.1; require-java:=9; location:="dev/api/spec/,lib/"; apiJar=false; version="[1.0.0,1.0.200)",
+ com.ibm.websphere.javaee.jaxb.2.2; require-java:=9; location:="dev/api/spec/,lib/"; apiJar=false; version="[1.0.0,1.0.200)",
+ com.ibm.websphere.javaee.jaxrs.2.1; location:="dev/api/spec/,lib/"; mavenCoordinates="javax.ws.rs:javax.ws.rs-api:2.1"; version="[1.0.0,1.0.200)"
+Subsystem-Description: %description
+Subsystem-License: https://www.eclipse.org/legal/epl-v10.html
+Subsystem-Localization: OSGI-INF/l10n/com.ibm.websphere.appserver.javax.jaxrs-2.1
+Subsystem-ManifestVersion: 1
+Subsystem-Name: Java RESTful Services API 2.1
+Subsystem-SymbolicName: com.ibm.websphere.appserver.javax.jaxrs-2.1; visibility:=private; singleton:=true
+Subsystem-Type: osgi.subsystem.feature
+Subsystem-Vendor: IBM Corp.
+Subsystem-Version: 1.0.0
+Tool: Bnd-6.3.0.202206012108
+WLP-Activation-Type: parallel
+WLP-DisableAllFeatures-OnConflict: false

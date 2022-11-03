@@ -1,0 +1,7 @@
+/home/nitekon1/repos/Incident-Accuracy-Reporting-System/backend/media-service/src/main/java/org/callforcode/iars/application/MediaApplication.java
+/home/nitekon1/repos/Incident-Accuracy-Reporting-System/backend/media-service/src/main/java/org/callforcode/iars/mongo/MongoProducer.java
+/home/nitekon1/repos/Incident-Accuracy-Reporting-System/backend/media-service/src/main/java/org/callforcode/iars/application/MediaResource.java
+/home/nitekon1/repos/Incident-Accuracy-Reporting-System/backend/media-service/src/main/java/org/callforcode/iars/application/MediaService.java
+/home/nitekon1/repos/Incident-Accuracy-Reporting-System/backend/media-service/src/main/java/org/callforcode/iars/models/Media.java
+/home/nitekon1/repos/Incident-Accuracy-Reporting-System/backend/media-service/src/main/java/org/callforcode/iars/models/MediaFile.java
+/home/nitekon1/repos/Incident-Accuracy-Reporting-System/backend/media-service/src/main/java/org/callforcode/iars/models/UnprocessedMedia.java

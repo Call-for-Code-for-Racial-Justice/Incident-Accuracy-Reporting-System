@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?><!--HTTP server plugin config file for defaultServer generated on 2022.11.02 at 18:02:33 CDT-->
+<Config ASDisableNagle="false" AcceptAllContent="false" AppServerPortPreference="HostHeader" ChunkedResponse="false" ConfigHash="1048968868" FIPSEnable="false" IISDisableNagle="false" IISPluginPriority="High" IgnoreDNSFailures="false" RefreshInterval="60" ResponseChunkSize="64" SSLConsolidate="false" TrustedProxyEnable="false" VHostMatchingCompat="false">
+       
+    <Log LogLevel="Error" Name="/opt/IBM/WebSphere/Plugins/logs/webserver1/http_plugin.log"/>
+       
+    <Property Name="ESIEnable" Value="true"/>
+       
+    <Property Name="ESIMaxCacheSize" Value="1024"/>
+       
+    <Property Name="ESIInvalidationMonitor" Value="false"/>
+       
+    <Property Name="ESIEnableToPassCookies" Value="false"/>
+       
+    <Property Name="PluginInstallRoot" Value="/opt/IBM/WebSphere/Plugins"/>
+    <!-- Configuration generated using httpEndpointRef=defaultHttpEndpoint-->
+    <!-- No Virtual Hosts were found, possibly because no applications are defined. 
+	 Verify that at least one application is defined in the server configuration. -->
+       
+    <ServerCluster CloneSeparatorChange="false" GetDWLMTable="false" IgnoreAffinityRequests="true" LoadBalance="Round Robin" Name="defaultServer_default_node_Cluster" PostBufferSize="0" PostSizeLimit="-1" RemoveSpecialHeaders="true" RetryInterval="60" ServerIOTimeoutRetry="-1">
+              
+        <Server CloneID="5d253478-a48e-447a-bbe9-4aecb9ea781a" ConnectTimeout="5" ExtendedHandshake="false" LoadBalanceWeight="20" MaxConnections="-1" Name="default_node_defaultServer" ServerIOTimeout="900" WaitForContinue="false">
+                     
+            <Transport Hostname="localhost" Port="9080" Protocol="http"/>
+                     
+            <Transport Hostname="localhost" Port="9443" Protocol="https">
+                            
+                <Property Name="keyring" Value="/opt/IBM/WebSphere/Plugins/config/webserver1/plugin-key.kdb"/>
+                            
+                <Property Name="stashfile" Value="/opt/IBM/WebSphere/Plugins/config/webserver1/plugin-key.sth"/>
+                         
+            </Transport>
+                  
+        </Server>
+              
+        <PrimaryServers>
+                     
+            <Server Name="default_node_defaultServer"/>
+                  
+        </PrimaryServers>
+           
+    </ServerCluster>
+    
+</Config>

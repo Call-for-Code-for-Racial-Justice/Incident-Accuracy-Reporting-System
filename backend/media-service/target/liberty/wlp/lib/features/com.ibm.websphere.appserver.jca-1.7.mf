@@ -1,0 +1,28 @@
+Created-By: 11.0.14.1 (International Business Machines Corporation)
+IBM-API-Package: com.ibm.ws.jca.service; type="internal"
+IBM-AppliesTo: io.openliberty;productEdition=Open;productVersion="22.0.0.11"
+IBM-Feature-Version: 2
+IBM-InstallTo: core
+IBM-License-Agreement: wlp/lafiles/LA
+IBM-ProductID: io.openliberty
+IBM-ShortName: jca-1.7
+Subsystem-Category: JavaEE7Application
+Subsystem-Content: com.ibm.websphere.appserver.transaction-1.2; type="osgi.subsystem.feature",
+ com.ibm.websphere.appserver.eeCompatible-7.0; ibm.tolerates:="8.0"; type="osgi.subsystem.feature",
+ com.ibm.websphere.appserver.javaeePlatform-7.0; type="osgi.subsystem.feature",
+ com.ibm.websphere.appserver.javax.connector-1.7; type="osgi.subsystem.feature",
+ com.ibm.websphere.appserver.internal.jca-1.6; type="osgi.subsystem.feature",
+ com.ibm.ws.app.manager.rar; version="[1.0.0,1.0.200)",
+ com.ibm.ws.jca.1.7; version="[1.0.0,1.0.200)"
+Subsystem-Description: %description
+Subsystem-License: https://www.eclipse.org/legal/epl-v10.html
+Subsystem-Localization: OSGI-INF/l10n/com.ibm.websphere.appserver.jca-1.7
+Subsystem-ManifestVersion: 1
+Subsystem-Name: Java Connector Architecture 1.7
+Subsystem-SymbolicName: com.ibm.websphere.appserver.jca-1.7; visibility:=public; singleton:=true
+Subsystem-Type: osgi.subsystem.feature
+Subsystem-Vendor: IBM Corp.
+Subsystem-Version: 1.0.0
+Tool: Bnd-6.3.0.202206012108
+WLP-Activation-Type: parallel
+WLP-DisableAllFeatures-OnConflict: false

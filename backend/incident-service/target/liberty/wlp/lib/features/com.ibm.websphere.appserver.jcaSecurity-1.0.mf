@@ -1,0 +1,25 @@
+Created-By: 11.0.14.1 (International Business Machines Corporation)
+IBM-AppliesTo: io.openliberty;productVersion="22.0.0.11"
+IBM-Feature-Version: 2
+IBM-InstallTo: core
+IBM-License-Agreement: wlp/lafiles/LA
+IBM-ProductID: io.openliberty
+Subsystem-Content: com.ibm.websphere.appserver.containerServices-1.0; type="osgi.subsystem.feature",
+ io.openliberty.jcaSecurity.internal.ee-6.0; ibm.tolerates:="9.0"; type="osgi.subsystem.feature",
+ com.ibm.websphere.appserver.transaction-1.1; ibm.tolerates:="1.2,2.0"; type="osgi.subsystem.feature",
+ com.ibm.ws.security.auth.data.common; version="[1.0.0,1.0.200)",
+ com.ibm.ws.security.authentication; version="[1.0.0,1.0.200)",
+ com.ibm.ws.security.credentials; version="[1.0.0,1.0.200)",
+ com.ibm.ws.security.kerberos.auth; version="[1.0.0,1.0.200)",
+ com.ibm.websphere.security; version="[1.1.0,1.1.200)"
+Subsystem-Description: %description
+Subsystem-License: https://www.eclipse.org/legal/epl-v10.html
+Subsystem-Localization: OSGI-INF/l10n/com.ibm.websphere.appserver.jcaSecurity-1.0
+Subsystem-ManifestVersion: 1
+Subsystem-SymbolicName: com.ibm.websphere.appserver.jcaSecurity-1.0; visibility:=private; singleton:=false
+Subsystem-Type: osgi.subsystem.feature
+Subsystem-Vendor: IBM Corp.
+Subsystem-Version: 1.0.0
+Tool: Bnd-6.3.0.202206012108
+WLP-Activation-Type: parallel
+WLP-DisableAllFeatures-OnConflict: false

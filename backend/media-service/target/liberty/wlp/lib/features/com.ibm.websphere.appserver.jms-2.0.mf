@@ -1,0 +1,24 @@
+Created-By: 11.0.14.1 (International Business Machines Corporation)
+IBM-API-Package: javax.jms; version="2.0"; type="spec"
+IBM-App-ForceRestart: uninstall
+IBM-AppliesTo: io.openliberty;productEdition=Open;productVersion="22.0.0.11"
+IBM-Feature-Version: 2
+IBM-InstallTo: core
+IBM-License-Agreement: wlp/lafiles/LA
+IBM-ProductID: io.openliberty
+IBM-ShortName: jms-2.0
+Subsystem-Content: com.ibm.websphere.appserver.transaction-1.2; type="osgi.subsystem.feature",
+ com.ibm.websphere.appserver.jca-1.7; type="osgi.subsystem.feature",
+ com.ibm.websphere.appserver.internal.jms-2.0; type="osgi.subsystem.feature",
+ com.ibm.ws.jms20.feature; version="[1.0.0,1.0.200)"
+Subsystem-Description: %description
+Subsystem-License: https://www.eclipse.org/legal/epl-v10.html
+Subsystem-Localization: OSGI-INF/l10n/com.ibm.websphere.appserver.jms-2.0
+Subsystem-ManifestVersion: 1
+Subsystem-Name: Java Message Service 2.0
+Subsystem-SymbolicName: com.ibm.websphere.appserver.jms-2.0; visibility:=public; singleton:=true
+Subsystem-Type: osgi.subsystem.feature
+Subsystem-Vendor: IBM Corp.
+Subsystem-Version: 1.0.0
+Tool: Bnd-6.3.0.202206012108
+WLP-DisableAllFeatures-OnConflict: false

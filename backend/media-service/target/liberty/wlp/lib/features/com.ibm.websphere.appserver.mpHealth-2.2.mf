@@ -1,0 +1,34 @@
+Created-By: 11.0.14.1 (International Business Machines Corporation)
+IBM-API-Package: org.eclipse.microprofile.health; type=stable,
+ org.eclipse.microprofile.health.spi; type=stable
+IBM-App-ForceRestart: install,
+ uninstall
+IBM-AppliesTo: io.openliberty;productVersion="22.0.0.11"
+IBM-Feature-Version: 2
+IBM-InstallTo: core
+IBM-License-Agreement: wlp/lafiles/LA
+IBM-ProductID: io.openliberty
+IBM-ShortName: mpHealth-2.2
+Subsystem-Content: com.ibm.websphere.appserver.json-1.0; type="osgi.subsystem.feature",
+ io.openliberty.mpCompatible-0.0; type="osgi.subsystem.feature",
+ com.ibm.wsspi.appserver.webBundle-1.0; type="osgi.subsystem.feature",
+ com.ibm.websphere.appserver.contextService-1.0; type="osgi.subsystem.feature",
+ com.ibm.websphere.appserver.servlet-4.0; ibm.tolerates:="3.1"; type="osgi.subsystem.feature",
+ com.ibm.websphere.appserver.org.eclipse.microprofile.health-2.2; type="osgi.subsystem.feature",
+ com.ibm.websphere.appserver.cdi-2.0; ibm.tolerates:="1.2"; type="osgi.subsystem.feature",
+ com.ibm.websphere.appserver.jndi-1.0; type="osgi.subsystem.feature",
+ com.ibm.websphere.jsonsupport; version="[1.0.0,1.0.200)",
+ com.ibm.ws.microprofile.health.2.0; apiJar=false; location:="lib/"; version="[1.0.0,1.0.200)",
+ com.ibm.ws.org.joda.time.1.6.2; version="[1.0.0,1.0.200)"
+Subsystem-Description: %description
+Subsystem-License: https://www.eclipse.org/legal/epl-v10.html
+Subsystem-Localization: OSGI-INF/l10n/com.ibm.websphere.appserver.mpHealth-2.2
+Subsystem-ManifestVersion: 1
+Subsystem-Name: MicroProfile Health 2.2
+Subsystem-SymbolicName: com.ibm.websphere.appserver.mpHealth-2.2; visibility:=public; singleton:=true
+Subsystem-Type: osgi.subsystem.feature
+Subsystem-Vendor: IBM Corp.
+Subsystem-Version: 1.0.0
+Tool: Bnd-6.3.0.202206012108
+WLP-Activation-Type: parallel
+WLP-DisableAllFeatures-OnConflict: false

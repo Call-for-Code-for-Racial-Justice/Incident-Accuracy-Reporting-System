@@ -1,0 +1,46 @@
+Created-By: 11.0.14.1 (International Business Machines Corporation)
+IBM-API-Package: javax.transaction; type=spec,
+ javax.transaction.xa; type=spec,
+ com.ibm.wsspi.uow; type=ibm-api,
+ com.ibm.websphere.jtaextensions; type=ibm-api,
+ com.ibm.websphere.uow; type=ibm-api,
+ com.ibm.tx.jta; type=ibm-api,
+ com.ibm.ws.Transaction.resources; type=internal,
+ com.ibm.ws.LocalTransaction.resources; type=internal
+IBM-API-Service: com.ibm.wsspi.uow.UOWManager,
+ javax.transaction.TransactionSynchronizationRegistry,
+ javax.transaction.UserTransaction
+IBM-AppliesTo: io.openliberty;productVersion="22.0.0.11"
+IBM-Feature-Version: 2
+IBM-InstallTo: core
+IBM-License-Agreement: wlp/lafiles/LA
+IBM-ProductID: io.openliberty
+IBM-SPI-Package: com.ibm.wsspi.tx
+Subsystem-Content: com.ibm.websphere.appserver.spi.transaction_1.1-javadoc.zip; type=file; location:="dev/spi/ibm/javadoc/com.ibm.websphere.appserver.spi.transaction_1.1-javadoc.zip",
+ com.ibm.websphere.appserver.javaeedd-1.0; type="osgi.subsystem.feature",
+ io.openliberty.servlet.api-3.0; apiJar=false; ibm.tolerates:="3.1"; type="osgi.subsystem.feature",
+ com.ibm.websphere.appserver.jta-1.1; type="osgi.subsystem.feature",
+ com.ibm.websphere.appserver.containerServices-1.0; type="osgi.subsystem.feature",
+ com.ibm.websphere.appserver.injection-1.0; type="osgi.subsystem.feature",
+ com.ibm.websphere.appserver.anno-1.0; type="osgi.subsystem.feature",
+ com.ibm.websphere.appserver.eeCompatible-6.0; ibm.tolerates:="7.0,8.0"; type="osgi.subsystem.feature",
+ com.ibm.websphere.appserver.artifact-1.0; type="osgi.subsystem.feature",
+ com.ibm.websphere.appserver.javax.connector.internal-1.6; type="osgi.subsystem.feature",
+ com.ibm.websphere.appserver.spi.transaction; location:="dev/spi/ibm/,lib/"; type=jar; version="[1.1.0,1.1.200)",
+ com.ibm.ws.tx.jta.extensions; version="[1.0.0,1.0.200)",
+ com.ibm.ws.transaction; start-phase:=CONTAINER_LATE; version="[1.0.0,1.0.200)",
+ com.ibm.tx.jta; version="[1.0.0,1.0.200)",
+ com.ibm.tx.util; version="[1.0.0,1.0.200)",
+ com.ibm.rls.jdbc; version="[1.0.0,1.0.200)",
+ com.ibm.ws.tx.embeddable; version="[1.0.0,1.0.200)",
+ com.ibm.ws.recoverylog; version="[1.0.0,1.0.200)"
+Subsystem-Description: %description
+Subsystem-License: https://www.eclipse.org/legal/epl-v10.html
+Subsystem-Localization: OSGI-INF/l10n/com.ibm.websphere.appserver.transaction-1.1
+Subsystem-ManifestVersion: 1
+Subsystem-SymbolicName: com.ibm.websphere.appserver.transaction-1.1; visibility:=protected; singleton:=true
+Subsystem-Type: osgi.subsystem.feature
+Subsystem-Vendor: IBM Corp.
+Subsystem-Version: 1.0.0
+Tool: Bnd-6.3.0.202206012108
+WLP-DisableAllFeatures-OnConflict: false

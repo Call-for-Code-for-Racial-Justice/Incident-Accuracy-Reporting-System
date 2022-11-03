@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<archive>
+    <dir sourceOnDisk="/home/nitekon1/repos/Incident-Accuracy-Reporting-System/backend/incident-service/target/classes" targetInArchive="/WEB-INF/classes"/>
+    <file sourceOnDisk="/home/nitekon1/.m2/repository/org/reactivestreams/reactive-streams/1.0.3/reactive-streams-1.0.3.jar" targetInArchive="/WEB-INF/lib/reactive-streams-1.0.3.jar"/>
+    <file sourceOnDisk="/home/nitekon1/.m2/repository/org/apache/kafka/kafka-clients/2.8.1/kafka-clients-2.8.1.jar" targetInArchive="/WEB-INF/lib/kafka-clients-2.8.1.jar"/>
+    <file sourceOnDisk="/home/nitekon1/.m2/repository/com/github/luben/zstd-jni/1.4.9-1/zstd-jni-1.4.9-1.jar" targetInArchive="/WEB-INF/lib/zstd-jni-1.4.9-1.jar"/>
+    <file sourceOnDisk="/home/nitekon1/.m2/repository/org/lz4/lz4-java/1.7.1/lz4-java-1.7.1.jar" targetInArchive="/WEB-INF/lib/lz4-java-1.7.1.jar"/>
+    <file sourceOnDisk="/home/nitekon1/.m2/repository/org/xerial/snappy/snappy-java/1.1.8.1/snappy-java-1.1.8.1.jar" targetInArchive="/WEB-INF/lib/snappy-java-1.1.8.1.jar"/>
+    <file sourceOnDisk="/home/nitekon1/.m2/repository/io/reactivex/rxjava3/rxjava/3.1.2/rxjava-3.1.2.jar" targetInArchive="/WEB-INF/lib/rxjava-3.1.2.jar"/>
+    <file sourceOnDisk="/home/nitekon1/.m2/repository/org/slf4j/slf4j-api/2.0.2/slf4j-api-2.0.2.jar" targetInArchive="/WEB-INF/lib/slf4j-api-2.0.2.jar"/>
+    <file sourceOnDisk="/home/nitekon1/.m2/repository/org/slf4j/slf4j-simple/2.0.2/slf4j-simple-2.0.2.jar" targetInArchive="/WEB-INF/lib/slf4j-simple-2.0.2.jar"/>
+    <file sourceOnDisk="/home/nitekon1/repos/Incident-Accuracy-Reporting-System/backend/incident-service/target/tmp/META-INF/MANIFEST.MF" targetInArchive="/META-INF/MANIFEST.MF"/>
+</archive>

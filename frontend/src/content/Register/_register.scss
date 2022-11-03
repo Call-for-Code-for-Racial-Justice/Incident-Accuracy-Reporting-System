@@ -1,0 +1,93 @@
+@use '@carbon/react/scss/type' as *;
+
+.register {
+  width: 90%;
+  max-width: 40rem;
+  margin: 2rem auto;
+  padding: 2rem;
+}
+
+.register__main {
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  box-shadow: 1px 0 10px 0 #cccccc;
+}
+.register__right-pane {
+  float: right;
+  min-width: 30rem;
+  min-height: 100vh;
+  background-color: rgba(204,204,204,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.register__control {
+  margin: 1rem 0;
+  display: flex;
+  align-items: stretch;
+  flex-direction: column;
+}
+
+.register__button {
+  margin: 1rem 0;
+}
+
+.register__button button {
+  display: block;
+  min-width: 100%;
+}
+
+.register__sign-up {
+  text-align: center;
+}
+
+.register__sign-up span {
+  //@include type-style('label-02');
+}
+
+
+// .control label,
+// .control input {
+//   display: block;
+// }
+
+// .control label {
+//   font-weight: bold;
+//   flex: 1;
+//   color: #464646;
+//   margin-bottom: 0.5rem;
+// }
+
+// .control input {
+//   flex: 3;
+//   font: inherit;
+//   padding: 0.35rem 0.35rem;
+//   border-radius: 6px;
+//   border: 1px solid #ccc;
+// }
+
+// .control input:focus {
+//   outline: none;
+//   border-color: #4f005f;
+//   background: #f6dbfc;
+// }
+
+// .control.invalid input {
+//   border-color: red;
+//   background: #fbdada;
+// }
+
+// .actions {
+//   text-align: center;
+// }
+
+@media (min-width: 768px) {
+  .control {
+    align-items: center;
+    flex-direction: row;
+  }
+
+}

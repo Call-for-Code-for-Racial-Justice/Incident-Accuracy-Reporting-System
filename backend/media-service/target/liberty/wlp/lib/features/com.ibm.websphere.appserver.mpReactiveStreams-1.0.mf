@@ -1,0 +1,32 @@
+Created-By: 11.0.14.1 (International Business Machines Corporation)
+IBM-API-Package: org.eclipse.microprofile.reactive.streams.operators; type=stable,
+ org.eclipse.microprofile.reactive.streams.operators.spi; type=stable,
+ org.eclipse.microprofile.reactive.streams.operators.core; type=stable,
+ org.reactivestreams; type=stable
+IBM-App-ForceRestart: install,
+ uninstall
+IBM-AppliesTo: io.openliberty;productVersion="22.0.0.11"
+IBM-Feature-Version: 2
+IBM-InstallTo: core
+IBM-License-Agreement: wlp/lafiles/LA
+IBM-ProductID: io.openliberty
+IBM-ShortName: mpReactiveStreams-1.0
+Subsystem-Content: io.openliberty.mpCompatible-0.0; type="osgi.subsystem.feature",
+ com.ibm.websphere.appserver.org.eclipse.microprofile.reactive.streams.operators-1.0; type="osgi.subsystem.feature",
+ com.ibm.websphere.appserver.concurrent-1.0; type="osgi.subsystem.feature",
+ com.ibm.ws.microprofile.reactive.streams.operators; version="[1.0.0,1.0.200)",
+ com.ibm.ws.io.smallrye.reactive.streams-operators; version="[1.0.0,1.0.200)",
+ com.ibm.ws.io.smallrye.reactive.converter-api; version="[1.0.0,1.0.200)",
+ com.ibm.ws.io.reactivex.rxjava.2.2; version="[1.0.0,1.0.200)"
+Subsystem-Description: %description
+Subsystem-License: https://www.eclipse.org/legal/epl-v10.html
+Subsystem-Localization: OSGI-INF/l10n/com.ibm.websphere.appserver.mpReactiveStreams-1.0
+Subsystem-ManifestVersion: 1
+Subsystem-Name: MicroProfile Reactive Streams 1.0
+Subsystem-SymbolicName: com.ibm.websphere.appserver.mpReactiveStreams-1.0; visibility:=public; singleton:=true
+Subsystem-Type: osgi.subsystem.feature
+Subsystem-Vendor: IBM Corp.
+Subsystem-Version: 1.0.0
+Tool: Bnd-6.3.0.202206012108
+WLP-Activation-Type: parallel
+WLP-DisableAllFeatures-OnConflict: false

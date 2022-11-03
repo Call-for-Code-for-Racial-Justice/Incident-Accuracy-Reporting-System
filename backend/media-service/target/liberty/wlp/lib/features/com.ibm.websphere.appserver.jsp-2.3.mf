@@ -1,0 +1,61 @@
+Created-By: 11.0.14.1 (International Business Machines Corporation)
+IBM-API-Package: javax.servlet.jsp; type=spec,
+ javax.servlet.jsp.el; type=spec,
+ javax.servlet.jsp.tagext; type=spec,
+ javax.servlet.jsp.jstl.sql; type=spec,
+ javax.servlet.jsp.jstl.tlv; type=spec,
+ javax.servlet.jsp.jstl.core; type=spec,
+ javax.servlet.jsp.jstl.fmt; type=spec,
+ javax.el; type=spec,
+ org.apache.taglibs.standard; type=internal,
+ org.apache.taglibs.standard.tag.common.core; type=internal,
+ org.apache.taglibs.standard.tag.common.fmt; type=internal,
+ org.apache.taglibs.standard.tag.common.sql; type=internal,
+ org.apache.taglibs.standard.tag.common.xml; type=internal,
+ org.apache.taglibs.standard.tag.el.core; type=internal,
+ org.apache.taglibs.standard.tag.el.fmt; type=internal,
+ org.apache.taglibs.standard.tag.el.sql; type=internal,
+ org.apache.taglibs.standard.tag.el.xml; type=internal,
+ org.apache.taglibs.standard.functions; type=internal,
+ org.apache.taglibs.standard.tag.rt.core; type=internal,
+ org.apache.taglibs.standard.tag.rt.fmt; type=internal,
+ org.apache.taglibs.standard.tag.rt.sql; type=internal,
+ org.apache.taglibs.standard.tag.rt.xml; type=internal,
+ org.apache.el; type=internal,
+ org.apache.el.lang; type=internal,
+ org.apache.jasper.el; type=internal
+IBM-App-ForceRestart: install,
+ uninstall
+IBM-AppliesTo: io.openliberty;productVersion="22.0.0.11"
+IBM-Feature-Version: 2
+IBM-InstallTo: core
+IBM-License-Agreement: wlp/lafiles/LA
+IBM-ProductID: io.openliberty
+IBM-SPI-Package: com.ibm.wsspi.jsp.taglib.config
+IBM-ShortName: jsp-2.3
+Subsystem-Content: com.ibm.websphere.appserver.spi.jsp_1.0-javadoc.zip; type=file; location:="dev/spi/ibm/javadoc/com.ibm.websphere.appserver.spi.jsp_1.0-javadoc.zip",
+ com.ibm.websphere.appserver.javax.jsp-2.3; type="osgi.subsystem.feature",
+ com.ibm.websphere.appserver.servlet-3.1; ibm.tolerates:="4.0"; type="osgi.subsystem.feature",
+ com.ibm.websphere.appserver.eeCompatible-7.0; ibm.tolerates:="6.0,8.0"; type="osgi.subsystem.feature",
+ com.ibm.websphere.appserver.el-3.0; type="osgi.subsystem.feature",
+ com.ibm.websphere.appserver.javax.el-3.0; type="osgi.subsystem.feature",
+ com.ibm.websphere.appserver.spi.jsp; location:="dev/spi/ibm/,lib/"; type=jar; version="[1.0.0,1.0.200)",
+ com.ibm.websphere.javaee.jsp.tld.2.2; location:="dev/api/spec/,lib/"; type=jar; version="[1.2.0,1.2.200)",
+ com.ibm.ws.org.eclipse.jdt.core; version="[1.0.0,1.0.200)",
+ com.ibm.websphere.javaee.jstl.1.2; location:="dev/api/spec/,lib/"; mavenCoordinates="javax.servlet:jstl:1.2"; version="[1.0.0,1.0.200)",
+ com.ibm.ws.jsp.2.3; version="[1.0.0,1.0.200)",
+ com.ibm.ws.jsp; version="[1.0.0,1.0.200)",
+ com.ibm.ws.jsp.jstl.facade; start-phase:=CONTAINER_EARLY; version="[1.0.0,1.0.200)",
+ com.ibm.ws.org.apache.taglibs.standard; version="[1.0.0,1.0.200)"
+Subsystem-Description: %description
+Subsystem-License: https://www.eclipse.org/legal/epl-v10.html
+Subsystem-Localization: OSGI-INF/l10n/com.ibm.websphere.appserver.jsp-2.3
+Subsystem-ManifestVersion: 1
+Subsystem-Name: JavaServer Pages 2.3
+Subsystem-SymbolicName: com.ibm.websphere.appserver.jsp-2.3; visibility:=public; singleton:=true
+Subsystem-Type: osgi.subsystem.feature
+Subsystem-Vendor: IBM Corp.
+Subsystem-Version: 1.0.0
+Tool: Bnd-6.3.0.202206012108
+WLP-Activation-Type: parallel
+WLP-DisableAllFeatures-OnConflict: false

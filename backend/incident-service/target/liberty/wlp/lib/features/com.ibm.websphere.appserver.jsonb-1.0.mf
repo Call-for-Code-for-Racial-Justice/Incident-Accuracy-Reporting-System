@@ -1,0 +1,27 @@
+Created-By: 11.0.14.1 (International Business Machines Corporation)
+IBM-API-Package: javax.json.bind; type=spec,
+ javax.json.bind.adapter; type=spec,
+ javax.json.bind.annotation; type=spec,
+ javax.json.bind.config; type=spec,
+ javax.json.bind.serializer; type=spec,
+ javax.json.bind.spi; type=spec
+IBM-AppliesTo: io.openliberty;productVersion="22.0.0.11"
+IBM-Feature-Version: 2
+IBM-InstallTo: core
+IBM-License-Agreement: wlp/lafiles/LA
+IBM-ProductID: io.openliberty
+IBM-ShortName: jsonb-1.0
+Subsystem-Content: com.ibm.websphere.appserver.jsonbInternal-1.0; type="osgi.subsystem.feature",
+ com.ibm.ws.jsonb.service; version="[1.0.0,1.0.200)"
+Subsystem-Description: %description
+Subsystem-License: https://www.eclipse.org/legal/epl-v10.html
+Subsystem-Localization: OSGI-INF/l10n/com.ibm.websphere.appserver.jsonb-1.0
+Subsystem-ManifestVersion: 1
+Subsystem-Name: JavaScript Object Notation Binding 1.0
+Subsystem-SymbolicName: com.ibm.websphere.appserver.jsonb-1.0; visibility:=public; singleton:=false
+Subsystem-Type: osgi.subsystem.feature
+Subsystem-Vendor: IBM Corp.
+Subsystem-Version: 1.0.0
+Tool: Bnd-6.3.0.202206012108
+WLP-Activation-Type: parallel
+WLP-DisableAllFeatures-OnConflict: false

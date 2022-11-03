@@ -1,0 +1,10 @@
+
+ Index  Count  Time of first Occurrence    Time of last Occurrence     Exception SourceId ProbeId
+------+------+---------------------------+---------------------------+---------------------------
+     0      2   10/26/22, 7:01:14:671 CDT  10/28/22, 19:20:59:160 CDT org.jboss.weld.exceptions.DeploymentException com.ibm.ws.container.service.state.internal.ApplicationStateManager 54
+                                                                            - /home/nitekon1/repos/Incident-Accuracy-Reporting-System/backend/media-service/target/liberty/wlp/usr/servers/defaultServer/logs/ffdc/ffdc_22.10.26_07.01.14.0.log
+     1      2   10/26/22, 7:01:14:709 CDT  10/28/22, 19:20:59:162 CDT com.ibm.ws.container.service.state.StateChangeException com.ibm.ws.app.manager.module.internal.SimpleDeployedAppInfoBase 548
+                                                                            - /home/nitekon1/repos/Incident-Accuracy-Reporting-System/backend/media-service/target/liberty/wlp/usr/servers/defaultServer/logs/ffdc/ffdc_22.10.26_07.01.14.1.log
+     2      1   11/2/22, 18:02:35:160 CDT   11/2/22, 18:02:35:160 CDT java.lang.ClassNotFoundException com.ibm.ws.classloading.java2sec.PermissionManager 544
+                                                                            - /home/nitekon1/repos/Incident-Accuracy-Reporting-System/backend/media-service/target/liberty/wlp/usr/servers/defaultServer/logs/ffdc/ffdc_22.11.02_18.02.35.0.log
+------+------+---------------------------+---------------------------+---------------------------

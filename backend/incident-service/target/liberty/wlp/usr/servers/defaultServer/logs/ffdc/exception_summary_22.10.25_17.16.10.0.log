@@ -1,0 +1,13 @@
+
+ Index  Count  Time of first Occurrence    Time of last Occurrence     Exception SourceId ProbeId
+------+------+---------------------------+---------------------------+---------------------------
+     0      3  10/25/22, 17:16:10:215 CDT   10/26/22, 7:01:17:907 CDT javax.persistence.NoResultException com.ibm.ws.uow.UOWManagerImpl.runUnderCurrentUOW 1130
+                                                                            - /home/nitekon1/repos/Incident-Accuracy-Reporting-System/backend/incident-service/target/liberty/wlp/usr/servers/defaultServer/logs/ffdc/ffdc_22.10.25_17.16.10.0.log
+     1     13   10/26/22, 6:58:13:716 CDT   11/2/22, 10:41:11:082 CDT java.util.NoSuchElementException com.ibm.ws.microprofile.config.cdi.ConfigCDIExtension 151
+                                                                            - /home/nitekon1/repos/Incident-Accuracy-Reporting-System/backend/incident-service/target/liberty/wlp/usr/servers/defaultServer/logs/ffdc/ffdc_22.10.26_06.58.13.0.log
+                                                                            - /home/nitekon1/repos/Incident-Accuracy-Reporting-System/backend/incident-service/target/liberty/wlp/usr/servers/defaultServer/logs/ffdc/ffdc_22.10.26_06.58.13.1.log
+     2      6   10/26/22, 6:58:13:888 CDT  10/28/22, 19:20:55:663 CDT org.jboss.weld.exceptions.DeploymentException com.ibm.ws.container.service.state.internal.ApplicationStateManager 54
+                                                                            - /home/nitekon1/repos/Incident-Accuracy-Reporting-System/backend/incident-service/target/liberty/wlp/usr/servers/defaultServer/logs/ffdc/ffdc_22.10.26_06.58.13.2.log
+     3      6   10/26/22, 6:58:13:910 CDT  10/28/22, 19:20:55:663 CDT com.ibm.ws.container.service.state.StateChangeException com.ibm.ws.app.manager.module.internal.SimpleDeployedAppInfoBase 548
+                                                                            - /home/nitekon1/repos/Incident-Accuracy-Reporting-System/backend/incident-service/target/liberty/wlp/usr/servers/defaultServer/logs/ffdc/ffdc_22.10.26_06.58.13.3.log
+------+------+---------------------------+---------------------------+---------------------------

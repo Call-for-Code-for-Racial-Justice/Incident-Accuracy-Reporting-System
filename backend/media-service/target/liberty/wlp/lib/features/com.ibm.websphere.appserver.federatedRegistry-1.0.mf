@@ -1,0 +1,30 @@
+Created-By: 11.0.14.1 (International Business Machines Corporation)
+IBM-AppliesTo: io.openliberty;productVersion="22.0.0.11"
+IBM-Feature-Version: 2
+IBM-InstallTo: core
+IBM-License-Agreement: wlp/lafiles/LA
+IBM-ProductID: io.openliberty
+IBM-SPI-Package: com.ibm.wsspi.security.wim; type=ibm-spi,
+ com.ibm.wsspi.security.wim.exception; type=ibm-spi,
+ com.ibm.wsspi.security.wim.model; type=ibm-spi
+IBM-ShortName: federatedRegistry-1.0
+Subsystem-Content: com.ibm.websphere.appserver.spi.federatedRepository_1.2-javadoc.zip; type=file; location:="dev/spi/ibm/javadoc/com.ibm.websphere.appserver.spi.federatedRepository_1.2-javadoc.zip",
+ io.openliberty.federatedRepository.spi_1.2-javadoc.zip; type=file; location:="dev/spi/ibm/javadoc/io.openliberty.federatedRepository.spi_1.2-javadoc.zip",
+ com.ibm.websphere.appserver.wimcore-1.0; type="osgi.subsystem.feature",
+ com.ibm.websphere.appserver.securityInfrastructure-1.0; type="osgi.subsystem.feature",
+ com.ibm.websphere.appserver.spi.federatedRepository; location:="dev/spi/ibm/,lib/"; type=jar; version="[1.2.0,1.2.200)",
+ io.openliberty.federatedRepository.spi; location:="dev/spi/ibm/,lib/"; type=jar; version="[1.2.0,1.2.200)",
+ com.ibm.websphere.security; version="[1.1.0,1.1.200)",
+ com.ibm.ws.security.registry; version="[1.0.0,1.0.200)",
+ com.ibm.ws.security.wim.registry; version="[1.0.0,1.0.200)"
+Subsystem-Description: %description
+Subsystem-License: https://www.eclipse.org/legal/epl-v10.html
+Subsystem-Localization: OSGI-INF/l10n/com.ibm.websphere.appserver.federatedRegistry-1.0
+Subsystem-ManifestVersion: 1
+Subsystem-Name: Federated User Registry 1.0
+Subsystem-SymbolicName: com.ibm.websphere.appserver.federatedRegistry-1.0; visibility:=public; singleton:=false
+Subsystem-Type: osgi.subsystem.feature
+Subsystem-Vendor: IBM Corp.
+Subsystem-Version: 1.0.0
+Tool: Bnd-6.3.0.202206012108
+WLP-DisableAllFeatures-OnConflict: false

@@ -1,0 +1,17 @@
+
+ Index  Count  Time of first Occurrence    Time of last Occurrence     Exception SourceId ProbeId
+------+------+---------------------------+---------------------------+---------------------------
+     0      1  10/25/22, 12:36:50:049 CDT  10/25/22, 12:36:50:049 CDT java.lang.NoClassDefFoundError com.ibm.wsspi.injectionengine.MethodMap.getAllDeclaredMethods 106
+                                                                            - /home/nitekon1/repos/Incident-Accuracy-Reporting-System/backend/incident-service/target/liberty/wlp/usr/servers/defaultServer/logs/ffdc/ffdc_22.10.25_12.36.50.0.log
+     1      1  10/25/22, 12:36:50:146 CDT  10/25/22, 12:36:50:146 CDT org.jboss.weld.resources.spi.ResourceLoadingException com.ibm.ws.cdi.impl.weld.BeanDeploymentArchiveImpl 954
+                                                                            - /home/nitekon1/repos/Incident-Accuracy-Reporting-System/backend/incident-service/target/liberty/wlp/usr/servers/defaultServer/logs/ffdc/ffdc_22.10.25_12.36.50.1.log
+     2      2  10/25/22, 12:36:50:277 CDT  10/25/22, 12:36:50:360 CDT java.util.NoSuchElementException com.ibm.ws.microprofile.config.cdi.ConfigCDIExtension 151
+                                                                            - /home/nitekon1/repos/Incident-Accuracy-Reporting-System/backend/incident-service/target/liberty/wlp/usr/servers/defaultServer/logs/ffdc/ffdc_22.10.25_12.36.50.2.log
+                                                                            - /home/nitekon1/repos/Incident-Accuracy-Reporting-System/backend/incident-service/target/liberty/wlp/usr/servers/defaultServer/logs/ffdc/ffdc_22.10.25_12.36.50.3.log
+     3      1  10/25/22, 12:36:50:500 CDT  10/25/22, 12:36:50:500 CDT org.jboss.weld.exceptions.DeploymentException com.ibm.ws.container.service.state.internal.ApplicationStateManager 54
+                                                                            - /home/nitekon1/repos/Incident-Accuracy-Reporting-System/backend/incident-service/target/liberty/wlp/usr/servers/defaultServer/logs/ffdc/ffdc_22.10.25_12.36.50.4.log
+     4      1  10/25/22, 12:36:50:529 CDT  10/25/22, 12:36:50:529 CDT com.ibm.ws.container.service.state.StateChangeException com.ibm.ws.app.manager.module.internal.SimpleDeployedAppInfoBase 548
+                                                                            - /home/nitekon1/repos/Incident-Accuracy-Reporting-System/backend/incident-service/target/liberty/wlp/usr/servers/defaultServer/logs/ffdc/ffdc_22.10.25_12.36.50.5.log
+     5      1  10/25/22, 14:53:18:909 CDT  10/25/22, 14:53:18:909 CDT java.lang.NullPointerException com.ibm.ws.uow.UOWManagerImpl.runUnderCurrentUOW 1130
+                                                                            - /home/nitekon1/repos/Incident-Accuracy-Reporting-System/backend/incident-service/target/liberty/wlp/usr/servers/defaultServer/logs/ffdc/ffdc_22.10.25_14.53.18.0.log
+------+------+---------------------------+---------------------------+---------------------------

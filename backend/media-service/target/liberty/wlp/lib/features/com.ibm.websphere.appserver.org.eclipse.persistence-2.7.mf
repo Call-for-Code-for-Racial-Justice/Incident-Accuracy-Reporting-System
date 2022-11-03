@@ -1,0 +1,21 @@
+Created-By: 11.0.14.1 (International Business Machines Corporation)
+IBM-AppliesTo: io.openliberty;productVersion="22.0.0.11"
+IBM-Feature-Version: 2
+IBM-InstallTo: core
+IBM-License-Agreement: wlp/lafiles/LA
+IBM-Process-Types: server,
+ client
+IBM-ProductID: io.openliberty
+Subsystem-Content: com.ibm.websphere.appserver.javax.persistence.base-2.2; type="osgi.subsystem.feature",
+ com.ibm.websphere.appserver.thirdparty.eclipselink.2.7; apiJar=false; location:="dev/api/third-party/,lib/"; mavenCoordinates="org.eclipse.persistence:eclipselink:2.7.1"; version="[1.0.0,1.0.200)"
+Subsystem-Description: %description
+Subsystem-License: https://www.eclipse.org/legal/epl-v10.html
+Subsystem-Localization: OSGI-INF/l10n/com.ibm.websphere.appserver.org.eclipse.persistence-2.7
+Subsystem-ManifestVersion: 1
+Subsystem-SymbolicName: com.ibm.websphere.appserver.org.eclipse.persistence-2.7; visibility:=private; singleton:=true
+Subsystem-Type: osgi.subsystem.feature
+Subsystem-Vendor: IBM Corp.
+Subsystem-Version: 1.0.0
+Tool: Bnd-6.3.0.202206012108
+WLP-Activation-Type: parallel
+WLP-DisableAllFeatures-OnConflict: false
