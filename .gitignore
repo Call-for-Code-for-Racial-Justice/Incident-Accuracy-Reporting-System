@@ -25,6 +25,6 @@ buildNumber.properties
 
 *.vscode*
 
-deployment-configurations/docker/.data
 deployment-configurations/docker/.env
+deployment-configurations/docker/init-mongo.js
 deployment-configurations/docker/pgadmin4-server.json

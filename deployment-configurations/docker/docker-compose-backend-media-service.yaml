@@ -16,7 +16,7 @@ services:
       timeout: 20s
       retries: 3
     volumes:
-      - .data/minio:/data
+      - iars_media_objectstorage_volume:/data
     command: server --console-address ":9001" /data
 
   iars-media-mongodb:
@@ -30,16 +30,17 @@ services:
       - "27017-27019:27017-27019"
     volumes:
       - ./init-mongo.js:/docker-entrypoint-initdb.d/init-mongo.js:ro
-      - .data/mongodb:/data/db
+      - iars_media_database_volume:/data/db
 
-  # iars-media:
-  #   container_name: iars-media
-  #   image: iars-media-service
-  #   build:
-  #     dockerfile: ../../backend/media-service/Dockerfile
-  #     context: ../../backend/media-service/
-  #   ports:
-  #     - "9080:9080"
+  iars-media:
+    container_name: iars-media
+    image: iars-media-service
+    build:
+      dockerfile: ../../backend/media-service/Dockerfile
+      context: ../../backend/media-service/
+    ports:
+      - "9080:9080"
 
 volumes:
-  incident_database_volume:
+  iars_media_database_volume:
+  iars_media_objectstorage_volume:

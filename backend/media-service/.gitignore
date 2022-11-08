@@ -10,8 +10,8 @@ buildNumber.properties
 # https://github.com/takari/maven-wrapper#usage-without-binary-jar
 .mvn/wrapper/maven-wrapper.jar
 
-local-development/.data
 local-development/.env
+local-development/init-mongo.js
 
 src/main/liberty/config/server.env
 
