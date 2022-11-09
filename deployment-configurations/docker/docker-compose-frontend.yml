@@ -1,0 +1,11 @@
+version: "3.9"
+
+services:
+  iars-frontend:
+    container_name: iars-frontend
+    image: iars-frontend
+    build:
+      dockerfile: ../../frontend/Dockerfile
+      context: ../../frontend/
+    ports:
+      - "3000:80"

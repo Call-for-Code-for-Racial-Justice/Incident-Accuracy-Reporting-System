@@ -1,0 +1,46 @@
+version: "3"
+
+services:
+  iars-media-minio:
+    container_name: iars-media-minio
+    image: minio/minio:RELEASE.2022-09-17T00-09-45Z
+    ports:
+      - "9000:9000"
+      - "9001:9001"
+    environment:
+      MINIO_ROOT_USER: ${MINIO_ROOT_USER}
+      MINIO_ROOT_PASSWORD: ${MINIO_ROOT_PASSWORD}
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9000/minio/health/live"]
+      interval: 30s
+      timeout: 20s
+      retries: 3
+    volumes:
+      - iars_media_objectstorage_volume:/data
+    command: server --console-address ":9001" /data
+
+  iars-media-mongodb:
+    container_name: iars-media-mongodb
+    image: mongo:latest
+    environment:
+      MONGO_INITDB_DATABASE: ${MONGO_INITDB_DATABASE}
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_INITDB_ROOT_USERNAME}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_INITDB_ROOT_PASSWORD}
+    ports:
+      - "27017-27019:27017-27019"
+    volumes:
+      - ./init-mongo.js:/docker-entrypoint-initdb.d/init-mongo.js:ro
+      - iars_media_database_volume:/data/db
+
+  iars-media:
+    container_name: iars-media
+    image: iars-media-service
+    build:
+      dockerfile: ../../backend/media-service/Dockerfile
+      context: ../../backend/media-service/
+    ports:
+      - "9080:9080"
+
+volumes:
+  iars_media_database_volume:
+  iars_media_objectstorage_volume:

@@ -6,4 +6,25 @@ bootstrap/
 backend/STT-Audio/node_modules
 backend/STT-Audio/uploads/
 backend/STT-Audio/.env
-.DS_store
+.DS_[sS]tore
+
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+# https://github.com/takari/maven-wrapper#usage-without-binary-jar
+.mvn/wrapper/maven-wrapper.jar
+
+.data/*
+.env
+
+*.vscode*
+
+deployment-configurations/docker/.env
+deployment-configurations/docker/init-mongo.js
+deployment-configurations/docker/pgadmin4-server.json

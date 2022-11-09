@@ -1,0 +1,40 @@
+version: "3"
+
+services:
+  iars-incident-postgres:
+    container_name: iars-incident-postgres
+    image: postgres:14.4
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: "${POSTGRES_USER}"
+      POSTGRES_PASSWORD: "${POSTGRES_PASSWORD}"
+      POSTGRES_DB: "${POSTGRES_DB}"
+    volumes:
+      - iars_incident_database_volume:/var/lib/postgresql/data
+
+  iars-incident-pgadmin:
+    container_name: iars-incident-pgadmin
+    image: dpage/pgadmin4
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: "${PGADMIN_DEFAULT_EMAIL}"
+      PGADMIN_DEFAULT_PASSWORD: "${PGADMIN_DEFAULT_PASSWORD}"
+    ports:
+      - "5050:80"
+    volumes:
+      - ./pgadmin4-server.json:/pgadmin4/servers.json
+    depends_on:
+      - "iars-incident-postgres"
+
+  iars-incident:
+    container_name: iars-incident
+    image: iars-incident-service
+    build:
+      dockerfile: ../../backend/incident-service/Dockerfile
+      context: ../../backend/incident-service/
+    ports:
+      - "9081:9080"
+
+volumes:
+  iars_incident_database_volume:
