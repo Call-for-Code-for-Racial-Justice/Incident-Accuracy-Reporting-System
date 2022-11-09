@@ -1,0 +1,52 @@
+npm-debug.*
+*.jks
+*.jks.bak
+*.p12
+*.key
+*.mobileprovision
+
+# osx
+.DS_Store
+
+# intellij
+.idea
+local.properties
+
+# node.js
+node_modules/
+node_modules/**/*
+npm-debug.log
+
+# env
+env/index.js
+
+# expo
+
+.expo
+.expo/*
+.expo-shared/
+web-build/
+
+dist
+
+# Bundle artifact
+*.jsbundle
+
+# native
+
+# Android/IntelliJ
+#
+build/
+.gradle
+*.iml
+*.apk
+
+# BUCK
+buck-out/
+\.buckd/
+*.keystore
+!debug.keystore
+
+# CocoaPods
+/ios/Pods/
+
