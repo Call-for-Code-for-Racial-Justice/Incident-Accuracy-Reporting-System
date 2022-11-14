@@ -1,13 +1,29 @@
-# Getting started
+# React Carbon Dashboard
 
-## Prereqs
-Install node and NPM (suggest using NVM https://github.com/nvm-sh/nvm#install--update-script )
+## Built on
 
-## Run application
-```
-git clone https://github.ibm.com/kkbankol/embrace-lions-for-justice
-cd embrace-lions-for-justice
-cd frontend
-npm install
-npm run serve
-```
+- React v17
+- Carbon Design System v11
+- Node JS v16
+- Bootstrapped with [Create React App](https://github.com/facebook/create-react-app)
+
+## Live Demo
+
+View the live [demo](https://react-carbon-dashboard.tge4hc9rhau.us-south.codeengine.appdomain.cloud). <br />
+> **Credentials**: `demo / demo`
+
+## Included Pages
+
+- Login
+- Admin Dashboard
+- New Report
+- User Profile
+- Register
+
+## Deploy
+
+To deploy locally, suggest review of this [article](./local-development/README.md).
+
+## Feedback
+
+Please open an issue!

@@ -1,0 +1,18 @@
+.dashboard-page__r2 .bx--tabs--scrollable {
+  transform: translateZ(0);
+  justify-content: flex-end;
+}
+
+.dashboard-page__r2 .bx--tab-content {
+  padding: 0;
+}
+
+.cds--tab--list {
+  justify-content: flex-end;
+  padding-right: 1rem;
+}
+
+.cds--subgrid--wide {
+  //fix needed to keep the subgrid from scrolling horizontally
+  margin-right: 1rem;
+}
