@@ -1,0 +1,65 @@
+@use '@carbon/react/scss/spacing' as *;
+@use '@carbon/react/scss/type' as *;
+@use '@carbon/react/scss/breakpoint' as *;
+@use '@carbon/react/scss/theme' as *;
+
+@use './mixins.scss' as *;
+@use './overrides.scss';
+
+
+.userprofile-page__illo {
+  max-width: 100%;
+}
+
+.userprofile-page__banner {
+  padding-top: $spacing-05;
+  padding-bottom: $spacing-05 * 2;
+  @include userprofile-page-background;
+}
+
+.userprofile-page__actions {
+  margin-top: 1rem;
+  @include userprofile-page-background;
+}
+
+.userprofile-page__heading {
+  @include type-style('heading-05');
+}
+
+.userprofile-page__separator {
+  font-weight: bold;
+  padding-top: $spacing-03;
+  padding-bottom: $spacing-02 * 2;
+  margin-top: rem(40px);
+  @include type-style('heading-06');
+  @include userprofile-page-background;
+}
+
+.userprofile-page__card {
+  margin: 1rem auto;
+  padding: 1rem;
+}
+
+.userprofile-page__update {
+  text-align: center;
+  padding: 15px 32px;
+}
+
+.userprofile-page__update button {
+  margin-left: 1rem;
+  margin-right: 1rem;
+  font-size: 18px;
+}
+
+.userprofile-page__fullnameUnderPic {
+  @include type-style('heading-03');
+}
+
+.userprofile-page__usernameUnderPic {
+  @include type-style('heading-02');
+}
+
+.userprofile_page__fields {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
