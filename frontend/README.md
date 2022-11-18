@@ -1,4 +1,4 @@
-# React Carbon Dashboard
+# Administration Dashboard
 
 ## Built on
 
@@ -10,6 +10,7 @@
 ## Live Demo
 
 View the live [demo](https://react-carbon-dashboard.tge4hc9rhau.us-south.codeengine.appdomain.cloud). <br />
+
 > **Credentials**: `demo / demo`
 
 ## Included Pages
